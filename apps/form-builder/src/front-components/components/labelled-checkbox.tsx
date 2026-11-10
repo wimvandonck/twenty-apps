@@ -7,10 +7,23 @@ type LabelledCheckboxProps = {
   checked: boolean;
   onChange: (checked: boolean) => void;
   disabled?: boolean;
+  // Keeps the label for screen readers only, for use under a column heading.
+  hideLabel?: boolean;
 };
 
-export const LabelledCheckbox = ({ label, checked, onChange, disabled }: LabelledCheckboxProps) => {
+export const LabelledCheckbox = ({ label, checked, onChange, disabled, hideLabel }: LabelledCheckboxProps) => {
   const id = useId();
+
+  if (hideLabel === true) {
+    return (
+      <Checkbox
+        aria-label={label}
+        checked={checked}
+        disabled={disabled}
+        onCheckedChange={(next) => onChange(next === true)}
+      />
+    );
+  }
 
   return (
     <label htmlFor={id} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, minWidth: 0 }}>

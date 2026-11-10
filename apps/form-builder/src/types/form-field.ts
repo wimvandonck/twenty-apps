@@ -7,4 +7,9 @@ export type FormField = {
   type: FormFieldType;
   required: boolean;
   options?: FormFieldOption[];
+  // Prefills a visible field. For a hidden field it is the value written,
+  // whatever the visitor posts. Same shape as a posted value.
+  defaultValue?: string | boolean | string[];
+  // Hidden fields are not shown on the public form.
+  hidden?: boolean;
 };

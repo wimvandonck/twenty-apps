@@ -5,6 +5,7 @@ import { Response, type RoutePayload } from 'twenty-sdk/logic-function';
 import { createRecordApi } from 'src/twenty-client/create-record-api';
 import { fetchPublishedForm } from 'src/twenty-client/fetch-published-form';
 import { type SubmissionValues } from 'src/types/submission-values';
+import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
 import { processSubmission } from 'src/utils/process-submission.util';
 
 const json = (status: number, body: unknown) =>
@@ -15,13 +16,16 @@ const json = (status: number, body: unknown) =>
 
 const handler = async (event: RoutePayload) => {
   const client = new RestApiClient();
+  const body = (event.body ?? {}) as { values?: unknown; website?: unknown; language?: unknown };
+  const { messages } = getPublicFormMessages(
+    typeof body.language === 'string' ? body.language : undefined,
+    event.headers?.['accept-language'],
+  );
   const definition = await fetchPublishedForm(client, event.pathParameters?.formId);
 
   if (definition === null) {
-    return json(404, { ok: false, errors: ['This form does not exist or is not published.'] });
+    return json(404, { ok: false, errors: [messages.unavailableText] });
   }
-
-  const body = (event.body ?? {}) as { values?: unknown; website?: unknown };
 
   // Bots fill the hidden "website" input; pretend it worked and write nothing.
   if (typeof body.website === 'string' && body.website !== '') {
@@ -31,7 +35,7 @@ const handler = async (event: RoutePayload) => {
   const values = (
     typeof body.values === 'object' && body.values !== null ? body.values : {}
   ) as SubmissionValues;
-  const result = await processSubmission(definition, values, createRecordApi(client));
+  const result = await processSubmission(definition, values, createRecordApi(client), messages);
 
   return result.ok
     ? json(200, { ok: true })
@@ -48,5 +52,6 @@ export default defineLogicFunction({
     path: '/forms/:formId',
     httpMethod: 'POST',
     isAuthRequired: false,
+    forwardedRequestHeaders: ['accept-language'],
   },
 });

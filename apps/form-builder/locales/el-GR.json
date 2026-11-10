@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Ένα κρυφό πεδίο δεν εμφανίζεται στους επισκέπτες και λαμβάνει πάντα την προεπιλεγμένη τιμή του.",
+  "Add a record": "Προσθήκη εγγραφής",
+  "Add at least one visible field before publishing.": "Προσθέστε τουλάχιστον ένα ορατό πεδίο πριν από τη δημοσίευση.",
+  "Add link": "Προσθήκη σύνδεσης",
+  "Add record": "Προσθήκη εγγραφής",
+  "Always create": "Πάντα δημιουργία",
+  "Choose a form": "Επιλέξτε φόρμα",
+  "Choose a record": "Επιλέξτε εγγραφή",
+  "Choose an object": "Επιλέξτε αντικείμενο",
+  "Connect the records of one submission, for example the new person to the new company.": "Συνδέστε τις εγγραφές μιας υποβολής, για παράδειγμα το νέο άτομο με τη νέα εταιρεία.",
+  "Copied": "Αντιγράφηκε",
+  "Copy embed code": "Αντιγραφή κώδικα ενσωμάτωσης",
+  "Copy link": "Αντιγραφή συνδέσμου",
+  "Create form": "Δημιουργία φόρμας",
+  "Creating the form failed: {error}": "Η δημιουργία της φόρμας απέτυχε: {error}",
+  "Default value": "Προεπιλεγμένη τιμή",
+  "Description": "Περιγραφή",
+  "Draft": "Πρόχειρο",
+  "Embed code": "Κώδικας ενσωμάτωσης",
+  "Field": "Πεδίο",
+  "Fields Twenty requires are always included; system fields are never offered.": "Τα πεδία που απαιτεί το Twenty περιλαμβάνονται πάντα· τα πεδία συστήματος δεν προσφέρονται ποτέ.",
+  "First record": "Πρώτη εγγραφή",
+  "Fix the link loop before saving.": "Διορθώστε τον βρόχο των συνδέσεων πριν από την αποθήκευση.",
+  "Form": "Φόρμα",
+  "Form saved": "Η φόρμα αποθηκεύτηκε",
+  "Form saved and live": "Η φόρμα αποθηκεύτηκε και είναι ενεργή",
+  "Form settings and sharing": "Ρυθμίσεις φόρμας και κοινοποίηση",
+  "Hidden": "Κρυφό",
+  "Label on the form": "Ετικέτα στη φόρμα",
+  "Linked through": "Σύνδεση μέσω",
+  "Links between records": "Συνδέσεις μεταξύ εγγραφών",
+  "Live": "Ενεργή",
+  "Message after submitting": "Μήνυμα μετά την υποβολή",
+  "Name of the new form": "Όνομα της νέας φόρμας",
+  "New form": "Νέα φόρμα",
+  "No default": "Χωρίς προεπιλεγμένη τιμή",
+  "No form yet": "Δεν υπάρχει ακόμη φόρμα",
+  "Not available": "Μη διαθέσιμο",
+  "Not live yet": "Δεν είναι ακόμη ενεργή",
+  "On submit": "Κατά την υποβολή",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Επικολλήστε αυτό στο HTML οποιασδήποτε σελίδας. Η φόρμα ακολουθεί τη γλώσσα του επισκέπτη.",
+  "Public link": "Δημόσιος σύνδεσμος",
+  "Published – anyone with the link can submit": "Δημοσιευμένη – οποιοσδήποτε έχει τον σύνδεσμο μπορεί να την υποβάλει",
+  "Records and fields": "Εγγραφές και πεδία",
+  "Remove": "Αφαίρεση",
+  "Remove record": "Αφαίρεση εγγραφής",
+  "Required": "Υποχρεωτικό",
+  "Required by Twenty": "Απαιτείται από το Twenty",
+  "Save": "Αποθήκευση",
+  "Saved": "Αποθηκεύτηκε",
+  "Saving failed: {error}": "Η αποθήκευση απέτυχε: {error}",
+  "Second record": "Δεύτερη εγγραφή",
+  "Submit button": "Κουμπί υποβολής",
+  "The forms could not be loaded": "Δεν ήταν δυνατή η φόρτωση των φορμών",
+  "These links form a loop": "Αυτές οι συνδέσεις σχηματίζουν βρόχο",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Αυτές οι δύο εγγραφές δεν μπορούν να συνδεθούν: τα αντικείμενά τους δεν έχουν σχέση στο Twenty. Προσθέστε πρώτα ένα πεδίο σχέσης στις Ρυθμίσεις → Μοντέλο δεδομένων.",
+  "This object has required fields a form cannot fill": "Αυτό το αντικείμενο έχει υποχρεωτικά πεδία που μια φόρμα δεν μπορεί να συμπληρώσει",
+  "This object no longer exists": "Αυτό το αντικείμενο δεν υπάρχει πλέον",
+  "Tick Published and save to get the public link and the embed code.": "Επιλέξτε «Δημοσιευμένη» και αποθηκεύστε για να λάβετε τον δημόσιο σύνδεσμο και τον κώδικα ενσωμάτωσης.",
+  "Ticked": "Επιλεγμένο",
+  "Title": "Τίτλος",
+  "Try again": "Δοκιμάστε ξανά",
+  "Unsaved changes": "Μη αποθηκευμένες αλλαγές",
+  "Untitled form": "Φόρμα χωρίς τίτλο",
+  "Update when {field} matches": "Ενημέρωση όταν ταιριάζει το πεδίο {field}",
+  "Used to match": "Χρησιμοποιείται για αντιστοίχιση",
+  "via {relation}": "μέσω {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Η δημιουργία αυτής της εγγραφής αποτυγχάνει, εκτός αν τα συμπληρώσει μια σύνδεση.",
+  "{object} – section title": "{object} – τίτλος ενότητας",
+  "fieldMetadata.label": {
+    "Definition": "Ορισμός",
+    "Name": "Όνομα",
+    "Published": "Δημοσιευμένη"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Δημιουργός φορμών",
+    "Forms": "Φόρμες"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Φόρμες"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Φόρμα"
+  },
+  "pageLayout.name": {
+    "Form builder": "Δημιουργός φορμών"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Δημιουργός φορμών",
+    "Home": "Αρχική",
+    "Timeline": "Χρονολόγιο"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Πεδία",
+    "Timeline": "Χρονολόγιο"
+  },
+  "view.name": {
+    "All forms": "Όλες οι φόρμες"
+  }
+}

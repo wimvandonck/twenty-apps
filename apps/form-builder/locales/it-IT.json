@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Un campo nascosto non viene mostrato ai visitatori e riceve sempre il suo valore predefinito.",
+  "Add a record": "Aggiungi un record",
+  "Add at least one visible field before publishing.": "Aggiungi almeno un campo visibile prima di pubblicare.",
+  "Add link": "Aggiungi collegamento",
+  "Add record": "Aggiungi record",
+  "Always create": "Crea sempre",
+  "Choose a form": "Scegli un modulo",
+  "Choose a record": "Scegli un record",
+  "Choose an object": "Scegli un oggetto",
+  "Connect the records of one submission, for example the new person to the new company.": "Collega i record di uno stesso invio, ad esempio la nuova persona alla nuova azienda.",
+  "Copied": "Copiato",
+  "Copy embed code": "Copia codice di incorporamento",
+  "Copy link": "Copia link",
+  "Create form": "Crea modulo",
+  "Creating the form failed: {error}": "Creazione del modulo non riuscita: {error}",
+  "Default value": "Valore predefinito",
+  "Description": "Descrizione",
+  "Draft": "Bozza",
+  "Embed code": "Codice di incorporamento",
+  "Field": "Campo",
+  "Fields Twenty requires are always included; system fields are never offered.": "I campi richiesti da Twenty sono sempre inclusi; i campi di sistema non vengono mai proposti.",
+  "First record": "Primo record",
+  "Fix the link loop before saving.": "Correggi il ciclo di collegamenti prima di salvare.",
+  "Form": "Modulo",
+  "Form saved": "Modulo salvato",
+  "Form saved and live": "Modulo salvato e online",
+  "Form settings and sharing": "Impostazioni del modulo e condivisione",
+  "Hidden": "Nascosto",
+  "Label on the form": "Etichetta nel modulo",
+  "Linked through": "Collegato tramite",
+  "Links between records": "Collegamenti tra i record",
+  "Live": "Online",
+  "Message after submitting": "Messaggio dopo l’invio",
+  "Name of the new form": "Nome del nuovo modulo",
+  "New form": "Nuovo modulo",
+  "No default": "Nessun valore predefinito",
+  "No form yet": "Ancora nessun modulo",
+  "Not available": "Non disponibile",
+  "Not live yet": "Non ancora online",
+  "On submit": "All’invio",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Incolla questo nell’HTML di qualsiasi pagina. Il modulo segue la lingua del visitatore.",
+  "Public link": "Link pubblico",
+  "Published – anyone with the link can submit": "Pubblicato – chiunque abbia il link può inviarlo",
+  "Records and fields": "Record e campi",
+  "Remove": "Rimuovi",
+  "Remove record": "Rimuovi record",
+  "Required": "Obbligatorio",
+  "Required by Twenty": "Richiesto da Twenty",
+  "Save": "Salva",
+  "Saved": "Salvato",
+  "Saving failed: {error}": "Salvataggio non riuscito: {error}",
+  "Second record": "Secondo record",
+  "Submit button": "Pulsante di invio",
+  "The forms could not be loaded": "Impossibile caricare i moduli",
+  "These links form a loop": "Questi collegamenti formano un ciclo",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Questi due record non possono essere collegati: i loro oggetti non hanno alcuna relazione in Twenty. Aggiungi prima un campo di relazione in Impostazioni → Modello dati.",
+  "This object has required fields a form cannot fill": "Questo oggetto ha campi obbligatori che un modulo non può compilare",
+  "This object no longer exists": "Questo oggetto non esiste più",
+  "Tick Published and save to get the public link and the embed code.": "Seleziona Pubblicato e salva per ottenere il link pubblico e il codice di incorporamento.",
+  "Ticked": "Selezionato",
+  "Title": "Titolo",
+  "Try again": "Riprova",
+  "Unsaved changes": "Modifiche non salvate",
+  "Untitled form": "Modulo senza titolo",
+  "Update when {field} matches": "Aggiorna quando {field} corrisponde",
+  "Used to match": "Usato per la corrispondenza",
+  "via {relation}": "tramite {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. La creazione di questo record non riesce, a meno che un collegamento non li compili.",
+  "{object} – section title": "{object} – titolo della sezione",
+  "fieldMetadata.label": {
+    "Definition": "Definizione",
+    "Name": "Nome",
+    "Published": "Pubblicato"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Creazione moduli",
+    "Forms": "Moduli"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Moduli"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Modulo"
+  },
+  "pageLayout.name": {
+    "Form builder": "Creazione moduli"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Creazione moduli",
+    "Home": "Home",
+    "Timeline": "Cronologia"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Campi",
+    "Timeline": "Cronologia"
+  },
+  "view.name": {
+    "All forms": "Tutti i moduli"
+  }
+}

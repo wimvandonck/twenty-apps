@@ -5,5 +5,8 @@ export type ObjectMetadata = {
   namePlural: string;
   labelSingular: string;
   labelPlural: string;
+  // Whether a form may write records of this object. System objects are
+  // loaded too, because junction objects are system objects.
+  isSelectable: boolean;
   fields: FieldMetadata[];
 };

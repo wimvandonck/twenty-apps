@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Ein ausgeblendetes Feld wird Besuchern nicht angezeigt und erhält immer seinen Standardwert.",
+  "Add a record": "Datensatz hinzufügen",
+  "Add at least one visible field before publishing.": "Fügen Sie vor dem Veröffentlichen mindestens ein sichtbares Feld hinzu.",
+  "Add link": "Verknüpfung hinzufügen",
+  "Add record": "Datensatz hinzufügen",
+  "Always create": "Immer erstellen",
+  "Choose a form": "Formular wählen",
+  "Choose a record": "Datensatz wählen",
+  "Choose an object": "Objekt wählen",
+  "Connect the records of one submission, for example the new person to the new company.": "Verknüpfen Sie die Datensätze einer Einsendung, zum Beispiel die neue Person mit dem neuen Unternehmen.",
+  "Copied": "Kopiert",
+  "Copy embed code": "Einbettungscode kopieren",
+  "Copy link": "Link kopieren",
+  "Create form": "Formular erstellen",
+  "Creating the form failed: {error}": "Formular konnte nicht erstellt werden: {error}",
+  "Default value": "Standardwert",
+  "Description": "Beschreibung",
+  "Draft": "Entwurf",
+  "Embed code": "Einbettungscode",
+  "Field": "Feld",
+  "Fields Twenty requires are always included; system fields are never offered.": "Von Twenty verlangte Felder sind immer enthalten; Systemfelder werden nie angeboten.",
+  "First record": "Erster Datensatz",
+  "Fix the link loop before saving.": "Beheben Sie die Schleife in den Verknüpfungen, bevor Sie speichern.",
+  "Form": "Formular",
+  "Form saved": "Formular gespeichert",
+  "Form saved and live": "Formular gespeichert und live",
+  "Form settings and sharing": "Formulareinstellungen und Teilen",
+  "Hidden": "Ausgeblendet",
+  "Label on the form": "Beschriftung im Formular",
+  "Linked through": "Verknüpft über",
+  "Links between records": "Verknüpfungen zwischen Datensätzen",
+  "Live": "Live",
+  "Message after submitting": "Nachricht nach dem Absenden",
+  "Name of the new form": "Name des neuen Formulars",
+  "New form": "Neues Formular",
+  "No default": "Kein Standardwert",
+  "No form yet": "Noch kein Formular",
+  "Not available": "Nicht verfügbar",
+  "Not live yet": "Noch nicht live",
+  "On submit": "Beim Absenden",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Fügen Sie dies in das HTML einer beliebigen Seite ein. Das Formular folgt der Sprache des Besuchers.",
+  "Public link": "Öffentlicher Link",
+  "Published – anyone with the link can submit": "Veröffentlicht – jeder mit dem Link kann das Formular absenden",
+  "Records and fields": "Datensätze und Felder",
+  "Remove": "Entfernen",
+  "Remove record": "Datensatz entfernen",
+  "Required": "Pflichtfeld",
+  "Required by Twenty": "Von Twenty verlangt",
+  "Save": "Speichern",
+  "Saved": "Gespeichert",
+  "Saving failed: {error}": "Speichern fehlgeschlagen: {error}",
+  "Second record": "Zweiter Datensatz",
+  "Submit button": "Absenden-Schaltfläche",
+  "The forms could not be loaded": "Die Formulare konnten nicht geladen werden",
+  "These links form a loop": "Diese Verknüpfungen bilden eine Schleife",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Diese beiden Datensätze können nicht verknüpft werden: Ihre Objekte haben in Twenty keine Beziehung. Fügen Sie zuerst unter Einstellungen → Datenmodell ein Beziehungsfeld hinzu.",
+  "This object has required fields a form cannot fill": "Dieses Objekt hat Pflichtfelder, die ein Formular nicht ausfüllen kann",
+  "This object no longer exists": "Dieses Objekt existiert nicht mehr",
+  "Tick Published and save to get the public link and the embed code.": "Aktivieren Sie „Veröffentlicht“ und speichern Sie, um den öffentlichen Link und den Einbettungscode zu erhalten.",
+  "Ticked": "Angekreuzt",
+  "Title": "Titel",
+  "Try again": "Erneut versuchen",
+  "Unsaved changes": "Nicht gespeicherte Änderungen",
+  "Untitled form": "Unbenanntes Formular",
+  "Update when {field} matches": "Aktualisieren, wenn {field} übereinstimmt",
+  "Used to match": "Für den Abgleich verwendet",
+  "via {relation}": "über {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Das Erstellen dieses Datensatzes schlägt fehl, sofern keine Verknüpfung sie ausfüllt.",
+  "{object} – section title": "{object} – Abschnittstitel",
+  "fieldMetadata.label": {
+    "Definition": "Definition",
+    "Name": "Name",
+    "Published": "Veröffentlicht"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Formular-Builder",
+    "Forms": "Formulare"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formulare"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formular"
+  },
+  "pageLayout.name": {
+    "Form builder": "Formular-Builder"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Formular-Builder",
+    "Home": "Start",
+    "Timeline": "Zeitachse"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Felder",
+    "Timeline": "Zeitachse"
+  },
+  "view.name": {
+    "All forms": "Alle Formulare"
+  }
+}

@@ -8,7 +8,11 @@ import { processSubmission } from 'src/utils/process-submission.util';
 import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
 import { toFieldValue } from 'src/utils/to-field-value.util';
 
-import { DEFINITION } from './fixtures';
+import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
+
+import { DEFINITION, NOTE_LINK, NOTE_RECORD } from './fixtures';
+
+const { messages: MESSAGES } = getPublicFormMessages(undefined, undefined);
 
 const [PERSON_RECORD, COMPANY_RECORD] = DEFINITION.records;
 const VALUES = {
@@ -40,6 +44,37 @@ describe('parseFormDefinition', () => {
     expect(
       parseFormDefinition({ records: [PERSON_RECORD], links: [{ ...DEFINITION.links[0] }] }),
     ).toBeNull();
+  });
+
+  it('gives links without a kind the DIRECT kind and accepts junction links', () => {
+    const legacyLink = { ...DEFINITION.links[0], kind: undefined };
+    const parsed = parseFormDefinition({
+      records: [...DEFINITION.records, NOTE_RECORD],
+      links: [legacyLink, NOTE_LINK],
+    });
+
+    expect(parsed?.links).toEqual([DEFINITION.links[0], NOTE_LINK]);
+  });
+
+  it('keeps defaults and only hides fields that have one', () => {
+    const parsed = parseFormDefinition({
+      records: [
+        {
+          ...COMPANY_RECORD,
+          fields: [
+            { name: 'a', type: 'TEXT', hidden: true, defaultValue: 'x' },
+            { name: 'b', type: 'TEXT', hidden: true },
+            { name: 'c', type: 'FULL_NAME', defaultValue: 'x' },
+          ],
+        },
+      ],
+    });
+
+    expect(parsed?.records[0].fields.map(({ hidden, defaultValue }) => ({ hidden, defaultValue }))).toEqual([
+      { hidden: true, defaultValue: 'x' },
+      { hidden: undefined, defaultValue: undefined },
+      { hidden: undefined, defaultValue: undefined },
+    ]);
   });
 
   it('falls back to CREATE when the match field is not in the form', () => {
@@ -92,15 +127,30 @@ describe('toFieldValue', () => {
 
 describe('buildRecordData', () => {
   it('ignores values for fields that are not in the form', () => {
-    const { data, errors } = buildRecordData(COMPANY_RECORD, { name: 'Acme', accountOwnerId: 'x', id: 'y' });
+    const { data, errors } = buildRecordData(COMPANY_RECORD, { name: 'Acme', accountOwnerId: 'x', id: 'y' }, MESSAGES);
 
     expect(data).toEqual({ name: 'Acme' });
     expect(errors).toEqual([]);
   });
 
+  it('writes the default of a hidden field, whatever was posted', () => {
+    const record = {
+      ...COMPANY_RECORD,
+      fields: [
+        ...COMPANY_RECORD.fields,
+        { name: 'source', label: 'Source', type: 'TEXT' as const, required: true, hidden: true, defaultValue: 'Website' },
+      ],
+    };
+
+    expect(buildRecordData(record, { name: 'Acme', source: 'Hacked' }, MESSAGES).data).toEqual({
+      name: 'Acme',
+      source: 'Website',
+    });
+  });
+
   it('reports missing required and invalid values', () => {
-    expect(buildRecordData(PERSON_RECORD, {}).errors).toEqual(['Email is required']);
-    expect(buildRecordData(PERSON_RECORD, { emails: 'x' }).errors).toEqual(['Email must be an email address']);
+    expect(buildRecordData(PERSON_RECORD, {}, MESSAGES).errors).toEqual(['Email is required']);
+    expect(buildRecordData(PERSON_RECORD, { emails: 'x' }, MESSAGES).errors).toEqual(['Email must be an email address']);
   });
 });
 
@@ -121,7 +171,7 @@ describe('sortRecordsByLinks', () => {
     expect(
       sortRecordsByLinks(DEFINITION.records, [
         ...DEFINITION.links,
-        { sourceRecordKey: 'company', relationFieldName: 'x', joinColumnName: 'xId', targetRecordKey: 'person' },
+        { kind: 'DIRECT', sourceRecordKey: 'company', relationFieldName: 'x', joinColumnName: 'xId', targetRecordKey: 'person' },
       ]),
     ).toBeNull();
   });
@@ -131,7 +181,7 @@ describe('processSubmission', () => {
   it('creates the target first and links the source to it', async () => {
     const api = createApi();
 
-    expect(await processSubmission(DEFINITION, VALUES, api)).toEqual({ ok: true });
+    expect(await processSubmission(DEFINITION, VALUES, api, MESSAGES)).toEqual({ ok: true });
     expect(api.create).toHaveBeenNthCalledWith(1, 'companies', { name: 'Analytical Engines' });
     expect(api.create).toHaveBeenNthCalledWith(2, 'people', {
       name: { firstName: 'Ada', lastName: 'Lovelace' },
@@ -143,16 +193,25 @@ describe('processSubmission', () => {
   it('updates the matching record instead of creating one', async () => {
     const api = createApi({ findIdByFilter: vi.fn(async () => 'existing') });
 
-    await processSubmission(DEFINITION, VALUES, api);
+    await processSubmission(DEFINITION, VALUES, api, MESSAGES);
 
     expect(api.findIdByFilter).toHaveBeenCalledWith('people', 'emails.primaryEmail[eq]:"ada@example.com"');
     expect(api.update).toHaveBeenCalledWith('people', 'existing', expect.objectContaining({ companyId: 'companies-id' }));
     expect(api.create).toHaveBeenCalledTimes(1);
   });
 
+  it('creates the junction record after both records exist', async () => {
+    const api = createApi();
+    const definition = { ...DEFINITION, records: [...DEFINITION.records, NOTE_RECORD], links: [...DEFINITION.links, NOTE_LINK] };
+
+    await processSubmission(definition, { ...VALUES, note: { title: 'Hello' } }, api, MESSAGES);
+
+    expect(api.create).toHaveBeenLastCalledWith('noteTargets', { noteId: 'notes-id', targetPersonId: 'people-id' });
+  });
+
   it('writes nothing when validation fails', async () => {
     const api = createApi();
-    const result = await processSubmission(DEFINITION, { person: {}, company: {} }, api);
+    const result = await processSubmission(DEFINITION, { person: {}, company: {} }, api, MESSAGES);
 
     expect(result).toEqual({ ok: false, status: 422, errors: ['Company name is required', 'Email is required'] });
     expect(api.create).not.toHaveBeenCalled();
@@ -166,9 +225,18 @@ describe('processSubmission', () => {
         return 'company-id';
       }),
     });
-    const result = await processSubmission(DEFINITION, VALUES, api);
+    const result = await processSubmission(DEFINITION, VALUES, api, MESSAGES);
 
     expect(result).toMatchObject({ ok: false, status: 500 });
     expect(api.remove).toHaveBeenCalledWith('companies', 'company-id');
+  });
+});
+
+describe('getPublicFormMessages', () => {
+  it('prefers the explicit language, then the browser, then English', () => {
+    expect(getPublicFormMessages('nl-NL', 'fr-FR').locale).toBe('nl-NL');
+    expect(getPublicFormMessages(undefined, 'xx,fr-CA;q=0.9,en;q=0.8').locale).toBe('fr-FR');
+    expect(getPublicFormMessages('<script>', 'zz').locale).toBe('en');
+    expect(getPublicFormMessages(undefined, 'nl').messages.required).toContain('{label}');
   });
 });

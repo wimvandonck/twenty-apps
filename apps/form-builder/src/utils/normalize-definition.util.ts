@@ -1,7 +1,6 @@
 import { type FormDefinition } from 'src/types/form-definition';
 import { type ObjectMetadata } from 'src/types/object-metadata';
 import { enforceRequiredFields } from 'src/utils/enforce-required-fields.util';
-import { getAvailableLinks } from 'src/utils/get-available-links.util';
 import { pruneLinks } from 'src/utils/prune-links.util';
 
 // Brings a definition in line with the workspace's current objects: required
@@ -20,6 +19,6 @@ export const normalizeDefinition = (
   return {
     ...definition,
     records,
-    links: pruneLinks(definition.links, getAvailableLinks(records, objects)),
+    links: pruneLinks(definition.links, records, objects),
   };
 };

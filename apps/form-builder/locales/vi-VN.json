@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Trường ẩn không hiển thị cho khách truy cập và luôn nhận giá trị mặc định.",
+  "Add a record": "Thêm một bản ghi",
+  "Add at least one visible field before publishing.": "Hãy thêm ít nhất một trường hiển thị trước khi xuất bản.",
+  "Add link": "Thêm liên kết",
+  "Add record": "Thêm bản ghi",
+  "Always create": "Luôn tạo mới",
+  "Choose a form": "Chọn một biểu mẫu",
+  "Choose a record": "Chọn một bản ghi",
+  "Choose an object": "Chọn một đối tượng",
+  "Connect the records of one submission, for example the new person to the new company.": "Kết nối các bản ghi của cùng một lần gửi, ví dụ người mới với công ty mới.",
+  "Copied": "Đã sao chép",
+  "Copy embed code": "Sao chép mã nhúng",
+  "Copy link": "Sao chép liên kết",
+  "Create form": "Tạo biểu mẫu",
+  "Creating the form failed: {error}": "Tạo biểu mẫu thất bại: {error}",
+  "Default value": "Giá trị mặc định",
+  "Description": "Mô tả",
+  "Draft": "Bản nháp",
+  "Embed code": "Mã nhúng",
+  "Field": "Trường",
+  "Fields Twenty requires are always included; system fields are never offered.": "Các trường Twenty yêu cầu luôn được đưa vào; trường hệ thống không bao giờ được cung cấp.",
+  "First record": "Bản ghi thứ nhất",
+  "Fix the link loop before saving.": "Hãy sửa vòng lặp liên kết trước khi lưu.",
+  "Form": "Biểu mẫu",
+  "Form saved": "Biểu mẫu đã lưu",
+  "Form saved and live": "Biểu mẫu đã lưu và đang hoạt động",
+  "Form settings and sharing": "Cài đặt biểu mẫu và chia sẻ",
+  "Hidden": "Ẩn",
+  "Label on the form": "Nhãn trên biểu mẫu",
+  "Linked through": "Liên kết qua",
+  "Links between records": "Liên kết giữa các bản ghi",
+  "Live": "Đang hoạt động",
+  "Message after submitting": "Thông báo sau khi gửi",
+  "Name of the new form": "Tên của biểu mẫu mới",
+  "New form": "Biểu mẫu mới",
+  "No default": "Không có giá trị mặc định",
+  "No form yet": "Chưa có biểu mẫu nào",
+  "Not available": "Không khả dụng",
+  "Not live yet": "Chưa hoạt động",
+  "On submit": "Khi gửi",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Dán mã này vào HTML của bất kỳ trang nào. Biểu mẫu hiển thị theo ngôn ngữ của khách truy cập.",
+  "Public link": "Liên kết công khai",
+  "Published – anyone with the link can submit": "Đã xuất bản – bất kỳ ai có liên kết đều có thể gửi",
+  "Records and fields": "Bản ghi và trường",
+  "Remove": "Xóa",
+  "Remove record": "Xóa bản ghi",
+  "Required": "Bắt buộc",
+  "Required by Twenty": "Twenty yêu cầu",
+  "Save": "Lưu",
+  "Saved": "Đã lưu",
+  "Saving failed: {error}": "Lưu thất bại: {error}",
+  "Second record": "Bản ghi thứ hai",
+  "Submit button": "Nút gửi",
+  "The forms could not be loaded": "Không thể tải các biểu mẫu",
+  "These links form a loop": "Các liên kết này tạo thành vòng lặp",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Không thể liên kết hai bản ghi này: các đối tượng của chúng không có quan hệ trong Twenty. Trước tiên hãy thêm trường quan hệ trong Cài đặt → Mô hình dữ liệu.",
+  "This object has required fields a form cannot fill": "Đối tượng này có các trường bắt buộc mà biểu mẫu không thể điền",
+  "This object no longer exists": "Đối tượng này không còn tồn tại",
+  "Tick Published and save to get the public link and the embed code.": "Chọn Đã xuất bản rồi lưu để nhận liên kết công khai và mã nhúng.",
+  "Ticked": "Đã chọn",
+  "Title": "Tiêu đề",
+  "Try again": "Thử lại",
+  "Unsaved changes": "Thay đổi chưa lưu",
+  "Untitled form": "Biểu mẫu chưa đặt tên",
+  "Update when {field} matches": "Cập nhật khi {field} trùng khớp",
+  "Used to match": "Dùng để đối chiếu",
+  "via {relation}": "qua {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Việc tạo bản ghi này sẽ thất bại trừ khi một liên kết điền các trường đó.",
+  "{object} – section title": "{object} – tiêu đề phần",
+  "fieldMetadata.label": {
+    "Definition": "Định nghĩa",
+    "Name": "Tên",
+    "Published": "Đã xuất bản"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Trình tạo biểu mẫu",
+    "Forms": "Biểu mẫu"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Biểu mẫu"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Biểu mẫu"
+  },
+  "pageLayout.name": {
+    "Form builder": "Trình tạo biểu mẫu"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Trình tạo biểu mẫu",
+    "Home": "Trang chủ",
+    "Timeline": "Dòng thời gian"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Trường",
+    "Timeline": "Dòng thời gian"
+  },
+  "view.name": {
+    "All forms": "Tất cả biểu mẫu"
+  }
+}

@@ -62,7 +62,7 @@ export const FORM_PAGE_SCRIPT = `
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ values: collect(), website: form.elements.website.value })
+      body: JSON.stringify({ values: collect(), website: form.elements.website.value, language: document.documentElement.lang })
     })
       .then(function (response) {
         return response.json().catch(function () { return {}; }).then(function (body) {
@@ -71,13 +71,13 @@ export const FORM_PAGE_SCRIPT = `
             showMessage('success', [form.dataset.success]);
           } else {
             button.disabled = false;
-            showMessage('error', body.errors && body.errors.length ? body.errors : ['Something went wrong. Please try again.']);
+            showMessage('error', body.errors && body.errors.length ? body.errors : [form.dataset.genericError]);
           }
         });
       })
       .catch(function () {
         button.disabled = false;
-        showMessage('error', ['Could not reach the server. Please try again.']);
+        showMessage('error', [form.dataset.networkError]);
       });
   });
 

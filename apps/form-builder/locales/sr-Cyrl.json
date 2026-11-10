@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Скривено поље се не приказује посетиоцима и увек добија подразумевану вредност.",
+  "Add a record": "Додај запис",
+  "Add at least one visible field before publishing.": "Додајте бар једно видљиво поље пре објављивања.",
+  "Add link": "Додај везу",
+  "Add record": "Додај запис",
+  "Always create": "Увек креирај",
+  "Choose a form": "Изаберите образац",
+  "Choose a record": "Изаберите запис",
+  "Choose an object": "Изаберите објекат",
+  "Connect the records of one submission, for example the new person to the new company.": "Повежите записе једног слања, на пример нову особу са новом компанијом.",
+  "Copied": "Копирано",
+  "Copy embed code": "Копирај кôд за уградњу",
+  "Copy link": "Копирај везу",
+  "Create form": "Креирај образац",
+  "Creating the form failed: {error}": "Креирање обрасца није успело: {error}",
+  "Default value": "Подразумевана вредност",
+  "Description": "Опис",
+  "Draft": "Нацрт",
+  "Embed code": "Кôд за уградњу",
+  "Field": "Поље",
+  "Fields Twenty requires are always included; system fields are never offered.": "Поља која Twenty захтева увек су укључена; системска поља се никада не нуде.",
+  "First record": "Први запис",
+  "Fix the link loop before saving.": "Исправите петљу у везама пре чувања.",
+  "Form": "Образац",
+  "Form saved": "Образац је сачуван",
+  "Form saved and live": "Образац је сачуван и активан",
+  "Form settings and sharing": "Подешавања обрасца и дељење",
+  "Hidden": "Скривено",
+  "Label on the form": "Ознака у обрасцу",
+  "Linked through": "Повезано преко",
+  "Links between records": "Везе између записа",
+  "Live": "Активно",
+  "Message after submitting": "Порука након слања",
+  "Name of the new form": "Назив новог обрасца",
+  "New form": "Нови образац",
+  "No default": "Без подразумеване вредности",
+  "No form yet": "Још нема образаца",
+  "Not available": "Није доступно",
+  "Not live yet": "Још није активно",
+  "On submit": "При слању",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Налепите ово у HTML било које странице. Образац прати језик посетиоца.",
+  "Public link": "Јавна веза",
+  "Published – anyone with the link can submit": "Објављено – свако ко има везу може да пошаље",
+  "Records and fields": "Записи и поља",
+  "Remove": "Уклони",
+  "Remove record": "Уклони запис",
+  "Required": "Обавезно",
+  "Required by Twenty": "Захтева Twenty",
+  "Save": "Сачувај",
+  "Saved": "Сачувано",
+  "Saving failed: {error}": "Чување није успело: {error}",
+  "Second record": "Други запис",
+  "Submit button": "Дугме за слање",
+  "The forms could not be loaded": "Обрасци нису могли да се учитају",
+  "These links form a loop": "Ове везе чине петљу",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Ова два записа не могу да се повежу: њихови објекти немају релацију у Twenty-ју. Прво додајте поље релације у Подешавања → Модел података.",
+  "This object has required fields a form cannot fill": "Овај објекат има обавезна поља која образац не може да попуни",
+  "This object no longer exists": "Овај објекат више не постоји",
+  "Tick Published and save to get the public link and the embed code.": "Означите Објављено и сачувајте да бисте добили јавну везу и кôд за уградњу.",
+  "Ticked": "Означено",
+  "Title": "Наслов",
+  "Try again": "Покушај поново",
+  "Unsaved changes": "Несачуване измене",
+  "Untitled form": "Образац без наслова",
+  "Update when {field} matches": "Ажурирај када се {field} подудара",
+  "Used to match": "Користи се за подударање",
+  "via {relation}": "преко {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Креирање овог записа неће успети осим ако их веза не попуни.",
+  "{object} – section title": "{object} – наслов одељка",
+  "fieldMetadata.label": {
+    "Definition": "Дефиниција",
+    "Name": "Назив",
+    "Published": "Објављено"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Креатор образаца",
+    "Forms": "Обрасци"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Обрасци"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Образац"
+  },
+  "pageLayout.name": {
+    "Form builder": "Креатор образаца"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Креатор образаца",
+    "Home": "Почетна",
+    "Timeline": "Временска линија"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поља",
+    "Timeline": "Временска линија"
+  },
+  "view.name": {
+    "All forms": "Сви обрасци"
+  }
+}

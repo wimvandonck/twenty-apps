@@ -9,7 +9,7 @@ export default defineField({
   universalIdentifier: FORM_DEFINITION_FIELD_UNIVERSAL_IDENTIFIER,
   name: 'definition',
   label: 'Definition',
-  description: 'Records, links and fields of the form, edited in the Builder tab',
+  description: 'Records, links and fields of the form, edited in the form builder',
   icon: 'IconBraces',
   type: FieldType.RAW_JSON,
   objectUniversalIdentifier: FORM_OBJECT_UNIVERSAL_IDENTIFIER,

@@ -7,6 +7,7 @@ type OptionSelectProps = {
   onChange: (value: string) => void;
   placeholder?: string;
   disabled?: boolean;
+  hideLabel?: boolean;
 };
 
 export const OptionSelect = ({
@@ -16,9 +17,10 @@ export const OptionSelect = ({
   onChange,
   placeholder,
   disabled,
+  hideLabel,
 }: OptionSelectProps) => (
   <Field.Root style={{ minWidth: 0 }}>
-    <Field.Label>{label}</Field.Label>
+    {hideLabel !== true && <Field.Label>{label}</Field.Label>}
     <Select.Root
       items={options}
       value={value === '' ? null : value}
@@ -26,7 +28,7 @@ export const OptionSelect = ({
       onValueChange={(next) => onChange(typeof next === 'string' ? next : '')}
     >
       <Select.Trigger aria-label={label}>
-        <Select.Value placeholder={placeholder ?? 'Choose…'} />
+        <Select.Value placeholder={placeholder ?? ''} />
         <Select.Icon />
       </Select.Trigger>
       <Select.Portal>

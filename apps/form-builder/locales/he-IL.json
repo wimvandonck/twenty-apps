@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "שדה מוסתר אינו מוצג למבקרים ותמיד מקבל את ערך ברירת המחדל שלו.",
+  "Add a record": "הוספת רשומה",
+  "Add at least one visible field before publishing.": "הוסיפו לפחות שדה גלוי אחד לפני הפרסום.",
+  "Add link": "הוספת קישור",
+  "Add record": "הוספת הרשומה",
+  "Always create": "ליצור תמיד",
+  "Choose a form": "בחרו טופס",
+  "Choose a record": "בחרו רשומה",
+  "Choose an object": "בחרו אובייקט",
+  "Connect the records of one submission, for example the new person to the new company.": "קשרו בין הרשומות של שליחה אחת, למשל את האדם החדש לחברה החדשה.",
+  "Copied": "הועתק",
+  "Copy embed code": "העתקת קוד ההטמעה",
+  "Copy link": "העתקת הקישור",
+  "Create form": "יצירת טופס",
+  "Creating the form failed: {error}": "יצירת הטופס נכשלה: {error}",
+  "Default value": "ערך ברירת מחדל",
+  "Description": "תיאור",
+  "Draft": "טיוטה",
+  "Embed code": "קוד הטמעה",
+  "Field": "שדה",
+  "Fields Twenty requires are always included; system fields are never offered.": "שדות ש-Twenty דורש נכללים תמיד; שדות מערכת לעולם אינם מוצעים.",
+  "First record": "רשומה ראשונה",
+  "Fix the link loop before saving.": "תקנו את לולאת הקישורים לפני השמירה.",
+  "Form": "טופס",
+  "Form saved": "הטופס נשמר",
+  "Form saved and live": "הטופס נשמר ונמצא באוויר",
+  "Form settings and sharing": "הגדרות הטופס ושיתוף",
+  "Hidden": "מוסתר",
+  "Label on the form": "תווית בטופס",
+  "Linked through": "מקושר דרך",
+  "Links between records": "קישורים בין רשומות",
+  "Live": "באוויר",
+  "Message after submitting": "הודעה לאחר השליחה",
+  "Name of the new form": "שם הטופס החדש",
+  "New form": "טופס חדש",
+  "No default": "ללא ערך ברירת מחדל",
+  "No form yet": "עדיין אין טופס",
+  "Not available": "לא זמין",
+  "Not live yet": "עדיין לא באוויר",
+  "On submit": "בעת השליחה",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "הדביקו את זה ב-HTML של כל דף. הטופס מוצג בשפת המבקר.",
+  "Public link": "קישור ציבורי",
+  "Published – anyone with the link can submit": "מפורסם – כל מי שיש לו את הקישור יכול לשלוח",
+  "Records and fields": "רשומות ושדות",
+  "Remove": "הסרה",
+  "Remove record": "הסרת הרשומה",
+  "Required": "חובה",
+  "Required by Twenty": "נדרש על ידי Twenty",
+  "Save": "שמירה",
+  "Saved": "נשמר",
+  "Saving failed: {error}": "השמירה נכשלה: {error}",
+  "Second record": "רשומה שנייה",
+  "Submit button": "לחצן שליחה",
+  "The forms could not be loaded": "לא ניתן היה לטעון את הטפסים",
+  "These links form a loop": "הקישורים האלה יוצרים לולאה",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "אי אפשר לקשר בין שתי הרשומות האלה: אין קשר בין האובייקטים שלהן ב-Twenty. הוסיפו קודם שדה קשר בהגדרות ← מודל נתונים.",
+  "This object has required fields a form cannot fill": "לאובייקט הזה יש שדות חובה שטופס לא יכול למלא",
+  "This object no longer exists": "האובייקט הזה כבר לא קיים",
+  "Tick Published and save to get the public link and the embed code.": "סמנו ״מפורסם״ ושמרו כדי לקבל את הקישור הציבורי ואת קוד ההטמעה.",
+  "Ticked": "מסומן",
+  "Title": "כותרת",
+  "Try again": "ניסיון חוזר",
+  "Unsaved changes": "שינויים שלא נשמרו",
+  "Untitled form": "טופס ללא שם",
+  "Update when {field} matches": "עדכון כאשר {field} תואם",
+  "Used to match": "משמש להתאמה",
+  "via {relation}": "דרך {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. יצירת הרשומה תיכשל אלא אם קישור ימלא אותם.",
+  "{object} – section title": "{object} – כותרת המקטע",
+  "fieldMetadata.label": {
+    "Definition": "הגדרה",
+    "Name": "שם",
+    "Published": "מפורסם"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "בונה הטפסים",
+    "Forms": "טפסים"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "טפסים"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "טופס"
+  },
+  "pageLayout.name": {
+    "Form builder": "בונה הטפסים"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "בונה הטפסים",
+    "Home": "בית",
+    "Timeline": "ציר זמן"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "שדות",
+    "Timeline": "ציר זמן"
+  },
+  "view.name": {
+    "All forms": "כל הטפסים"
+  }
+}

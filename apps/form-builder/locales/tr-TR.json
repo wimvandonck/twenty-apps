@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Gizli bir alan ziyaretçilere gösterilmez ve her zaman varsayılan değerini alır.",
+  "Add a record": "Kayıt ekle",
+  "Add at least one visible field before publishing.": "Yayınlamadan önce en az bir görünür alan ekleyin.",
+  "Add link": "Bağlantı ekle",
+  "Add record": "Kaydı ekle",
+  "Always create": "Her zaman oluştur",
+  "Choose a form": "Bir form seçin",
+  "Choose a record": "Bir kayıt seçin",
+  "Choose an object": "Bir nesne seçin",
+  "Connect the records of one submission, for example the new person to the new company.": "Aynı gönderimdeki kayıtları birbirine bağlayın; örneğin yeni kişiyi yeni şirkete.",
+  "Copied": "Kopyalandı",
+  "Copy embed code": "Gömme kodunu kopyala",
+  "Copy link": "Bağlantıyı kopyala",
+  "Create form": "Form oluştur",
+  "Creating the form failed: {error}": "Form oluşturulamadı: {error}",
+  "Default value": "Varsayılan değer",
+  "Description": "Açıklama",
+  "Draft": "Taslak",
+  "Embed code": "Gömme kodu",
+  "Field": "Alan",
+  "Fields Twenty requires are always included; system fields are never offered.": "Twenty’nin zorunlu kıldığı alanlar her zaman dahil edilir; sistem alanları hiçbir zaman sunulmaz.",
+  "First record": "Birinci kayıt",
+  "Fix the link loop before saving.": "Kaydetmeden önce bağlantı döngüsünü düzeltin.",
+  "Form": "Form",
+  "Form saved": "Form kaydedildi",
+  "Form saved and live": "Form kaydedildi ve yayında",
+  "Form settings and sharing": "Form ayarları ve paylaşım",
+  "Hidden": "Gizli",
+  "Label on the form": "Formdaki etiket",
+  "Linked through": "Şununla bağlı",
+  "Links between records": "Kayıtlar arası bağlantılar",
+  "Live": "Yayında",
+  "Message after submitting": "Gönderimden sonraki mesaj",
+  "Name of the new form": "Yeni formun adı",
+  "New form": "Yeni form",
+  "No default": "Varsayılan değer yok",
+  "No form yet": "Henüz form yok",
+  "Not available": "Kullanılamıyor",
+  "Not live yet": "Henüz yayında değil",
+  "On submit": "Gönderildiğinde",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Bunu herhangi bir sayfanın HTML’ine yapıştırın. Form, ziyaretçinin dilini izler.",
+  "Public link": "Herkese açık bağlantı",
+  "Published – anyone with the link can submit": "Yayında – bağlantıya sahip herkes gönderebilir",
+  "Records and fields": "Kayıtlar ve alanlar",
+  "Remove": "Kaldır",
+  "Remove record": "Kaydı kaldır",
+  "Required": "Zorunlu",
+  "Required by Twenty": "Twenty tarafından zorunlu",
+  "Save": "Kaydet",
+  "Saved": "Kaydedildi",
+  "Saving failed: {error}": "Kaydedilemedi: {error}",
+  "Second record": "İkinci kayıt",
+  "Submit button": "Gönder düğmesi",
+  "The forms could not be loaded": "Formlar yüklenemedi",
+  "These links form a loop": "Bu bağlantılar bir döngü oluşturuyor",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Bu iki kayıt bağlanamaz: nesneleri arasında Twenty’de bir ilişki yok. Önce Ayarlar → Veri modeli bölümünden bir ilişki alanı ekleyin.",
+  "This object has required fields a form cannot fill": "Bu nesnede bir formun dolduramayacağı zorunlu alanlar var",
+  "This object no longer exists": "Bu nesne artık yok",
+  "Tick Published and save to get the public link and the embed code.": "Herkese açık bağlantıyı ve gömme kodunu almak için Yayında’yı işaretleyip kaydedin.",
+  "Ticked": "İşaretli",
+  "Title": "Başlık",
+  "Try again": "Tekrar dene",
+  "Unsaved changes": "Kaydedilmemiş değişiklikler",
+  "Untitled form": "Adsız form",
+  "Update when {field} matches": "{field} eşleştiğinde güncelle",
+  "Used to match": "Eşleştirme için kullanılıyor",
+  "via {relation}": "{relation} üzerinden",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Bir bağlantı bunları doldurmadıkça bu kaydın oluşturulması başarısız olur.",
+  "{object} – section title": "{object} – bölüm başlığı",
+  "fieldMetadata.label": {
+    "Definition": "Tanım",
+    "Name": "Ad",
+    "Published": "Yayında"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Form oluşturucu",
+    "Forms": "Formlar"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formlar"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Form"
+  },
+  "pageLayout.name": {
+    "Form builder": "Form oluşturucu"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Form oluşturucu",
+    "Home": "Ana sayfa",
+    "Timeline": "Zaman çizelgesi"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Alanlar",
+    "Timeline": "Zaman çizelgesi"
+  },
+  "view.name": {
+    "All forms": "Tüm formlar"
+  }
+}

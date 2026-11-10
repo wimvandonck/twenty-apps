@@ -1,9 +1,6 @@
 import { definePageLayout, PageLayoutTabLayoutMode, PageLayoutType } from 'twenty-sdk/define';
 
-import {
-  FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER,
-  FORM_OBJECT_UNIVERSAL_IDENTIFIER,
-} from 'src/constants/universal-identifiers';
+import { FORM_OBJECT_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identifiers';
 
 export default definePageLayout({
   universalIdentifier: 'd7721a93-0199-44ac-9c6c-2820b48ea79f',
@@ -11,26 +8,6 @@ export default definePageLayout({
   type: PageLayoutType.RECORD_PAGE,
   objectUniversalIdentifier: FORM_OBJECT_UNIVERSAL_IDENTIFIER,
   tabs: [
-    {
-      universalIdentifier: 'd314575b-7f26-4371-8fb8-d85ec2478b8e',
-      title: 'Builder',
-      position: 5,
-      icon: 'IconForms',
-      layoutMode: PageLayoutTabLayoutMode.VERTICAL_LIST,
-      widgets: [
-        {
-          universalIdentifier: '7126383b-2b70-49ee-b684-a57af845bee2',
-          title: 'Form builder',
-          type: 'FRONT_COMPONENT',
-          objectUniversalIdentifier: FORM_OBJECT_UNIVERSAL_IDENTIFIER,
-          configuration: {
-            configurationType: 'FRONT_COMPONENT',
-            frontComponentUniversalIdentifier:
-              FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER,
-          },
-        },
-      ],
-    },
     {
       universalIdentifier: '62ed042b-9636-4842-8586-70e9160da2f8',
       title: 'Home',

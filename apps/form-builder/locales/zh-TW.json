@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "隱藏欄位不會向訪客顯示，並且一律使用其預設值。",
+  "Add a record": "新增記錄",
+  "Add at least one visible field before publishing.": "發布前請至少新增一個可見欄位。",
+  "Add link": "新增連結",
+  "Add record": "新增記錄",
+  "Always create": "一律建立",
+  "Choose a form": "選擇表單",
+  "Choose a record": "選擇記錄",
+  "Choose an object": "選擇物件",
+  "Connect the records of one submission, for example the new person to the new company.": "將同一次提交中的記錄互相連結，例如將新人員連結到新公司。",
+  "Copied": "已複製",
+  "Copy embed code": "複製內嵌程式碼",
+  "Copy link": "複製連結",
+  "Create form": "建立表單",
+  "Creating the form failed: {error}": "建立表單失敗：{error}",
+  "Default value": "預設值",
+  "Description": "描述",
+  "Draft": "草稿",
+  "Embed code": "內嵌程式碼",
+  "Field": "欄位",
+  "Fields Twenty requires are always included; system fields are never offered.": "Twenty 要求的欄位一律包含在內；系統欄位不會提供。",
+  "First record": "第一筆記錄",
+  "Fix the link loop before saving.": "儲存前請先解決連結迴圈。",
+  "Form": "表單",
+  "Form saved": "表單已儲存",
+  "Form saved and live": "表單已儲存並上線",
+  "Form settings and sharing": "表單設定與分享",
+  "Hidden": "隱藏",
+  "Label on the form": "表單上的標籤",
+  "Linked through": "連結方式",
+  "Links between records": "記錄之間的連結",
+  "Live": "已上線",
+  "Message after submitting": "提交後的訊息",
+  "Name of the new form": "新表單的名稱",
+  "New form": "新增表單",
+  "No default": "無預設值",
+  "No form yet": "尚無表單",
+  "Not available": "無法使用",
+  "Not live yet": "尚未上線",
+  "On submit": "提交時",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "將此程式碼貼到任何頁面的 HTML 中。表單會依訪客的語言顯示。",
+  "Public link": "公開連結",
+  "Published – anyone with the link can submit": "已發布 – 任何擁有連結的人都可以提交",
+  "Records and fields": "記錄與欄位",
+  "Remove": "移除",
+  "Remove record": "移除記錄",
+  "Required": "必填",
+  "Required by Twenty": "Twenty 必填",
+  "Save": "儲存",
+  "Saved": "已儲存",
+  "Saving failed: {error}": "儲存失敗：{error}",
+  "Second record": "第二筆記錄",
+  "Submit button": "提交按鈕",
+  "The forms could not be loaded": "無法載入表單",
+  "These links form a loop": "這些連結形成了迴圈",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "這兩筆記錄無法連結：它們的物件在 Twenty 中沒有關聯。請先在「設定 → 資料模型」中新增關聯欄位。",
+  "This object has required fields a form cannot fill": "此物件包含表單無法填寫的必填欄位",
+  "This object no longer exists": "此物件已不存在",
+  "Tick Published and save to get the public link and the embed code.": "勾選「已發布」並儲存，即可取得公開連結和內嵌程式碼。",
+  "Ticked": "已勾選",
+  "Title": "標題",
+  "Try again": "重試",
+  "Unsaved changes": "未儲存的變更",
+  "Untitled form": "未命名表單",
+  "Update when {field} matches": "當 {field} 相符時更新",
+  "Used to match": "用於比對",
+  "via {relation}": "透過 {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}。除非由連結填入，否則建立此記錄會失敗。",
+  "{object} – section title": "{object} – 區段標題",
+  "fieldMetadata.label": {
+    "Definition": "定義",
+    "Name": "名稱",
+    "Published": "已發布"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "表單建立工具",
+    "Forms": "表單"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "表單"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "表單"
+  },
+  "pageLayout.name": {
+    "Form builder": "表單建立工具"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "表單建立工具",
+    "Home": "首頁",
+    "Timeline": "時間軸"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "欄位",
+    "Timeline": "時間軸"
+  },
+  "view.name": {
+    "All forms": "所有表單"
+  }
+}

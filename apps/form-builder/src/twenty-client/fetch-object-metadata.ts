@@ -2,8 +2,8 @@ import { MetadataApiClient } from 'twenty-client-sdk/metadata';
 
 import { type ObjectMetadata } from 'src/types/object-metadata';
 
-// The objects a form can target, with the field details the builder needs.
-// System objects are left out; the form object itself is too.
+// Every active object with the field details the builder needs. Only
+// non-system objects are selectable; the rest are there for junction links.
 export const fetchObjectMetadata = async (): Promise<ObjectMetadata[]> => {
   const result = await new MetadataApiClient().query({
     objects: {
@@ -19,6 +19,7 @@ export const fetchObjectMetadata = async (): Promise<ObjectMetadata[]> => {
           isRemote: true,
           isUIReadOnly: true,
           fieldsList: {
+            id: true,
             name: true,
             label: true,
             type: true,
@@ -34,6 +35,9 @@ export const fetchObjectMetadata = async (): Promise<ObjectMetadata[]> => {
               type: true,
               targetObjectMetadata: { nameSingular: true },
             },
+            morphRelations: {
+              targetObjectMetadata: { nameSingular: true },
+            },
           },
         },
       },
@@ -42,20 +46,16 @@ export const fetchObjectMetadata = async (): Promise<ObjectMetadata[]> => {
 
   return result.objects.edges
     .map(({ node }) => node)
-    .filter(
-      (node) =>
-        node.isActive &&
-        !node.isSystem &&
-        !node.isRemote &&
-        !node.isUIReadOnly &&
-        node.nameSingular !== 'form',
-    )
+    .filter((node) => node.isActive && !node.isRemote)
     .map((node) => ({
       nameSingular: node.nameSingular,
       namePlural: node.namePlural,
       labelSingular: node.labelSingular,
       labelPlural: node.labelPlural,
+      isSelectable:
+        !node.isSystem && !node.isUIReadOnly && node.nameSingular !== 'form',
       fields: node.fieldsList.map((field) => ({
+        id: field.id ?? '',
         name: field.name,
         label: field.label,
         type: field.type,
@@ -73,6 +73,13 @@ export const fetchObjectMetadata = async (): Promise<ObjectMetadata[]> => {
         relationType: field.relation?.type ?? null,
         relationTargetObjectNameSingular:
           field.relation?.targetObjectMetadata.nameSingular ?? null,
+        junctionTargetFieldId:
+          typeof field.settings?.junctionTargetFieldId === 'string'
+            ? field.settings.junctionTargetFieldId
+            : null,
+        morphTargetObjectNamesSingular: (field.morphRelations ?? []).map(
+          (relation) => relation.targetObjectMetadata.nameSingular,
+        ),
       })),
     }))
     .sort((a, b) => a.labelSingular.localeCompare(b.labelSingular));

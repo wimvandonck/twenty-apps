@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "非表示の項目は訪問者には表示されず、常に既定値が設定されます。",
+  "Add a record": "レコードを追加",
+  "Add at least one visible field before publishing.": "公開する前に、表示される項目を 1 つ以上追加してください。",
+  "Add link": "リンクを追加",
+  "Add record": "レコードを追加",
+  "Always create": "常に作成",
+  "Choose a form": "フォームを選択",
+  "Choose a record": "レコードを選択",
+  "Choose an object": "オブジェクトを選択",
+  "Connect the records of one submission, for example the new person to the new company.": "1 回の送信で作成されるレコード同士を関連付けます。たとえば、新しい人物を新しい会社に関連付けます。",
+  "Copied": "コピーしました",
+  "Copy embed code": "埋め込みコードをコピー",
+  "Copy link": "リンクをコピー",
+  "Create form": "フォームを作成",
+  "Creating the form failed: {error}": "フォームを作成できませんでした: {error}",
+  "Default value": "既定値",
+  "Description": "説明",
+  "Draft": "下書き",
+  "Embed code": "埋め込みコード",
+  "Field": "項目",
+  "Fields Twenty requires are always included; system fields are never offered.": "Twenty で必須の項目は常に含まれます。システム項目は選択できません。",
+  "First record": "1 つ目のレコード",
+  "Fix the link loop before saving.": "保存する前にリンクの循環を解消してください。",
+  "Form": "フォーム",
+  "Form saved": "フォームを保存しました",
+  "Form saved and live": "フォームを保存して公開しました",
+  "Form settings and sharing": "フォームの設定と共有",
+  "Hidden": "非表示",
+  "Label on the form": "フォーム上のラベル",
+  "Linked through": "リンク方法",
+  "Links between records": "レコード間のリンク",
+  "Live": "公開中",
+  "Message after submitting": "送信後のメッセージ",
+  "Name of the new form": "新しいフォームの名前",
+  "New form": "新しいフォーム",
+  "No default": "既定値なし",
+  "No form yet": "フォームはまだありません",
+  "Not available": "利用不可",
+  "Not live yet": "まだ公開されていません",
+  "On submit": "送信時",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "任意のページの HTML に貼り付けてください。フォームは訪問者の言語で表示されます。",
+  "Public link": "公開リンク",
+  "Published – anyone with the link can submit": "公開中 – リンクを知っている人は誰でも送信できます",
+  "Records and fields": "レコードと項目",
+  "Remove": "削除",
+  "Remove record": "レコードを削除",
+  "Required": "必須",
+  "Required by Twenty": "Twenty で必須",
+  "Save": "保存",
+  "Saved": "保存済み",
+  "Saving failed: {error}": "保存できませんでした: {error}",
+  "Second record": "2 つ目のレコード",
+  "Submit button": "送信ボタン",
+  "The forms could not be loaded": "フォームを読み込めませんでした",
+  "These links form a loop": "これらのリンクは循環しています",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "この 2 つのレコードはリンクできません。Twenty でオブジェクト間にリレーションがありません。先に「設定 → データモデル」でリレーション項目を追加してください。",
+  "This object has required fields a form cannot fill": "このオブジェクトには、フォームでは入力できない必須項目があります",
+  "This object no longer exists": "このオブジェクトはもう存在しません",
+  "Tick Published and save to get the public link and the embed code.": "「公開中」をオンにして保存すると、公開リンクと埋め込みコードが表示されます。",
+  "Ticked": "オン",
+  "Title": "タイトル",
+  "Try again": "再試行",
+  "Unsaved changes": "未保存の変更",
+  "Untitled form": "無題のフォーム",
+  "Update when {field} matches": "{field} が一致したら更新",
+  "Used to match": "照合に使用",
+  "via {relation}": "{relation} 経由",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}。リンクで値が設定されない限り、このレコードの作成は失敗します。",
+  "{object} – section title": "{object} – セクションのタイトル",
+  "fieldMetadata.label": {
+    "Definition": "定義",
+    "Name": "名前",
+    "Published": "公開中"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "フォームビルダー",
+    "Forms": "フォーム"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "フォーム"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "フォーム"
+  },
+  "pageLayout.name": {
+    "Form builder": "フォームビルダー"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "フォームビルダー",
+    "Home": "ホーム",
+    "Timeline": "タイムライン"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "項目",
+    "Timeline": "タイムライン"
+  },
+  "view.name": {
+    "All forms": "すべてのフォーム"
+  }
+}

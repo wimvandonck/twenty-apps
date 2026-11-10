@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Un campo oculto no se muestra a los visitantes y siempre recibe su valor predeterminado.",
+  "Add a record": "Añadir un registro",
+  "Add at least one visible field before publishing.": "Añade al menos un campo visible antes de publicar.",
+  "Add link": "Añadir vínculo",
+  "Add record": "Añadir registro",
+  "Always create": "Crear siempre",
+  "Choose a form": "Elige un formulario",
+  "Choose a record": "Elige un registro",
+  "Choose an object": "Elige un objeto",
+  "Connect the records of one submission, for example the new person to the new company.": "Conecta los registros de un mismo envío, por ejemplo la nueva persona con la nueva empresa.",
+  "Copied": "Copiado",
+  "Copy embed code": "Copiar código de inserción",
+  "Copy link": "Copiar enlace",
+  "Create form": "Crear formulario",
+  "Creating the form failed: {error}": "No se pudo crear el formulario: {error}",
+  "Default value": "Valor predeterminado",
+  "Description": "Descripción",
+  "Draft": "Borrador",
+  "Embed code": "Código de inserción",
+  "Field": "Campo",
+  "Fields Twenty requires are always included; system fields are never offered.": "Los campos que Twenty exige siempre se incluyen; los campos del sistema nunca se ofrecen.",
+  "First record": "Primer registro",
+  "Fix the link loop before saving.": "Corrige el bucle de vínculos antes de guardar.",
+  "Form": "Formulario",
+  "Form saved": "Formulario guardado",
+  "Form saved and live": "Formulario guardado y activo",
+  "Form settings and sharing": "Ajustes del formulario y compartir",
+  "Hidden": "Oculto",
+  "Label on the form": "Etiqueta en el formulario",
+  "Linked through": "Vinculado mediante",
+  "Links between records": "Vínculos entre registros",
+  "Live": "Activo",
+  "Message after submitting": "Mensaje tras el envío",
+  "Name of the new form": "Nombre del nuevo formulario",
+  "New form": "Nuevo formulario",
+  "No default": "Sin valor predeterminado",
+  "No form yet": "Aún no hay formularios",
+  "Not available": "No disponible",
+  "Not live yet": "Aún no está activo",
+  "On submit": "Al enviar",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Pega esto en el HTML de cualquier página. El formulario sigue el idioma del visitante.",
+  "Public link": "Enlace público",
+  "Published – anyone with the link can submit": "Publicado: cualquiera con el enlace puede enviarlo",
+  "Records and fields": "Registros y campos",
+  "Remove": "Quitar",
+  "Remove record": "Quitar registro",
+  "Required": "Obligatorio",
+  "Required by Twenty": "Exigido por Twenty",
+  "Save": "Guardar",
+  "Saved": "Guardado",
+  "Saving failed: {error}": "No se pudo guardar: {error}",
+  "Second record": "Segundo registro",
+  "Submit button": "Botón de envío",
+  "The forms could not be loaded": "No se pudieron cargar los formularios",
+  "These links form a loop": "Estos vínculos forman un bucle",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Estos dos registros no se pueden vincular: sus objetos no tienen relación en Twenty. Añade primero un campo de relación en Ajustes → Modelo de datos.",
+  "This object has required fields a form cannot fill": "Este objeto tiene campos obligatorios que un formulario no puede rellenar",
+  "This object no longer exists": "Este objeto ya no existe",
+  "Tick Published and save to get the public link and the embed code.": "Marca Publicado y guarda para obtener el enlace público y el código de inserción.",
+  "Ticked": "Marcado",
+  "Title": "Título",
+  "Try again": "Reintentar",
+  "Unsaved changes": "Cambios sin guardar",
+  "Untitled form": "Formulario sin título",
+  "Update when {field} matches": "Actualizar cuando {field} coincida",
+  "Used to match": "Usado para la coincidencia",
+  "via {relation}": "mediante {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. La creación de este registro falla salvo que un vínculo los rellene.",
+  "{object} – section title": "{object} – título de la sección",
+  "fieldMetadata.label": {
+    "Definition": "Definición",
+    "Name": "Nombre",
+    "Published": "Publicado"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Creador de formularios",
+    "Forms": "Formularios"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formularios"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formulario"
+  },
+  "pageLayout.name": {
+    "Form builder": "Creador de formularios"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Creador de formularios",
+    "Home": "Inicio",
+    "Timeline": "Cronología"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Campos",
+    "Timeline": "Cronología"
+  },
+  "view.name": {
+    "All forms": "Todos los formularios"
+  }
+}

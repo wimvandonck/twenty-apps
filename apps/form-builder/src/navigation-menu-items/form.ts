@@ -3,7 +3,7 @@ import { defineNavigationMenuItem, NavigationMenuItemType } from 'twenty-sdk/def
 export default defineNavigationMenuItem({
   universalIdentifier: '2f5de7b2-e093-4985-b669-1d0987b399d2',
   name: 'Forms',
-  icon: 'IconForms',
+  icon: 'IconList',
   color: 'blue',
   position: 0,
   type: NavigationMenuItemType.OBJECT,

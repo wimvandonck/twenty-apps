@@ -1,4 +1,5 @@
 export type FieldMetadata = {
+  id: string;
   name: string;
   label: string;
   type: string;
@@ -12,4 +13,9 @@ export type FieldMetadata = {
   joinColumnName: string | null;
   relationType: string | null;
   relationTargetObjectNameSingular: string | null;
+  // On a one-to-many field: the junction object's field that points at the
+  // records on the other side.
+  junctionTargetFieldId: string | null;
+  // On a morph relation: every object it can point at.
+  morphTargetObjectNamesSingular: string[];
 };

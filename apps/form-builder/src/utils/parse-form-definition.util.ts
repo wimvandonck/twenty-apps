@@ -1,3 +1,4 @@
+import { DEFAULT_VALUE_FIELD_TYPES } from 'src/constants/default-value-field-types';
 import { MATCH_FIELD_TYPES } from 'src/constants/match-field-types';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type FormField } from 'src/types/form-field';
@@ -37,12 +38,25 @@ const parseField = (value: unknown): FormField | null => {
         }))
     : undefined;
 
+  const rawDefault = value.defaultValue;
+  const defaultValue =
+    !DEFAULT_VALUE_FIELD_TYPES.includes(value.type) || rawDefault === '' || rawDefault === false
+      ? undefined
+      : typeof rawDefault === 'string' || rawDefault === true
+        ? rawDefault
+        : Array.isArray(rawDefault) && rawDefault.length > 0 && rawDefault.every((item) => typeof item === 'string')
+          ? (rawDefault as string[])
+          : undefined;
+
   return {
     name: value.name,
     label: asText(value.label, value.name),
     type: value.type,
     required: value.required === true,
     ...(options ? { options } : {}),
+    ...(defaultValue !== undefined ? { defaultValue } : {}),
+    // A hidden field without a default would never get a value.
+    ...(value.hidden === true && defaultValue !== undefined ? { hidden: true } : {}),
   };
 };
 
@@ -83,8 +97,6 @@ const parseRecord = (value: unknown): FormRecord | null => {
 const parseLink = (value: unknown, recordKeys: string[]): FormLink | null => {
   if (
     !isObject(value) ||
-    !isIdentifier(value.relationFieldName) ||
-    !isIdentifier(value.joinColumnName) ||
     typeof value.sourceRecordKey !== 'string' ||
     typeof value.targetRecordKey !== 'string' ||
     !recordKeys.includes(value.sourceRecordKey) ||
@@ -94,12 +106,34 @@ const parseLink = (value: unknown, recordKeys: string[]): FormLink | null => {
     return null;
   }
 
-  return {
+  const ends = {
     sourceRecordKey: value.sourceRecordKey,
-    relationFieldName: value.relationFieldName,
-    joinColumnName: value.joinColumnName,
     targetRecordKey: value.targetRecordKey,
   };
+
+  if (value.kind === 'JUNCTION') {
+    return isIdentifier(value.junctionObjectNamePlural) &&
+      isIdentifier(value.sourceJoinColumnName) &&
+      isIdentifier(value.targetJoinColumnName)
+      ? {
+          kind: 'JUNCTION',
+          ...ends,
+          junctionObjectNamePlural: value.junctionObjectNamePlural,
+          sourceJoinColumnName: value.sourceJoinColumnName,
+          targetJoinColumnName: value.targetJoinColumnName,
+        }
+      : null;
+  }
+
+  // Links saved before junction links existed have no kind.
+  return isIdentifier(value.relationFieldName) && isIdentifier(value.joinColumnName)
+    ? {
+        kind: 'DIRECT',
+        ...ends,
+        relationFieldName: value.relationFieldName,
+        joinColumnName: value.joinColumnName,
+      }
+    : null;
 };
 
 // Turns the stored JSON into a definition that is safe to render and write

@@ -1,96 +1,90 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { RestApiClient } from 'twenty-client-sdk/rest';
-import { defineFrontComponent, PageLayoutType } from 'twenty-sdk/define';
-import { enqueueSnackbar, useSelectedRecordIds } from 'twenty-sdk/front-component';
+import { defineFrontComponent } from 'twenty-sdk/define';
+import { enqueueSnackbar, useTranslate } from 'twenty-sdk/front-component';
 import { Callout } from 'twenty-ui/components/feedback';
-import { MainButton, SegmentedControl } from 'twenty-ui/components/input';
+import { MainButton } from 'twenty-ui/components/input';
 import { Status } from 'twenty-ui/primitives/data-display';
 import { Loader } from 'twenty-ui/primitives/feedback';
+import { Button, Field, Input } from 'twenty-ui/primitives/input';
+import { Heading, Text } from 'twenty-ui/primitives/typography';
 import { useTheme } from 'twenty-ui/theme';
 
 import { EMPTY_FORM_DEFINITION } from 'src/constants/empty-form-definition';
-import {
-  FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER,
-  FORM_OBJECT_UNIVERSAL_IDENTIFIER,
-} from 'src/constants/universal-identifiers';
-import { FieldsStep } from 'src/front-components/components/fields-step';
-import { LinksStep } from 'src/front-components/components/links-step';
-import { PublishStep } from 'src/front-components/components/publish-step';
-import { RecordsStep } from 'src/front-components/components/records-step';
+import { FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identifiers';
+import { LinksSection } from 'src/front-components/components/links-section';
+import { OptionSelect } from 'src/front-components/components/option-select';
+import { RecordCard } from 'src/front-components/components/record-card';
+import { SectionCard } from 'src/front-components/components/section-card';
+import { SettingsSection } from 'src/front-components/components/settings-section';
+import { fetchForms } from 'src/twenty-client/fetch-forms';
 import { fetchObjectMetadata } from 'src/twenty-client/fetch-object-metadata';
 import { type FormDefinition } from 'src/types/form-definition';
+import { type FormSummary } from 'src/types/form-summary';
 import { type ObjectMetadata } from 'src/types/object-metadata';
-import { getAvailableLinks } from 'src/utils/get-available-links.util';
+import { createFormRecord } from 'src/utils/create-form-record.util';
 import { normalizeDefinition } from 'src/utils/normalize-definition.util';
 import { parseFormDefinition } from 'src/utils/parse-form-definition.util';
 import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
-
-type FormResponse = {
-  data: { form: { name: string; isPublished: boolean | null; definition: unknown } };
-};
 
 type LoadState =
   | { status: 'LOADING' }
   | { status: 'ERROR'; message: string }
   | { status: 'READY'; objects: ObjectMetadata[] };
 
-const STEPS = [
-  { value: 'records', label: '1. Records' },
-  { value: 'links', label: '2. Links' },
-  { value: 'fields', label: '3. Fields' },
-  { value: 'publish', label: '4. Publish' },
-];
+type CreatedFormResponse = { data: { createForm: { id: string } } };
+
+const LAST_FORM_KEY = 'form-builder.last-form-id';
 
 const FormBuilder = () => {
   const theme = useTheme();
-  const selectedRecordIds = useSelectedRecordIds();
-  const formId = selectedRecordIds.length === 1 ? selectedRecordIds[0] : null;
+  const { t } = useTranslate();
   const client = useMemo(() => new RestApiClient(), []);
 
   const [loadState, setLoadState] = useState<LoadState>({ status: 'LOADING' });
-  const [step, setStep] = useState('records');
+  const [forms, setForms] = useState<FormSummary[]>([]);
+  const [formId, setFormId] = useState<string | null>(null);
   const [definition, setDefinition] = useState<FormDefinition>(EMPTY_FORM_DEFINITION);
   const [isPublished, setIsPublished] = useState(false);
   const [saved, setSaved] = useState({ snapshot: '', isPublished: false });
   const [isSaving, setIsSaving] = useState(false);
+  const [newFormName, setNewFormName] = useState('');
+  const [objectToAdd, setObjectToAdd] = useState('');
+
+  const openForm = useCallback((form: FormSummary, objects: ObjectMetadata[]) => {
+    const stored = parseFormDefinition(form.definition) ?? { ...EMPTY_FORM_DEFINITION, title: form.name };
+    const normalized = normalizeDefinition(stored, objects);
+
+    setFormId(form.id);
+    setDefinition(normalized);
+    setIsPublished(form.isPublished);
+    setSaved({ snapshot: JSON.stringify(normalized), isPublished: form.isPublished });
+    localStorage.setItem(LAST_FORM_KEY, form.id);
+  }, []);
 
   const load = useCallback(async () => {
-    if (formId === null) {
-      return;
-    }
-
     setLoadState({ status: 'LOADING' });
 
     try {
-      const [objects, response] = await Promise.all([
-        fetchObjectMetadata(),
-        client.get<FormResponse>(`/rest/forms/${formId}`),
-      ]);
-      const form = response.data.form;
-      const stored = parseFormDefinition(form.definition) ?? {
-        ...EMPTY_FORM_DEFINITION,
-        title: form.name ?? '',
-      };
+      const [objects, loadedForms] = await Promise.all([fetchObjectMetadata(), fetchForms(client)]);
+      const lastFormId = localStorage.getItem(LAST_FORM_KEY);
+      const initialForm = loadedForms.find(({ id }) => id === lastFormId) ?? loadedForms[0];
 
-      setDefinition(normalizeDefinition(stored, objects));
-      setIsPublished(form.isPublished === true);
-      setSaved({ snapshot: JSON.stringify(stored), isPublished: form.isPublished === true });
+      setForms(loadedForms);
+
+      if (initialForm !== undefined) {
+        openForm(initialForm, objects);
+      }
+
       setLoadState({ status: 'READY', objects });
     } catch (error) {
-      setLoadState({
-        status: 'ERROR',
-        message: error instanceof Error ? error.message : 'Unknown error',
-      });
+      setLoadState({ status: 'ERROR', message: error instanceof Error ? error.message : String(error) });
     }
-  }, [client, formId]);
+  }, [client, openForm]);
 
   useEffect(() => {
     void load();
   }, [load]);
-
-  if (formId === null) {
-    return <Callout status="neutral" title="Open a form" description="The builder works on one form at a time." />;
-  }
 
   if (loadState.status === 'LOADING') {
     return (
@@ -102,39 +96,69 @@ const FormBuilder = () => {
 
   if (loadState.status === 'ERROR') {
     return (
-      <Callout
-        status="error"
-        title="The form could not be loaded"
-        description={loadState.message}
-        action={<Callout.Action onClick={() => void load()}>Try again</Callout.Action>}
-      />
+      <div style={{ padding: theme.spacing[4] }}>
+        <Callout
+          status="error"
+          title={t('The forms could not be loaded')}
+          description={loadState.message}
+          action={<Callout.Action onClick={() => void load()}>{t('Try again')}</Callout.Action>}
+        />
+      </div>
     );
   }
 
   const { objects } = loadState;
-  const availableLinks = getAvailableLinks(definition.records, objects);
+  const selectableObjects = objects.filter(({ isSelectable }) => isSelectable);
   const hasCycle = sortRecordsByLinks(definition.records, definition.links) === null;
-  const hasFields = definition.records.some(({ fields }) => fields.length > 0);
+  const hasVisibleField = definition.records.some(({ fields }) => fields.some(({ hidden }) => hidden !== true));
   const isDirty = JSON.stringify(definition) !== saved.snapshot || isPublished !== saved.isPublished;
   const blocker = hasCycle
-    ? 'Fix the link loop in step 2 before saving.'
-    : isPublished && !hasFields
-      ? 'Add at least one record with a field before publishing.'
+    ? t('Fix the link loop before saving.')
+    : isPublished && !hasVisibleField
+      ? t('Add at least one visible field before publishing.')
       : null;
 
   const applyDefinition = (changes: Partial<FormDefinition>) =>
     setDefinition((current) => normalizeDefinition({ ...current, ...changes }, objects));
 
+  const createForm = async () => {
+    const name = newFormName.trim();
+
+    // Opening another form drops unsaved edits, so it waits for a save.
+    if (name === '' || isDirty) {
+      return;
+    }
+
+    try {
+      const response = await client.post<CreatedFormResponse>('/rest/forms', { name });
+      const form: FormSummary = { id: response.data.createForm.id, name, isPublished: false, definition: null };
+
+      setForms([form, ...forms]);
+      setNewFormName('');
+      openForm(form, objects);
+    } catch (error) {
+      await enqueueSnackbar({
+        message: t('Creating the form failed: {error}', { error: error instanceof Error ? error.message : String(error) }),
+        variant: 'error',
+      });
+    }
+  };
+
   const save = async () => {
+    if (formId === null) {
+      return;
+    }
+
     setIsSaving(true);
 
     try {
       await client.patch(`/rest/forms/${formId}`, { definition, isPublished });
       setSaved({ snapshot: JSON.stringify(definition), isPublished });
-      await enqueueSnackbar({ message: isPublished ? 'Form saved and live' : 'Form saved', variant: 'success' });
+      setForms(forms.map((form) => (form.id === formId ? { ...form, definition, isPublished } : form)));
+      await enqueueSnackbar({ message: isPublished ? t('Form saved and live') : t('Form saved'), variant: 'success' });
     } catch (error) {
       await enqueueSnackbar({
-        message: `Saving failed: ${error instanceof Error ? error.message : 'unknown error'}`,
+        message: t('Saving failed: {error}', { error: error instanceof Error ? error.message : String(error) }),
         variant: 'error',
       });
     } finally {
@@ -142,8 +166,21 @@ const FormBuilder = () => {
     }
   };
 
+  const addRecord = () => {
+    const object = selectableObjects.find(({ nameSingular }) => nameSingular === objectToAdd);
+
+    if (object !== undefined) {
+      applyDefinition({
+        records: [...definition.records, createFormRecord(object, definition.records.map(({ key }) => key))],
+      });
+      setObjectToAdd('');
+    }
+  };
+
+  const columnStyle = { display: 'flex', flexDirection: 'column' as const, gap: theme.spacing[4], minWidth: 0 };
+
   return (
-    <div
+    <main
       style={{
         boxSizing: 'border-box',
         display: 'flex',
@@ -151,56 +188,138 @@ const FormBuilder = () => {
         gap: theme.spacing[4],
         padding: theme.spacing[4],
         width: '100%',
+        height: '100%',
+        overflowY: 'auto',
         color: theme.font.color.primary,
+        background: theme.background.secondary,
       }}
     >
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'center', justifyContent: 'space-between' }}>
-        <SegmentedControl aria-label="Builder step" value={step} onValueChange={setStep} options={STEPS} />
-        <div style={{ display: 'flex', gap: theme.spacing[3], alignItems: 'center' }}>
-          <Status color={saved.isPublished ? 'green' : 'gray'}>{saved.isPublished ? 'Live' : 'Draft'}</Status>
-          <MainButton size="sm" onClick={() => void save()} disabled={!isDirty || blocker !== null} loading={isSaving}>
-            {isDirty ? 'Save' : 'Saved'}
-          </MainButton>
+      <header style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'end', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'end' }}>
+          <div style={{ width: 260, maxWidth: '100%' }}>
+            <OptionSelect
+              label={t('Form')}
+              value={formId ?? ''}
+              options={forms.map(({ id, name }) => ({ value: id, label: name || t('Untitled form') }))}
+              placeholder={t('Choose a form')}
+              disabled={isDirty}
+              onChange={(id) => {
+                const form = forms.find((candidate) => candidate.id === id);
+
+                if (form !== undefined) {
+                  openForm(form, objects);
+                }
+              }}
+            />
+          </div>
+          <div style={{ width: 220, maxWidth: '100%' }}>
+            <Field.Root>
+              <Field.Label>{t('New form')}</Field.Label>
+              <Input
+                placeholder={t('Name of the new form')}
+                value={newFormName}
+                disabled={isDirty}
+                onChange={(event) => setNewFormName(event.target.value)}
+              />
+            </Field.Root>
+          </div>
+          <Button onClick={() => void createForm()} disabled={isDirty || newFormName.trim() === ''}>
+            {t('Create form')}
+          </Button>
         </div>
-      </div>
+        {formId !== null && (
+          <div style={{ display: 'flex', gap: theme.spacing[3], alignItems: 'center' }}>
+            {isDirty && (
+              <Text size="xs" color="secondary">
+                {t('Unsaved changes')}
+              </Text>
+            )}
+            <Status color={saved.isPublished ? 'green' : 'gray'}>{saved.isPublished ? t('Live') : t('Draft')}</Status>
+            <MainButton onClick={() => void save()} disabled={!isDirty || blocker !== null} loading={isSaving}>
+              {isDirty ? t('Save') : t('Saved')}
+            </MainButton>
+          </div>
+        )}
+      </header>
       {blocker !== null && <Callout status="warning" title={blocker} />}
-      {step === 'records' && (
-        <RecordsStep records={definition.records} objects={objects} onChange={(records) => applyDefinition({ records })} />
-      )}
-      {step === 'links' && (
-        <LinksStep
-          records={definition.records}
-          objects={objects}
-          links={definition.links}
-          availableLinks={availableLinks}
-          hasCycle={hasCycle}
-          onChange={(links) => applyDefinition({ links })}
+      {formId === null ? (
+        <Callout
+          status="neutral"
+          title={t('No form yet')}
         />
+      ) : (
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
+            gap: theme.spacing[4],
+            alignItems: 'start',
+          }}
+        >
+          <div style={columnStyle}>
+            <Heading level={2}>{t('Records and fields')}</Heading>
+            <Text color="secondary">
+              {t('Fields Twenty requires are always included; system fields are never offered.')}
+            </Text>
+            {definition.records.map((record) => (
+              <RecordCard
+                key={record.key}
+                record={record}
+                object={objects.find(({ nameSingular }) => nameSingular === record.objectNameSingular)}
+                onChange={(next) =>
+                  applyDefinition({
+                    records: definition.records.map((current) => (current.key === record.key ? next : current)),
+                  })
+                }
+                onRemove={() => applyDefinition({ records: definition.records.filter(({ key }) => key !== record.key) })}
+              />
+            ))}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[2], alignItems: 'end' }}>
+              <div style={{ flex: '1 1 200px', minWidth: 0, maxWidth: 320 }}>
+                <OptionSelect
+                  label={t('Add a record')}
+                  value={objectToAdd}
+                  options={selectableObjects.map(({ nameSingular, labelSingular }) => ({ value: nameSingular, label: labelSingular }))}
+                  placeholder={t('Choose an object')}
+                  onChange={setObjectToAdd}
+                />
+              </div>
+              <Button onClick={addRecord} disabled={objectToAdd === ''}>
+                {t('Add record')}
+              </Button>
+            </div>
+          </div>
+          <div style={columnStyle}>
+            <SectionCard title={t('Links between records')}>
+              <LinksSection
+                key={formId}
+                records={definition.records}
+                objects={objects}
+                links={definition.links}
+                hasCycle={hasCycle}
+                onChange={(links) => applyDefinition({ links })}
+              />
+            </SectionCard>
+            <SectionCard title={t('Form settings and sharing')}>
+              <SettingsSection
+                definition={definition}
+                isPublished={isPublished}
+                isLive={saved.isPublished && !isDirty}
+                formUrl={client.resolveUrl(`/s/forms/${formId}`)}
+                onDefinitionChange={applyDefinition}
+                onPublishedChange={setIsPublished}
+              />
+            </SectionCard>
+          </div>
+        </div>
       )}
-      {step === 'fields' && (
-        <FieldsStep records={definition.records} objects={objects} onChange={(records) => applyDefinition({ records })} />
-      )}
-      {step === 'publish' && (
-        <PublishStep
-          definition={definition}
-          isPublished={isPublished}
-          isSavedAndPublished={saved.isPublished && !isDirty}
-          formUrl={client.resolveUrl(`/s/forms/${formId}`)}
-          onDefinitionChange={applyDefinition}
-          onPublishedChange={setIsPublished}
-        />
-      )}
-    </div>
+    </main>
   );
 };
 
 export default defineFrontComponent({
   universalIdentifier: FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER,
   name: 'form-builder',
-  description: 'Builds a form in four steps: records, links, fields and publishing.',
+  description: 'Full-page builder for forms: records, fields, links and sharing.',
   component: FormBuilder,
-  widgetAvailability: {
-    pageLayoutType: PageLayoutType.RECORD_PAGE,
-    objectUniversalIdentifiers: [FORM_OBJECT_UNIVERSAL_IDENTIFIER],
-  },
 });

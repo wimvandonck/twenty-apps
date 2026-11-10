@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Скрытое поле не показывается посетителям и всегда получает значение по умолчанию.",
+  "Add a record": "Добавить запись",
+  "Add at least one visible field before publishing.": "Добавьте хотя бы одно видимое поле перед публикацией.",
+  "Add link": "Добавить связь",
+  "Add record": "Добавить запись",
+  "Always create": "Всегда создавать",
+  "Choose a form": "Выберите форму",
+  "Choose a record": "Выберите запись",
+  "Choose an object": "Выберите объект",
+  "Connect the records of one submission, for example the new person to the new company.": "Свяжите записи одной отправки, например нового человека с новой компанией.",
+  "Copied": "Скопировано",
+  "Copy embed code": "Копировать код для встраивания",
+  "Copy link": "Копировать ссылку",
+  "Create form": "Создать форму",
+  "Creating the form failed: {error}": "Не удалось создать форму: {error}",
+  "Default value": "Значение по умолчанию",
+  "Description": "Описание",
+  "Draft": "Черновик",
+  "Embed code": "Код для встраивания",
+  "Field": "Поле",
+  "Fields Twenty requires are always included; system fields are never offered.": "Поля, которых требует Twenty, всегда включены; системные поля никогда не предлагаются.",
+  "First record": "Первая запись",
+  "Fix the link loop before saving.": "Устраните цикл в связях перед сохранением.",
+  "Form": "Форма",
+  "Form saved": "Форма сохранена",
+  "Form saved and live": "Форма сохранена и опубликована",
+  "Form settings and sharing": "Настройки формы и публикация",
+  "Hidden": "Скрытое",
+  "Label on the form": "Подпись в форме",
+  "Linked through": "Связано через",
+  "Links between records": "Связи между записями",
+  "Live": "Опубликовано",
+  "Message after submitting": "Сообщение после отправки",
+  "Name of the new form": "Название новой формы",
+  "New form": "Новая форма",
+  "No default": "Без значения по умолчанию",
+  "No form yet": "Форм пока нет",
+  "Not available": "Недоступно",
+  "Not live yet": "Ещё не опубликовано",
+  "On submit": "При отправке",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Вставьте это в HTML любой страницы. Форма подстраивается под язык посетителя.",
+  "Public link": "Публичная ссылка",
+  "Published – anyone with the link can submit": "Опубликовано – отправить форму может любой, у кого есть ссылка",
+  "Records and fields": "Записи и поля",
+  "Remove": "Удалить",
+  "Remove record": "Удалить запись",
+  "Required": "Обязательное",
+  "Required by Twenty": "Требуется Twenty",
+  "Save": "Сохранить",
+  "Saved": "Сохранено",
+  "Saving failed: {error}": "Не удалось сохранить: {error}",
+  "Second record": "Вторая запись",
+  "Submit button": "Кнопка отправки",
+  "The forms could not be loaded": "Не удалось загрузить формы",
+  "These links form a loop": "Эти связи образуют цикл",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Эти две записи нельзя связать: у их объектов нет связи в Twenty. Сначала добавьте поле связи в разделе «Настройки → Модель данных».",
+  "This object has required fields a form cannot fill": "У этого объекта есть обязательные поля, которые форма не может заполнить",
+  "This object no longer exists": "Этот объект больше не существует",
+  "Tick Published and save to get the public link and the embed code.": "Отметьте «Опубликовано» и сохраните, чтобы получить публичную ссылку и код для встраивания.",
+  "Ticked": "Отмечено",
+  "Title": "Заголовок",
+  "Try again": "Повторить",
+  "Unsaved changes": "Несохранённые изменения",
+  "Untitled form": "Форма без названия",
+  "Update when {field} matches": "Обновлять при совпадении поля «{field}»",
+  "Used to match": "Используется для сопоставления",
+  "via {relation}": "через {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Создать эту запись не получится, если их не заполнит связь.",
+  "{object} – section title": "{object} – заголовок раздела",
+  "fieldMetadata.label": {
+    "Definition": "Определение",
+    "Name": "Название",
+    "Published": "Опубликовано"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Конструктор форм",
+    "Forms": "Формы"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Формы"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Форма"
+  },
+  "pageLayout.name": {
+    "Form builder": "Конструктор форм"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Конструктор форм",
+    "Home": "Главная",
+    "Timeline": "Хронология"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поля",
+    "Timeline": "Хронология"
+  },
+  "view.name": {
+    "All forms": "Все формы"
+  }
+}

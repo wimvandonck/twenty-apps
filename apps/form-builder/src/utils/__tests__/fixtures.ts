@@ -3,6 +3,7 @@ import { type FormDefinition } from 'src/types/form-definition';
 import { type ObjectMetadata } from 'src/types/object-metadata';
 
 export const field = (overrides: Partial<FieldMetadata> & { name: string }): FieldMetadata => ({
+  id: `id-${overrides.name}`,
   label: overrides.name,
   type: 'TEXT',
   isSystem: false,
@@ -15,6 +16,8 @@ export const field = (overrides: Partial<FieldMetadata> & { name: string }): Fie
   joinColumnName: null,
   relationType: null,
   relationTargetObjectNameSingular: null,
+  junctionTargetFieldId: null,
+  morphTargetObjectNamesSingular: [],
   ...overrides,
 });
 
@@ -23,6 +26,7 @@ export const PERSON: ObjectMetadata = {
   namePlural: 'people',
   labelSingular: 'Person',
   labelPlural: 'People',
+  isSelectable: true,
   fields: [
     field({ name: 'id', type: 'UUID', isSystem: true, isNullable: false }),
     field({ name: 'name', type: 'FULL_NAME', label: 'Name' }),
@@ -46,7 +50,67 @@ export const COMPANY: ObjectMetadata = {
   namePlural: 'companies',
   labelSingular: 'Company',
   labelPlural: 'Companies',
+  isSelectable: true,
   fields: [field({ name: 'name', label: 'Name' })],
+};
+
+export const NOTE: ObjectMetadata = {
+  nameSingular: 'note',
+  namePlural: 'notes',
+  labelSingular: 'Note',
+  labelPlural: 'Notes',
+  isSelectable: true,
+  fields: [
+    field({ name: 'title', label: 'Title' }),
+    field({
+      name: 'noteTargets',
+      type: 'RELATION',
+      relationType: 'ONE_TO_MANY',
+      relationTargetObjectNameSingular: 'noteTarget',
+      junctionTargetFieldId: 'note-target-target',
+    }),
+  ],
+};
+
+export const NOTE_TARGET: ObjectMetadata = {
+  nameSingular: 'noteTarget',
+  namePlural: 'noteTargets',
+  labelSingular: 'Note target',
+  labelPlural: 'Note targets',
+  isSelectable: false,
+  fields: [
+    field({
+      name: 'note',
+      type: 'RELATION',
+      relationType: 'MANY_TO_ONE',
+      joinColumnName: 'noteId',
+      relationTargetObjectNameSingular: 'note',
+    }),
+    field({
+      id: 'note-target-target',
+      name: 'target',
+      type: 'MORPH_RELATION',
+      morphTargetObjectNamesSingular: ['person', 'company'],
+    }),
+  ],
+};
+
+export const NOTE_RECORD = {
+  key: 'note',
+  objectNameSingular: 'note',
+  objectNamePlural: 'notes',
+  label: 'Note',
+  mode: 'CREATE' as const,
+  fields: [{ name: 'title', label: 'Title', type: 'TEXT' as const, required: false }],
+};
+
+export const NOTE_LINK = {
+  kind: 'JUNCTION' as const,
+  junctionObjectNamePlural: 'noteTargets',
+  sourceRecordKey: 'note',
+  sourceJoinColumnName: 'noteId',
+  targetRecordKey: 'person',
+  targetJoinColumnName: 'targetPersonId',
 };
 
 export const DEFINITION: FormDefinition = {
@@ -79,6 +143,7 @@ export const DEFINITION: FormDefinition = {
   ],
   links: [
     {
+      kind: 'DIRECT',
       sourceRecordKey: 'person',
       relationFieldName: 'company',
       joinColumnName: 'companyId',

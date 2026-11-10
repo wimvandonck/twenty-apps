@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Ukryte pole nie jest pokazywane odwiedzającym i zawsze otrzymuje wartość domyślną.",
+  "Add a record": "Dodaj rekord",
+  "Add at least one visible field before publishing.": "Dodaj co najmniej jedno widoczne pole przed publikacją.",
+  "Add link": "Dodaj powiązanie",
+  "Add record": "Dodaj rekord",
+  "Always create": "Zawsze twórz",
+  "Choose a form": "Wybierz formularz",
+  "Choose a record": "Wybierz rekord",
+  "Choose an object": "Wybierz obiekt",
+  "Connect the records of one submission, for example the new person to the new company.": "Połącz rekordy z jednego zgłoszenia, na przykład nową osobę z nową firmą.",
+  "Copied": "Skopiowano",
+  "Copy embed code": "Kopiuj kod do osadzenia",
+  "Copy link": "Kopiuj link",
+  "Create form": "Utwórz formularz",
+  "Creating the form failed: {error}": "Nie udało się utworzyć formularza: {error}",
+  "Default value": "Wartość domyślna",
+  "Description": "Opis",
+  "Draft": "Wersja robocza",
+  "Embed code": "Kod do osadzenia",
+  "Field": "Pole",
+  "Fields Twenty requires are always included; system fields are never offered.": "Pola wymagane przez Twenty są zawsze uwzględniane; pola systemowe nigdy nie są dostępne.",
+  "First record": "Pierwszy rekord",
+  "Fix the link loop before saving.": "Napraw pętlę powiązań przed zapisaniem.",
+  "Form": "Formularz",
+  "Form saved": "Formularz zapisany",
+  "Form saved and live": "Formularz zapisany i aktywny",
+  "Form settings and sharing": "Ustawienia formularza i udostępnianie",
+  "Hidden": "Ukryte",
+  "Label on the form": "Etykieta w formularzu",
+  "Linked through": "Powiązane przez",
+  "Links between records": "Powiązania między rekordami",
+  "Live": "Aktywny",
+  "Message after submitting": "Komunikat po wysłaniu",
+  "Name of the new form": "Nazwa nowego formularza",
+  "New form": "Nowy formularz",
+  "No default": "Brak wartości domyślnej",
+  "No form yet": "Nie ma jeszcze formularza",
+  "Not available": "Niedostępne",
+  "Not live yet": "Jeszcze nieaktywny",
+  "On submit": "Po wysłaniu",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Wklej to do kodu HTML dowolnej strony. Formularz dopasowuje się do języka odwiedzającego.",
+  "Public link": "Link publiczny",
+  "Published – anyone with the link can submit": "Opublikowany – każdy, kto ma link, może go wysłać",
+  "Records and fields": "Rekordy i pola",
+  "Remove": "Usuń",
+  "Remove record": "Usuń rekord",
+  "Required": "Wymagane",
+  "Required by Twenty": "Wymagane przez Twenty",
+  "Save": "Zapisz",
+  "Saved": "Zapisano",
+  "Saving failed: {error}": "Nie udało się zapisać: {error}",
+  "Second record": "Drugi rekord",
+  "Submit button": "Przycisk wysyłania",
+  "The forms could not be loaded": "Nie udało się wczytać formularzy",
+  "These links form a loop": "Te powiązania tworzą pętlę",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Tych dwóch rekordów nie można powiązać: ich obiekty nie mają relacji w Twenty. Najpierw dodaj pole relacji w Ustawienia → Model danych.",
+  "This object has required fields a form cannot fill": "Ten obiekt ma pola wymagane, których formularz nie może wypełnić",
+  "This object no longer exists": "Ten obiekt już nie istnieje",
+  "Tick Published and save to get the public link and the embed code.": "Zaznacz Opublikowany i zapisz, aby uzyskać link publiczny i kod do osadzenia.",
+  "Ticked": "Zaznaczone",
+  "Title": "Tytuł",
+  "Try again": "Spróbuj ponownie",
+  "Unsaved changes": "Niezapisane zmiany",
+  "Untitled form": "Formularz bez tytułu",
+  "Update when {field} matches": "Aktualizuj, gdy {field} pasuje",
+  "Used to match": "Używane do dopasowania",
+  "via {relation}": "przez {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Utworzenie tego rekordu się nie powiedzie, chyba że wypełni je powiązanie.",
+  "{object} – section title": "{object} – tytuł sekcji",
+  "fieldMetadata.label": {
+    "Definition": "Definicja",
+    "Name": "Nazwa",
+    "Published": "Opublikowany"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Kreator formularzy",
+    "Forms": "Formularze"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formularze"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formularz"
+  },
+  "pageLayout.name": {
+    "Form builder": "Kreator formularzy"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Kreator formularzy",
+    "Home": "Start",
+    "Timeline": "Oś czasu"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Pola",
+    "Timeline": "Oś czasu"
+  },
+  "view.name": {
+    "All forms": "Wszystkie formularze"
+  }
+}

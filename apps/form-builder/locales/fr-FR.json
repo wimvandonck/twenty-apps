@@ -1,0 +1,101 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Un champ masqué n’est pas affiché aux visiteurs et reçoit toujours sa valeur par défaut.",
+  "Add a record": "Ajouter un enregistrement",
+  "Add at least one visible field before publishing.": "Ajoutez au moins un champ visible avant de publier.",
+  "Add link": "Ajouter un lien",
+  "Add record": "Ajouter l’enregistrement",
+  "Always create": "Toujours créer",
+  "Choose a form": "Choisir un formulaire",
+  "Choose a record": "Choisir un enregistrement",
+  "Choose an object": "Choisir un objet",
+  "Connect the records of one submission, for example the new person to the new company.": "Reliez les enregistrements d’un même envoi, par exemple la nouvelle personne à la nouvelle entreprise.",
+  "Copied": "Copié",
+  "Copy embed code": "Copier le code d’intégration",
+  "Copy link": "Copier le lien",
+  "Create form": "Créer le formulaire",
+  "Creating the form failed: {error}": "Échec de la création du formulaire : {error}",
+  "Default value": "Valeur par défaut",
+  "Description": "Description",
+  "Draft": "Brouillon",
+  "Embed code": "Code d’intégration",
+  "Field": "Champ",
+  "Fields Twenty requires are always included; system fields are never offered.": "Les champs exigés par Twenty sont toujours inclus ; les champs système ne sont jamais proposés.",
+  "First record": "Premier enregistrement",
+  "Fix the link loop before saving.": "Corrigez la boucle de liens avant d’enregistrer.",
+  "Form": "Formulaire",
+  "Form saved": "Formulaire enregistré",
+  "Form saved and live": "Formulaire enregistré et en ligne",
+  "Form settings and sharing": "Paramètres du formulaire et partage",
+  "Hidden": "Masqué",
+  "Label on the form": "Libellé dans le formulaire",
+  "Linked through": "Lié par",
+  "Links between records": "Liens entre les enregistrements",
+  "Live": "En ligne",
+  "Message after submitting": "Message après l’envoi",
+  "Name of the new form": "Nom du nouveau formulaire",
+  "New form": "Nouveau formulaire",
+  "No default": "Aucune valeur par défaut",
+  "No form yet": "Aucun formulaire pour l’instant",
+  "Not available": "Non disponible",
+  "Not live yet": "Pas encore en ligne",
+  "On submit": "À l’envoi",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Collez ceci dans le HTML de n’importe quelle page. Le formulaire suit la langue du visiteur.",
+  "Public link": "Lien public",
+  "Published – anyone with the link can submit": "Publié – toute personne disposant du lien peut répondre",
+  "Records and fields": "Enregistrements et champs",
+  "Remove": "Supprimer",
+  "Remove record": "Supprimer l’enregistrement",
+  "Required": "Obligatoire",
+  "Required by Twenty": "Exigé par Twenty",
+  "Save": "Enregistrer",
+  "Saved": "Enregistré",
+  "Saving failed: {error}": "Échec de l’enregistrement : {error}",
+  "Second record": "Second enregistrement",
+  "Submit button": "Bouton d’envoi",
+  "The forms could not be loaded": "Impossible de charger les formulaires",
+  "These links form a loop": "Ces liens forment une boucle",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Ces deux enregistrements ne peuvent pas être liés : leurs objets n’ont aucune relation dans Twenty. Ajoutez d’abord un champ de relation dans Paramètres → Modèle de données.",
+  "This object has required fields a form cannot fill": "Cet objet a des champs obligatoires qu’un formulaire ne peut pas remplir",
+  "This object no longer exists": "Cet objet n’existe plus",
+  "Tick Published and save to get the public link and the embed code.": "Cochez Publié et enregistrez pour obtenir le lien public et le code d’intégration.",
+  "Ticked": "Coché",
+  "Title": "Titre",
+  "Try again": "Réessayer",
+  "Unsaved changes": "Modifications non enregistrées",
+  "Untitled form": "Formulaire sans titre",
+  "Update when {field} matches": "Mettre à jour si {field} correspond",
+  "Used to match": "Utilisé pour la correspondance",
+  "via {relation}": "via {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. La création de cet enregistrement échoue, sauf si un lien les remplit.",
+  "{object} – section title": "{object} – titre de la section",
+  "fieldMetadata.label": {
+    "Definition": "Définition",
+    "Name": "Nom",
+    "Published": "Publié"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Créateur de formulaires",
+    "Forms": "Formulaires"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formulaires"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formulaire"
+  },
+  "pageLayout.name": {
+    "Form builder": "Créateur de formulaires"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Créateur de formulaires",
+    "Home": "Accueil",
+    "Timeline": "Chronologie"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Champs",
+    "Timeline": "Chronologie"
+  },
+  "view.name": {
+    "All forms": "Tous les formulaires"
+  }
+}
