@@ -6,7 +6,7 @@ Monorepo for Twenty CRM apps. Each app lives in its own folder under `apps/` and
 
 | Path | Contents |
 | --- | --- |
-| `apps/hello-world` | Minimal test app that adds a Greeting object |
+| `apps/form-builder` | Builds embeddable forms that create or update linked records |
 | `.claude/skills` | Twenty's official agent skills: `create-app`, `develop-app`, `manage-app` |
 
 # Working on an app

@@ -1,0 +1,21 @@
+export const APP_DISPLAY_NAME = 'Form Builder';
+export const APP_DESCRIPTION =
+  'Build embeddable forms that create or update linked records.';
+export const APPLICATION_UNIVERSAL_IDENTIFIER =
+  '6c1a67d6-b4ad-4212-ba0e-d1fbaf2282c5';
+export const DEFAULT_ROLE_UNIVERSAL_IDENTIFIER =
+  'e6d1b586-b9a1-43fb-bb7c-4da5c202ac00';
+export const HEALTH_CHECK_UNIVERSAL_IDENTIFIER =
+  '52d39ac1-ee8a-40a6-9c9f-297d8902b840';
+export const FORM_OBJECT_UNIVERSAL_IDENTIFIER =
+  '483eccf6-59f8-4cac-a368-bf1d06ad7e06';
+export const FORM_NAME_FIELD_UNIVERSAL_IDENTIFIER =
+  '5967b72b-55e1-4aee-992e-712d6eec4bcf';
+export const FORM_IS_PUBLISHED_FIELD_UNIVERSAL_IDENTIFIER =
+  '4e80d8f5-afd5-43ab-bdd2-fcb38420d060';
+export const FORM_DEFINITION_FIELD_UNIVERSAL_IDENTIFIER =
+  'a321fdd8-72ef-4e83-8fdd-ad4fd856a6c6';
+export const FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER =
+  '44d39302-7fe8-4583-80c4-05e58a21c411';
+export const RENDER_FORM_LOGIC_FUNCTION_UNIVERSAL_IDENTIFIER =
+  'd7577f00-19aa-46f8-a8cf-bde526d56c8b';
