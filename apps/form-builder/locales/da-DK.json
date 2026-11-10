@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Et skjult felt vises ikke for besøgende og får altid sin standardværdi.",
+  "Add a record": "Tilføj en post",
+  "Add at least one visible field before publishing.": "Tilføj mindst ét synligt felt, før du udgiver.",
+  "Add link": "Tilføj link",
+  "Add record": "Tilføj post",
+  "Always create": "Opret altid",
+  "Choose a form": "Vælg en formular",
+  "Choose a record": "Vælg en post",
+  "Choose an object": "Vælg et objekt",
+  "Connect the records of one submission, for example the new person to the new company.": "Forbind posterne fra én indsendelse, for eksempel den nye person med den nye virksomhed.",
+  "Copied": "Kopieret",
+  "Copy embed code": "Kopiér indlejringskode",
+  "Copy link": "Kopiér link",
+  "Create form": "Opret formular",
+  "Creating the form failed: {error}": "Formularen kunne ikke oprettes: {error}",
+  "Default value": "Standardværdi",
+  "Description": "Beskrivelse",
+  "Draft": "Kladde",
+  "Embed code": "Indlejringskode",
+  "Field": "Felt",
+  "Fields Twenty requires are always included; system fields are never offered.": "Felter, som Twenty kræver, er altid med; systemfelter tilbydes aldrig.",
+  "First record": "Første post",
+  "Fix the link loop before saving.": "Ret løkken i linkene, før du gemmer.",
+  "Form": "Formular",
+  "Form saved": "Formular gemt",
+  "Form saved and live": "Formular gemt og live",
+  "Form settings and sharing": "Formularindstillinger og deling",
+  "Hidden": "Skjult",
+  "Label on the form": "Etiket i formularen",
+  "Linked through": "Forbundet via",
+  "Links between records": "Links mellem poster",
+  "Live": "Live",
+  "Message after submitting": "Besked efter indsendelse",
+  "Name of the new form": "Navn på den nye formular",
+  "New form": "Ny formular",
+  "No default": "Ingen standardværdi",
+  "No form yet": "Ingen formular endnu",
+  "Not available": "Ikke tilgængelig",
+  "Not live yet": "Ikke live endnu",
+  "On submit": "Ved indsendelse",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Indsæt dette i HTML-koden på en hvilken som helst side. Formularen følger den besøgendes sprog.",
+  "Public link": "Offentligt link",
+  "Published – anyone with the link can submit": "Udgivet – alle med linket kan indsende",
+  "Records and fields": "Poster og felter",
+  "Remove": "Fjern",
+  "Remove record": "Fjern post",
+  "Required": "Obligatorisk",
+  "Required by Twenty": "Krævet af Twenty",
+  "Save": "Gem",
+  "Saved": "Gemt",
+  "Saving failed: {error}": "Kunne ikke gemme: {error}",
+  "Second record": "Anden post",
+  "Submit button": "Send-knap",
+  "The forms could not be loaded": "Formularerne kunne ikke indlæses",
+  "These links form a loop": "Disse links danner en løkke",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Disse to poster kan ikke forbindes: deres objekter har ingen relation i Twenty. Tilføj først et relationsfelt under Indstillinger → Datamodel.",
+  "This object has required fields a form cannot fill": "Dette objekt har obligatoriske felter, som en formular ikke kan udfylde",
+  "This object no longer exists": "Dette objekt findes ikke længere",
+  "Tick Published and save to get the public link and the embed code.": "Sæt kryds ved Udgivet, og gem for at få det offentlige link og indlejringskoden.",
+  "Ticked": "Afkrydset",
+  "Title": "Titel",
+  "Try again": "Prøv igen",
+  "Unsaved changes": "Ikke-gemte ændringer",
+  "Untitled form": "Formular uden titel",
+  "Update when {field} matches": "Opdater, når {field} matcher",
+  "Used to match": "Bruges til match",
+  "via {relation}": "via {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Oprettelsen af denne post mislykkes, medmindre et link udfylder dem.",
+  "{object} – section title": "{object} – afsnitstitel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Åbn i formularbygger"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Åbn i formularbygger"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definition",
+    "Name": "Navn",
+    "Published": "Udgivet"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Formularbygger",
+    "Forms": "Formularer"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formularer"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formular"
+  },
+  "pageLayout.name": {
+    "Form builder": "Formularbygger"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Formularbygger",
+    "Home": "Hjem",
+    "Timeline": "Tidslinje"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Felter",
+    "Timeline": "Tidslinje"
+  },
+  "view.name": {
+    "All forms": "Alle formularer"
+  }
+}

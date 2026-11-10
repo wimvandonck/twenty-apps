@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Um campo oculto não é mostrado aos visitantes e sempre recebe seu valor padrão.",
+  "Add a record": "Adicionar um registro",
+  "Add at least one visible field before publishing.": "Adicione pelo menos um campo visível antes de publicar.",
+  "Add link": "Adicionar vínculo",
+  "Add record": "Adicionar registro",
+  "Always create": "Sempre criar",
+  "Choose a form": "Escolha um formulário",
+  "Choose a record": "Escolha um registro",
+  "Choose an object": "Escolha um objeto",
+  "Connect the records of one submission, for example the new person to the new company.": "Conecte os registros de um mesmo envio, por exemplo a nova pessoa à nova empresa.",
+  "Copied": "Copiado",
+  "Copy embed code": "Copiar código de incorporação",
+  "Copy link": "Copiar link",
+  "Create form": "Criar formulário",
+  "Creating the form failed: {error}": "Falha ao criar o formulário: {error}",
+  "Default value": "Valor padrão",
+  "Description": "Descrição",
+  "Draft": "Rascunho",
+  "Embed code": "Código de incorporação",
+  "Field": "Campo",
+  "Fields Twenty requires are always included; system fields are never offered.": "Os campos que o Twenty exige são sempre incluídos; campos de sistema nunca são oferecidos.",
+  "First record": "Primeiro registro",
+  "Fix the link loop before saving.": "Corrija o ciclo de vínculos antes de salvar.",
+  "Form": "Formulário",
+  "Form saved": "Formulário salvo",
+  "Form saved and live": "Formulário salvo e no ar",
+  "Form settings and sharing": "Configurações do formulário e compartilhamento",
+  "Hidden": "Oculto",
+  "Label on the form": "Rótulo no formulário",
+  "Linked through": "Vinculado por",
+  "Links between records": "Vínculos entre registros",
+  "Live": "No ar",
+  "Message after submitting": "Mensagem após o envio",
+  "Name of the new form": "Nome do novo formulário",
+  "New form": "Novo formulário",
+  "No default": "Sem valor padrão",
+  "No form yet": "Nenhum formulário ainda",
+  "Not available": "Não disponível",
+  "Not live yet": "Ainda não está no ar",
+  "On submit": "Ao enviar",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Cole isto no HTML de qualquer página. O formulário segue o idioma do visitante.",
+  "Public link": "Link público",
+  "Published – anyone with the link can submit": "Publicado – qualquer pessoa com o link pode enviar",
+  "Records and fields": "Registros e campos",
+  "Remove": "Remover",
+  "Remove record": "Remover registro",
+  "Required": "Obrigatório",
+  "Required by Twenty": "Exigido pelo Twenty",
+  "Save": "Salvar",
+  "Saved": "Salvo",
+  "Saving failed: {error}": "Falha ao salvar: {error}",
+  "Second record": "Segundo registro",
+  "Submit button": "Botão de envio",
+  "The forms could not be loaded": "Não foi possível carregar os formulários",
+  "These links form a loop": "Estes vínculos formam um ciclo",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Estes dois registros não podem ser vinculados: os objetos deles não têm relação no Twenty. Adicione antes um campo de relação em Configurações → Modelo de dados.",
+  "This object has required fields a form cannot fill": "Este objeto tem campos obrigatórios que um formulário não consegue preencher",
+  "This object no longer exists": "Este objeto não existe mais",
+  "Tick Published and save to get the public link and the embed code.": "Marque Publicado e salve para obter o link público e o código de incorporação.",
+  "Ticked": "Marcado",
+  "Title": "Título",
+  "Try again": "Tentar novamente",
+  "Unsaved changes": "Alterações não salvas",
+  "Untitled form": "Formulário sem título",
+  "Update when {field} matches": "Atualizar quando {field} corresponder",
+  "Used to match": "Usado para a correspondência",
+  "via {relation}": "via {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. A criação deste registro falha, a menos que um vínculo os preencha.",
+  "{object} – section title": "{object} – título da seção",
+  "commandMenuItem.label": {
+    "Open in form builder": "Abrir no criador de formulários"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Abrir no criador de formulários"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definição",
+    "Name": "Nome",
+    "Published": "Publicado"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Criador de formulários",
+    "Forms": "Formulários"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formulários"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formulário"
+  },
+  "pageLayout.name": {
+    "Form builder": "Criador de formulários"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Criador de formulários",
+    "Home": "Início",
+    "Timeline": "Linha do tempo"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Campos",
+    "Timeline": "Linha do tempo"
+  },
+  "view.name": {
+    "All forms": "Todos os formulários"
+  }
+}

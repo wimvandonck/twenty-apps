@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "숨겨진 필드는 방문자에게 표시되지 않으며 항상 기본값이 저장됩니다.",
+  "Add a record": "레코드 추가",
+  "Add at least one visible field before publishing.": "게시하기 전에 표시되는 필드를 하나 이상 추가하세요.",
+  "Add link": "연결 추가",
+  "Add record": "레코드 추가",
+  "Always create": "항상 생성",
+  "Choose a form": "양식 선택",
+  "Choose a record": "레코드 선택",
+  "Choose an object": "개체 선택",
+  "Connect the records of one submission, for example the new person to the new company.": "한 번의 제출로 만들어지는 레코드를 서로 연결합니다. 예를 들어 새 사람을 새 회사에 연결합니다.",
+  "Copied": "복사됨",
+  "Copy embed code": "임베드 코드 복사",
+  "Copy link": "링크 복사",
+  "Create form": "양식 만들기",
+  "Creating the form failed: {error}": "양식을 만들지 못했습니다: {error}",
+  "Default value": "기본값",
+  "Description": "설명",
+  "Draft": "초안",
+  "Embed code": "임베드 코드",
+  "Field": "필드",
+  "Fields Twenty requires are always included; system fields are never offered.": "Twenty가 요구하는 필드는 항상 포함되며, 시스템 필드는 제공되지 않습니다.",
+  "First record": "첫 번째 레코드",
+  "Fix the link loop before saving.": "저장하기 전에 연결의 순환을 해결하세요.",
+  "Form": "양식",
+  "Form saved": "양식이 저장되었습니다",
+  "Form saved and live": "양식이 저장되고 게시되었습니다",
+  "Form settings and sharing": "양식 설정 및 공유",
+  "Hidden": "숨김",
+  "Label on the form": "양식에 표시할 레이블",
+  "Linked through": "연결 방식",
+  "Links between records": "레코드 간 연결",
+  "Live": "게시됨",
+  "Message after submitting": "제출 후 메시지",
+  "Name of the new form": "새 양식의 이름",
+  "New form": "새 양식",
+  "No default": "기본값 없음",
+  "No form yet": "아직 양식이 없습니다",
+  "Not available": "사용할 수 없음",
+  "Not live yet": "아직 게시되지 않음",
+  "On submit": "제출 시",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "원하는 페이지의 HTML에 붙여 넣으세요. 양식은 방문자의 언어를 따릅니다.",
+  "Public link": "공개 링크",
+  "Published – anyone with the link can submit": "게시됨 – 링크가 있는 누구나 제출할 수 있습니다",
+  "Records and fields": "레코드와 필드",
+  "Remove": "제거",
+  "Remove record": "레코드 제거",
+  "Required": "필수",
+  "Required by Twenty": "Twenty 필수 항목",
+  "Save": "저장",
+  "Saved": "저장됨",
+  "Saving failed: {error}": "저장하지 못했습니다: {error}",
+  "Second record": "두 번째 레코드",
+  "Submit button": "제출 버튼",
+  "The forms could not be loaded": "양식을 불러올 수 없습니다",
+  "These links form a loop": "이 연결들이 순환을 이룹니다",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "이 두 레코드는 연결할 수 없습니다. Twenty에서 두 개체 사이에 관계가 없습니다. 먼저 설정 → 데이터 모델에서 관계 필드를 추가하세요.",
+  "This object has required fields a form cannot fill": "이 개체에는 양식으로 채울 수 없는 필수 필드가 있습니다",
+  "This object no longer exists": "이 개체는 더 이상 존재하지 않습니다",
+  "Tick Published and save to get the public link and the embed code.": "게시됨을 선택하고 저장하면 공개 링크와 임베드 코드를 받을 수 있습니다.",
+  "Ticked": "선택됨",
+  "Title": "제목",
+  "Try again": "다시 시도",
+  "Unsaved changes": "저장되지 않은 변경 사항",
+  "Untitled form": "제목 없는 양식",
+  "Update when {field} matches": "{field}이(가) 일치하면 업데이트",
+  "Used to match": "일치 확인에 사용",
+  "via {relation}": "{relation} 경유",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. 연결이 값을 채우지 않으면 이 레코드를 생성할 수 없습니다.",
+  "{object} – section title": "{object} – 섹션 제목",
+  "commandMenuItem.label": {
+    "Open in form builder": "양식 빌더에서 열기"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "양식 빌더에서 열기"
+  },
+  "fieldMetadata.label": {
+    "Definition": "정의",
+    "Name": "이름",
+    "Published": "게시됨"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "양식 빌더",
+    "Forms": "양식"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "양식"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "양식"
+  },
+  "pageLayout.name": {
+    "Form builder": "양식 빌더"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "양식 빌더",
+    "Home": "홈",
+    "Timeline": "타임라인"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "필드",
+    "Timeline": "타임라인"
+  },
+  "view.name": {
+    "All forms": "모든 양식"
+  }
+}

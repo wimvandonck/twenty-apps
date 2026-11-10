@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "فیلد پنهان به بازدیدکنندگان نشان داده نمی‌شود و همیشه مقدار پیش‌فرض خود را می‌گیرد.",
+  "Add a record": "افزودن رکورد",
+  "Add at least one visible field before publishing.": "پیش از انتشار، دست‌کم یک فیلد قابل‌مشاهده اضافه کنید.",
+  "Add link": "افزودن پیوند",
+  "Add record": "افزودن رکورد",
+  "Always create": "همیشه ایجاد شود",
+  "Choose a form": "یک فرم انتخاب کنید",
+  "Choose a record": "یک رکورد انتخاب کنید",
+  "Choose an object": "یک شیء انتخاب کنید",
+  "Connect the records of one submission, for example the new person to the new company.": "رکوردهای یک ارسال را به هم وصل کنید، مثلاً شخص جدید را به شرکت جدید.",
+  "Copied": "کپی شد",
+  "Copy embed code": "کپی کد جاسازی",
+  "Copy link": "کپی پیوند",
+  "Create form": "ایجاد فرم",
+  "Creating the form failed: {error}": "ایجاد فرم ناموفق بود: {error}",
+  "Default value": "مقدار پیش‌فرض",
+  "Description": "توضیحات",
+  "Draft": "پیش‌نویس",
+  "Embed code": "کد جاسازی",
+  "Field": "فیلد",
+  "Fields Twenty requires are always included; system fields are never offered.": "فیلدهایی که Twenty الزامی می‌داند همیشه گنجانده می‌شوند؛ فیلدهای سیستمی هرگز ارائه نمی‌شوند.",
+  "First record": "رکورد اول",
+  "Fix the link loop before saving.": "پیش از ذخیره، حلقهٔ پیوندها را برطرف کنید.",
+  "Form": "فرم",
+  "Form saved": "فرم ذخیره شد",
+  "Form saved and live": "فرم ذخیره و فعال شد",
+  "Form settings and sharing": "تنظیمات فرم و اشتراک‌گذاری",
+  "Hidden": "پنهان",
+  "Label on the form": "برچسب در فرم",
+  "Linked through": "پیوند از طریق",
+  "Links between records": "پیوندهای میان رکوردها",
+  "Live": "فعال",
+  "Message after submitting": "پیام پس از ارسال",
+  "Name of the new form": "نام فرم جدید",
+  "New form": "فرم جدید",
+  "No default": "بدون مقدار پیش‌فرض",
+  "No form yet": "هنوز فرمی وجود ندارد",
+  "Not available": "در دسترس نیست",
+  "Not live yet": "هنوز فعال نیست",
+  "On submit": "هنگام ارسال",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "این را در HTML هر صفحه‌ای جای‌گذاری کنید. فرم از زبان بازدیدکننده پیروی می‌کند.",
+  "Public link": "پیوند عمومی",
+  "Published – anyone with the link can submit": "منتشرشده – هر کسی که پیوند را دارد می‌تواند ارسال کند",
+  "Records and fields": "رکوردها و فیلدها",
+  "Remove": "حذف",
+  "Remove record": "حذف رکورد",
+  "Required": "اجباری",
+  "Required by Twenty": "الزامی از سوی Twenty",
+  "Save": "ذخیره",
+  "Saved": "ذخیره شد",
+  "Saving failed: {error}": "ذخیره ناموفق بود: {error}",
+  "Second record": "رکورد دوم",
+  "Submit button": "دکمهٔ ارسال",
+  "The forms could not be loaded": "بارگیری فرم‌ها ممکن نشد",
+  "These links form a loop": "این پیوندها یک حلقه می‌سازند",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "این دو رکورد را نمی‌توان به هم پیوند داد: شیءهای آن‌ها در Twenty رابطه‌ای ندارند. ابتدا در تنظیمات ← مدل داده یک فیلد رابطه اضافه کنید.",
+  "This object has required fields a form cannot fill": "این شیء فیلدهای اجباری‌ای دارد که فرم نمی‌تواند پر کند",
+  "This object no longer exists": "این شیء دیگر وجود ندارد",
+  "Tick Published and save to get the public link and the embed code.": "برای دریافت پیوند عمومی و کد جاسازی، «منتشرشده» را علامت بزنید و ذخیره کنید.",
+  "Ticked": "علامت‌خورده",
+  "Title": "عنوان",
+  "Try again": "تلاش دوباره",
+  "Unsaved changes": "تغییرات ذخیره‌نشده",
+  "Untitled form": "فرم بدون عنوان",
+  "Update when {field} matches": "به‌روزرسانی هنگام تطابق {field}",
+  "Used to match": "برای تطبیق استفاده می‌شود",
+  "via {relation}": "از طریق {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. ایجاد این رکورد ناموفق خواهد بود مگر اینکه یک پیوند آن‌ها را پر کند.",
+  "{object} – section title": "{object} – عنوان بخش",
+  "commandMenuItem.label": {
+    "Open in form builder": "باز کردن در فرم‌ساز"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "باز کردن در فرم‌ساز"
+  },
+  "fieldMetadata.label": {
+    "Definition": "تعریف",
+    "Name": "نام",
+    "Published": "منتشرشده"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "فرم‌ساز",
+    "Forms": "فرم‌ها"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "فرم‌ها"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "فرم"
+  },
+  "pageLayout.name": {
+    "Form builder": "فرم‌ساز"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "فرم‌ساز",
+    "Home": "خانه",
+    "Timeline": "خط زمانی"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "فیلدها",
+    "Timeline": "خط زمانی"
+  },
+  "view.name": {
+    "All forms": "همهٔ فرم‌ها"
+  }
+}

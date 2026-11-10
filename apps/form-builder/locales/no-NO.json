@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Et skjult felt vises ikke for besøkende og får alltid standardverdien sin.",
+  "Add a record": "Legg til en post",
+  "Add at least one visible field before publishing.": "Legg til minst ett synlig felt før du publiserer.",
+  "Add link": "Legg til kobling",
+  "Add record": "Legg til post",
+  "Always create": "Opprett alltid",
+  "Choose a form": "Velg et skjema",
+  "Choose a record": "Velg en post",
+  "Choose an object": "Velg et objekt",
+  "Connect the records of one submission, for example the new person to the new company.": "Koble sammen postene fra én innsending, for eksempel den nye personen med det nye selskapet.",
+  "Copied": "Kopiert",
+  "Copy embed code": "Kopier innbyggingskode",
+  "Copy link": "Kopier lenke",
+  "Create form": "Opprett skjema",
+  "Creating the form failed: {error}": "Kunne ikke opprette skjemaet: {error}",
+  "Default value": "Standardverdi",
+  "Description": "Beskrivelse",
+  "Draft": "Utkast",
+  "Embed code": "Innbyggingskode",
+  "Field": "Felt",
+  "Fields Twenty requires are always included; system fields are never offered.": "Felt som Twenty krever, er alltid med; systemfelt tilbys aldri.",
+  "First record": "Første post",
+  "Fix the link loop before saving.": "Rett opp løkken i koblingene før du lagrer.",
+  "Form": "Skjema",
+  "Form saved": "Skjemaet er lagret",
+  "Form saved and live": "Skjemaet er lagret og publisert",
+  "Form settings and sharing": "Skjemainnstillinger og deling",
+  "Hidden": "Skjult",
+  "Label on the form": "Etikett i skjemaet",
+  "Linked through": "Koblet via",
+  "Links between records": "Koblinger mellom poster",
+  "Live": "Publisert",
+  "Message after submitting": "Melding etter innsending",
+  "Name of the new form": "Navn på det nye skjemaet",
+  "New form": "Nytt skjema",
+  "No default": "Ingen standardverdi",
+  "No form yet": "Ingen skjema ennå",
+  "Not available": "Ikke tilgjengelig",
+  "Not live yet": "Ikke publisert ennå",
+  "On submit": "Ved innsending",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Lim dette inn i HTML-koden på en hvilken som helst side. Skjemaet følger språket til den besøkende.",
+  "Public link": "Offentlig lenke",
+  "Published – anyone with the link can submit": "Publisert – alle med lenken kan sende inn",
+  "Records and fields": "Poster og felt",
+  "Remove": "Fjern",
+  "Remove record": "Fjern post",
+  "Required": "Obligatorisk",
+  "Required by Twenty": "Kreves av Twenty",
+  "Save": "Lagre",
+  "Saved": "Lagret",
+  "Saving failed: {error}": "Kunne ikke lagre: {error}",
+  "Second record": "Andre post",
+  "Submit button": "Send-knapp",
+  "The forms could not be loaded": "Skjemaene kunne ikke lastes inn",
+  "These links form a loop": "Disse koblingene danner en løkke",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Disse to postene kan ikke kobles: objektene deres har ingen relasjon i Twenty. Legg først til et relasjonsfelt under Innstillinger → Datamodell.",
+  "This object has required fields a form cannot fill": "Dette objektet har obligatoriske felt som et skjema ikke kan fylle ut",
+  "This object no longer exists": "Dette objektet finnes ikke lenger",
+  "Tick Published and save to get the public link and the embed code.": "Kryss av for Publisert og lagre for å få den offentlige lenken og innbyggingskoden.",
+  "Ticked": "Avkrysset",
+  "Title": "Tittel",
+  "Try again": "Prøv igjen",
+  "Unsaved changes": "Ulagrede endringer",
+  "Untitled form": "Skjema uten tittel",
+  "Update when {field} matches": "Oppdater når {field} samsvarer",
+  "Used to match": "Brukes til samsvar",
+  "via {relation}": "via {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Opprettelsen av denne posten mislykkes med mindre en kobling fyller dem ut.",
+  "{object} – section title": "{object} – seksjonstittel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Åpne i skjemabygger"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Åpne i skjemabygger"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definisjon",
+    "Name": "Navn",
+    "Published": "Publisert"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Skjemabygger",
+    "Forms": "Skjemaer"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Skjemaer"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Skjema"
+  },
+  "pageLayout.name": {
+    "Form builder": "Skjemabygger"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Skjemabygger",
+    "Home": "Hjem",
+    "Timeline": "Tidslinje"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Felt",
+    "Timeline": "Tidslinje"
+  },
+  "view.name": {
+    "All forms": "Alle skjemaer"
+  }
+}

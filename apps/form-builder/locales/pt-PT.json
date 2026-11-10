@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Um campo oculto não é mostrado aos visitantes e recebe sempre o seu valor predefinido.",
+  "Add a record": "Adicionar um registo",
+  "Add at least one visible field before publishing.": "Adicione pelo menos um campo visível antes de publicar.",
+  "Add link": "Adicionar ligação",
+  "Add record": "Adicionar registo",
+  "Always create": "Criar sempre",
+  "Choose a form": "Escolha um formulário",
+  "Choose a record": "Escolha um registo",
+  "Choose an object": "Escolha um objeto",
+  "Connect the records of one submission, for example the new person to the new company.": "Ligue os registos de um mesmo envio, por exemplo a nova pessoa à nova empresa.",
+  "Copied": "Copiado",
+  "Copy embed code": "Copiar código de incorporação",
+  "Copy link": "Copiar ligação",
+  "Create form": "Criar formulário",
+  "Creating the form failed: {error}": "Falha ao criar o formulário: {error}",
+  "Default value": "Valor predefinido",
+  "Description": "Descrição",
+  "Draft": "Rascunho",
+  "Embed code": "Código de incorporação",
+  "Field": "Campo",
+  "Fields Twenty requires are always included; system fields are never offered.": "Os campos que o Twenty exige são sempre incluídos; os campos de sistema nunca são propostos.",
+  "First record": "Primeiro registo",
+  "Fix the link loop before saving.": "Corrija o ciclo de ligações antes de guardar.",
+  "Form": "Formulário",
+  "Form saved": "Formulário guardado",
+  "Form saved and live": "Formulário guardado e online",
+  "Form settings and sharing": "Definições do formulário e partilha",
+  "Hidden": "Oculto",
+  "Label on the form": "Etiqueta no formulário",
+  "Linked through": "Ligado através de",
+  "Links between records": "Ligações entre registos",
+  "Live": "Online",
+  "Message after submitting": "Mensagem após o envio",
+  "Name of the new form": "Nome do novo formulário",
+  "New form": "Novo formulário",
+  "No default": "Sem valor predefinido",
+  "No form yet": "Ainda não há formulários",
+  "Not available": "Não disponível",
+  "Not live yet": "Ainda não está online",
+  "On submit": "Ao enviar",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Cole isto no HTML de qualquer página. O formulário segue o idioma do visitante.",
+  "Public link": "Ligação pública",
+  "Published – anyone with the link can submit": "Publicado – qualquer pessoa com a ligação pode enviar",
+  "Records and fields": "Registos e campos",
+  "Remove": "Remover",
+  "Remove record": "Remover registo",
+  "Required": "Obrigatório",
+  "Required by Twenty": "Exigido pelo Twenty",
+  "Save": "Guardar",
+  "Saved": "Guardado",
+  "Saving failed: {error}": "Falha ao guardar: {error}",
+  "Second record": "Segundo registo",
+  "Submit button": "Botão de envio",
+  "The forms could not be loaded": "Não foi possível carregar os formulários",
+  "These links form a loop": "Estas ligações formam um ciclo",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Estes dois registos não podem ser ligados: os respetivos objetos não têm relação no Twenty. Adicione primeiro um campo de relação em Definições → Modelo de dados.",
+  "This object has required fields a form cannot fill": "Este objeto tem campos obrigatórios que um formulário não consegue preencher",
+  "This object no longer exists": "Este objeto já não existe",
+  "Tick Published and save to get the public link and the embed code.": "Assinale Publicado e guarde para obter a ligação pública e o código de incorporação.",
+  "Ticked": "Assinalado",
+  "Title": "Título",
+  "Try again": "Tentar novamente",
+  "Unsaved changes": "Alterações não guardadas",
+  "Untitled form": "Formulário sem título",
+  "Update when {field} matches": "Atualizar quando {field} corresponder",
+  "Used to match": "Usado para a correspondência",
+  "via {relation}": "através de {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. A criação deste registo falha, a menos que uma ligação os preencha.",
+  "{object} – section title": "{object} – título da secção",
+  "commandMenuItem.label": {
+    "Open in form builder": "Abrir no criador de formulários"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Abrir no criador de formulários"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definição",
+    "Name": "Nome",
+    "Published": "Publicado"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Criador de formulários",
+    "Forms": "Formulários"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formulários"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formulário"
+  },
+  "pageLayout.name": {
+    "Form builder": "Criador de formulários"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Criador de formulários",
+    "Home": "Início",
+    "Timeline": "Cronologia"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Campos",
+    "Timeline": "Cronologia"
+  },
+  "view.name": {
+    "All forms": "Todos os formulários"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Приховане поле не показується відвідувачам і завжди отримує значення за замовчуванням.",
+  "Add a record": "Додати запис",
+  "Add at least one visible field before publishing.": "Додайте принаймні одне видиме поле перед публікацією.",
+  "Add link": "Додати зв’язок",
+  "Add record": "Додати запис",
+  "Always create": "Завжди створювати",
+  "Choose a form": "Виберіть форму",
+  "Choose a record": "Виберіть запис",
+  "Choose an object": "Виберіть об’єкт",
+  "Connect the records of one submission, for example the new person to the new company.": "Зв’яжіть записи одного надсилання, наприклад нову особу з новою компанією.",
+  "Copied": "Скопійовано",
+  "Copy embed code": "Копіювати код для вбудовування",
+  "Copy link": "Копіювати посилання",
+  "Create form": "Створити форму",
+  "Creating the form failed: {error}": "Не вдалося створити форму: {error}",
+  "Default value": "Значення за замовчуванням",
+  "Description": "Опис",
+  "Draft": "Чернетка",
+  "Embed code": "Код для вбудовування",
+  "Field": "Поле",
+  "Fields Twenty requires are always included; system fields are never offered.": "Поля, яких вимагає Twenty, завжди включено; системні поля ніколи не пропонуються.",
+  "First record": "Перший запис",
+  "Fix the link loop before saving.": "Усуньте цикл у зв’язках перед збереженням.",
+  "Form": "Форма",
+  "Form saved": "Форму збережено",
+  "Form saved and live": "Форму збережено й опубліковано",
+  "Form settings and sharing": "Налаштування форми та поширення",
+  "Hidden": "Приховане",
+  "Label on the form": "Підпис у формі",
+  "Linked through": "Зв’язано через",
+  "Links between records": "Зв’язки між записами",
+  "Live": "Опубліковано",
+  "Message after submitting": "Повідомлення після надсилання",
+  "Name of the new form": "Назва нової форми",
+  "New form": "Нова форма",
+  "No default": "Без значення за замовчуванням",
+  "No form yet": "Форм поки немає",
+  "Not available": "Недоступно",
+  "Not live yet": "Ще не опубліковано",
+  "On submit": "Під час надсилання",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Вставте це в HTML будь-якої сторінки. Форма підлаштовується під мову відвідувача.",
+  "Public link": "Публічне посилання",
+  "Published – anyone with the link can submit": "Опубліковано – надіслати форму може будь-хто, хто має посилання",
+  "Records and fields": "Записи та поля",
+  "Remove": "Вилучити",
+  "Remove record": "Вилучити запис",
+  "Required": "Обов’язкове",
+  "Required by Twenty": "Вимагається Twenty",
+  "Save": "Зберегти",
+  "Saved": "Збережено",
+  "Saving failed: {error}": "Не вдалося зберегти: {error}",
+  "Second record": "Другий запис",
+  "Submit button": "Кнопка надсилання",
+  "The forms could not be loaded": "Не вдалося завантажити форми",
+  "These links form a loop": "Ці зв’язки утворюють цикл",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Ці два записи неможливо зв’язати: їхні об’єкти не мають зв’язку в Twenty. Спершу додайте поле зв’язку в розділі «Налаштування → Модель даних».",
+  "This object has required fields a form cannot fill": "Цей об’єкт має обов’язкові поля, які форма не може заповнити",
+  "This object no longer exists": "Цей об’єкт більше не існує",
+  "Tick Published and save to get the public link and the embed code.": "Позначте «Опубліковано» і збережіть, щоб отримати публічне посилання та код для вбудовування.",
+  "Ticked": "Позначено",
+  "Title": "Заголовок",
+  "Try again": "Спробувати ще раз",
+  "Unsaved changes": "Незбережені зміни",
+  "Untitled form": "Форма без назви",
+  "Update when {field} matches": "Оновлювати, коли збігається поле «{field}»",
+  "Used to match": "Використовується для зіставлення",
+  "via {relation}": "через {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Створити цей запис не вдасться, якщо їх не заповнить зв’язок.",
+  "{object} – section title": "{object} – заголовок розділу",
+  "commandMenuItem.label": {
+    "Open in form builder": "Відкрити в конструкторі форм"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Відкрити в конструкторі форм"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Визначення",
+    "Name": "Назва",
+    "Published": "Опубліковано"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Конструктор форм",
+    "Forms": "Форми"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Форми"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Форма"
+  },
+  "pageLayout.name": {
+    "Form builder": "Конструктор форм"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Конструктор форм",
+    "Home": "Головна",
+    "Timeline": "Хронологія"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поля",
+    "Timeline": "Хронологія"
+  },
+  "view.name": {
+    "All forms": "Усі форми"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "A hidden field is not shown to visitors and always gets its default value.",
+  "Add a record": "Add a record",
+  "Add at least one visible field before publishing.": "Add at least one visible field before publishing.",
+  "Add link": "Add link",
+  "Add record": "Add record",
+  "Always create": "Always create",
+  "Choose a form": "Choose a form",
+  "Choose a record": "Choose a record",
+  "Choose an object": "Choose an object",
+  "Connect the records of one submission, for example the new person to the new company.": "Connect the records of one submission, for example the new person to the new company.",
+  "Copied": "Copied",
+  "Copy embed code": "Copy embed code",
+  "Copy link": "Copy link",
+  "Create form": "Create form",
+  "Creating the form failed: {error}": "Creating the form failed: {error}",
+  "Default value": "Default value",
+  "Description": "Description",
+  "Draft": "Draft",
+  "Embed code": "Embed code",
+  "Field": "Field",
+  "Fields Twenty requires are always included; system fields are never offered.": "Fields Twenty requires are always included; system fields are never offered.",
+  "First record": "First record",
+  "Fix the link loop before saving.": "Fix the link loop before saving.",
+  "Form": "Form",
+  "Form saved": "Form saved",
+  "Form saved and live": "Form saved and live",
+  "Form settings and sharing": "Form settings and sharing",
+  "Hidden": "Hidden",
+  "Label on the form": "Label on the form",
+  "Linked through": "Linked through",
+  "Links between records": "Links between records",
+  "Live": "Live",
+  "Message after submitting": "Message after submitting",
+  "Name of the new form": "Name of the new form",
+  "New form": "New form",
+  "No default": "No default",
+  "No form yet": "No form yet",
+  "Not available": "Not available",
+  "Not live yet": "Not live yet",
+  "On submit": "On submit",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Paste this into the HTML of any page. The form follows the visitor’s language.",
+  "Public link": "Public link",
+  "Published – anyone with the link can submit": "Published – anyone with the link can submit",
+  "Records and fields": "Records and fields",
+  "Remove": "Remove",
+  "Remove record": "Remove record",
+  "Required": "Required",
+  "Required by Twenty": "Required by Twenty",
+  "Save": "Save",
+  "Saved": "Saved",
+  "Saving failed: {error}": "Saving failed: {error}",
+  "Second record": "Second record",
+  "Submit button": "Submit button",
+  "The forms could not be loaded": "The forms could not be loaded",
+  "These links form a loop": "These links form a loop",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.",
+  "This object has required fields a form cannot fill": "This object has required fields a form cannot fill",
+  "This object no longer exists": "This object no longer exists",
+  "Tick Published and save to get the public link and the embed code.": "Tick Published and save to get the public link and the embed code.",
+  "Ticked": "Ticked",
+  "Title": "Title",
+  "Try again": "Try again",
+  "Unsaved changes": "Unsaved changes",
+  "Untitled form": "Untitled form",
+  "Update when {field} matches": "Update when {field} matches",
+  "Used to match": "Used to match",
+  "via {relation}": "via {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Creating this record fails unless a link fills them.",
+  "{object} – section title": "{object} – section title",
+  "commandMenuItem.label": {
+    "Open in form builder": "Open in form builder"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Open in form builder"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Name of the form",
+    "Only published forms are reachable from their public link": "Only published forms are reachable from their public link",
+    "Records, links and fields of the form, edited in the form builder": "Records, links and fields of the form, edited in the form builder"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definition",
+    "Name": "Name",
+    "Published": "Published"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Form builder",
+    "Forms": "Forms"
+  },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "An embeddable form that creates or updates records"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Forms"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Form"
+  },
+  "pageLayout.name": {
+    "Default Form Layout": "Default Form Layout",
+    "Form builder": "Form builder"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Form builder",
+    "Home": "Home",
+    "Timeline": "Timeline"
+  },
+  "pageLayoutWidget.title": {
+    " ": " ",
+    "Fields": "Fields",
+    "Timeline": "Timeline"
+  },
+  "view.name": {
+    "All forms": "All forms",
+    "form-record-page-fields": "form-record-page-fields"
+  }
+}

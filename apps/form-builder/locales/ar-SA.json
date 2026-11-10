@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "الحقل المخفي لا يظهر للزوار ويأخذ دائماً قيمته الافتراضية.",
+  "Add a record": "إضافة سجل",
+  "Add at least one visible field before publishing.": "أضف حقلاً ظاهراً واحداً على الأقل قبل النشر.",
+  "Add link": "إضافة رابط",
+  "Add record": "إضافة السجل",
+  "Always create": "الإنشاء دائماً",
+  "Choose a form": "اختر نموذجاً",
+  "Choose a record": "اختر سجلاً",
+  "Choose an object": "اختر كائناً",
+  "Connect the records of one submission, for example the new person to the new company.": "اربط سجلات الإرسال الواحد ببعضها، مثل ربط الشخص الجديد بالشركة الجديدة.",
+  "Copied": "تم النسخ",
+  "Copy embed code": "نسخ رمز التضمين",
+  "Copy link": "نسخ الرابط",
+  "Create form": "إنشاء النموذج",
+  "Creating the form failed: {error}": "تعذّر إنشاء النموذج: {error}",
+  "Default value": "القيمة الافتراضية",
+  "Description": "الوصف",
+  "Draft": "مسودة",
+  "Embed code": "رمز التضمين",
+  "Field": "الحقل",
+  "Fields Twenty requires are always included; system fields are never offered.": "الحقول التي يتطلبها Twenty مضمَّنة دائماً، وحقول النظام لا تُعرض أبداً.",
+  "First record": "السجل الأول",
+  "Fix the link loop before saving.": "أصلح حلقة الروابط قبل الحفظ.",
+  "Form": "النموذج",
+  "Form saved": "تم حفظ النموذج",
+  "Form saved and live": "تم حفظ النموذج ونشره",
+  "Form settings and sharing": "إعدادات النموذج والمشاركة",
+  "Hidden": "مخفي",
+  "Label on the form": "التسمية في النموذج",
+  "Linked through": "مرتبط عبر",
+  "Links between records": "الروابط بين السجلات",
+  "Live": "منشور",
+  "Message after submitting": "الرسالة بعد الإرسال",
+  "Name of the new form": "اسم النموذج الجديد",
+  "New form": "نموذج جديد",
+  "No default": "بلا قيمة افتراضية",
+  "No form yet": "لا يوجد نموذج بعد",
+  "Not available": "غير متاح",
+  "Not live yet": "غير منشور بعد",
+  "On submit": "عند الإرسال",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "الصق هذا في HTML أي صفحة. يتبع النموذج لغة الزائر.",
+  "Public link": "الرابط العام",
+  "Published – anyone with the link can submit": "منشور – يمكن لأي شخص لديه الرابط الإرسال",
+  "Records and fields": "السجلات والحقول",
+  "Remove": "إزالة",
+  "Remove record": "إزالة السجل",
+  "Required": "إلزامي",
+  "Required by Twenty": "مطلوب من Twenty",
+  "Save": "حفظ",
+  "Saved": "تم الحفظ",
+  "Saving failed: {error}": "تعذّر الحفظ: {error}",
+  "Second record": "السجل الثاني",
+  "Submit button": "زر الإرسال",
+  "The forms could not be loaded": "تعذّر تحميل النماذج",
+  "These links form a loop": "هذه الروابط تشكّل حلقة",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "لا يمكن ربط هذين السجلين: لا توجد علاقة بين كائنيهما في Twenty. أضف أولاً حقل علاقة من الإعدادات ← نموذج البيانات.",
+  "This object has required fields a form cannot fill": "يحتوي هذا الكائن على حقول إلزامية لا يستطيع النموذج تعبئتها",
+  "This object no longer exists": "هذا الكائن لم يعد موجوداً",
+  "Tick Published and save to get the public link and the embed code.": "حدِّد «منشور» ثم احفظ للحصول على الرابط العام ورمز التضمين.",
+  "Ticked": "محدَّد",
+  "Title": "العنوان",
+  "Try again": "إعادة المحاولة",
+  "Unsaved changes": "تغييرات غير محفوظة",
+  "Untitled form": "نموذج بلا عنوان",
+  "Update when {field} matches": "التحديث عند تطابق {field}",
+  "Used to match": "يُستخدم للمطابقة",
+  "via {relation}": "عبر {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. سيفشل إنشاء هذا السجل ما لم يعبّئها رابط.",
+  "{object} – section title": "{object} – عنوان القسم",
+  "commandMenuItem.label": {
+    "Open in form builder": "فتح في منشئ النماذج"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "فتح في منشئ النماذج"
+  },
+  "fieldMetadata.label": {
+    "Definition": "التعريف",
+    "Name": "الاسم",
+    "Published": "منشور"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "منشئ النماذج",
+    "Forms": "النماذج"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "النماذج"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "نموذج"
+  },
+  "pageLayout.name": {
+    "Form builder": "منشئ النماذج"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "منشئ النماذج",
+    "Home": "الرئيسية",
+    "Timeline": "المخطط الزمني"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "الحقول",
+    "Timeline": "المخطط الزمني"
+  },
+  "view.name": {
+    "All forms": "كل النماذج"
+  }
+}

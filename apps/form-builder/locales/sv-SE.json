@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Ett dolt fält visas inte för besökare och får alltid sitt standardvärde.",
+  "Add a record": "Lägg till en post",
+  "Add at least one visible field before publishing.": "Lägg till minst ett synligt fält innan du publicerar.",
+  "Add link": "Lägg till länk",
+  "Add record": "Lägg till post",
+  "Always create": "Skapa alltid",
+  "Choose a form": "Välj ett formulär",
+  "Choose a record": "Välj en post",
+  "Choose an object": "Välj ett objekt",
+  "Connect the records of one submission, for example the new person to the new company.": "Koppla ihop posterna i en och samma inskickning, till exempel den nya personen med det nya företaget.",
+  "Copied": "Kopierat",
+  "Copy embed code": "Kopiera inbäddningskod",
+  "Copy link": "Kopiera länk",
+  "Create form": "Skapa formulär",
+  "Creating the form failed: {error}": "Det gick inte att skapa formuläret: {error}",
+  "Default value": "Standardvärde",
+  "Description": "Beskrivning",
+  "Draft": "Utkast",
+  "Embed code": "Inbäddningskod",
+  "Field": "Fält",
+  "Fields Twenty requires are always included; system fields are never offered.": "Fält som Twenty kräver ingår alltid; systemfält erbjuds aldrig.",
+  "First record": "Första posten",
+  "Fix the link loop before saving.": "Åtgärda loopen i länkarna innan du sparar.",
+  "Form": "Formulär",
+  "Form saved": "Formuläret är sparat",
+  "Form saved and live": "Formuläret är sparat och live",
+  "Form settings and sharing": "Formulärinställningar och delning",
+  "Hidden": "Dolt",
+  "Label on the form": "Etikett i formuläret",
+  "Linked through": "Länkad via",
+  "Links between records": "Länkar mellan poster",
+  "Live": "Live",
+  "Message after submitting": "Meddelande efter inskickning",
+  "Name of the new form": "Namn på det nya formuläret",
+  "New form": "Nytt formulär",
+  "No default": "Inget standardvärde",
+  "No form yet": "Inget formulär ännu",
+  "Not available": "Inte tillgängligt",
+  "Not live yet": "Inte live ännu",
+  "On submit": "Vid inskickning",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Klistra in detta i HTML-koden på valfri sida. Formuläret följer besökarens språk.",
+  "Public link": "Offentlig länk",
+  "Published – anyone with the link can submit": "Publicerat – alla som har länken kan skicka in",
+  "Records and fields": "Poster och fält",
+  "Remove": "Ta bort",
+  "Remove record": "Ta bort post",
+  "Required": "Obligatoriskt",
+  "Required by Twenty": "Krävs av Twenty",
+  "Save": "Spara",
+  "Saved": "Sparat",
+  "Saving failed: {error}": "Det gick inte att spara: {error}",
+  "Second record": "Andra posten",
+  "Submit button": "Skicka-knapp",
+  "The forms could not be loaded": "Formulären kunde inte läsas in",
+  "These links form a loop": "De här länkarna bildar en loop",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "De här två posterna kan inte länkas: deras objekt har ingen relation i Twenty. Lägg först till ett relationsfält under Inställningar → Datamodell.",
+  "This object has required fields a form cannot fill": "Det här objektet har obligatoriska fält som ett formulär inte kan fylla i",
+  "This object no longer exists": "Det här objektet finns inte längre",
+  "Tick Published and save to get the public link and the embed code.": "Kryssa i Publicerat och spara för att få den offentliga länken och inbäddningskoden.",
+  "Ticked": "Ikryssad",
+  "Title": "Rubrik",
+  "Try again": "Försök igen",
+  "Unsaved changes": "Osparade ändringar",
+  "Untitled form": "Namnlöst formulär",
+  "Update when {field} matches": "Uppdatera när {field} matchar",
+  "Used to match": "Används för matchning",
+  "via {relation}": "via {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Det går inte att skapa posten om inte en länk fyller i dem.",
+  "{object} – section title": "{object} – avsnittsrubrik",
+  "commandMenuItem.label": {
+    "Open in form builder": "Öppna i formulärbyggaren"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Öppna i formulärbyggaren"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definition",
+    "Name": "Namn",
+    "Published": "Publicerat"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Formulärbyggare",
+    "Forms": "Formulär"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formulär"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formulär"
+  },
+  "pageLayout.name": {
+    "Form builder": "Formulärbyggare"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Formulärbyggare",
+    "Home": "Hem",
+    "Timeline": "Tidslinje"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Fält",
+    "Timeline": "Tidslinje"
+  },
+  "view.name": {
+    "All forms": "Alla formulär"
+  }
+}

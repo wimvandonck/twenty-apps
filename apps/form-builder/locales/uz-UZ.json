@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Yashirin maydon tashrif buyuruvchilarga ko‘rsatilmaydi va har doim standart qiymatini oladi.",
+  "Add a record": "Yozuv qo‘shish",
+  "Add at least one visible field before publishing.": "Chop etishdan oldin kamida bitta ko‘rinadigan maydon qo‘shing.",
+  "Add link": "Bog‘lanish qo‘shish",
+  "Add record": "Yozuvni qo‘shish",
+  "Always create": "Har doim yaratish",
+  "Choose a form": "Formani tanlang",
+  "Choose a record": "Yozuvni tanlang",
+  "Choose an object": "Obyektni tanlang",
+  "Connect the records of one submission, for example the new person to the new company.": "Bitta yuborishdagi yozuvlarni o‘zaro bog‘lang, masalan, yangi shaxsni yangi kompaniyaga.",
+  "Copied": "Nusxalandi",
+  "Copy embed code": "Joylashtirish kodidan nusxa olish",
+  "Copy link": "Havoladan nusxa olish",
+  "Create form": "Forma yaratish",
+  "Creating the form failed: {error}": "Formani yaratib bo‘lmadi: {error}",
+  "Default value": "Standart qiymat",
+  "Description": "Tavsif",
+  "Draft": "Qoralama",
+  "Embed code": "Joylashtirish kodi",
+  "Field": "Maydon",
+  "Fields Twenty requires are always included; system fields are never offered.": "Twenty talab qiladigan maydonlar har doim kiritiladi; tizim maydonlari hech qachon taklif qilinmaydi.",
+  "First record": "Birinchi yozuv",
+  "Fix the link loop before saving.": "Saqlashdan oldin bog‘lanishlardagi halqani tuzating.",
+  "Form": "Forma",
+  "Form saved": "Forma saqlandi",
+  "Form saved and live": "Forma saqlandi va faol",
+  "Form settings and sharing": "Forma sozlamalari va ulashish",
+  "Hidden": "Yashirin",
+  "Label on the form": "Formadagi yorliq",
+  "Linked through": "Bog‘lanish usuli",
+  "Links between records": "Yozuvlar orasidagi bog‘lanishlar",
+  "Live": "Faol",
+  "Message after submitting": "Yuborilgandan keyingi xabar",
+  "Name of the new form": "Yangi formaning nomi",
+  "New form": "Yangi forma",
+  "No default": "Standart qiymat yo‘q",
+  "No form yet": "Hali forma yo‘q",
+  "Not available": "Mavjud emas",
+  "Not live yet": "Hali faol emas",
+  "On submit": "Yuborilganda",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Buni istalgan sahifaning HTML kodiga joylang. Forma tashrif buyuruvchining tiliga moslashadi.",
+  "Public link": "Ochiq havola",
+  "Published – anyone with the link can submit": "Chop etilgan – havolasi bor har kim yubora oladi",
+  "Records and fields": "Yozuvlar va maydonlar",
+  "Remove": "Olib tashlash",
+  "Remove record": "Yozuvni olib tashlash",
+  "Required": "Majburiy",
+  "Required by Twenty": "Twenty talab qiladi",
+  "Save": "Saqlash",
+  "Saved": "Saqlandi",
+  "Saving failed: {error}": "Saqlab bo‘lmadi: {error}",
+  "Second record": "Ikkinchi yozuv",
+  "Submit button": "Yuborish tugmasi",
+  "The forms could not be loaded": "Formalarni yuklab bo‘lmadi",
+  "These links form a loop": "Bu bog‘lanishlar halqa hosil qiladi",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Bu ikki yozuvni bog‘lab bo‘lmaydi: ularning obyektlari o‘rtasida Twenty’da aloqa yo‘q. Avval Sozlamalar → Ma’lumotlar modeli bo‘limida aloqa maydonini qo‘shing.",
+  "This object has required fields a form cannot fill": "Bu obyektda forma to‘ldira olmaydigan majburiy maydonlar bor",
+  "This object no longer exists": "Bu obyekt endi mavjud emas",
+  "Tick Published and save to get the public link and the embed code.": "Ochiq havola va joylashtirish kodini olish uchun «Chop etilgan»ni belgilang va saqlang.",
+  "Ticked": "Belgilangan",
+  "Title": "Sarlavha",
+  "Try again": "Qayta urinish",
+  "Unsaved changes": "Saqlanmagan o‘zgarishlar",
+  "Untitled form": "Nomsiz forma",
+  "Update when {field} matches": "{field} mos kelganda yangilash",
+  "Used to match": "Moslashtirish uchun ishlatiladi",
+  "via {relation}": "{relation} orqali",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Bog‘lanish ularni to‘ldirmasa, bu yozuvni yaratib bo‘lmaydi.",
+  "{object} – section title": "{object} – bo‘lim sarlavhasi",
+  "commandMenuItem.label": {
+    "Open in form builder": "Forma konstruktorida ochish"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Forma konstruktorida ochish"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Ta’rif",
+    "Name": "Nomi",
+    "Published": "Chop etilgan"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Forma konstruktori",
+    "Forms": "Formalar"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formalar"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Forma"
+  },
+  "pageLayout.name": {
+    "Form builder": "Forma konstruktori"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Forma konstruktori",
+    "Home": "Bosh sahifa",
+    "Timeline": "Vaqt chizig‘i"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Maydonlar",
+    "Timeline": "Vaqt chizig‘i"
+  },
+  "view.name": {
+    "All forms": "Barcha formalar"
+  }
+}

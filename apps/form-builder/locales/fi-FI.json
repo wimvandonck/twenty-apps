@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Piilotettua kenttää ei näytetä kävijöille, ja se saa aina oletusarvonsa.",
+  "Add a record": "Lisää tietue",
+  "Add at least one visible field before publishing.": "Lisää vähintään yksi näkyvä kenttä ennen julkaisemista.",
+  "Add link": "Lisää linkki",
+  "Add record": "Lisää tietue",
+  "Always create": "Luo aina",
+  "Choose a form": "Valitse lomake",
+  "Choose a record": "Valitse tietue",
+  "Choose an object": "Valitse objekti",
+  "Connect the records of one submission, for example the new person to the new company.": "Yhdistä saman lähetyksen tietueet toisiinsa, esimerkiksi uusi henkilö uuteen yritykseen.",
+  "Copied": "Kopioitu",
+  "Copy embed code": "Kopioi upotuskoodi",
+  "Copy link": "Kopioi linkki",
+  "Create form": "Luo lomake",
+  "Creating the form failed: {error}": "Lomakkeen luonti epäonnistui: {error}",
+  "Default value": "Oletusarvo",
+  "Description": "Kuvaus",
+  "Draft": "Luonnos",
+  "Embed code": "Upotuskoodi",
+  "Field": "Kenttä",
+  "Fields Twenty requires are always included; system fields are never offered.": "Twentyn vaatimat kentät ovat aina mukana; järjestelmäkenttiä ei koskaan tarjota.",
+  "First record": "Ensimmäinen tietue",
+  "Fix the link loop before saving.": "Korjaa linkkien silmukka ennen tallentamista.",
+  "Form": "Lomake",
+  "Form saved": "Lomake tallennettu",
+  "Form saved and live": "Lomake tallennettu ja julkaistu",
+  "Form settings and sharing": "Lomakkeen asetukset ja jakaminen",
+  "Hidden": "Piilotettu",
+  "Label on the form": "Selite lomakkeessa",
+  "Linked through": "Linkitetty kautta",
+  "Links between records": "Tietueiden väliset linkit",
+  "Live": "Julkaistu",
+  "Message after submitting": "Viesti lähettämisen jälkeen",
+  "Name of the new form": "Uuden lomakkeen nimi",
+  "New form": "Uusi lomake",
+  "No default": "Ei oletusarvoa",
+  "No form yet": "Ei vielä lomaketta",
+  "Not available": "Ei käytettävissä",
+  "Not live yet": "Ei vielä julkaistu",
+  "On submit": "Lähetettäessä",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Liitä tämä minkä tahansa sivun HTML-koodiin. Lomake noudattaa kävijän kieltä.",
+  "Public link": "Julkinen linkki",
+  "Published – anyone with the link can submit": "Julkaistu – kuka tahansa linkin saanut voi lähettää",
+  "Records and fields": "Tietueet ja kentät",
+  "Remove": "Poista",
+  "Remove record": "Poista tietue",
+  "Required": "Pakollinen",
+  "Required by Twenty": "Twentyn vaatima",
+  "Save": "Tallenna",
+  "Saved": "Tallennettu",
+  "Saving failed: {error}": "Tallennus epäonnistui: {error}",
+  "Second record": "Toinen tietue",
+  "Submit button": "Lähetyspainike",
+  "The forms could not be loaded": "Lomakkeita ei voitu ladata",
+  "These links form a loop": "Nämä linkit muodostavat silmukan",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Näitä kahta tietuetta ei voi linkittää: niiden objekteilla ei ole suhdetta Twentyssä. Lisää ensin suhdekenttä kohdassa Asetukset → Tietomalli.",
+  "This object has required fields a form cannot fill": "Tällä objektilla on pakollisia kenttiä, joita lomake ei voi täyttää",
+  "This object no longer exists": "Tätä objektia ei enää ole",
+  "Tick Published and save to get the public link and the embed code.": "Valitse Julkaistu ja tallenna, niin saat julkisen linkin ja upotuskoodin.",
+  "Ticked": "Valittu",
+  "Title": "Otsikko",
+  "Try again": "Yritä uudelleen",
+  "Unsaved changes": "Tallentamattomia muutoksia",
+  "Untitled form": "Nimetön lomake",
+  "Update when {field} matches": "Päivitä, kun {field} täsmää",
+  "Used to match": "Käytetään täsmäytykseen",
+  "via {relation}": "kautta: {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Tietueen luonti epäonnistuu, ellei linkki täytä niitä.",
+  "{object} – section title": "{object} – osion otsikko",
+  "commandMenuItem.label": {
+    "Open in form builder": "Avaa lomaketyökalussa"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Avaa lomaketyökalussa"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Määritys",
+    "Name": "Nimi",
+    "Published": "Julkaistu"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Lomaketyökalu",
+    "Forms": "Lomakkeet"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Lomakkeet"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Lomake"
+  },
+  "pageLayout.name": {
+    "Form builder": "Lomaketyökalu"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Lomaketyökalu",
+    "Home": "Etusivu",
+    "Timeline": "Aikajana"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Kentät",
+    "Timeline": "Aikajana"
+  },
+  "view.name": {
+    "All forms": "Kaikki lomakkeet"
+  }
+}

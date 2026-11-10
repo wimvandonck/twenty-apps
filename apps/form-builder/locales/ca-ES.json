@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Un camp ocult no es mostra als visitants i sempre rep el seu valor per defecte.",
+  "Add a record": "Afegeix un registre",
+  "Add at least one visible field before publishing.": "Afegeix almenys un camp visible abans de publicar.",
+  "Add link": "Afegeix un vincle",
+  "Add record": "Afegeix el registre",
+  "Always create": "Crea sempre",
+  "Choose a form": "Tria un formulari",
+  "Choose a record": "Tria un registre",
+  "Choose an object": "Tria un objecte",
+  "Connect the records of one submission, for example the new person to the new company.": "Connecta els registres d’un mateix enviament, per exemple la nova persona amb la nova empresa.",
+  "Copied": "Copiat",
+  "Copy embed code": "Copia el codi d’inserció",
+  "Copy link": "Copia l’enllaç",
+  "Create form": "Crea el formulari",
+  "Creating the form failed: {error}": "No s’ha pogut crear el formulari: {error}",
+  "Default value": "Valor per defecte",
+  "Description": "Descripció",
+  "Draft": "Esborrany",
+  "Embed code": "Codi d’inserció",
+  "Field": "Camp",
+  "Fields Twenty requires are always included; system fields are never offered.": "Els camps que Twenty exigeix sempre s’inclouen; els camps del sistema mai no s’ofereixen.",
+  "First record": "Primer registre",
+  "Fix the link loop before saving.": "Corregeix el bucle de vincles abans de desar.",
+  "Form": "Formulari",
+  "Form saved": "Formulari desat",
+  "Form saved and live": "Formulari desat i actiu",
+  "Form settings and sharing": "Configuració del formulari i compartició",
+  "Hidden": "Ocult",
+  "Label on the form": "Etiqueta al formulari",
+  "Linked through": "Vinculat mitjançant",
+  "Links between records": "Vincles entre registres",
+  "Live": "Actiu",
+  "Message after submitting": "Missatge després de l’enviament",
+  "Name of the new form": "Nom del formulari nou",
+  "New form": "Formulari nou",
+  "No default": "Sense valor per defecte",
+  "No form yet": "Encara no hi ha cap formulari",
+  "Not available": "No disponible",
+  "Not live yet": "Encara no és actiu",
+  "On submit": "En enviar",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Enganxa això a l’HTML de qualsevol pàgina. El formulari segueix l’idioma del visitant.",
+  "Public link": "Enllaç públic",
+  "Published – anyone with the link can submit": "Publicat – qualsevol persona amb l’enllaç el pot enviar",
+  "Records and fields": "Registres i camps",
+  "Remove": "Treu",
+  "Remove record": "Treu el registre",
+  "Required": "Obligatori",
+  "Required by Twenty": "Exigit per Twenty",
+  "Save": "Desa",
+  "Saved": "Desat",
+  "Saving failed: {error}": "No s’ha pogut desar: {error}",
+  "Second record": "Segon registre",
+  "Submit button": "Botó d’enviament",
+  "The forms could not be loaded": "No s’han pogut carregar els formularis",
+  "These links form a loop": "Aquests vincles formen un bucle",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Aquests dos registres no es poden vincular: els seus objectes no tenen cap relació a Twenty. Afegeix primer un camp de relació a Configuració → Model de dades.",
+  "This object has required fields a form cannot fill": "Aquest objecte té camps obligatoris que un formulari no pot omplir",
+  "This object no longer exists": "Aquest objecte ja no existeix",
+  "Tick Published and save to get the public link and the embed code.": "Marca Publicat i desa per obtenir l’enllaç públic i el codi d’inserció.",
+  "Ticked": "Marcat",
+  "Title": "Títol",
+  "Try again": "Torna-ho a provar",
+  "Unsaved changes": "Canvis sense desar",
+  "Untitled form": "Formulari sense títol",
+  "Update when {field} matches": "Actualitza quan {field} coincideixi",
+  "Used to match": "Utilitzat per a la coincidència",
+  "via {relation}": "mitjançant {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. La creació d’aquest registre falla tret que un vincle els ompli.",
+  "{object} – section title": "{object} – títol de la secció",
+  "commandMenuItem.label": {
+    "Open in form builder": "Obre al creador de formularis"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Obre al creador de formularis"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definició",
+    "Name": "Nom",
+    "Published": "Publicat"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Creador de formularis",
+    "Forms": "Formularis"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formularis"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formulari"
+  },
+  "pageLayout.name": {
+    "Form builder": "Creador de formularis"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Creador de formularis",
+    "Home": "Inici",
+    "Timeline": "Cronologia"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Camps",
+    "Timeline": "Cronologia"
+  },
+  "view.name": {
+    "All forms": "Tots els formularis"
+  }
+}

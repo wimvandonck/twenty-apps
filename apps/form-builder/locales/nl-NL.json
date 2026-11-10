@@ -1,0 +1,107 @@
+{
+  "A hidden field is not shown to visitors and always gets its default value.": "Een verborgen veld wordt niet aan bezoekers getoond en krijgt altijd zijn standaardwaarde.",
+  "Add a record": "Een record toevoegen",
+  "Add at least one visible field before publishing.": "Voeg minstens één zichtbaar veld toe voordat je publiceert.",
+  "Add link": "Koppeling toevoegen",
+  "Add record": "Record toevoegen",
+  "Always create": "Altijd aanmaken",
+  "Choose a form": "Kies een formulier",
+  "Choose a record": "Kies een record",
+  "Choose an object": "Kies een object",
+  "Connect the records of one submission, for example the new person to the new company.": "Koppel de records van één inzending aan elkaar, bijvoorbeeld de nieuwe persoon aan het nieuwe bedrijf.",
+  "Copied": "Gekopieerd",
+  "Copy embed code": "Insluitcode kopiëren",
+  "Copy link": "Link kopiëren",
+  "Create form": "Formulier aanmaken",
+  "Creating the form failed: {error}": "Formulier aanmaken mislukt: {error}",
+  "Default value": "Standaardwaarde",
+  "Description": "Beschrijving",
+  "Draft": "Concept",
+  "Embed code": "Insluitcode",
+  "Field": "Veld",
+  "Fields Twenty requires are always included; system fields are never offered.": "Velden die Twenty vereist, zijn altijd opgenomen; systeemvelden worden nooit aangeboden.",
+  "First record": "Eerste record",
+  "Fix the link loop before saving.": "Los de lus in de koppelingen op voordat je opslaat.",
+  "Form": "Formulier",
+  "Form saved": "Formulier opgeslagen",
+  "Form saved and live": "Formulier opgeslagen en live",
+  "Form settings and sharing": "Formulierinstellingen en delen",
+  "Hidden": "Verborgen",
+  "Label on the form": "Label op het formulier",
+  "Linked through": "Gekoppeld via",
+  "Links between records": "Koppelingen tussen records",
+  "Live": "Live",
+  "Message after submitting": "Bericht na het verzenden",
+  "Name of the new form": "Naam van het nieuwe formulier",
+  "New form": "Nieuw formulier",
+  "No default": "Geen standaardwaarde",
+  "No form yet": "Nog geen formulier",
+  "Not available": "Niet beschikbaar",
+  "Not live yet": "Nog niet live",
+  "On submit": "Bij verzenden",
+  "Paste this into the HTML of any page. The form follows the visitor’s language.": "Plak dit in de HTML van een pagina. Het formulier volgt de taal van de bezoeker.",
+  "Public link": "Openbare link",
+  "Published – anyone with the link can submit": "Gepubliceerd – iedereen met de link kan het formulier invullen",
+  "Records and fields": "Records en velden",
+  "Remove": "Verwijderen",
+  "Remove record": "Record verwijderen",
+  "Required": "Verplicht",
+  "Required by Twenty": "Verplicht door Twenty",
+  "Save": "Opslaan",
+  "Saved": "Opgeslagen",
+  "Saving failed: {error}": "Opslaan mislukt: {error}",
+  "Second record": "Tweede record",
+  "Submit button": "Verzendknop",
+  "The forms could not be loaded": "De formulieren konden niet worden geladen",
+  "These links form a loop": "Deze koppelingen vormen een lus",
+  "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Deze twee records kunnen niet worden gekoppeld: hun objecten hebben geen relatie in Twenty. Voeg eerst een relatieveld toe in Instellingen → Datamodel.",
+  "This object has required fields a form cannot fill": "Dit object heeft verplichte velden die een formulier niet kan invullen",
+  "This object no longer exists": "Dit object bestaat niet meer",
+  "Tick Published and save to get the public link and the embed code.": "Vink Gepubliceerd aan en sla op om de openbare link en de insluitcode te krijgen.",
+  "Ticked": "Aangevinkt",
+  "Title": "Titel",
+  "Try again": "Opnieuw proberen",
+  "Unsaved changes": "Niet-opgeslagen wijzigingen",
+  "Untitled form": "Naamloos formulier",
+  "Update when {field} matches": "Bijwerken wanneer {field} overeenkomt",
+  "Used to match": "Gebruikt om te matchen",
+  "via {relation}": "via {relation}",
+  "{fields}. Creating this record fails unless a link fills them.": "{fields}. Dit record aanmaken mislukt, tenzij een koppeling ze invult.",
+  "{object} – section title": "{object} – sectietitel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Openen in formulierbouwer"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Openen in formulierbouwer"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definitie",
+    "Name": "Naam",
+    "Published": "Gepubliceerd"
+  },
+  "navigationMenuItem.name": {
+    "Form builder": "Formulierbouwer",
+    "Forms": "Formulieren"
+  },
+  "objectMetadata.labelPlural": {
+    "Forms": "Formulieren"
+  },
+  "objectMetadata.labelSingular": {
+    "Form": "Formulier"
+  },
+  "pageLayout.name": {
+    "Form builder": "Formulierbouwer"
+  },
+  "pageLayoutTab.title": {
+    "Form builder": "Formulierbouwer",
+    "Home": "Start",
+    "Timeline": "Tijdlijn"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Velden",
+    "Timeline": "Tijdlijn"
+  },
+  "view.name": {
+    "All forms": "Alle formulieren"
+  }
+}
