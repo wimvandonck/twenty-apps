@@ -23,7 +23,7 @@ Authenticate against the workspace without prompts:
 printf '%s' "$TWENTY_API_KEY" | twenty auth login --with-token --url "$TWENTY_URL" --name dev
 ```
 
-Then, from the app folder:
+Then, from the app folder (in Claude Code cloud sessions, `repo.yarnpkg.com` is unreachable, so first run `export COREPACK_NPM_REGISTRY=https://registry.npmjs.org` to let Corepack fetch Yarn from npm):
 
 ```bash
 yarn install

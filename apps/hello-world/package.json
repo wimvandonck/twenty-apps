@@ -19,7 +19,6 @@
     "test:watch": "vitest",
     "test:unit": "vitest run --config vitest.unit.config.ts"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "^24.7.2",
     "@types/react": "^19.0.0",
