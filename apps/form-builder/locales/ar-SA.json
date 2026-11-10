@@ -68,6 +68,12 @@
   "via {relation}": "عبر {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. سيفشل إنشاء هذا السجل ما لم يعبّئها رابط.",
   "{object} – section title": "{object} – عنوان القسم",
+  "commandMenuItem.label": {
+    "Open in form builder": "فتح في منشئ النماذج"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "فتح في منشئ النماذج"
+  },
   "fieldMetadata.label": {
     "Definition": "التعريف",
     "Name": "الاسم",

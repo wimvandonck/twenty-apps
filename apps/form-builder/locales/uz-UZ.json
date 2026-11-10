@@ -68,6 +68,12 @@
   "via {relation}": "{relation} orqali",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Bog‘lanish ularni to‘ldirmasa, bu yozuvni yaratib bo‘lmaydi.",
   "{object} – section title": "{object} – bo‘lim sarlavhasi",
+  "commandMenuItem.label": {
+    "Open in form builder": "Forma konstruktorida ochish"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Forma konstruktorida ochish"
+  },
   "fieldMetadata.label": {
     "Definition": "Ta’rif",
     "Name": "Nomi",

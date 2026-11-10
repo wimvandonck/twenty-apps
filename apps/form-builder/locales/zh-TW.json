@@ -68,6 +68,12 @@
   "via {relation}": "透過 {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}。除非由連結填入，否則建立此記錄會失敗。",
   "{object} – section title": "{object} – 區段標題",
+  "commandMenuItem.label": {
+    "Open in form builder": "在表單建立工具中開啟"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "在表單建立工具中開啟"
+  },
   "fieldMetadata.label": {
     "Definition": "定義",
     "Name": "名稱",

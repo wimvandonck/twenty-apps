@@ -68,6 +68,12 @@
   "via {relation}": "qua {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Việc tạo bản ghi này sẽ thất bại trừ khi một liên kết điền các trường đó.",
   "{object} – section title": "{object} – tiêu đề phần",
+  "commandMenuItem.label": {
+    "Open in form builder": "Mở trong trình tạo biểu mẫu"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Mở trong trình tạo biểu mẫu"
+  },
   "fieldMetadata.label": {
     "Definition": "Định nghĩa",
     "Name": "Tên",

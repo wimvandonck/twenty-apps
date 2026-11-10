@@ -68,6 +68,12 @@
   "via {relation}": "через {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Створити цей запис не вдасться, якщо їх не заповнить зв’язок.",
   "{object} – section title": "{object} – заголовок розділу",
+  "commandMenuItem.label": {
+    "Open in form builder": "Відкрити в конструкторі форм"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Відкрити в конструкторі форм"
+  },
   "fieldMetadata.label": {
     "Definition": "Визначення",
     "Name": "Назва",

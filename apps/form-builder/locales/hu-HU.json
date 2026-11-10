@@ -68,6 +68,12 @@
   "via {relation}": "ezen keresztül: {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. A rekord létrehozása sikertelen lesz, hacsak egy kapcsolat ki nem tölti őket.",
   "{object} – section title": "{object} – szakaszcím",
+  "commandMenuItem.label": {
+    "Open in form builder": "Megnyitás az űrlapkészítőben"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Megnyitás az űrlapkészítőben"
+  },
   "fieldMetadata.label": {
     "Definition": "Definíció",
     "Name": "Név",

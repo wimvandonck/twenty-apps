@@ -68,6 +68,12 @@
   "via {relation}": "通过 {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}。除非由关联填写，否则创建此记录会失败。",
   "{object} – section title": "{object} – 分区标题",
+  "commandMenuItem.label": {
+    "Open in form builder": "在表单生成器中打开"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "在表单生成器中打开"
+  },
   "fieldMetadata.label": {
     "Definition": "定义",
     "Name": "名称",

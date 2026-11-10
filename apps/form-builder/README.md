@@ -4,7 +4,7 @@ A Twenty app for building public forms that create or update linked records, and
 
 # Building a form
 
-Open **Form builder** in the sidebar. It is a full page: pick a form at the top, or name a new one and choose **Create form**.
+Open **Form builder** in the sidebar. It is a full page: pick a form at the top, or name a new one and choose **Create form**. From a form's record (or with one form selected in the list), the **Open in form builder** button takes you straight to that form. The builder has three tabs:
 
 - **Records and fields** – add the objects a submission writes. Each record is always created, or updates an existing record when a text or email field you choose matches. Per field you set the label, a default value, whether it is required and whether it is hidden. Fields Twenty requires are always included and required; system and read-only fields are never offered.
 - **Links between records** – choose two records and the builder finds how they relate: through a relation field in either direction, or through a junction object such as note targets. When there are several ways, you pick one. Two objects without any relation in Twenty cannot be linked until you add a relation field in the data model.

@@ -68,6 +68,12 @@
   "via {relation}": "através de {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. A criação deste registo falha, a menos que uma ligação os preencha.",
   "{object} – section title": "{object} – título da secção",
+  "commandMenuItem.label": {
+    "Open in form builder": "Abrir no criador de formulários"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Abrir no criador de formulários"
+  },
   "fieldMetadata.label": {
     "Definition": "Definição",
     "Name": "Nome",

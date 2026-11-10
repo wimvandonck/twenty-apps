@@ -68,6 +68,12 @@
   "via {relation}": "{relation} 経由",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}。リンクで値が設定されない限り、このレコードの作成は失敗します。",
   "{object} – section title": "{object} – セクションのタイトル",
+  "commandMenuItem.label": {
+    "Open in form builder": "フォームビルダーで開く"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "フォームビルダーで開く"
+  },
   "fieldMetadata.label": {
     "Definition": "定義",
     "Name": "名前",

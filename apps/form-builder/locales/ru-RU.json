@@ -68,6 +68,12 @@
   "via {relation}": "через {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Создать эту запись не получится, если их не заполнит связь.",
   "{object} – section title": "{object} – заголовок раздела",
+  "commandMenuItem.label": {
+    "Open in form builder": "Открыть в конструкторе форм"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Открыть в конструкторе форм"
+  },
   "fieldMetadata.label": {
     "Definition": "Определение",
     "Name": "Название",

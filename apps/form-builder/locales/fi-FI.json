@@ -68,6 +68,12 @@
   "via {relation}": "kautta: {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Tietueen luonti epäonnistuu, ellei linkki täytä niitä.",
   "{object} – section title": "{object} – osion otsikko",
+  "commandMenuItem.label": {
+    "Open in form builder": "Avaa lomaketyökalussa"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Avaa lomaketyökalussa"
+  },
   "fieldMetadata.label": {
     "Definition": "Määritys",
     "Name": "Nimi",

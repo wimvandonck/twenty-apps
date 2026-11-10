@@ -68,6 +68,12 @@
   "via {relation}": "über {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Das Erstellen dieses Datensatzes schlägt fehl, sofern keine Verknüpfung sie ausfüllt.",
   "{object} – section title": "{object} – Abschnittstitel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Im Formular-Builder öffnen"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Im Formular-Builder öffnen"
+  },
   "fieldMetadata.label": {
     "Definition": "Definition",
     "Name": "Name",

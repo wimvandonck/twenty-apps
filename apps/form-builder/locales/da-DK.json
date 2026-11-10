@@ -68,6 +68,12 @@
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Oprettelsen af denne post mislykkes, medmindre et link udfylder dem.",
   "{object} – section title": "{object} – afsnitstitel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Åbn i formularbygger"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Åbn i formularbygger"
+  },
   "fieldMetadata.label": {
     "Definition": "Definition",
     "Name": "Navn",

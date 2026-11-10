@@ -68,6 +68,12 @@
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Dit record aanmaken mislukt, tenzij een koppeling ze invult.",
   "{object} – section title": "{object} – sectietitel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Openen in formulierbouwer"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Openen in formulierbouwer"
+  },
   "fieldMetadata.label": {
     "Definition": "Definitie",
     "Name": "Naam",

@@ -68,6 +68,12 @@
   "via {relation}": "преко {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Креирање овог записа неће успети осим ако их веза не попуни.",
   "{object} – section title": "{object} – наслов одељка",
+  "commandMenuItem.label": {
+    "Open in form builder": "Отвори у креатору образаца"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Отвори у креатору образаца"
+  },
   "fieldMetadata.label": {
     "Definition": "Дефиниција",
     "Name": "Назив",

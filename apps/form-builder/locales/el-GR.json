@@ -68,6 +68,12 @@
   "via {relation}": "μέσω {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Η δημιουργία αυτής της εγγραφής αποτυγχάνει, εκτός αν τα συμπληρώσει μια σύνδεση.",
   "{object} – section title": "{object} – τίτλος ενότητας",
+  "commandMenuItem.label": {
+    "Open in form builder": "Άνοιγμα στον δημιουργό φορμών"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Άνοιγμα στον δημιουργό φορμών"
+  },
   "fieldMetadata.label": {
     "Definition": "Ορισμός",
     "Name": "Όνομα",

@@ -68,6 +68,12 @@
   "via {relation}": "{relation}-ի միջոցով",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}։ Այս գրառման ստեղծումը կձախողվի, եթե կապը դրանք չլրացնի։",
   "{object} – section title": "{object} – բաժնի վերնագիր",
+  "commandMenuItem.label": {
+    "Open in form builder": "Բացել ձևերի կառուցիչում"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Բացել ձևերի կառուցիչում"
+  },
   "fieldMetadata.label": {
     "Definition": "Սահմանում",
     "Name": "Անվանում",

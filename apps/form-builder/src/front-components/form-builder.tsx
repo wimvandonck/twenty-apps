@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { RestApiClient } from 'twenty-client-sdk/rest';
 import { defineFrontComponent } from 'twenty-sdk/define';
-import { enqueueSnackbar, useTranslate } from 'twenty-sdk/front-component';
+import { enqueueSnackbar, useLocation, useTranslate } from 'twenty-sdk/front-component';
 import { Callout } from 'twenty-ui/components/feedback';
 import { MainButton } from 'twenty-ui/components/input';
 import { Status } from 'twenty-ui/primitives/data-display';
 import { Loader } from 'twenty-ui/primitives/feedback';
 import { Button, Field, Input } from 'twenty-ui/primitives/input';
-import { Heading, Text } from 'twenty-ui/primitives/typography';
+import { Tabs } from 'twenty-ui/primitives/navigation';
+import { Text } from 'twenty-ui/primitives/typography';
 import { useTheme } from 'twenty-ui/theme';
 
 import { EMPTY_FORM_DEFINITION } from 'src/constants/empty-form-definition';
@@ -15,7 +16,6 @@ import { FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER } from 'src/constants
 import { LinksSection } from 'src/front-components/components/links-section';
 import { OptionSelect } from 'src/front-components/components/option-select';
 import { RecordCard } from 'src/front-components/components/record-card';
-import { SectionCard } from 'src/front-components/components/section-card';
 import { SettingsSection } from 'src/front-components/components/settings-section';
 import { fetchForms } from 'src/twenty-client/fetch-forms';
 import { fetchObjectMetadata } from 'src/twenty-client/fetch-object-metadata';
@@ -40,6 +40,8 @@ const FormBuilder = () => {
   const theme = useTheme();
   const { t } = useTranslate();
   const client = useMemo(() => new RestApiClient(), []);
+  // Set when the page is opened from a form record's button.
+  const requestedFormId = new URLSearchParams(useLocation()?.search ?? '').get('formId');
 
   const [loadState, setLoadState] = useState<LoadState>({ status: 'LOADING' });
   const [forms, setForms] = useState<FormSummary[]>([]);
@@ -50,6 +52,7 @@ const FormBuilder = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [newFormName, setNewFormName] = useState('');
   const [objectToAdd, setObjectToAdd] = useState('');
+  const [tab, setTab] = useState('records');
 
   const openForm = useCallback((form: FormSummary, objects: ObjectMetadata[]) => {
     const stored = parseFormDefinition(form.definition) ?? { ...EMPTY_FORM_DEFINITION, title: form.name };
@@ -67,8 +70,8 @@ const FormBuilder = () => {
 
     try {
       const [objects, loadedForms] = await Promise.all([fetchObjectMetadata(), fetchForms(client)]);
-      const lastFormId = localStorage.getItem(LAST_FORM_KEY);
-      const initialForm = loadedForms.find(({ id }) => id === lastFormId) ?? loadedForms[0];
+      const preferredFormId = requestedFormId ?? localStorage.getItem(LAST_FORM_KEY);
+      const initialForm = loadedForms.find(({ id }) => id === preferredFormId) ?? loadedForms[0];
 
       setForms(loadedForms);
 
@@ -80,7 +83,7 @@ const FormBuilder = () => {
     } catch (error) {
       setLoadState({ status: 'ERROR', message: error instanceof Error ? error.message : String(error) });
     }
-  }, [client, openForm]);
+  }, [client, openForm, requestedFormId]);
 
   useEffect(() => {
     void load();
@@ -177,7 +180,13 @@ const FormBuilder = () => {
     }
   };
 
-  const columnStyle = { display: 'flex', flexDirection: 'column' as const, gap: theme.spacing[4], minWidth: 0 };
+  const panelStyle = {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: theme.spacing[4],
+    minWidth: 0,
+    paddingTop: theme.spacing[4],
+  };
 
   return (
     <main
@@ -248,49 +257,49 @@ const FormBuilder = () => {
           title={t('No form yet')}
         />
       ) : (
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
-            gap: theme.spacing[4],
-            alignItems: 'start',
-          }}
-        >
-          <div style={columnStyle}>
-            <Heading level={2}>{t('Records and fields')}</Heading>
-            <Text color="secondary">
-              {t('Fields Twenty requires are always included; system fields are never offered.')}
-            </Text>
-            {definition.records.map((record) => (
-              <RecordCard
-                key={record.key}
-                record={record}
-                object={objects.find(({ nameSingular }) => nameSingular === record.objectNameSingular)}
-                onChange={(next) =>
-                  applyDefinition({
-                    records: definition.records.map((current) => (current.key === record.key ? next : current)),
-                  })
-                }
-                onRemove={() => applyDefinition({ records: definition.records.filter(({ key }) => key !== record.key) })}
-              />
-            ))}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[2], alignItems: 'end' }}>
-              <div style={{ flex: '1 1 200px', minWidth: 0, maxWidth: 320 }}>
-                <OptionSelect
-                  label={t('Add a record')}
-                  value={objectToAdd}
-                  options={selectableObjects.map(({ nameSingular, labelSingular }) => ({ value: nameSingular, label: labelSingular }))}
-                  placeholder={t('Choose an object')}
-                  onChange={setObjectToAdd}
+        <Tabs.Root value={tab} onValueChange={(value) => setTab(String(value))}>
+          <Tabs.List aria-label={t('Form')}>
+            <Tabs.Tab value="records">{t('Records and fields')}</Tabs.Tab>
+            <Tabs.Tab value="links">{t('Links between records')}</Tabs.Tab>
+            <Tabs.Tab value="settings">{t('Form settings and sharing')}</Tabs.Tab>
+            <Tabs.Indicator />
+          </Tabs.List>
+          <Tabs.Panel value="records">
+            <div style={panelStyle}>
+              <Text color="secondary">
+                {t('Fields Twenty requires are always included; system fields are never offered.')}
+              </Text>
+              {definition.records.map((record) => (
+                <RecordCard
+                  key={record.key}
+                  record={record}
+                  object={objects.find(({ nameSingular }) => nameSingular === record.objectNameSingular)}
+                  onChange={(next) =>
+                    applyDefinition({
+                      records: definition.records.map((current) => (current.key === record.key ? next : current)),
+                    })
+                  }
+                  onRemove={() => applyDefinition({ records: definition.records.filter(({ key }) => key !== record.key) })}
                 />
+              ))}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[2], alignItems: 'end' }}>
+                <div style={{ flex: '1 1 200px', minWidth: 0, maxWidth: 320 }}>
+                  <OptionSelect
+                    label={t('Add a record')}
+                    value={objectToAdd}
+                    options={selectableObjects.map(({ nameSingular, labelSingular }) => ({ value: nameSingular, label: labelSingular }))}
+                    placeholder={t('Choose an object')}
+                    onChange={setObjectToAdd}
+                  />
+                </div>
+                <Button onClick={addRecord} disabled={objectToAdd === ''}>
+                  {t('Add record')}
+                </Button>
               </div>
-              <Button onClick={addRecord} disabled={objectToAdd === ''}>
-                {t('Add record')}
-              </Button>
             </div>
-          </div>
-          <div style={columnStyle}>
-            <SectionCard title={t('Links between records')}>
+          </Tabs.Panel>
+          <Tabs.Panel value="links">
+            <div style={{ ...panelStyle, maxWidth: 880 }}>
               <LinksSection
                 key={formId}
                 records={definition.records}
@@ -299,8 +308,10 @@ const FormBuilder = () => {
                 hasCycle={hasCycle}
                 onChange={(links) => applyDefinition({ links })}
               />
-            </SectionCard>
-            <SectionCard title={t('Form settings and sharing')}>
+            </div>
+          </Tabs.Panel>
+          <Tabs.Panel value="settings">
+            <div style={{ ...panelStyle, maxWidth: 880 }}>
               <SettingsSection
                 definition={definition}
                 isPublished={isPublished}
@@ -309,9 +320,9 @@ const FormBuilder = () => {
                 onDefinitionChange={applyDefinition}
                 onPublishedChange={setIsPublished}
               />
-            </SectionCard>
-          </div>
-        </div>
+            </div>
+          </Tabs.Panel>
+        </Tabs.Root>
       )}
     </main>
   );

@@ -68,6 +68,12 @@
   "via {relation}": "از طریق {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. ایجاد این رکورد ناموفق خواهد بود مگر اینکه یک پیوند آن‌ها را پر کند.",
   "{object} – section title": "{object} – عنوان بخش",
+  "commandMenuItem.label": {
+    "Open in form builder": "باز کردن در فرم‌ساز"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "باز کردن در فرم‌ساز"
+  },
   "fieldMetadata.label": {
     "Definition": "تعریف",
     "Name": "نام",

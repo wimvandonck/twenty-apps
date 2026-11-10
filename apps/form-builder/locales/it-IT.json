@@ -68,6 +68,12 @@
   "via {relation}": "tramite {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. La creazione di questo record non riesce, a meno che un collegamento non li compili.",
   "{object} – section title": "{object} – titolo della sezione",
+  "commandMenuItem.label": {
+    "Open in form builder": "Apri in Creazione moduli"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Apri in Creazione moduli"
+  },
   "fieldMetadata.label": {
     "Definition": "Definizione",
     "Name": "Nome",

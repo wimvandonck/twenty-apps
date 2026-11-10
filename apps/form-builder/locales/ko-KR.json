@@ -68,6 +68,12 @@
   "via {relation}": "{relation} 경유",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. 연결이 값을 채우지 않으면 이 레코드를 생성할 수 없습니다.",
   "{object} – section title": "{object} – 섹션 제목",
+  "commandMenuItem.label": {
+    "Open in form builder": "양식 빌더에서 열기"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "양식 빌더에서 열기"
+  },
   "fieldMetadata.label": {
     "Definition": "정의",
     "Name": "이름",

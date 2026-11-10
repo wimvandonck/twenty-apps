@@ -68,6 +68,12 @@
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Det går inte att skapa posten om inte en länk fyller i dem.",
   "{object} – section title": "{object} – avsnittsrubrik",
+  "commandMenuItem.label": {
+    "Open in form builder": "Öppna i formulärbyggaren"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Öppna i formulärbyggaren"
+  },
   "fieldMetadata.label": {
     "Definition": "Definition",
     "Name": "Namn",

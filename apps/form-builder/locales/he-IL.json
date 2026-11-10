@@ -68,6 +68,12 @@
   "via {relation}": "דרך {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. יצירת הרשומה תיכשל אלא אם קישור ימלא אותם.",
   "{object} – section title": "{object} – כותרת המקטע",
+  "commandMenuItem.label": {
+    "Open in form builder": "פתיחה בבונה הטפסים"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "פתיחה בבונה הטפסים"
+  },
   "fieldMetadata.label": {
     "Definition": "הגדרה",
     "Name": "שם",

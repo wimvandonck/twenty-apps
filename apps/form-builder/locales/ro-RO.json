@@ -68,6 +68,12 @@
   "via {relation}": "prin {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Crearea acestei înregistrări eșuează dacă o legătură nu le completează.",
   "{object} – section title": "{object} – titlul secțiunii",
+  "commandMenuItem.label": {
+    "Open in form builder": "Deschide în generatorul de formulare"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Deschide în generatorul de formulare"
+  },
   "fieldMetadata.label": {
     "Definition": "Definiție",
     "Name": "Nume",

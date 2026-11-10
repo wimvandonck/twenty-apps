@@ -68,6 +68,12 @@
   "via {relation}": "mitjançant {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. La creació d’aquest registre falla tret que un vincle els ompli.",
   "{object} – section title": "{object} – títol de la secció",
+  "commandMenuItem.label": {
+    "Open in form builder": "Obre al creador de formularis"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Obre al creador de formularis"
+  },
   "fieldMetadata.label": {
     "Definition": "Definició",
     "Name": "Nom",

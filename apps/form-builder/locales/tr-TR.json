@@ -68,6 +68,12 @@
   "via {relation}": "{relation} üzerinden",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Bir bağlantı bunları doldurmadıkça bu kaydın oluşturulması başarısız olur.",
   "{object} – section title": "{object} – bölüm başlığı",
+  "commandMenuItem.label": {
+    "Open in form builder": "Form oluşturucuda aç"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Form oluşturucuda aç"
+  },
   "fieldMetadata.label": {
     "Definition": "Tanım",
     "Name": "Ad",

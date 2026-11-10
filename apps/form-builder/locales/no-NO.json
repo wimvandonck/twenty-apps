@@ -68,6 +68,12 @@
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Opprettelsen av denne posten mislykkes med mindre en kobling fyller dem ut.",
   "{object} – section title": "{object} – seksjonstittel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Åpne i skjemabygger"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Åpne i skjemabygger"
+  },
   "fieldMetadata.label": {
     "Definition": "Definisjon",
     "Name": "Navn",

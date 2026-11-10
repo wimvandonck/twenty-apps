@@ -68,6 +68,12 @@
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Die skep van hierdie rekord misluk tensy ’n skakel hulle invul.",
   "{object} – section title": "{object} – afdelingstitel",
+  "commandMenuItem.label": {
+    "Open in form builder": "Maak oop in vormbouer"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Maak oop in vormbouer"
+  },
   "fieldMetadata.label": {
     "Definition": "Definisie",
     "Name": "Naam",

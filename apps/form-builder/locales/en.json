@@ -68,6 +68,12 @@
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Creating this record fails unless a link fills them.",
   "{object} – section title": "{object} – section title",
+  "commandMenuItem.label": {
+    "Open in form builder": "Open in form builder"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Open in form builder"
+  },
   "fieldMetadata.description": {
     "Name of the form": "Name of the form",
     "Only published forms are reachable from their public link": "Only published forms are reachable from their public link",

@@ -68,6 +68,12 @@
   "via {relation}": "přes {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Vytvoření tohoto záznamu selže, pokud je nevyplní propojení.",
   "{object} – section title": "{object} – název oddílu",
+  "commandMenuItem.label": {
+    "Open in form builder": "Otevřít v tvůrci formulářů"
+  },
+  "commandMenuItem.shortLabel": {
+    "Open in form builder": "Otevřít v tvůrci formulářů"
+  },
   "fieldMetadata.label": {
     "Definition": "Definice",
     "Name": "Název",
