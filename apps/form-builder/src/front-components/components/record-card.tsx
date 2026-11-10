@@ -48,8 +48,8 @@ export const RecordCard = ({ record, object, onChange, onRemove }: RecordCardPro
 
         const next = { ...field, ...changes };
 
-        // Without a default there is nothing to write for a hidden field.
-        return next.defaultValue === undefined ? { ...next, hidden: false } : next;
+        // A required field can only stay hidden while a default fills it.
+        return next.required && next.defaultValue === undefined ? { ...next, hidden: false } : next;
       }),
     });
 
@@ -167,7 +167,7 @@ export const RecordCard = ({ record, object, onChange, onRemove }: RecordCardPro
                       label={t('Hidden')}
                       hideLabel
                       checked={field.hidden === true}
-                      disabled={field.defaultValue === undefined}
+                      disabled={field.required && field.defaultValue === undefined}
                       onChange={(hidden) => updateField(field.name, { hidden })}
                     />
                   </>

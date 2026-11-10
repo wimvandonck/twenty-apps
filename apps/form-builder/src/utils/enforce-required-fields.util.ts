@@ -4,7 +4,8 @@ import { isRequiredField } from 'src/utils/is-required-field.util';
 import { isSelectableField } from 'src/utils/is-selectable-field.util';
 import { toFormField } from 'src/utils/to-form-field.util';
 
-// Rebuilds a record's fields in the object's field order, dropping fields
+// Rebuilds a record's fields in the object's field order, keeping each
+// field's own settings (label, default, hidden), dropping fields
 // that no longer exist or became system fields, and making sure every field
 // Twenty requires, and the field an update matches on, is present and required.
 export const enforceRequiredFields = (
@@ -25,11 +26,17 @@ export const enforceRequiredFields = (
       return [];
     }
 
+    const required = isForced || selected?.required === true;
+    const hasDefault = selected?.defaultValue !== undefined;
+
     return [
       {
         ...toFormField(metadata),
         label: selected?.label ?? metadata.label,
-        required: isForced || selected?.required === true,
+        required,
+        ...(hasDefault ? { defaultValue: selected.defaultValue } : {}),
+        // A required field can only be hidden when a default fills it.
+        ...(selected?.hidden === true && (hasDefault || !required) ? { hidden: true } : {}),
       },
     ];
   });

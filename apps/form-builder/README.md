@@ -10,7 +10,7 @@ Open **Form builder** in the sidebar. It is a full page: pick a form at the top,
 - **Links between records** – choose two records and the builder finds how they relate: through a relation field in either direction, or through a junction object such as note targets. When there are several ways, you pick one. Two objects without any relation in Twenty cannot be linked until you add a relation field in the data model.
 - **Form settings and sharing** – set the title and messages, tick **Published**, save, and copy the public link or the embed code.
 
-A default value prefills a visible field. A hidden field is not shown to visitors and always gets its default, whatever is posted. Only fields with a default can be hidden.
+A default value prefills a visible field. A hidden field is not shown to visitors and gets its default, if it has one, whatever is posted. A required field can only be hidden once it has a default.
 
 # Languages
 

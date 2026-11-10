@@ -62,6 +62,27 @@ describe('enforceRequiredFields', () => {
   });
 });
 
+describe('enforceRequiredFields settings', () => {
+  it('keeps the default value and hidden flag of a field', () => {
+    const record = enforceRequiredFields(
+      {
+        ...DEFINITION.records[0],
+        fields: [{ name: 'nickname', label: 'Nick', type: 'TEXT', required: true, defaultValue: 'Web', hidden: true }],
+      },
+      PERSON,
+    );
+
+    expect(record.fields.find(({ name }) => name === 'nickname')).toEqual({
+      name: 'nickname',
+      label: 'Nick',
+      type: 'TEXT',
+      required: true,
+      defaultValue: 'Web',
+      hidden: true,
+    });
+  });
+});
+
 describe('getBlockingFields', () => {
   it('lists required fields a form cannot fill', () => {
     const object = { ...COMPANY, fields: [field({ name: 'payload', type: 'RAW_JSON', isNullable: false })] };

@@ -55,8 +55,8 @@ const parseField = (value: unknown): FormField | null => {
     required: value.required === true,
     ...(options ? { options } : {}),
     ...(defaultValue !== undefined ? { defaultValue } : {}),
-    // A hidden field without a default would never get a value.
-    ...(value.hidden === true && defaultValue !== undefined ? { hidden: true } : {}),
+    // A required field can only be hidden when a default fills it.
+    ...(value.hidden === true && (defaultValue !== undefined || value.required !== true) ? { hidden: true } : {}),
   };
 };
 

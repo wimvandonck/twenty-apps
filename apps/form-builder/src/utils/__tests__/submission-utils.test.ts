@@ -56,14 +56,15 @@ describe('parseFormDefinition', () => {
     expect(parsed?.links).toEqual([DEFINITION.links[0], NOTE_LINK]);
   });
 
-  it('keeps defaults and only hides fields that have one', () => {
+  it('keeps defaults and never hides a required field without one', () => {
     const parsed = parseFormDefinition({
       records: [
         {
           ...COMPANY_RECORD,
           fields: [
             { name: 'a', type: 'TEXT', hidden: true, defaultValue: 'x' },
-            { name: 'b', type: 'TEXT', hidden: true },
+            { name: 'b', type: 'TEXT', hidden: true, required: true },
+            { name: 'd', type: 'TEXT', hidden: true },
             { name: 'c', type: 'FULL_NAME', defaultValue: 'x' },
           ],
         },
@@ -73,6 +74,7 @@ describe('parseFormDefinition', () => {
     expect(parsed?.records[0].fields.map(({ hidden, defaultValue }) => ({ hidden, defaultValue }))).toEqual([
       { hidden: true, defaultValue: 'x' },
       { hidden: undefined, defaultValue: undefined },
+      { hidden: true, defaultValue: undefined },
       { hidden: undefined, defaultValue: undefined },
     ]);
   });
