@@ -2,7 +2,7 @@ import { defineView } from 'twenty-sdk/define';
 
 export default defineView({
   universalIdentifier: 'f8d73349-0ccb-414a-8e6f-77e81d86ebd9',
-  name: 'form-record-page-fields',
+  name: 'Form fields',
   objectUniversalIdentifier: '483eccf6-59f8-4cac-a368-bf1d06ad7e06',
   type: 'FIELDS_WIDGET',
   icon: 'IconListDetails',

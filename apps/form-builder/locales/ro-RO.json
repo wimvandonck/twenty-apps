@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Un câmp ascuns nu este afișat vizitatorilor și primește întotdeauna valoarea sa implicită.",
+  "Add a field": "Adaugă un câmp",
   "Add a record": "Adaugă o înregistrare",
+  "Add a record and a field to see the form here.": "Adăugați o înregistrare și un câmp pentru a vedea formularul aici.",
   "Add at least one visible field before publishing.": "Adăugați cel puțin un câmp vizibil înainte de a publica.",
   "Add link": "Adaugă legătură",
-  "Add record": "Adaugă înregistrarea",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Adăugați înregistrările pe care o trimitere le creează sau le actualizează, apoi câmpurile de solicitat. Câmpurile cerute de Twenty sunt adăugate automat.",
   "Always create": "Creează întotdeauna",
+  "Cancel": "Anulează",
+  "Choose New form to create your first form.": "Alegeți Formular nou pentru a crea primul formular.",
+  "Choose a field": "Alegeți un câmp",
   "Choose a form": "Alegeți un formular",
   "Choose a record": "Alegeți o înregistrare",
   "Choose an object": "Alegeți un obiect",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Crearea formularului a eșuat: {error}",
   "Default value": "Valoare implicită",
   "Description": "Descriere",
+  "Discard changes": "Renunță la modificări",
   "Draft": "Ciornă",
   "Embed code": "Cod de încorporare",
   "Field": "Câmp",
-  "Fields Twenty requires are always included; system fields are never offered.": "Câmpurile cerute de Twenty sunt întotdeauna incluse; câmpurile de sistem nu sunt oferite niciodată.",
+  "Fields": "Câmpuri",
   "First record": "Prima înregistrare",
   "Fix the link loop before saving.": "Corectați bucla de legături înainte de a salva.",
   "Form": "Formular",
   "Form saved": "Formular salvat",
   "Form saved and live": "Formular salvat și activ",
-  "Form settings and sharing": "Setările formularului și partajare",
   "Hidden": "Ascuns",
+  "Hidden, filled in automatically:": "Ascunse, completate automat:",
   "Label on the form": "Etichetă în formular",
   "Linked through": "Legat prin",
-  "Links between records": "Legături între înregistrări",
+  "Links": "Legături",
   "Live": "Activ",
   "Message after submitting": "Mesaj după trimitere",
+  "Move down": "Mută în jos",
+  "Move up": "Mută în sus",
   "Name of the new form": "Numele noului formular",
   "New form": "Formular nou",
   "No default": "Fără valoare implicită",
+  "No fields yet. Add the first one below.": "Încă nu există câmpuri. Adăugați primul mai jos.",
   "No form yet": "Încă nu există niciun formular",
-  "Not available": "Indisponibil",
+  "No links yet.": "Încă nu există legături.",
   "Not live yet": "Încă nu este activ",
   "On submit": "La trimitere",
+  "Open form": "Deschide formularul",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Lipiți acest cod în HTML-ul oricărei pagini. Formularul urmează limba vizitatorului.",
+  "Preview": "Previzualizare",
   "Public link": "Link public",
-  "Published – anyone with the link can submit": "Publicat – oricine are linkul îl poate trimite",
-  "Records and fields": "Înregistrări și câmpuri",
+  "Published": "Publicat",
   "Remove": "Elimină",
   "Remove record": "Elimină înregistrarea",
   "Required": "Obligatoriu",
   "Required by Twenty": "Cerut de Twenty",
   "Save": "Salvează",
+  "Save or discard your changes to switch forms.": "Salvați sau renunțați la modificări pentru a schimba formularul.",
   "Saved": "Salvat",
   "Saving failed: {error}": "Salvarea a eșuat: {error}",
   "Second record": "A doua înregistrare",
+  "Section title": "Titlul secțiunii",
+  "Set a default value first to hide a required field.": "Setați mai întâi o valoare implicită pentru a ascunde un câmp obligatoriu.",
+  "Settings": "Setări",
+  "Share": "Partajare",
   "Submit button": "Buton de trimitere",
+  "The form builder page was not found.": "Pagina generatorului de formulare nu a fost găsită.",
   "The forms could not be loaded": "Formularele nu au putut fi încărcate",
   "These links form a loop": "Aceste legături formează o buclă",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Aceste două înregistrări nu pot fi legate: obiectele lor nu au nicio relație în Twenty. Adăugați mai întâi un câmp de relație în Setări → Model de date.",
   "This object has required fields a form cannot fill": "Acest obiect are câmpuri obligatorii pe care un formular nu le poate completa",
   "This object no longer exists": "Acest obiect nu mai există",
-  "Tick Published and save to get the public link and the embed code.": "Bifați Publicat și salvați pentru a obține linkul public și codul de încorporare.",
   "Ticked": "Bifat",
   "Title": "Titlu",
   "Try again": "Încearcă din nou",
-  "Unsaved changes": "Modificări nesalvate",
+  "Turn on Published and save to get the public link and the embed code.": "Activați Publicat și salvați pentru a obține linkul public și codul de încorporare.",
   "Untitled form": "Formular fără titlu",
   "Update when {field} matches": "Actualizează când {field} se potrivește",
   "Used to match": "Folosit pentru potrivire",
   "via {relation}": "prin {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Crearea acestei înregistrări eșuează dacă o legătură nu le completează.",
-  "{object} – section title": "{object} – titlul secțiunii",
   "commandMenuItem.label": {
     "Open in form builder": "Deschide în generatorul de formulare"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Deschide în generatorul de formulare"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Numele formularului",
+    "Only published forms are reachable from their public link": "Doar formularele publicate sunt accesibile prin linkul lor public",
+    "Records, links and fields of the form, edited in the form builder": "Înregistrările, legăturile și câmpurile formularului, editate în generatorul de formulare"
   },
   "fieldMetadata.label": {
     "Definition": "Definiție",
@@ -83,6 +101,9 @@
     "Form builder": "Generator de formulare",
     "Forms": "Formulare"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Un formular încorporabil care creează sau actualizează înregistrări"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Formulare"
   },
@@ -90,6 +111,7 @@
     "Form": "Formular"
   },
   "pageLayout.name": {
+    "Form": "Formular",
     "Form builder": "Generator de formulare"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Cronologie"
   },
   "view.name": {
-    "All forms": "Toate formularele"
+    "All forms": "Toate formularele",
+    "Form fields": "Câmpurile formularului"
   }
 }

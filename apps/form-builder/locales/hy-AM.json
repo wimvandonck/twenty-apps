@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Թաքցված դաշտը չի ցուցադրվում այցելուներին և միշտ ստանում է իր լռելյայն արժեքը։",
+  "Add a field": "Ավելացնել դաշտ",
   "Add a record": "Ավելացնել գրառում",
+  "Add a record and a field to see the form here.": "Ավելացրեք գրառում և դաշտ՝ ձևն այստեղ տեսնելու համար։",
   "Add at least one visible field before publishing.": "Հրապարակելուց առաջ ավելացրեք առնվազն մեկ տեսանելի դաշտ։",
   "Add link": "Ավելացնել կապ",
-  "Add record": "Ավելացնել գրառումը",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Ավելացրեք այն գրառումները, որոնք ուղարկումը ստեղծում կամ թարմացնում է, ապա՝ հարցվող դաշտերը։ Twenty-ի պահանջած դաշտերն ավելացվում են ինքնաշխատ։",
   "Always create": "Միշտ ստեղծել",
+  "Cancel": "Չեղարկել",
+  "Choose New form to create your first form.": "Ընտրեք «Նոր ձև»՝ ձեր առաջին ձևը ստեղծելու համար։",
+  "Choose a field": "Ընտրեք դաշտ",
   "Choose a form": "Ընտրեք ձև",
   "Choose a record": "Ընտրեք գրառում",
   "Choose an object": "Ընտրեք օբյեկտ",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Ձևի ստեղծումը ձախողվեց. {error}",
   "Default value": "Լռելյայն արժեք",
   "Description": "Նկարագրություն",
+  "Discard changes": "Չեղարկել փոփոխությունները",
   "Draft": "Սևագիր",
   "Embed code": "Ներդրման կոդ",
   "Field": "Դաշտ",
-  "Fields Twenty requires are always included; system fields are never offered.": "Twenty-ի պահանջած դաշտերը միշտ ներառված են. համակարգային դաշտերը երբեք չեն առաջարկվում։",
+  "Fields": "Դաշտեր",
   "First record": "Առաջին գրառում",
   "Fix the link loop before saving.": "Պահպանելուց առաջ շտկեք կապերի ցիկլը։",
   "Form": "Ձև",
   "Form saved": "Ձևը պահպանված է",
   "Form saved and live": "Ձևը պահպանված է և ակտիվ",
-  "Form settings and sharing": "Ձևի կարգավորումներ և համօգտագործում",
   "Hidden": "Թաքցված",
+  "Hidden, filled in automatically:": "Թաքցված, լրացվում է ինքնաշխատ՝",
   "Label on the form": "Պիտակը ձևում",
   "Linked through": "Կապված է միջոցով",
-  "Links between records": "Կապեր գրառումների միջև",
+  "Links": "Կապեր",
   "Live": "Ակտիվ",
   "Message after submitting": "Հաղորդագրություն ուղարկելուց հետո",
+  "Move down": "Տեղափոխել ներքև",
+  "Move up": "Տեղափոխել վերև",
   "Name of the new form": "Նոր ձևի անվանումը",
   "New form": "Նոր ձև",
   "No default": "Առանց լռելյայն արժեքի",
+  "No fields yet. Add the first one below.": "Դեռ դաշտեր չկան։ Ավելացրեք առաջինը ստորև։",
   "No form yet": "Դեռ ձև չկա",
-  "Not available": "Հասանելի չէ",
+  "No links yet.": "Դեռ կապեր չկան։",
   "Not live yet": "Դեռ ակտիվ չէ",
   "On submit": "Ուղարկելիս",
+  "Open form": "Բացել ձևը",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Տեղադրեք սա ցանկացած էջի HTML-ում։ Ձևը հետևում է այցելուի լեզվին։",
+  "Preview": "Նախադիտում",
   "Public link": "Հանրային հղում",
-  "Published – anyone with the link can submit": "Հրապարակված է – հղումն ունեցող ցանկացած ոք կարող է ուղարկել",
-  "Records and fields": "Գրառումներ և դաշտեր",
+  "Published": "Հրապարակված է",
   "Remove": "Հեռացնել",
   "Remove record": "Հեռացնել գրառումը",
   "Required": "Պարտադիր",
   "Required by Twenty": "Պահանջվում է Twenty-ի կողմից",
   "Save": "Պահպանել",
+  "Save or discard your changes to switch forms.": "Ձևը փոխելու համար պահպանեք կամ չեղարկեք փոփոխությունները։",
   "Saved": "Պահպանված է",
   "Saving failed: {error}": "Պահպանումը ձախողվեց. {error}",
   "Second record": "Երկրորդ գրառում",
+  "Section title": "Բաժնի վերնագիր",
+  "Set a default value first to hide a required field.": "Պարտադիր դաշտը թաքցնելու համար նախ սահմանեք լռելյայն արժեք։",
+  "Settings": "Կարգավորումներ",
+  "Share": "Կիսվել",
   "Submit button": "Ուղարկման կոճակ",
+  "The form builder page was not found.": "Ձևերի կառուցիչի էջը չի գտնվել։",
   "The forms could not be loaded": "Չհաջողվեց բեռնել ձևերը",
   "These links form a loop": "Այս կապերը ցիկլ են կազմում",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Այս երկու գրառումները հնարավոր չէ կապել. դրանց օբյեկտները Twenty-ում կապ չունեն։ Նախ ավելացրեք կապի դաշտ՝ Կարգավորումներ → Տվյալների մոդել բաժնում։",
   "This object has required fields a form cannot fill": "Այս օբյեկտն ունի պարտադիր դաշտեր, որոնք ձևը չի կարող լրացնել",
   "This object no longer exists": "Այս օբյեկտն այլևս գոյություն չունի",
-  "Tick Published and save to get the public link and the embed code.": "Նշեք «Հրապարակված է» և պահպանեք՝ հանրային հղումը և ներդրման կոդը ստանալու համար։",
   "Ticked": "Նշված",
   "Title": "Վերնագիր",
   "Try again": "Կրկին փորձել",
-  "Unsaved changes": "Չպահպանված փոփոխություններ",
+  "Turn on Published and save to get the public link and the embed code.": "Միացրեք «Հրապարակված է» և պահպանեք՝ հանրային հղումը և ներդրման կոդը ստանալու համար։",
   "Untitled form": "Անվերնագիր ձև",
   "Update when {field} matches": "Թարմացնել, երբ {field} դաշտը համընկնում է",
   "Used to match": "Օգտագործվում է համընկեցման համար",
   "via {relation}": "{relation}-ի միջոցով",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}։ Այս գրառման ստեղծումը կձախողվի, եթե կապը դրանք չլրացնի։",
-  "{object} – section title": "{object} – բաժնի վերնագիր",
   "commandMenuItem.label": {
     "Open in form builder": "Բացել ձևերի կառուցիչում"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Բացել ձևերի կառուցիչում"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Ձևի անվանումը",
+    "Only published forms are reachable from their public link": "Միայն հրապարակված ձևերն են հասանելի իրենց հանրային հղումով",
+    "Records, links and fields of the form, edited in the form builder": "Ձևի գրառումները, կապերը և դաշտերը, որոնք խմբագրվում են ձևերի կառուցիչում"
   },
   "fieldMetadata.label": {
     "Definition": "Սահմանում",
@@ -83,6 +101,9 @@
     "Form builder": "Ձևերի կառուցիչ",
     "Forms": "Ձևեր"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Ներդրվող ձև, որը ստեղծում կամ թարմացնում է գրառումներ"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Ձևեր"
   },
@@ -90,6 +111,7 @@
     "Form": "Ձև"
   },
   "pageLayout.name": {
+    "Form": "Ձև",
     "Form builder": "Ձևերի կառուցիչ"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Ժամանակագրություն"
   },
   "view.name": {
-    "All forms": "Բոլոր ձևերը"
+    "All forms": "Բոլոր ձևերը",
+    "Form fields": "Ձևի դաշտեր"
   }
 }

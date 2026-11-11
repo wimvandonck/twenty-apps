@@ -1,6 +1,6 @@
 import { MetadataApiClient } from 'twenty-client-sdk/metadata';
 import { defineFrontComponent } from 'twenty-sdk/define';
-import { AppPath, Command, navigate, useSelectedRecordIds } from 'twenty-sdk/front-component';
+import { AppPath, Command, navigate, t, useSelectedRecordIds } from 'twenty-sdk/front-component';
 
 import {
   FORM_BUILDER_PAGE_LAYOUT_UNIVERSAL_IDENTIFIER,
@@ -22,7 +22,7 @@ const OpenFormBuilder = () => {
     );
 
     if (pageLayout === undefined) {
-      throw new Error('The form builder page was not found');
+      throw new Error(t('The form builder page was not found.'));
     }
 
     await navigate(

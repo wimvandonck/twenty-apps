@@ -7,6 +7,7 @@ import { getLinkPaths } from 'src/utils/get-link-paths.util';
 import { getBlockingFields } from 'src/utils/get-blocking-fields.util';
 import { isRequiredField } from 'src/utils/is-required-field.util';
 import { isSelectableField } from 'src/utils/is-selectable-field.util';
+import { moveItem } from 'src/utils/move-item.util';
 import { normalizeDefinition } from 'src/utils/normalize-definition.util';
 
 import { replaceLink } from 'src/utils/replace-link.util';
@@ -134,5 +135,34 @@ describe('normalizeDefinition', () => {
     const normalized = normalizeDefinition({ ...DEFINITION, records: [DEFINITION.records[0]] }, OBJECTS);
 
     expect(normalized.links).toEqual([]);
+  });
+});
+
+describe('enforceRequiredFields order', () => {
+  it('keeps the order chosen in the builder', () => {
+    const record = enforceRequiredFields(
+      {
+        ...DEFINITION.records[0],
+        mode: 'CREATE',
+        matchFieldName: undefined,
+        fields: [
+          { name: 'nickname', label: 'Nickname', type: 'TEXT', required: true },
+          { name: 'emails', label: 'Email', type: 'EMAILS', required: false },
+          { name: 'name', label: 'Name', type: 'FULL_NAME', required: false },
+        ],
+      },
+      PERSON,
+    );
+
+    expect(record.fields.map(({ name }) => name)).toEqual(['nickname', 'emails', 'name']);
+  });
+});
+
+describe('moveItem', () => {
+  it('moves an item one place and ignores moves past the ends', () => {
+    expect(moveItem(['a', 'b', 'c'], 1, -1)).toEqual(['b', 'a', 'c']);
+    expect(moveItem(['a', 'b', 'c'], 1, 1)).toEqual(['a', 'c', 'b']);
+    expect(moveItem(['a', 'b', 'c'], 0, -1)).toEqual(['a', 'b', 'c']);
+    expect(moveItem(['a', 'b', 'c'], 2, 1)).toEqual(['a', 'b', 'c']);
   });
 });

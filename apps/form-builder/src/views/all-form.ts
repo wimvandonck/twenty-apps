@@ -1,5 +1,7 @@
 import { defineView } from 'twenty-sdk/define';
 
+import { FORM_IS_PUBLISHED_FIELD_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identifiers';
+
 export default defineView({
   universalIdentifier: 'a9954fae-1561-4120-8d71-29adb6155086',
   name: 'All forms',
@@ -14,6 +16,13 @@ export default defineView({
       position: 0,
       isVisible: true,
       size: 200,
+    },
+    {
+      universalIdentifier: '89f5f968-7577-4e98-b620-f891c246c0b2',
+      fieldMetadataUniversalIdentifier: FORM_IS_PUBLISHED_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 1,
+      isVisible: true,
+      size: 120,
     },
   ],
 });

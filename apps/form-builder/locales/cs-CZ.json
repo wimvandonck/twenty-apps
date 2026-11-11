@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Skryté pole se návštěvníkům nezobrazuje a vždy dostane svou výchozí hodnotu.",
+  "Add a field": "Přidat pole",
   "Add a record": "Přidat záznam",
+  "Add a record and a field to see the form here.": "Přidejte záznam a pole, aby se zde formulář zobrazil.",
   "Add at least one visible field before publishing.": "Před zveřejněním přidejte alespoň jedno viditelné pole.",
   "Add link": "Přidat propojení",
-  "Add record": "Přidat záznam",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Přidejte záznamy, které odeslání vytvoří nebo aktualizuje, a poté pole, na která se chcete ptát. Pole vyžadovaná Twenty se přidají automaticky.",
   "Always create": "Vždy vytvořit",
+  "Cancel": "Zrušit",
+  "Choose New form to create your first form.": "Zvolte Nový formulář a vytvořte svůj první formulář.",
+  "Choose a field": "Vyberte pole",
   "Choose a form": "Vyberte formulář",
   "Choose a record": "Vyberte záznam",
   "Choose an object": "Vyberte objekt",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Formulář se nepodařilo vytvořit: {error}",
   "Default value": "Výchozí hodnota",
   "Description": "Popis",
+  "Discard changes": "Zahodit změny",
   "Draft": "Koncept",
   "Embed code": "Kód pro vložení",
   "Field": "Pole",
-  "Fields Twenty requires are always included; system fields are never offered.": "Pole vyžadovaná Twenty jsou vždy zahrnuta; systémová pole se nikdy nenabízejí.",
+  "Fields": "Pole",
   "First record": "První záznam",
   "Fix the link loop before saving.": "Před uložením opravte smyčku v propojeních.",
   "Form": "Formulář",
   "Form saved": "Formulář uložen",
   "Form saved and live": "Formulář uložen a aktivní",
-  "Form settings and sharing": "Nastavení formuláře a sdílení",
   "Hidden": "Skryté",
+  "Hidden, filled in automatically:": "Skryté, vyplněné automaticky:",
   "Label on the form": "Popisek ve formuláři",
   "Linked through": "Propojeno přes",
-  "Links between records": "Propojení mezi záznamy",
+  "Links": "Propojení",
   "Live": "Aktivní",
   "Message after submitting": "Zpráva po odeslání",
+  "Move down": "Posunout dolů",
+  "Move up": "Posunout nahoru",
   "Name of the new form": "Název nového formuláře",
   "New form": "Nový formulář",
   "No default": "Bez výchozí hodnoty",
+  "No fields yet. Add the first one below.": "Zatím žádná pole. Přidejte první níže.",
   "No form yet": "Zatím žádný formulář",
-  "Not available": "Není k dispozici",
+  "No links yet.": "Zatím žádná propojení.",
   "Not live yet": "Zatím není aktivní",
   "On submit": "Při odeslání",
+  "Open form": "Otevřít formulář",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Vložte toto do HTML libovolné stránky. Formulář se řídí jazykem návštěvníka.",
+  "Preview": "Náhled",
   "Public link": "Veřejný odkaz",
-  "Published – anyone with the link can submit": "Zveřejněno – odeslat jej může kdokoli s odkazem",
-  "Records and fields": "Záznamy a pole",
+  "Published": "Zveřejněno",
   "Remove": "Odebrat",
   "Remove record": "Odebrat záznam",
   "Required": "Povinné",
   "Required by Twenty": "Vyžadováno Twenty",
   "Save": "Uložit",
+  "Save or discard your changes to switch forms.": "Chcete-li přepnout formulář, uložte nebo zahoďte změny.",
   "Saved": "Uloženo",
   "Saving failed: {error}": "Uložení se nezdařilo: {error}",
   "Second record": "Druhý záznam",
+  "Section title": "Název oddílu",
+  "Set a default value first to hide a required field.": "Chcete-li skrýt povinné pole, nejprve nastavte výchozí hodnotu.",
+  "Settings": "Nastavení",
+  "Share": "Sdílet",
   "Submit button": "Tlačítko pro odeslání",
+  "The form builder page was not found.": "Stránka tvůrce formulářů nebyla nalezena.",
   "The forms could not be loaded": "Formuláře se nepodařilo načíst",
   "These links form a loop": "Tato propojení tvoří smyčku",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Tyto dva záznamy nelze propojit: jejich objekty nemají v Twenty žádnou relaci. Nejprve přidejte pole relace v Nastavení → Datový model.",
   "This object has required fields a form cannot fill": "Tento objekt má povinná pole, která formulář nedokáže vyplnit",
   "This object no longer exists": "Tento objekt již neexistuje",
-  "Tick Published and save to get the public link and the embed code.": "Zaškrtněte Zveřejněno a uložte, abyste získali veřejný odkaz a kód pro vložení.",
   "Ticked": "Zaškrtnuto",
   "Title": "Název",
   "Try again": "Zkusit znovu",
-  "Unsaved changes": "Neuložené změny",
+  "Turn on Published and save to get the public link and the embed code.": "Zapněte Zveřejněno a uložte, abyste získali veřejný odkaz a kód pro vložení.",
   "Untitled form": "Formulář bez názvu",
   "Update when {field} matches": "Aktualizovat, když se shoduje {field}",
   "Used to match": "Použito pro shodu",
   "via {relation}": "přes {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Vytvoření tohoto záznamu selže, pokud je nevyplní propojení.",
-  "{object} – section title": "{object} – název oddílu",
   "commandMenuItem.label": {
     "Open in form builder": "Otevřít v tvůrci formulářů"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Otevřít v tvůrci formulářů"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Název formuláře",
+    "Only published forms are reachable from their public link": "Přes veřejný odkaz jsou dostupné pouze zveřejněné formuláře",
+    "Records, links and fields of the form, edited in the form builder": "Záznamy, propojení a pole formuláře upravované v tvůrci formulářů"
   },
   "fieldMetadata.label": {
     "Definition": "Definice",
@@ -83,6 +101,9 @@
     "Form builder": "Tvůrce formulářů",
     "Forms": "Formuláře"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Vložitelný formulář, který vytváří nebo aktualizuje záznamy"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Formuláře"
   },
@@ -90,6 +111,7 @@
     "Form": "Formulář"
   },
   "pageLayout.name": {
+    "Form": "Formulář",
     "Form builder": "Tvůrce formulářů"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Časová osa"
   },
   "view.name": {
-    "All forms": "Všechny formuláře"
+    "All forms": "Všechny formuláře",
+    "Form fields": "Pole formuláře"
   }
 }

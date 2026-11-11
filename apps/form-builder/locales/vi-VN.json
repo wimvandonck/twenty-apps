@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Trường ẩn không hiển thị cho khách truy cập và luôn nhận giá trị mặc định.",
+  "Add a field": "Thêm một trường",
   "Add a record": "Thêm một bản ghi",
+  "Add a record and a field to see the form here.": "Thêm một bản ghi và một trường để xem biểu mẫu ở đây.",
   "Add at least one visible field before publishing.": "Hãy thêm ít nhất một trường hiển thị trước khi xuất bản.",
   "Add link": "Thêm liên kết",
-  "Add record": "Thêm bản ghi",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Thêm các bản ghi mà một lần gửi sẽ tạo hoặc cập nhật, sau đó thêm các trường cần hỏi. Các trường Twenty yêu cầu được thêm tự động.",
   "Always create": "Luôn tạo mới",
+  "Cancel": "Hủy",
+  "Choose New form to create your first form.": "Chọn Biểu mẫu mới để tạo biểu mẫu đầu tiên của bạn.",
+  "Choose a field": "Chọn một trường",
   "Choose a form": "Chọn một biểu mẫu",
   "Choose a record": "Chọn một bản ghi",
   "Choose an object": "Chọn một đối tượng",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Tạo biểu mẫu thất bại: {error}",
   "Default value": "Giá trị mặc định",
   "Description": "Mô tả",
+  "Discard changes": "Hủy thay đổi",
   "Draft": "Bản nháp",
   "Embed code": "Mã nhúng",
   "Field": "Trường",
-  "Fields Twenty requires are always included; system fields are never offered.": "Các trường Twenty yêu cầu luôn được đưa vào; trường hệ thống không bao giờ được cung cấp.",
+  "Fields": "Trường",
   "First record": "Bản ghi thứ nhất",
   "Fix the link loop before saving.": "Hãy sửa vòng lặp liên kết trước khi lưu.",
   "Form": "Biểu mẫu",
   "Form saved": "Biểu mẫu đã lưu",
   "Form saved and live": "Biểu mẫu đã lưu và đang hoạt động",
-  "Form settings and sharing": "Cài đặt biểu mẫu và chia sẻ",
   "Hidden": "Ẩn",
+  "Hidden, filled in automatically:": "Ẩn, được điền tự động:",
   "Label on the form": "Nhãn trên biểu mẫu",
   "Linked through": "Liên kết qua",
-  "Links between records": "Liên kết giữa các bản ghi",
+  "Links": "Liên kết",
   "Live": "Đang hoạt động",
   "Message after submitting": "Thông báo sau khi gửi",
+  "Move down": "Chuyển xuống",
+  "Move up": "Chuyển lên",
   "Name of the new form": "Tên của biểu mẫu mới",
   "New form": "Biểu mẫu mới",
   "No default": "Không có giá trị mặc định",
+  "No fields yet. Add the first one below.": "Chưa có trường nào. Hãy thêm trường đầu tiên bên dưới.",
   "No form yet": "Chưa có biểu mẫu nào",
-  "Not available": "Không khả dụng",
+  "No links yet.": "Chưa có liên kết nào.",
   "Not live yet": "Chưa hoạt động",
   "On submit": "Khi gửi",
+  "Open form": "Mở biểu mẫu",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Dán mã này vào HTML của bất kỳ trang nào. Biểu mẫu hiển thị theo ngôn ngữ của khách truy cập.",
+  "Preview": "Xem trước",
   "Public link": "Liên kết công khai",
-  "Published – anyone with the link can submit": "Đã xuất bản – bất kỳ ai có liên kết đều có thể gửi",
-  "Records and fields": "Bản ghi và trường",
+  "Published": "Đã xuất bản",
   "Remove": "Xóa",
   "Remove record": "Xóa bản ghi",
   "Required": "Bắt buộc",
   "Required by Twenty": "Twenty yêu cầu",
   "Save": "Lưu",
+  "Save or discard your changes to switch forms.": "Hãy lưu hoặc hủy thay đổi để chuyển sang biểu mẫu khác.",
   "Saved": "Đã lưu",
   "Saving failed: {error}": "Lưu thất bại: {error}",
   "Second record": "Bản ghi thứ hai",
+  "Section title": "Tiêu đề phần",
+  "Set a default value first to hide a required field.": "Hãy đặt giá trị mặc định trước để ẩn một trường bắt buộc.",
+  "Settings": "Cài đặt",
+  "Share": "Chia sẻ",
   "Submit button": "Nút gửi",
+  "The form builder page was not found.": "Không tìm thấy trang trình tạo biểu mẫu.",
   "The forms could not be loaded": "Không thể tải các biểu mẫu",
   "These links form a loop": "Các liên kết này tạo thành vòng lặp",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Không thể liên kết hai bản ghi này: các đối tượng của chúng không có quan hệ trong Twenty. Trước tiên hãy thêm trường quan hệ trong Cài đặt → Mô hình dữ liệu.",
   "This object has required fields a form cannot fill": "Đối tượng này có các trường bắt buộc mà biểu mẫu không thể điền",
   "This object no longer exists": "Đối tượng này không còn tồn tại",
-  "Tick Published and save to get the public link and the embed code.": "Chọn Đã xuất bản rồi lưu để nhận liên kết công khai và mã nhúng.",
   "Ticked": "Đã chọn",
   "Title": "Tiêu đề",
   "Try again": "Thử lại",
-  "Unsaved changes": "Thay đổi chưa lưu",
+  "Turn on Published and save to get the public link and the embed code.": "Bật Đã xuất bản rồi lưu để nhận liên kết công khai và mã nhúng.",
   "Untitled form": "Biểu mẫu chưa đặt tên",
   "Update when {field} matches": "Cập nhật khi {field} trùng khớp",
   "Used to match": "Dùng để đối chiếu",
   "via {relation}": "qua {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Việc tạo bản ghi này sẽ thất bại trừ khi một liên kết điền các trường đó.",
-  "{object} – section title": "{object} – tiêu đề phần",
   "commandMenuItem.label": {
     "Open in form builder": "Mở trong trình tạo biểu mẫu"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Mở trong trình tạo biểu mẫu"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Tên biểu mẫu",
+    "Only published forms are reachable from their public link": "Chỉ biểu mẫu đã xuất bản mới truy cập được qua liên kết công khai",
+    "Records, links and fields of the form, edited in the form builder": "Bản ghi, liên kết và trường của biểu mẫu, được chỉnh sửa trong trình tạo biểu mẫu"
   },
   "fieldMetadata.label": {
     "Definition": "Định nghĩa",
@@ -83,6 +101,9 @@
     "Form builder": "Trình tạo biểu mẫu",
     "Forms": "Biểu mẫu"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Biểu mẫu có thể nhúng, dùng để tạo hoặc cập nhật bản ghi"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Biểu mẫu"
   },
@@ -90,6 +111,7 @@
     "Form": "Biểu mẫu"
   },
   "pageLayout.name": {
+    "Form": "Biểu mẫu",
     "Form builder": "Trình tạo biểu mẫu"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Dòng thời gian"
   },
   "view.name": {
-    "All forms": "Tất cả biểu mẫu"
+    "All forms": "Tất cả biểu mẫu",
+    "Form fields": "Trường biểu mẫu"
   }
 }

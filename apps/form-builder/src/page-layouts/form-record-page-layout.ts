@@ -4,7 +4,7 @@ import { FORM_OBJECT_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identi
 
 export default definePageLayout({
   universalIdentifier: 'd7721a93-0199-44ac-9c6c-2820b48ea79f',
-  name: 'Default Form Layout',
+  name: 'Form',
   type: PageLayoutType.RECORD_PAGE,
   objectUniversalIdentifier: FORM_OBJECT_UNIVERSAL_IDENTIFIER,
   tabs: [

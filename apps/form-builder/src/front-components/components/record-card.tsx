@@ -1,15 +1,13 @@
 import { useTranslate } from 'twenty-sdk/front-component';
 import { Callout } from 'twenty-ui/components/feedback';
-import { LightButton } from 'twenty-ui/components/input';
-import { Tag } from 'twenty-ui/primitives/data-display';
+import { LightIconButton } from 'twenty-ui/components/input';
+import { IconArrowDown, IconArrowUp, IconTrash } from 'twenty-ui/icon';
 import { Field, Input } from 'twenty-ui/primitives/input';
-import { Text } from 'twenty-ui/primitives/typography';
+import { Heading, Text } from 'twenty-ui/primitives/typography';
 import { useTheme } from 'twenty-ui/theme';
 
-import { DEFAULT_VALUE_FIELD_TYPES } from 'src/constants/default-value-field-types';
 import { MATCH_FIELD_TYPES } from 'src/constants/match-field-types';
-import { DefaultValueInput } from 'src/front-components/components/default-value-input';
-import { LabelledCheckbox } from 'src/front-components/components/labelled-checkbox';
+import { FieldRow } from 'src/front-components/components/field-row';
 import { OptionSelect } from 'src/front-components/components/option-select';
 import { type FormField } from 'src/types/form-field';
 import { type FormRecord } from 'src/types/form-record';
@@ -17,41 +15,35 @@ import { type ObjectMetadata } from 'src/types/object-metadata';
 import { getBlockingFields } from 'src/utils/get-blocking-fields.util';
 import { isRequiredField } from 'src/utils/is-required-field.util';
 import { isSelectableField } from 'src/utils/is-selectable-field.util';
+import { moveItem } from 'src/utils/move-item.util';
 import { toFormField } from 'src/utils/to-form-field.util';
 
 type RecordCardProps = {
   record: FormRecord;
   object: ObjectMetadata | undefined;
+  isFirst: boolean;
+  isLast: boolean;
   onChange: (record: FormRecord) => void;
+  onMove: (offset: -1 | 1) => void;
   onRemove: () => void;
 };
 
-const ALWAYS_CREATE = '';
-const FIELD_GRID = 'minmax(140px, 1.3fr) minmax(110px, 1fr) minmax(110px, 1fr) auto auto';
+// A real value, so the select shows it as a choice and not as a placeholder.
+const ALWAYS_CREATE = '__always_create__';
+const FIELD_GRID = 'minmax(120px, 1.1fr) minmax(110px, 1fr) minmax(110px, 1fr) auto auto auto';
 
-export const RecordCard = ({ record, object, onChange, onRemove }: RecordCardProps) => {
+export const RecordCard = ({ record, object, isFirst, isLast, onChange, onMove, onRemove }: RecordCardProps) => {
   const theme = useTheme();
   const { t } = useTranslate();
   const selectable = (object?.fields ?? []).filter(isSelectableField);
+  const available = selectable.filter(({ name }) => !record.fields.some((field) => field.name === name));
   const matchOptions = selectable
     .filter((field) => (MATCH_FIELD_TYPES as readonly string[]).includes(field.type))
     .map((field) => ({ value: field.name, label: t('Update when {field} matches', { field: field.label }) }));
   const blockingFields = object === undefined ? [] : getBlockingFields(object);
+  const objectLabel = object?.labelSingular ?? record.objectNameSingular;
 
-  const updateField = (name: string, changes: Partial<FormField>) =>
-    onChange({
-      ...record,
-      fields: record.fields.map((field) => {
-        if (field.name !== name) {
-          return field;
-        }
-
-        const next = { ...field, ...changes };
-
-        // A required field can only stay hidden while a default fills it.
-        return next.required && next.defaultValue === undefined ? { ...next, hidden: false } : next;
-      }),
-    });
+  const setFields = (fields: FormField[]) => onChange({ ...record, fields });
 
   return (
     <section
@@ -65,35 +57,40 @@ export const RecordCard = ({ record, object, onChange, onRemove }: RecordCardPro
         background: theme.background.primary,
       }}
     >
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'end' }}>
-        <div style={{ flex: '1 1 180px', minWidth: 0 }}>
-          <Field.Root>
-            <Field.Label>
-              {t('{object} – section title', { object: object?.labelSingular ?? record.objectNameSingular })}
-            </Field.Label>
-            <Input value={record.label} onChange={(event) => onChange({ ...record, label: event.target.value })} />
-          </Field.Root>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: theme.spacing[2] }}>
+        <Heading level={3}>{objectLabel}</Heading>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <LightIconButton aria-label={`${t('Move up')}: ${record.label}`} disabled={isFirst} onClick={() => onMove(-1)}>
+            <IconArrowUp />
+          </LightIconButton>
+          <LightIconButton aria-label={`${t('Move down')}: ${record.label}`} disabled={isLast} onClick={() => onMove(1)}>
+            <IconArrowDown />
+          </LightIconButton>
+          <LightIconButton aria-label={`${t('Remove record')}: ${record.label}`} onClick={onRemove}>
+            <IconTrash />
+          </LightIconButton>
         </div>
-        <div style={{ flex: '1 1 200px', minWidth: 0 }}>
-          <OptionSelect
-            label={t('On submit')}
-            value={record.mode === 'UPSERT' ? (record.matchFieldName ?? ALWAYS_CREATE) : ALWAYS_CREATE}
-            options={[{ value: ALWAYS_CREATE, label: t('Always create') }, ...matchOptions]}
-            placeholder={t('Always create')}
-            onChange={(matchFieldName) =>
-              onChange(
-                matchFieldName === ALWAYS_CREATE
-                  ? { ...record, mode: 'CREATE', matchFieldName: undefined }
-                  : { ...record, mode: 'UPSERT', matchFieldName },
-              )
-            }
-          />
-        </div>
-        <LightButton onClick={onRemove}>{t('Remove record')}</LightButton>
       </div>
-      {object === undefined && (
-        <Callout status="error" title={t('This object no longer exists')} />
-      )}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: theme.spacing[3] }}>
+        <Field.Root style={{ minWidth: 0 }}>
+          <Field.Label>{t('Section title')}</Field.Label>
+          <Input value={record.label} onChange={(event) => onChange({ ...record, label: event.target.value })} />
+        </Field.Root>
+        <OptionSelect
+          label={t('On submit')}
+          value={record.mode === 'UPSERT' ? (record.matchFieldName ?? ALWAYS_CREATE) : ALWAYS_CREATE}
+          options={[{ value: ALWAYS_CREATE, label: t('Always create') }, ...matchOptions]}
+          placeholder={t('Always create')}
+          onChange={(matchFieldName) =>
+            onChange(
+              matchFieldName === ALWAYS_CREATE
+                ? { ...record, mode: 'CREATE', matchFieldName: undefined }
+                : { ...record, mode: 'UPSERT', matchFieldName },
+            )
+          }
+        />
+      </div>
+      {object === undefined && <Callout status="error" title={t('This object no longer exists')} />}
       {blockingFields.length > 0 && (
         <Callout
           status="warning"
@@ -103,83 +100,56 @@ export const RecordCard = ({ record, object, onChange, onRemove }: RecordCardPro
           })}
         />
       )}
-      <div style={{ overflowX: 'auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: FIELD_GRID, gap: theme.spacing[2], alignItems: 'center', minWidth: 560 }}>
-          {[t('Field'), t('Label on the form'), t('Default value'), t('Required'), t('Hidden')].map((heading) => (
-            <Text key={heading} size="xs" weight="semibold" color="light">
-              {heading}
-            </Text>
-          ))}
-          {selectable.map((metadata) => {
-            const field = record.fields.find(({ name }) => name === metadata.name);
-            const isMatchField = record.mode === 'UPSERT' && record.matchFieldName === metadata.name;
-            const isLocked = isRequiredField(metadata) || isMatchField;
-            const canHaveDefault = DEFAULT_VALUE_FIELD_TYPES.includes(toFormField(metadata).type);
+      {record.fields.length === 0 ? (
+        <Text color="secondary">{t('No fields yet. Add the first one below.')}</Text>
+      ) : (
+        <div style={{ overflowX: 'auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: FIELD_GRID, gap: theme.spacing[2], alignItems: 'center', minWidth: 620 }}>
+            {[t('Field'), t('Label on the form'), t('Default value'), t('Required'), t('Hidden'), ''].map((heading, index) => (
+              <Text key={index} size="xs" weight="semibold" color="light">
+                {heading}
+              </Text>
+            ))}
+            {record.fields.map((field, index) => {
+              const metadata = selectable.find(({ name }) => name === field.name);
 
-            return (
-              <div key={metadata.name} style={{ display: 'contents' }}>
-                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: theme.spacing[2], minWidth: 0, minHeight: 32 }}>
-                  <LabelledCheckbox
-                    label={metadata.label}
-                    checked={field !== undefined}
-                    disabled={isLocked}
-                    onChange={(checked) =>
-                      onChange({
-                        ...record,
-                        fields: checked
-                          ? [...record.fields, toFormField(metadata)]
-                          : record.fields.filter(({ name }) => name !== metadata.name),
-                      })
-                    }
-                  />
-                  {isRequiredField(metadata) && <Tag color="red">{t('Required by Twenty')}</Tag>}
-                  {isMatchField && <Tag color="blue">{t('Used to match')}</Tag>}
-                </div>
-                {field === undefined ? (
-                  <>
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                  </>
-                ) : (
-                  <>
-                    <Input
-                      aria-label={`${t('Label on the form')}: ${metadata.label}`}
-                      value={field.label}
-                      onChange={(event) => updateField(field.name, { label: event.target.value })}
-                    />
-                    {canHaveDefault ? (
-                      <DefaultValueInput field={field} onChange={(defaultValue) => updateField(field.name, { defaultValue })} />
-                    ) : (
-                      <Text size="xs" color="light">
-                        {t('Not available')}
-                      </Text>
-                    )}
-                    <LabelledCheckbox
-                      label={t('Required')}
-                      hideLabel
-                      checked={field.required}
-                      disabled={isLocked}
-                      onChange={(required) => updateField(field.name, { required })}
-                    />
-                    <LabelledCheckbox
-                      label={t('Hidden')}
-                      hideLabel
-                      checked={field.hidden === true}
-                      disabled={field.required && field.defaultValue === undefined}
-                      onChange={(hidden) => updateField(field.name, { hidden })}
-                    />
-                  </>
-                )}
-              </div>
-            );
-          })}
+              return (
+                <FieldRow
+                  key={field.name}
+                  field={field}
+                  sourceLabel={metadata?.label ?? field.name}
+                  isRequiredByTwenty={metadata !== undefined && isRequiredField(metadata)}
+                  isMatchField={record.mode === 'UPSERT' && record.matchFieldName === field.name}
+                  isFirst={index === 0}
+                  isLast={index === record.fields.length - 1}
+                  onChange={(changes) =>
+                    setFields(record.fields.map((current) => (current.name === field.name ? { ...current, ...changes } : current)))
+                  }
+                  onMove={(offset) => setFields(moveItem(record.fields, index, offset))}
+                  onRemove={() => setFields(record.fields.filter(({ name }) => name !== field.name))}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <Text size="xs" color="light">
-        {t('A hidden field is not shown to visitors and always gets its default value.')}
-      </Text>
+      )}
+      {available.length > 0 && (
+        <div style={{ maxWidth: 320 }}>
+          <OptionSelect
+            label={t('Add a field')}
+            value=""
+            options={available.map(({ name, label }) => ({ value: name, label }))}
+            placeholder={t('Choose a field')}
+            onChange={(name) => {
+              const metadata = available.find((candidate) => candidate.name === name);
+
+              if (metadata !== undefined) {
+                setFields([...record.fields, toFormField(metadata)]);
+              }
+            }}
+          />
+        </div>
+      )}
     </section>
   );
 };

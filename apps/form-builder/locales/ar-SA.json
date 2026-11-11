@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "الحقل المخفي لا يظهر للزوار ويأخذ دائماً قيمته الافتراضية.",
+  "Add a field": "إضافة حقل",
   "Add a record": "إضافة سجل",
+  "Add a record and a field to see the form here.": "أضف سجلاً وحقلاً لرؤية النموذج هنا.",
   "Add at least one visible field before publishing.": "أضف حقلاً ظاهراً واحداً على الأقل قبل النشر.",
   "Add link": "إضافة رابط",
-  "Add record": "إضافة السجل",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "أضف السجلات التي ينشئها الإرسال أو يحدّثها، ثم الحقول المطلوب السؤال عنها. الحقول التي يتطلبها Twenty تُضاف تلقائياً.",
   "Always create": "الإنشاء دائماً",
+  "Cancel": "إلغاء",
+  "Choose New form to create your first form.": "اختر «نموذج جديد» لإنشاء نموذجك الأول.",
+  "Choose a field": "اختر حقلاً",
   "Choose a form": "اختر نموذجاً",
   "Choose a record": "اختر سجلاً",
   "Choose an object": "اختر كائناً",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "تعذّر إنشاء النموذج: {error}",
   "Default value": "القيمة الافتراضية",
   "Description": "الوصف",
+  "Discard changes": "تجاهل التغييرات",
   "Draft": "مسودة",
   "Embed code": "رمز التضمين",
   "Field": "الحقل",
-  "Fields Twenty requires are always included; system fields are never offered.": "الحقول التي يتطلبها Twenty مضمَّنة دائماً، وحقول النظام لا تُعرض أبداً.",
+  "Fields": "الحقول",
   "First record": "السجل الأول",
   "Fix the link loop before saving.": "أصلح حلقة الروابط قبل الحفظ.",
   "Form": "النموذج",
   "Form saved": "تم حفظ النموذج",
   "Form saved and live": "تم حفظ النموذج ونشره",
-  "Form settings and sharing": "إعدادات النموذج والمشاركة",
   "Hidden": "مخفي",
+  "Hidden, filled in automatically:": "مخفية، تُعبَّأ تلقائياً:",
   "Label on the form": "التسمية في النموذج",
   "Linked through": "مرتبط عبر",
-  "Links between records": "الروابط بين السجلات",
+  "Links": "الروابط",
   "Live": "منشور",
   "Message after submitting": "الرسالة بعد الإرسال",
+  "Move down": "تحريك لأسفل",
+  "Move up": "تحريك لأعلى",
   "Name of the new form": "اسم النموذج الجديد",
   "New form": "نموذج جديد",
   "No default": "بلا قيمة افتراضية",
+  "No fields yet. Add the first one below.": "لا توجد حقول بعد. أضف الأول أدناه.",
   "No form yet": "لا يوجد نموذج بعد",
-  "Not available": "غير متاح",
+  "No links yet.": "لا توجد روابط بعد.",
   "Not live yet": "غير منشور بعد",
   "On submit": "عند الإرسال",
+  "Open form": "فتح النموذج",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "الصق هذا في HTML أي صفحة. يتبع النموذج لغة الزائر.",
+  "Preview": "معاينة",
   "Public link": "الرابط العام",
-  "Published – anyone with the link can submit": "منشور – يمكن لأي شخص لديه الرابط الإرسال",
-  "Records and fields": "السجلات والحقول",
+  "Published": "منشور",
   "Remove": "إزالة",
   "Remove record": "إزالة السجل",
   "Required": "إلزامي",
   "Required by Twenty": "مطلوب من Twenty",
   "Save": "حفظ",
+  "Save or discard your changes to switch forms.": "احفظ تغييراتك أو تجاهلها للتبديل بين النماذج.",
   "Saved": "تم الحفظ",
   "Saving failed: {error}": "تعذّر الحفظ: {error}",
   "Second record": "السجل الثاني",
+  "Section title": "عنوان القسم",
+  "Set a default value first to hide a required field.": "عيّن قيمة افتراضية أولاً لإخفاء حقل إلزامي.",
+  "Settings": "الإعدادات",
+  "Share": "مشاركة",
   "Submit button": "زر الإرسال",
+  "The form builder page was not found.": "تعذّر العثور على صفحة منشئ النماذج.",
   "The forms could not be loaded": "تعذّر تحميل النماذج",
   "These links form a loop": "هذه الروابط تشكّل حلقة",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "لا يمكن ربط هذين السجلين: لا توجد علاقة بين كائنيهما في Twenty. أضف أولاً حقل علاقة من الإعدادات ← نموذج البيانات.",
   "This object has required fields a form cannot fill": "يحتوي هذا الكائن على حقول إلزامية لا يستطيع النموذج تعبئتها",
   "This object no longer exists": "هذا الكائن لم يعد موجوداً",
-  "Tick Published and save to get the public link and the embed code.": "حدِّد «منشور» ثم احفظ للحصول على الرابط العام ورمز التضمين.",
   "Ticked": "محدَّد",
   "Title": "العنوان",
   "Try again": "إعادة المحاولة",
-  "Unsaved changes": "تغييرات غير محفوظة",
+  "Turn on Published and save to get the public link and the embed code.": "فعِّل «منشور» ثم احفظ للحصول على الرابط العام ورمز التضمين.",
   "Untitled form": "نموذج بلا عنوان",
   "Update when {field} matches": "التحديث عند تطابق {field}",
   "Used to match": "يُستخدم للمطابقة",
   "via {relation}": "عبر {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. سيفشل إنشاء هذا السجل ما لم يعبّئها رابط.",
-  "{object} – section title": "{object} – عنوان القسم",
   "commandMenuItem.label": {
     "Open in form builder": "فتح في منشئ النماذج"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "فتح في منشئ النماذج"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "اسم النموذج",
+    "Only published forms are reachable from their public link": "النماذج المنشورة فقط يمكن الوصول إليها عبر رابطها العام",
+    "Records, links and fields of the form, edited in the form builder": "سجلات النموذج وروابطه وحقوله، تُحرَّر في منشئ النماذج"
   },
   "fieldMetadata.label": {
     "Definition": "التعريف",
@@ -83,6 +101,9 @@
     "Form builder": "منشئ النماذج",
     "Forms": "النماذج"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "نموذج قابل للتضمين ينشئ السجلات أو يحدّثها"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "النماذج"
   },
@@ -90,6 +111,7 @@
     "Form": "نموذج"
   },
   "pageLayout.name": {
+    "Form": "نموذج",
     "Form builder": "منشئ النماذج"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "المخطط الزمني"
   },
   "view.name": {
-    "All forms": "كل النماذج"
+    "All forms": "كل النماذج",
+    "Form fields": "حقول النموذج"
   }
 }

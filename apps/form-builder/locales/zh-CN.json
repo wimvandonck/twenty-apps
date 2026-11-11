@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "隐藏字段不会向访客显示，并且始终使用其默认值。",
+  "Add a field": "添加字段",
   "Add a record": "添加记录",
+  "Add a record and a field to see the form here.": "添加一条记录和一个字段后，表单会显示在这里。",
   "Add at least one visible field before publishing.": "发布前请至少添加一个可见字段。",
   "Add link": "添加关联",
-  "Add record": "添加记录",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "先添加提交时要创建或更新的记录，再添加要填写的字段。Twenty 要求的字段会自动添加。",
   "Always create": "始终创建",
+  "Cancel": "取消",
+  "Choose New form to create your first form.": "选择“新建表单”来创建您的第一个表单。",
+  "Choose a field": "选择字段",
   "Choose a form": "选择表单",
   "Choose a record": "选择记录",
   "Choose an object": "选择对象",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "创建表单失败：{error}",
   "Default value": "默认值",
   "Description": "描述",
+  "Discard changes": "放弃更改",
   "Draft": "草稿",
   "Embed code": "嵌入代码",
   "Field": "字段",
-  "Fields Twenty requires are always included; system fields are never offered.": "Twenty 要求的字段始终包含在内；系统字段不会提供。",
+  "Fields": "字段",
   "First record": "第一条记录",
   "Fix the link loop before saving.": "保存前请先解决关联循环。",
   "Form": "表单",
   "Form saved": "表单已保存",
   "Form saved and live": "表单已保存并上线",
-  "Form settings and sharing": "表单设置与分享",
   "Hidden": "隐藏",
+  "Hidden, filled in automatically:": "隐藏字段，自动填写：",
   "Label on the form": "表单上的标签",
   "Linked through": "关联方式",
-  "Links between records": "记录之间的关联",
+  "Links": "关联",
   "Live": "已上线",
   "Message after submitting": "提交后的消息",
+  "Move down": "下移",
+  "Move up": "上移",
   "Name of the new form": "新表单的名称",
   "New form": "新建表单",
   "No default": "无默认值",
+  "No fields yet. Add the first one below.": "还没有字段。请在下方添加第一个字段。",
   "No form yet": "还没有表单",
-  "Not available": "不可用",
+  "No links yet.": "还没有关联。",
   "Not live yet": "尚未上线",
   "On submit": "提交时",
+  "Open form": "打开表单",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "将此代码粘贴到任意页面的 HTML 中。表单会跟随访客的语言。",
+  "Preview": "预览",
   "Public link": "公开链接",
-  "Published – anyone with the link can submit": "已发布 – 任何拥有链接的人都可以提交",
-  "Records and fields": "记录和字段",
+  "Published": "已发布",
   "Remove": "移除",
   "Remove record": "移除记录",
   "Required": "必填",
   "Required by Twenty": "Twenty 必填",
   "Save": "保存",
+  "Save or discard your changes to switch forms.": "请先保存或放弃更改，再切换表单。",
   "Saved": "已保存",
   "Saving failed: {error}": "保存失败：{error}",
   "Second record": "第二条记录",
+  "Section title": "分区标题",
+  "Set a default value first to hide a required field.": "要隐藏必填字段，请先设置默认值。",
+  "Settings": "设置",
+  "Share": "分享",
   "Submit button": "提交按钮",
+  "The form builder page was not found.": "未找到表单生成器页面。",
   "The forms could not be loaded": "无法加载表单",
   "These links form a loop": "这些关联形成了循环",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "这两条记录无法关联：它们的对象在 Twenty 中没有关系。请先在“设置 → 数据模型”中添加关系字段。",
   "This object has required fields a form cannot fill": "此对象包含表单无法填写的必填字段",
   "This object no longer exists": "此对象已不存在",
-  "Tick Published and save to get the public link and the embed code.": "勾选“已发布”并保存，即可获得公开链接和嵌入代码。",
   "Ticked": "已勾选",
   "Title": "标题",
   "Try again": "重试",
-  "Unsaved changes": "未保存的更改",
+  "Turn on Published and save to get the public link and the embed code.": "开启“已发布”并保存，即可获得公开链接和嵌入代码。",
   "Untitled form": "未命名表单",
   "Update when {field} matches": "当 {field} 匹配时更新",
   "Used to match": "用于匹配",
   "via {relation}": "通过 {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}。除非由关联填写，否则创建此记录会失败。",
-  "{object} – section title": "{object} – 分区标题",
   "commandMenuItem.label": {
     "Open in form builder": "在表单生成器中打开"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "在表单生成器中打开"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "表单名称",
+    "Only published forms are reachable from their public link": "只有已发布的表单才能通过公开链接访问",
+    "Records, links and fields of the form, edited in the form builder": "表单的记录、关联和字段，在表单生成器中编辑"
   },
   "fieldMetadata.label": {
     "Definition": "定义",
@@ -83,6 +101,9 @@
     "Form builder": "表单生成器",
     "Forms": "表单"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "可嵌入的表单，用于创建或更新记录"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "表单"
   },
@@ -90,6 +111,7 @@
     "Form": "表单"
   },
   "pageLayout.name": {
+    "Form": "表单",
     "Form builder": "表单生成器"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "时间线"
   },
   "view.name": {
-    "All forms": "所有表单"
+    "All forms": "所有表单",
+    "Form fields": "表单字段"
   }
 }

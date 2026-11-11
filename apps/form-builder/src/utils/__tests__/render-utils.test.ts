@@ -46,7 +46,7 @@ describe('renderFormHtml', () => {
       'nl-NL',
     );
 
-    expect(html).toContain('<html lang="nl-NL">');
+    expect(html).toContain('<html lang="nl-NL" dir="ltr">');
     expect(html).toContain('value="Acme &quot;Inc&quot;"');
     expect(html).not.toContain('data-field="source"');
   });
