@@ -12,4 +12,6 @@ export type FormFieldType =
   | 'FULL_NAME'
   | 'CURRENCY'
   | 'ADDRESS'
-  | 'RICH_TEXT';
+  | 'RICH_TEXT'
+  // Not a field of the object: starts a new step of the form.
+  | 'PAGE_BREAK';

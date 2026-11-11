@@ -150,4 +150,15 @@ export const DEFINITION: FormDefinition = {
       targetRecordKey: 'company',
     },
   ],
+  lists: [],
+};
+
+export const NEWSLETTER = {
+  key: 'list1',
+  listId: 'c620b0f5-c8a5-4432-8e91-c3cd938e7100',
+  listName: 'Newsletter',
+  recordKey: 'person',
+  optIn: false,
+  label: 'Subscribe to Newsletter',
+  checked: false,
 };

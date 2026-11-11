@@ -1,13 +1,17 @@
-import { DEFAULT_VALUE_FIELD_TYPES } from 'src/constants/default-value-field-types';
+import { LIST_PERSON_OBJECT_NAME_SINGULAR } from 'src/constants/list-objects';
 import { MATCH_FIELD_TYPES } from 'src/constants/match-field-types';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type FormField } from 'src/types/form-field';
 import { type FormLink } from 'src/types/form-link';
+import { type FormList } from 'src/types/form-list';
 import { type FormRecord } from 'src/types/form-record';
+import { hasUsableDefault } from 'src/utils/has-usable-default.util';
 import { isSupportedFieldType } from 'src/utils/is-supported-field-type.util';
+import { parseDefaultValue } from 'src/utils/parse-default-value.util';
 
 // Names end up in API paths and filters, so only plain identifiers pass.
 const IDENTIFIER = /^[a-zA-Z][a-zA-Z0-9]*$/;
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 const isObject = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -19,12 +23,21 @@ const asText = (value: unknown, fallback: string): string =>
   typeof value === 'string' && value.trim() !== '' ? value : fallback;
 
 const parseField = (value: unknown): FormField | null => {
-  if (
-    !isObject(value) ||
-    !isIdentifier(value.name) ||
-    typeof value.type !== 'string' ||
-    !isSupportedFieldType(value.type)
-  ) {
+  if (!isObject(value) || !isIdentifier(value.name) || typeof value.type !== 'string') {
+    return null;
+  }
+
+  if (value.type === 'PAGE_BREAK') {
+    return {
+      name: value.name,
+      // The step's title, which may be left empty.
+      label: typeof value.label === 'string' ? value.label : '',
+      type: 'PAGE_BREAK',
+      required: false,
+    };
+  }
+
+  if (!isSupportedFieldType(value.type)) {
     return null;
   }
 
@@ -38,26 +51,18 @@ const parseField = (value: unknown): FormField | null => {
         }))
     : undefined;
 
-  const rawDefault = value.defaultValue;
-  const defaultValue =
-    !DEFAULT_VALUE_FIELD_TYPES.includes(value.type) || rawDefault === '' || rawDefault === false
-      ? undefined
-      : typeof rawDefault === 'string' || rawDefault === true
-        ? rawDefault
-        : Array.isArray(rawDefault) && rawDefault.length > 0 && rawDefault.every((item) => typeof item === 'string')
-          ? (rawDefault as string[])
-          : undefined;
-
-  return {
+  const defaultValue = parseDefaultValue(value.type, value.defaultValue);
+  const field: FormField = {
     name: value.name,
     label: asText(value.label, value.name),
     type: value.type,
     required: value.required === true,
     ...(options ? { options } : {}),
     ...(defaultValue !== undefined ? { defaultValue } : {}),
-    // A required field can only be hidden when a default fills it.
-    ...(value.hidden === true && (defaultValue !== undefined || value.required !== true) ? { hidden: true } : {}),
   };
+
+  // A required field can only be hidden when a default fills it.
+  return value.hidden === true && (!field.required || hasUsableDefault(field)) ? { ...field, hidden: true } : field;
 };
 
 const parseRecord = (value: unknown): FormRecord | null => {
@@ -136,6 +141,35 @@ const parseLink = (value: unknown, recordKeys: string[]): FormLink | null => {
     : null;
 };
 
+// Forms saved before lists existed have none. A list can only take the
+// form's person records.
+const parseList = (value: unknown, records: FormRecord[]): FormList | null => {
+  if (
+    !isObject(value) ||
+    !isIdentifier(value.key) ||
+    typeof value.listId !== 'string' ||
+    !UUID.test(value.listId) ||
+    !records.some(
+      ({ key, objectNameSingular }) =>
+        key === value.recordKey && objectNameSingular === LIST_PERSON_OBJECT_NAME_SINGULAR,
+    )
+  ) {
+    return null;
+  }
+
+  const listName = asText(value.listName, '');
+
+  return {
+    key: value.key,
+    listId: value.listId,
+    listName,
+    recordKey: value.recordKey as string,
+    optIn: value.optIn === true,
+    label: asText(value.label, listName),
+    checked: value.checked === true,
+  };
+};
+
 // Turns the stored JSON into a definition that is safe to render and write
 // from. Returns null when it is missing or malformed.
 export const parseFormDefinition = (value: unknown): FormDefinition | null => {
@@ -163,6 +197,15 @@ export const parseFormDefinition = (value: unknown): FormDefinition | null => {
     return null;
   }
 
+  const lists = (Array.isArray(value.lists) ? value.lists : []).map((list) =>
+    parseList(list, records as FormRecord[]),
+  );
+  const listKeys = lists.map((list) => list?.key);
+
+  if (lists.some((list) => list === null) || new Set(listKeys).size !== listKeys.length) {
+    return null;
+  }
+
   return {
     version: 1,
     title: asText(value.title, ''),
@@ -171,5 +214,6 @@ export const parseFormDefinition = (value: unknown): FormDefinition | null => {
     successMessage: asText(value.successMessage, 'Thank you!'),
     records: records as FormRecord[],
     links: links as FormLink[],
+    lists: lists as FormList[],
   };
 };

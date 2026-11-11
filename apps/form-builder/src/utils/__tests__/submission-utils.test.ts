@@ -10,7 +10,7 @@ import { toFieldValue } from 'src/utils/to-field-value.util';
 
 import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
 
-import { DEFINITION, NOTE_LINK, NOTE_RECORD } from './fixtures';
+import { DEFINITION, NEWSLETTER, NOTE_LINK, NOTE_RECORD } from './fixtures';
 
 const { messages: MESSAGES } = getPublicFormMessages(undefined, undefined);
 
@@ -231,6 +231,101 @@ describe('processSubmission', () => {
 
     expect(result).toMatchObject({ ok: false, status: 500 });
     expect(api.remove).toHaveBeenCalledWith('companies', 'company-id');
+  });
+});
+
+describe('processSubmission lists', () => {
+  const member = { listId: NEWSLETTER.listId, personId: 'people-id' };
+
+  it('adds the person to a list, and only with a ticked box when the visitor decides', async () => {
+    const always = createApi();
+    const optIn = { ...DEFINITION, lists: [{ ...NEWSLETTER, optIn: true }] };
+    const unticked = createApi();
+    const ticked = createApi();
+
+    await processSubmission({ ...DEFINITION, lists: [NEWSLETTER] }, VALUES, always, MESSAGES);
+    await processSubmission(optIn, VALUES, unticked, MESSAGES, { list1: false });
+    await processSubmission(optIn, VALUES, ticked, MESSAGES, { list1: true });
+
+    expect(always.create).toHaveBeenLastCalledWith('messageListMembers', member);
+    expect(unticked.create).not.toHaveBeenCalledWith('messageListMembers', expect.anything());
+    expect(ticked.create).toHaveBeenLastCalledWith('messageListMembers', member);
+  });
+
+  it('does not add a person who is on the list already', async () => {
+    const api = createApi({ findIdByFilter: vi.fn(async () => 'existing') });
+
+    await processSubmission({ ...DEFINITION, lists: [NEWSLETTER] }, VALUES, api, MESSAGES);
+
+    expect(api.findIdByFilter).toHaveBeenLastCalledWith(
+      'messageListMembers',
+      `and(listId[eq]:"${NEWSLETTER.listId}",personId[eq]:"existing")`,
+    );
+    expect(api.create).not.toHaveBeenCalledWith('messageListMembers', expect.anything());
+  });
+});
+
+describe('parseFormDefinition additions', () => {
+  it('keeps page breaks, lists and the defaults of every field type', () => {
+    const fields = [
+      { name: 'pageBreak1', label: '', type: 'PAGE_BREAK', required: false },
+      { name: 'name', label: 'Name', type: 'FULL_NAME', required: false, defaultValue: { firstName: 'Ada' } },
+      { name: 'arr', label: 'ARR', type: 'CURRENCY', required: true, defaultValue: { amount: '10', currencyCode: 'EUR' }, hidden: true },
+      { name: 'seenAt', label: 'Seen', type: 'DATE_TIME', required: true, defaultValue: 'now', hidden: true },
+      { name: 'emails', label: 'Email', type: 'EMAILS', required: true },
+    ];
+    const definition = {
+      ...DEFINITION,
+      records: [{ ...PERSON_RECORD, fields }, COMPANY_RECORD],
+      lists: [NEWSLETTER],
+    };
+
+    expect(parseFormDefinition(definition)).toEqual(definition);
+  });
+
+  it('drops defaults of the wrong shape and unhides required fields they leave empty', () => {
+    const parsed = parseFormDefinition({
+      ...DEFINITION,
+      records: [
+        {
+          ...COMPANY_RECORD,
+          fields: [
+            { name: 'name', label: 'Name', type: 'TEXT', required: true, defaultValue: { firstName: 'x' }, hidden: true },
+            { name: 'arr', label: 'ARR', type: 'CURRENCY', required: true, defaultValue: { currencyCode: 'EUR', other: 'x' }, hidden: true },
+          ],
+        },
+      ],
+      links: [],
+    });
+
+    expect(parsed?.records[0].fields).toEqual([
+      { name: 'name', label: 'Name', type: 'TEXT', required: true },
+      { name: 'arr', label: 'ARR', type: 'CURRENCY', required: true, defaultValue: { currencyCode: 'EUR' } },
+    ]);
+  });
+
+  it('rejects a list for a record that is not a person, and duplicate list keys', () => {
+    expect(parseFormDefinition({ ...DEFINITION, lists: [{ ...NEWSLETTER, recordKey: 'company' }] })).toBeNull();
+    expect(parseFormDefinition({ ...DEFINITION, lists: [{ ...NEWSLETTER, listId: 'x' }] })).toBeNull();
+    expect(parseFormDefinition({ ...DEFINITION, lists: [NEWSLETTER, NEWSLETTER] })).toBeNull();
+  });
+});
+
+describe('buildRecordData relative defaults', () => {
+  it('works out today and now for hidden fields and skips page breaks', () => {
+    const record = {
+      ...COMPANY_RECORD,
+      fields: [
+        { name: 'pageBreak1', label: 'Step', type: 'PAGE_BREAK' as const, required: false },
+        { name: 'day', label: 'Day', type: 'DATE' as const, required: true, defaultValue: 'today', hidden: true },
+        { name: 'seenAt', label: 'Seen', type: 'DATE_TIME' as const, required: true, defaultValue: 'now', hidden: true },
+      ],
+    };
+
+    expect(buildRecordData(record, {}, MESSAGES, new Date('2026-03-04T05:06:07.000Z'))).toEqual({
+      data: { day: '2026-03-04', seenAt: '2026-03-04T05:06:07.000Z' },
+      errors: [],
+    });
   });
 });
 

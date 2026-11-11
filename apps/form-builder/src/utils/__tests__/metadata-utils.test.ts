@@ -12,7 +12,7 @@ import { normalizeDefinition } from 'src/utils/normalize-definition.util';
 
 import { replaceLink } from 'src/utils/replace-link.util';
 
-import { COMPANY, DEFINITION, field, NOTE, NOTE_LINK, NOTE_RECORD, NOTE_TARGET, PERSON } from './fixtures';
+import { COMPANY, DEFINITION, field, NEWSLETTER, NOTE, NOTE_LINK, NOTE_RECORD, NOTE_TARGET, PERSON } from './fixtures';
 
 const OBJECTS = [PERSON, COMPANY, NOTE, NOTE_TARGET];
 const [PERSON_RECORD, COMPANY_RECORD] = DEFINITION.records;
@@ -164,5 +164,22 @@ describe('moveItem', () => {
     expect(moveItem(['a', 'b', 'c'], 1, 1)).toEqual(['a', 'c', 'b']);
     expect(moveItem(['a', 'b', 'c'], 0, -1)).toEqual(['a', 'b', 'c']);
     expect(moveItem(['a', 'b', 'c'], 2, 1)).toEqual(['a', 'b', 'c']);
+  });
+});
+
+describe('normalizeDefinition additions', () => {
+  it('keeps page breaks in place and drops lists whose person record is gone', () => {
+    const pageBreak = { name: 'pageBreak1', label: 'Next', type: 'PAGE_BREAK' as const, required: false };
+    const [person, company] = DEFINITION.records;
+    const definition = {
+      ...DEFINITION,
+      records: [{ ...person, fields: [person.fields[0], pageBreak, person.fields[1]] }, company],
+      lists: [NEWSLETTER],
+    };
+    const normalized = normalizeDefinition(definition, OBJECTS);
+
+    expect(normalized.records[0].fields.map(({ name }) => name).slice(0, 3)).toEqual(['name', 'pageBreak1', 'emails']);
+    expect(normalized.lists).toEqual([NEWSLETTER]);
+    expect(normalizeDefinition({ ...definition, records: [company], links: [] }, OBJECTS).lists).toEqual([]);
   });
 });

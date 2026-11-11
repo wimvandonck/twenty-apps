@@ -1,20 +1,26 @@
+import {
+  LIST_MEMBER_LIST_JOIN_COLUMN,
+  LIST_MEMBER_OBJECT_NAME_PLURAL,
+  LIST_MEMBER_PERSON_JOIN_COLUMN,
+} from 'src/constants/list-objects';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
 import { type RecordApi } from 'src/types/record-api';
 import { type SubmissionResult } from 'src/types/submission-result';
-import { type SubmissionValues } from 'src/types/submission-values';
+import { type SubmissionOptIns, type SubmissionValues } from 'src/types/submission-values';
 import { buildMatchFilter } from 'src/utils/build-match-filter.util';
 import { buildRecordData } from 'src/utils/build-record-data.util';
 import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
 
-// Validates a whole submission first, then writes the records in link order
-// and the junction records that connect them. If a write fails, the records
-// this submission created are removed again.
+// Validates a whole submission first, then writes the records in link order,
+// the junction records that connect them and the list memberships. If a
+// write fails, the records this submission created are removed again.
 export const processSubmission = async (
   definition: FormDefinition,
   values: SubmissionValues,
   api: RecordApi,
   messages: PublicFormMessages,
+  optIns: SubmissionOptIns = {},
 ): Promise<SubmissionResult> => {
   const orderedRecords = sortRecordsByLinks(definition.records, definition.links);
 
@@ -86,6 +92,31 @@ export const processSubmission = async (
         });
 
         created.push({ objectNamePlural: link.junctionObjectNamePlural, id });
+      }
+    }
+
+    for (const list of definition.lists) {
+      const personId = recordIds.get(list.recordKey);
+
+      if (personId === undefined || (list.optIn && optIns[list.key] !== true)) {
+        continue;
+      }
+
+      // A person who existed already may be on the list already.
+      const existingId = createdKeys.has(list.recordKey)
+        ? null
+        : await api.findIdByFilter(
+            LIST_MEMBER_OBJECT_NAME_PLURAL,
+            `and(${LIST_MEMBER_LIST_JOIN_COLUMN}[eq]:"${list.listId}",${LIST_MEMBER_PERSON_JOIN_COLUMN}[eq]:"${personId}")`,
+          );
+
+      if (existingId === null) {
+        const id = await api.create(LIST_MEMBER_OBJECT_NAME_PLURAL, {
+          [LIST_MEMBER_LIST_JOIN_COLUMN]: list.listId,
+          [LIST_MEMBER_PERSON_JOIN_COLUMN]: personId,
+        });
+
+        created.push({ objectNamePlural: LIST_MEMBER_OBJECT_NAME_PLURAL, id });
       }
     }
   } catch (error) {

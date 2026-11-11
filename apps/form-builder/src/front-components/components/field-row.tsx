@@ -6,10 +6,11 @@ import { Input } from 'twenty-ui/primitives/input';
 import { Text } from 'twenty-ui/primitives/typography';
 import { useTheme } from 'twenty-ui/theme';
 
-import { DEFAULT_VALUE_FIELD_TYPES } from 'src/constants/default-value-field-types';
 import { DefaultValueInput } from 'src/front-components/components/default-value-input';
 import { LabelledCheckbox } from 'src/front-components/components/labelled-checkbox';
 import { type FormField } from 'src/types/form-field';
+import { hasUsableDefault } from 'src/utils/has-usable-default.util';
+import { isPageBreak } from 'src/utils/is-page-break.util';
 
 type FieldRowProps = {
   field: FormField;
@@ -38,7 +39,40 @@ export const FieldRow = ({
   const theme = useTheme();
   const { t } = useTranslate();
   const isLocked = isRequiredByTwenty || isMatchField;
-  const canHide = !field.required || field.defaultValue !== undefined;
+  const canHide = !field.required || hasUsableDefault(field);
+  const actions = (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <LightIconButton aria-label={`${t('Move up')}: ${sourceLabel}`} disabled={isFirst} onClick={() => onMove(-1)}>
+        <IconArrowUp />
+      </LightIconButton>
+      <LightIconButton aria-label={`${t('Move down')}: ${sourceLabel}`} disabled={isLast} onClick={() => onMove(1)}>
+        <IconArrowDown />
+      </LightIconButton>
+      <LightIconButton aria-label={`${t('Remove')}: ${sourceLabel}`} disabled={isLocked} onClick={onRemove}>
+        <IconX />
+      </LightIconButton>
+    </div>
+  );
+
+  // A page break only has a title, shown above the step it starts.
+  if (isPageBreak(field)) {
+    return (
+      <div style={{ display: 'contents' }}>
+        <div style={{ display: 'flex', alignItems: 'center', minHeight: 32 }}>
+          <Tag color="purple">{t('Page break')}</Tag>
+        </div>
+        <div style={{ gridColumn: 'span 4', minWidth: 0 }}>
+          <Input
+            aria-label={t('Step title (optional)')}
+            placeholder={t('Step title (optional)')}
+            value={field.label}
+            onChange={(event) => onChange({ label: event.target.value })}
+          />
+        </div>
+        {actions}
+      </div>
+    );
+  }
 
   return (
     <div style={{ display: 'contents' }}>
@@ -52,11 +86,7 @@ export const FieldRow = ({
         value={field.label}
         onChange={(event) => onChange({ label: event.target.value })}
       />
-      {DEFAULT_VALUE_FIELD_TYPES.includes(field.type) ? (
-        <DefaultValueInput field={field} onChange={(defaultValue) => onChange({ defaultValue })} />
-      ) : (
-        <Text color="light">–</Text>
-      )}
+      <DefaultValueInput field={field} onChange={(defaultValue) => onChange({ defaultValue })} />
       <LabelledCheckbox
         label={`${t('Required')}: ${sourceLabel}`}
         hideLabel
@@ -73,17 +103,7 @@ export const FieldRow = ({
           onChange={(hidden) => onChange({ hidden })}
         />
       </span>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <LightIconButton aria-label={`${t('Move up')}: ${sourceLabel}`} disabled={isFirst} onClick={() => onMove(-1)}>
-          <IconArrowUp />
-        </LightIconButton>
-        <LightIconButton aria-label={`${t('Move down')}: ${sourceLabel}`} disabled={isLast} onClick={() => onMove(1)}>
-          <IconArrowDown />
-        </LightIconButton>
-        <LightIconButton aria-label={`${t('Remove')}: ${sourceLabel}`} disabled={isLocked} onClick={onRemove}>
-          <IconX />
-        </LightIconButton>
-      </div>
+      {actions}
     </div>
   );
 };
