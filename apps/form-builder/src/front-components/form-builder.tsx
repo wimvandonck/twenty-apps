@@ -3,25 +3,28 @@ import { RestApiClient } from 'twenty-client-sdk/rest';
 import { defineFrontComponent } from 'twenty-sdk/define';
 import { enqueueSnackbar, useLocation, useTranslate } from 'twenty-sdk/front-component';
 import { Callout } from 'twenty-ui/components/feedback';
-import { MainButton } from 'twenty-ui/components/input';
+import { LightButton, MainButton } from 'twenty-ui/components/input';
 import { Status } from 'twenty-ui/primitives/data-display';
 import { Loader } from 'twenty-ui/primitives/feedback';
-import { Button, Field, Input } from 'twenty-ui/primitives/input';
+import { Button, Input, Switch } from 'twenty-ui/primitives/input';
 import { Tabs } from 'twenty-ui/primitives/navigation';
 import { Text } from 'twenty-ui/primitives/typography';
 import { useTheme } from 'twenty-ui/theme';
 
 import { EMPTY_FORM_DEFINITION } from 'src/constants/empty-form-definition';
 import { FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identifiers';
+import { FormPreview } from 'src/front-components/components/form-preview';
 import { LinksSection } from 'src/front-components/components/links-section';
 import { OptionSelect } from 'src/front-components/components/option-select';
 import { RecordCard } from 'src/front-components/components/record-card';
 import { SettingsSection } from 'src/front-components/components/settings-section';
+import { ShareSection } from 'src/front-components/components/share-section';
 import { fetchForms } from 'src/twenty-client/fetch-forms';
 import { fetchObjectMetadata } from 'src/twenty-client/fetch-object-metadata';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type FormSummary } from 'src/types/form-summary';
 import { type ObjectMetadata } from 'src/types/object-metadata';
+import { moveItem } from 'src/utils/move-item.util';
 import { createFormRecord } from 'src/utils/create-form-record.util';
 import { normalizeDefinition } from 'src/utils/normalize-definition.util';
 import { parseFormDefinition } from 'src/utils/parse-form-definition.util';
@@ -50,9 +53,8 @@ const FormBuilder = () => {
   const [isPublished, setIsPublished] = useState(false);
   const [saved, setSaved] = useState({ snapshot: '', isPublished: false });
   const [isSaving, setIsSaving] = useState(false);
-  const [newFormName, setNewFormName] = useState('');
-  const [objectToAdd, setObjectToAdd] = useState('');
-  const [tab, setTab] = useState('records');
+  const [newFormName, setNewFormName] = useState<string | null>(null);
+  const [tab, setTab] = useState('fields');
 
   const openForm = useCallback((form: FormSummary, objects: ObjectMetadata[]) => {
     const stored = parseFormDefinition(form.definition) ?? { ...EMPTY_FORM_DEFINITION, title: form.name };
@@ -125,10 +127,9 @@ const FormBuilder = () => {
     setDefinition((current) => normalizeDefinition({ ...current, ...changes }, objects));
 
   const createForm = async () => {
-    const name = newFormName.trim();
+    const name = (newFormName ?? '').trim();
 
-    // Opening another form drops unsaved edits, so it waits for a save.
-    if (name === '' || isDirty) {
+    if (name === '') {
       return;
     }
 
@@ -137,7 +138,8 @@ const FormBuilder = () => {
       const form: FormSummary = { id: response.data.createForm.id, name, isPublished: false, definition: null };
 
       setForms([form, ...forms]);
-      setNewFormName('');
+      setNewFormName(null);
+      setTab('fields');
       openForm(form, objects);
     } catch (error) {
       await enqueueSnackbar({
@@ -145,6 +147,11 @@ const FormBuilder = () => {
         variant: 'error',
       });
     }
+  };
+
+  const discard = () => {
+    setDefinition(JSON.parse(saved.snapshot) as FormDefinition);
+    setIsPublished(saved.isPublished);
   };
 
   const save = async () => {
@@ -169,14 +176,13 @@ const FormBuilder = () => {
     }
   };
 
-  const addRecord = () => {
-    const object = selectableObjects.find(({ nameSingular }) => nameSingular === objectToAdd);
+  const addRecord = (objectNameSingular: string) => {
+    const object = selectableObjects.find(({ nameSingular }) => nameSingular === objectNameSingular);
 
     if (object !== undefined) {
       applyDefinition({
         records: [...definition.records, createFormRecord(object, definition.records.map(({ key }) => key))],
       });
-      setObjectToAdd('');
     }
   };
 
@@ -203,48 +209,68 @@ const FormBuilder = () => {
         background: theme.background.secondary,
       }}
     >
-      <header style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'end', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'end' }}>
-          <div style={{ width: 260, maxWidth: '100%' }}>
-            <OptionSelect
-              label={t('Form')}
-              value={formId ?? ''}
-              options={forms.map(({ id, name }) => ({ value: id, label: name || t('Untitled form') }))}
-              placeholder={t('Choose a form')}
-              disabled={isDirty}
-              onChange={(id) => {
-                const form = forms.find((candidate) => candidate.id === id);
+      <header style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[2], alignItems: 'center' }}>
+          {newFormName === null ? (
+            <>
+              <div style={{ width: 260, maxWidth: '100%' }}>
+                <OptionSelect
+                  label={t('Form')}
+                  hideLabel
+                  value={formId ?? ''}
+                  options={forms.map(({ id, name }) => ({ value: id, label: name || t('Untitled form') }))}
+                  placeholder={t('Choose a form')}
+                  disabled={isDirty}
+                  onChange={(id) => {
+                    const form = forms.find((candidate) => candidate.id === id);
 
-                if (form !== undefined) {
-                  openForm(form, objects);
-                }
-              }}
-            />
-          </div>
-          <div style={{ width: 220, maxWidth: '100%' }}>
-            <Field.Root>
-              <Field.Label>{t('New form')}</Field.Label>
-              <Input
-                placeholder={t('Name of the new form')}
-                value={newFormName}
-                disabled={isDirty}
-                onChange={(event) => setNewFormName(event.target.value)}
-              />
-            </Field.Root>
-          </div>
-          <Button onClick={() => void createForm()} disabled={isDirty || newFormName.trim() === ''}>
-            {t('Create form')}
-          </Button>
+                    if (form !== undefined) {
+                      openForm(form, objects);
+                    }
+                  }}
+                />
+              </div>
+              <Button disabled={isDirty} onClick={() => setNewFormName('')}>
+                {t('New form')}
+              </Button>
+            </>
+          ) : (
+            <>
+              <div style={{ width: 260, maxWidth: '100%' }}>
+                <Input
+                  aria-label={t('Name of the new form')}
+                  placeholder={t('Name of the new form')}
+                  autoFocus
+                  value={newFormName}
+                  onChange={(event) => setNewFormName(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                      void createForm();
+                    }
+                  }}
+                />
+              </div>
+              <Button onClick={() => void createForm()} disabled={newFormName.trim() === ''}>
+                {t('Create form')}
+              </Button>
+              <LightButton onClick={() => setNewFormName(null)}>{t('Cancel')}</LightButton>
+            </>
+          )}
+          {isDirty && (
+            <Text size="xs" color="secondary">
+              {t('Save or discard your changes to switch forms.')}
+            </Text>
+          )}
         </div>
         {formId !== null && (
-          <div style={{ display: 'flex', gap: theme.spacing[3], alignItems: 'center' }}>
-            {isDirty && (
-              <Text size="xs" color="secondary">
-                {t('Unsaved changes')}
-              </Text>
-            )}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[3], alignItems: 'center' }}>
             <Status color={saved.isPublished ? 'green' : 'gray'}>{saved.isPublished ? t('Live') : t('Draft')}</Status>
-            <MainButton onClick={() => void save()} disabled={!isDirty || blocker !== null} loading={isSaving}>
+            <label style={{ display: 'inline-flex', alignItems: 'center', gap: theme.spacing[2] }}>
+              <Switch size="sm" checked={isPublished} onCheckedChange={(checked) => setIsPublished(checked === true)} />
+              <Text render={<span />}>{t('Published')}</Text>
+            </label>
+            {isDirty && <LightButton onClick={discard}>{t('Discard changes')}</LightButton>}
+            <MainButton size="sm" onClick={() => void save()} disabled={!isDirty || blocker !== null} loading={isSaving}>
               {isDirty ? t('Save') : t('Saved')}
             </MainButton>
           </div>
@@ -252,77 +278,82 @@ const FormBuilder = () => {
       </header>
       {blocker !== null && <Callout status="warning" title={blocker} />}
       {formId === null ? (
-        <Callout
-          status="neutral"
-          title={t('No form yet')}
-        />
+        <Callout status="neutral" title={t('No form yet')} description={t('Choose New form to create your first form.')} />
       ) : (
-        <Tabs.Root value={tab} onValueChange={(value) => setTab(String(value))}>
-          <Tabs.List aria-label={t('Form')}>
-            <Tabs.Tab value="records">{t('Records and fields')}</Tabs.Tab>
-            <Tabs.Tab value="links">{t('Links between records')}</Tabs.Tab>
-            <Tabs.Tab value="settings">{t('Form settings and sharing')}</Tabs.Tab>
-            <Tabs.Indicator />
-          </Tabs.List>
-          <Tabs.Panel value="records">
-            <div style={panelStyle}>
-              <Text color="secondary">
-                {t('Fields Twenty requires are always included; system fields are never offered.')}
-              </Text>
-              {definition.records.map((record) => (
-                <RecordCard
-                  key={record.key}
-                  record={record}
-                  object={objects.find(({ nameSingular }) => nameSingular === record.objectNameSingular)}
-                  onChange={(next) =>
-                    applyDefinition({
-                      records: definition.records.map((current) => (current.key === record.key ? next : current)),
-                    })
-                  }
-                  onRemove={() => applyDefinition({ records: definition.records.filter(({ key }) => key !== record.key) })}
-                />
-              ))}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[2], alignItems: 'end' }}>
-                <div style={{ flex: '1 1 200px', minWidth: 0, maxWidth: 320 }}>
-                  <OptionSelect
-                    label={t('Add a record')}
-                    value={objectToAdd}
-                    options={selectableObjects.map(({ nameSingular, labelSingular }) => ({ value: nameSingular, label: labelSingular }))}
-                    placeholder={t('Choose an object')}
-                    onChange={setObjectToAdd}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: theme.spacing[6], alignItems: 'flex-start' }}>
+          <div style={{ flex: '3 1 560px', minWidth: 0 }}>
+            <Tabs.Root value={tab} onValueChange={(value) => setTab(String(value))}>
+              <Tabs.List aria-label={t('Form')}>
+                <Tabs.Tab value="fields">{t('Fields')}</Tabs.Tab>
+                <Tabs.Tab value="links">{t('Links')}</Tabs.Tab>
+                <Tabs.Tab value="settings">{t('Settings')}</Tabs.Tab>
+                <Tabs.Tab value="share">{t('Share')}</Tabs.Tab>
+                <Tabs.Indicator />
+              </Tabs.List>
+              <Tabs.Panel value="fields">
+                <div style={panelStyle}>
+                  <Text color="secondary">
+                    {t('Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.')}
+                  </Text>
+                  {definition.records.map((record, index) => (
+                    <RecordCard
+                      key={record.key}
+                      record={record}
+                      object={objects.find(({ nameSingular }) => nameSingular === record.objectNameSingular)}
+                      isFirst={index === 0}
+                      isLast={index === definition.records.length - 1}
+                      onChange={(next) =>
+                        applyDefinition({
+                          records: definition.records.map((current) => (current.key === record.key ? next : current)),
+                        })
+                      }
+                      onMove={(offset) => applyDefinition({ records: moveItem(definition.records, index, offset) })}
+                      onRemove={() => applyDefinition({ records: definition.records.filter(({ key }) => key !== record.key) })}
+                    />
+                  ))}
+                  <div style={{ maxWidth: 320 }}>
+                    <OptionSelect
+                      label={t('Add a record')}
+                      value=""
+                      options={selectableObjects.map(({ nameSingular, labelSingular }) => ({ value: nameSingular, label: labelSingular }))}
+                      placeholder={t('Choose an object')}
+                      onChange={addRecord}
+                    />
+                  </div>
+                </div>
+              </Tabs.Panel>
+              <Tabs.Panel value="links">
+                <div style={panelStyle}>
+                  <LinksSection
+                    key={formId}
+                    records={definition.records}
+                    objects={objects}
+                    links={definition.links}
+                    hasCycle={hasCycle}
+                    onChange={(links) => applyDefinition({ links })}
                   />
                 </div>
-                <Button onClick={addRecord} disabled={objectToAdd === ''}>
-                  {t('Add record')}
-                </Button>
-              </div>
-            </div>
-          </Tabs.Panel>
-          <Tabs.Panel value="links">
-            <div style={{ ...panelStyle, maxWidth: 880 }}>
-              <LinksSection
-                key={formId}
-                records={definition.records}
-                objects={objects}
-                links={definition.links}
-                hasCycle={hasCycle}
-                onChange={(links) => applyDefinition({ links })}
-              />
-            </div>
-          </Tabs.Panel>
-          <Tabs.Panel value="settings">
-            <div style={{ ...panelStyle, maxWidth: 880 }}>
-              <SettingsSection
-                definition={definition}
-                isPublished={isPublished}
-                isLive={saved.isPublished && !isDirty}
-                formUrl={client.resolveUrl(`/s/forms/${formId}`)}
-                onDefinitionChange={applyDefinition}
-                onPublishedChange={setIsPublished}
-              />
-            </div>
-          </Tabs.Panel>
-        </Tabs.Root>
+              </Tabs.Panel>
+              <Tabs.Panel value="settings">
+                <div style={panelStyle}>
+                  <SettingsSection definition={definition} onChange={applyDefinition} />
+                </div>
+              </Tabs.Panel>
+              <Tabs.Panel value="share">
+                <div style={panelStyle}>
+                  <ShareSection
+                    isLive={saved.isPublished && !isDirty}
+                    formUrl={client.resolveUrl(`/s/forms/${formId}`)}
+                    title={definition.title}
+                  />
+                </div>
+              </Tabs.Panel>
+            </Tabs.Root>
+          </div>
+          <div style={{ flex: '2 1 320px', minWidth: 0, maxWidth: 480, position: 'sticky', top: 0 }}>
+            <FormPreview definition={definition} />
+          </div>
+        </div>
       )}
     </main>
   );

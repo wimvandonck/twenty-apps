@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "’n Versteekte veld word nie aan besoekers gewys nie en kry altyd sy verstekwaarde.",
+  "Add a field": "Voeg ’n veld by",
   "Add a record": "Voeg ’n rekord by",
+  "Add a record and a field to see the form here.": "Voeg ’n rekord en ’n veld by om die vorm hier te sien.",
   "Add at least one visible field before publishing.": "Voeg ten minste een sigbare veld by voordat jy publiseer.",
   "Add link": "Voeg skakel by",
-  "Add record": "Voeg rekord by",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Voeg die rekords by wat ’n indiening skep of bywerk, en dan die velde om te vra. Velde wat Twenty vereis, word outomaties bygevoeg.",
   "Always create": "Skep altyd",
+  "Cancel": "Kanselleer",
+  "Choose New form to create your first form.": "Kies Nuwe vorm om jou eerste vorm te skep.",
+  "Choose a field": "Kies ’n veld",
   "Choose a form": "Kies ’n vorm",
   "Choose a record": "Kies ’n rekord",
   "Choose an object": "Kies ’n objek",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Kon nie die vorm skep nie: {error}",
   "Default value": "Verstekwaarde",
   "Description": "Beskrywing",
+  "Discard changes": "Verwerp veranderinge",
   "Draft": "Konsep",
   "Embed code": "Inbedkode",
   "Field": "Veld",
-  "Fields Twenty requires are always included; system fields are never offered.": "Velde wat Twenty vereis, is altyd ingesluit; stelselvelde word nooit aangebied nie.",
+  "Fields": "Velde",
   "First record": "Eerste rekord",
   "Fix the link loop before saving.": "Maak die lus in die skakels reg voordat jy stoor.",
   "Form": "Vorm",
   "Form saved": "Vorm gestoor",
   "Form saved and live": "Vorm gestoor en regstreeks",
-  "Form settings and sharing": "Vorminstellings en deel",
   "Hidden": "Versteek",
+  "Hidden, filled in automatically:": "Versteek, outomaties ingevul:",
   "Label on the form": "Etiket op die vorm",
   "Linked through": "Gekoppel via",
-  "Links between records": "Skakels tussen rekords",
+  "Links": "Skakels",
   "Live": "Regstreeks",
   "Message after submitting": "Boodskap ná indiening",
+  "Move down": "Skuif af",
+  "Move up": "Skuif op",
   "Name of the new form": "Naam van die nuwe vorm",
   "New form": "Nuwe vorm",
   "No default": "Geen verstekwaarde",
+  "No fields yet. Add the first one below.": "Nog geen velde nie. Voeg die eerste een hieronder by.",
   "No form yet": "Nog geen vorm nie",
-  "Not available": "Nie beskikbaar nie",
+  "No links yet.": "Nog geen skakels nie.",
   "Not live yet": "Nog nie regstreeks nie",
   "On submit": "By indiening",
+  "Open form": "Maak vorm oop",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Plak dit in die HTML van enige bladsy. Die vorm volg die besoeker se taal.",
+  "Preview": "Voorskou",
   "Public link": "Openbare skakel",
-  "Published – anyone with the link can submit": "Gepubliseer – enigeen met die skakel kan indien",
-  "Records and fields": "Rekords en velde",
+  "Published": "Gepubliseer",
   "Remove": "Verwyder",
   "Remove record": "Verwyder rekord",
   "Required": "Verpligtend",
   "Required by Twenty": "Vereis deur Twenty",
   "Save": "Stoor",
+  "Save or discard your changes to switch forms.": "Stoor of verwerp jou veranderinge om van vorm te wissel.",
   "Saved": "Gestoor",
   "Saving failed: {error}": "Kon nie stoor nie: {error}",
   "Second record": "Tweede rekord",
+  "Section title": "Afdelingstitel",
+  "Set a default value first to hide a required field.": "Stel eers ’n verstekwaarde in om ’n verpligte veld te versteek.",
+  "Settings": "Instellings",
+  "Share": "Deel",
   "Submit button": "Indien-knoppie",
+  "The form builder page was not found.": "Die vormbouer se bladsy is nie gevind nie.",
   "The forms could not be loaded": "Die vorms kon nie gelaai word nie",
   "These links form a loop": "Hierdie skakels vorm ’n lus",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Hierdie twee rekords kan nie gekoppel word nie: hul objekte het geen verwantskap in Twenty nie. Voeg eers ’n verwantskapveld by in Instellings → Datamodel.",
   "This object has required fields a form cannot fill": "Hierdie objek het verpligte velde wat ’n vorm nie kan invul nie",
   "This object no longer exists": "Hierdie objek bestaan nie meer nie",
-  "Tick Published and save to get the public link and the embed code.": "Merk Gepubliseer en stoor om die openbare skakel en die inbedkode te kry.",
   "Ticked": "Gemerk",
   "Title": "Titel",
   "Try again": "Probeer weer",
-  "Unsaved changes": "Ongestoorde veranderinge",
+  "Turn on Published and save to get the public link and the embed code.": "Skakel Gepubliseer aan en stoor om die openbare skakel en die inbedkode te kry.",
   "Untitled form": "Naamlose vorm",
   "Update when {field} matches": "Werk by wanneer {field} ooreenstem",
   "Used to match": "Gebruik om te pas",
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Die skep van hierdie rekord misluk tensy ’n skakel hulle invul.",
-  "{object} – section title": "{object} – afdelingstitel",
   "commandMenuItem.label": {
     "Open in form builder": "Maak oop in vormbouer"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Maak oop in vormbouer"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Naam van die vorm",
+    "Only published forms are reachable from their public link": "Slegs gepubliseerde vorms is via hul openbare skakel bereikbaar",
+    "Records, links and fields of the form, edited in the form builder": "Rekords, skakels en velde van die vorm, gewysig in die vormbouer"
   },
   "fieldMetadata.label": {
     "Definition": "Definisie",
@@ -83,6 +101,9 @@
     "Form builder": "Vormbouer",
     "Forms": "Vorms"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "’n Inbedbare vorm wat rekords skep of bywerk"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Vorms"
   },
@@ -90,6 +111,7 @@
     "Form": "Vorm"
   },
   "pageLayout.name": {
+    "Form": "Vorm",
     "Form builder": "Vormbouer"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Tydlyn"
   },
   "view.name": {
-    "All forms": "Alle vorms"
+    "All forms": "Alle vorms",
+    "Form fields": "Vormvelde"
   }
 }

@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "A rejtett mező nem jelenik meg a látogatóknak, és mindig az alapértelmezett értékét kapja.",
+  "Add a field": "Mező hozzáadása",
   "Add a record": "Rekord hozzáadása",
+  "Add a record and a field to see the form here.": "Adjon hozzá egy rekordot és egy mezőt, hogy itt megjelenjen az űrlap.",
   "Add at least one visible field before publishing.": "Közzététel előtt adjon hozzá legalább egy látható mezőt.",
   "Add link": "Kapcsolat hozzáadása",
-  "Add record": "Rekord hozzáadása",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Adja hozzá a rekordokat, amelyeket egy beküldés létrehoz vagy frissít, majd a bekérendő mezőket. A Twenty által megkövetelt mezők automatikusan hozzáadódnak.",
   "Always create": "Mindig hozza létre",
+  "Cancel": "Mégse",
+  "Choose New form to create your first form.": "Az első űrlap létrehozásához válassza az Új űrlap lehetőséget.",
+  "Choose a field": "Válasszon mezőt",
   "Choose a form": "Válasszon űrlapot",
   "Choose a record": "Válasszon rekordot",
   "Choose an object": "Válasszon objektumot",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Az űrlap létrehozása sikertelen: {error}",
   "Default value": "Alapértelmezett érték",
   "Description": "Leírás",
+  "Discard changes": "Módosítások elvetése",
   "Draft": "Piszkozat",
   "Embed code": "Beágyazási kód",
   "Field": "Mező",
-  "Fields Twenty requires are always included; system fields are never offered.": "A Twenty által megkövetelt mezők mindig szerepelnek; rendszermezők soha nem választhatók.",
+  "Fields": "Mezők",
   "First record": "Első rekord",
   "Fix the link loop before saving.": "Mentés előtt javítsa ki a kapcsolatok hurkát.",
   "Form": "Űrlap",
   "Form saved": "Az űrlap mentve",
   "Form saved and live": "Az űrlap mentve és él",
-  "Form settings and sharing": "Űrlapbeállítások és megosztás",
   "Hidden": "Rejtett",
+  "Hidden, filled in automatically:": "Rejtett, automatikusan kitöltve:",
   "Label on the form": "Címke az űrlapon",
   "Linked through": "Kapcsolat ezen keresztül",
-  "Links between records": "Rekordok közötti kapcsolatok",
+  "Links": "Kapcsolatok",
   "Live": "Él",
   "Message after submitting": "Üzenet beküldés után",
+  "Move down": "Mozgatás le",
+  "Move up": "Mozgatás fel",
   "Name of the new form": "Az új űrlap neve",
   "New form": "Új űrlap",
   "No default": "Nincs alapértelmezett érték",
+  "No fields yet. Add the first one below.": "Még nincsenek mezők. Adja hozzá az elsőt alább.",
   "No form yet": "Még nincs űrlap",
-  "Not available": "Nem érhető el",
+  "No links yet.": "Még nincsenek kapcsolatok.",
   "Not live yet": "Még nem él",
   "On submit": "Beküldéskor",
+  "Open form": "Űrlap megnyitása",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Illessze be ezt bármely oldal HTML-kódjába. Az űrlap a látogató nyelvét követi.",
+  "Preview": "Előnézet",
   "Public link": "Nyilvános hivatkozás",
-  "Published – anyone with the link can submit": "Közzétéve – a hivatkozás birtokában bárki beküldheti",
-  "Records and fields": "Rekordok és mezők",
+  "Published": "Közzétéve",
   "Remove": "Eltávolítás",
   "Remove record": "Rekord eltávolítása",
   "Required": "Kötelező",
   "Required by Twenty": "A Twenty megköveteli",
   "Save": "Mentés",
+  "Save or discard your changes to switch forms.": "Űrlapváltáshoz mentse vagy vesse el a módosításokat.",
   "Saved": "Mentve",
   "Saving failed: {error}": "A mentés sikertelen: {error}",
   "Second record": "Második rekord",
+  "Section title": "Szakaszcím",
+  "Set a default value first to hide a required field.": "Kötelező mező elrejtéséhez előbb adjon meg alapértelmezett értéket.",
+  "Settings": "Beállítások",
+  "Share": "Megosztás",
   "Submit button": "Beküldés gomb",
+  "The form builder page was not found.": "Az űrlapkészítő oldala nem található.",
   "The forms could not be loaded": "Az űrlapokat nem sikerült betölteni",
   "These links form a loop": "Ezek a kapcsolatok hurkot alkotnak",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Ez a két rekord nem kapcsolható össze: az objektumaik között nincs kapcsolat a Twentyben. Előbb adjon hozzá kapcsolatmezőt a Beállítások → Adatmodell alatt.",
   "This object has required fields a form cannot fill": "Ennek az objektumnak vannak kötelező mezői, amelyeket az űrlap nem tud kitölteni",
   "This object no longer exists": "Ez az objektum már nem létezik",
-  "Tick Published and save to get the public link and the embed code.": "Jelölje be a Közzétéve lehetőséget, és mentsen a nyilvános hivatkozás és a beágyazási kód eléréséhez.",
   "Ticked": "Bejelölve",
   "Title": "Cím",
   "Try again": "Újra",
-  "Unsaved changes": "Nem mentett módosítások",
+  "Turn on Published and save to get the public link and the embed code.": "Kapcsolja be a Közzétéve lehetőséget, és mentsen a nyilvános hivatkozás és a beágyazási kód eléréséhez.",
   "Untitled form": "Névtelen űrlap",
   "Update when {field} matches": "Frissítés, ha a(z) {field} egyezik",
   "Used to match": "Egyeztetéshez használva",
   "via {relation}": "ezen keresztül: {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. A rekord létrehozása sikertelen lesz, hacsak egy kapcsolat ki nem tölti őket.",
-  "{object} – section title": "{object} – szakaszcím",
   "commandMenuItem.label": {
     "Open in form builder": "Megnyitás az űrlapkészítőben"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Megnyitás az űrlapkészítőben"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Az űrlap neve",
+    "Only published forms are reachable from their public link": "Csak a közzétett űrlapok érhetők el a nyilvános hivatkozásukon",
+    "Records, links and fields of the form, edited in the form builder": "Az űrlap rekordjai, kapcsolatai és mezői, az űrlapkészítőben szerkesztve"
   },
   "fieldMetadata.label": {
     "Definition": "Definíció",
@@ -83,6 +101,9 @@
     "Form builder": "Űrlapkészítő",
     "Forms": "Űrlapok"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Beágyazható űrlap, amely rekordokat hoz létre vagy frissít"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Űrlapok"
   },
@@ -90,6 +111,7 @@
     "Form": "Űrlap"
   },
   "pageLayout.name": {
+    "Form": "Űrlap",
     "Form builder": "Űrlapkészítő"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Idővonal"
   },
   "view.name": {
-    "All forms": "Minden űrlap"
+    "All forms": "Minden űrlap",
+    "Form fields": "Űrlapmezők"
   }
 }

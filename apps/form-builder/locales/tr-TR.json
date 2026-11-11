@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Gizli bir alan ziyaretçilere gösterilmez ve her zaman varsayılan değerini alır.",
+  "Add a field": "Alan ekle",
   "Add a record": "Kayıt ekle",
+  "Add a record and a field to see the form here.": "Formu burada görmek için bir kayıt ve bir alan ekleyin.",
   "Add at least one visible field before publishing.": "Yayınlamadan önce en az bir görünür alan ekleyin.",
   "Add link": "Bağlantı ekle",
-  "Add record": "Kaydı ekle",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Bir gönderimin oluşturduğu veya güncellediği kayıtları, ardından sorulacak alanları ekleyin. Twenty’nin zorunlu kıldığı alanlar otomatik olarak eklenir.",
   "Always create": "Her zaman oluştur",
+  "Cancel": "İptal",
+  "Choose New form to create your first form.": "İlk formunuzu oluşturmak için Yeni form’u seçin.",
+  "Choose a field": "Bir alan seçin",
   "Choose a form": "Bir form seçin",
   "Choose a record": "Bir kayıt seçin",
   "Choose an object": "Bir nesne seçin",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Form oluşturulamadı: {error}",
   "Default value": "Varsayılan değer",
   "Description": "Açıklama",
+  "Discard changes": "Değişiklikleri at",
   "Draft": "Taslak",
   "Embed code": "Gömme kodu",
   "Field": "Alan",
-  "Fields Twenty requires are always included; system fields are never offered.": "Twenty’nin zorunlu kıldığı alanlar her zaman dahil edilir; sistem alanları hiçbir zaman sunulmaz.",
+  "Fields": "Alanlar",
   "First record": "Birinci kayıt",
   "Fix the link loop before saving.": "Kaydetmeden önce bağlantı döngüsünü düzeltin.",
   "Form": "Form",
   "Form saved": "Form kaydedildi",
   "Form saved and live": "Form kaydedildi ve yayında",
-  "Form settings and sharing": "Form ayarları ve paylaşım",
   "Hidden": "Gizli",
+  "Hidden, filled in automatically:": "Gizli, otomatik doldurulur:",
   "Label on the form": "Formdaki etiket",
   "Linked through": "Şununla bağlı",
-  "Links between records": "Kayıtlar arası bağlantılar",
+  "Links": "Bağlantılar",
   "Live": "Yayında",
   "Message after submitting": "Gönderimden sonraki mesaj",
+  "Move down": "Aşağı taşı",
+  "Move up": "Yukarı taşı",
   "Name of the new form": "Yeni formun adı",
   "New form": "Yeni form",
   "No default": "Varsayılan değer yok",
+  "No fields yet. Add the first one below.": "Henüz alan yok. İlkini aşağıdan ekleyin.",
   "No form yet": "Henüz form yok",
-  "Not available": "Kullanılamıyor",
+  "No links yet.": "Henüz bağlantı yok.",
   "Not live yet": "Henüz yayında değil",
   "On submit": "Gönderildiğinde",
+  "Open form": "Formu aç",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Bunu herhangi bir sayfanın HTML’ine yapıştırın. Form, ziyaretçinin dilini izler.",
+  "Preview": "Önizleme",
   "Public link": "Herkese açık bağlantı",
-  "Published – anyone with the link can submit": "Yayında – bağlantıya sahip herkes gönderebilir",
-  "Records and fields": "Kayıtlar ve alanlar",
+  "Published": "Yayında",
   "Remove": "Kaldır",
   "Remove record": "Kaydı kaldır",
   "Required": "Zorunlu",
   "Required by Twenty": "Twenty tarafından zorunlu",
   "Save": "Kaydet",
+  "Save or discard your changes to switch forms.": "Form değiştirmek için değişikliklerinizi kaydedin veya atın.",
   "Saved": "Kaydedildi",
   "Saving failed: {error}": "Kaydedilemedi: {error}",
   "Second record": "İkinci kayıt",
+  "Section title": "Bölüm başlığı",
+  "Set a default value first to hide a required field.": "Zorunlu bir alanı gizlemek için önce varsayılan bir değer belirleyin.",
+  "Settings": "Ayarlar",
+  "Share": "Paylaş",
   "Submit button": "Gönder düğmesi",
+  "The form builder page was not found.": "Form oluşturucu sayfası bulunamadı.",
   "The forms could not be loaded": "Formlar yüklenemedi",
   "These links form a loop": "Bu bağlantılar bir döngü oluşturuyor",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Bu iki kayıt bağlanamaz: nesneleri arasında Twenty’de bir ilişki yok. Önce Ayarlar → Veri modeli bölümünden bir ilişki alanı ekleyin.",
   "This object has required fields a form cannot fill": "Bu nesnede bir formun dolduramayacağı zorunlu alanlar var",
   "This object no longer exists": "Bu nesne artık yok",
-  "Tick Published and save to get the public link and the embed code.": "Herkese açık bağlantıyı ve gömme kodunu almak için Yayında’yı işaretleyip kaydedin.",
   "Ticked": "İşaretli",
   "Title": "Başlık",
   "Try again": "Tekrar dene",
-  "Unsaved changes": "Kaydedilmemiş değişiklikler",
+  "Turn on Published and save to get the public link and the embed code.": "Herkese açık bağlantıyı ve gömme kodunu almak için Yayında’yı açıp kaydedin.",
   "Untitled form": "Adsız form",
   "Update when {field} matches": "{field} eşleştiğinde güncelle",
   "Used to match": "Eşleştirme için kullanılıyor",
   "via {relation}": "{relation} üzerinden",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Bir bağlantı bunları doldurmadıkça bu kaydın oluşturulması başarısız olur.",
-  "{object} – section title": "{object} – bölüm başlığı",
   "commandMenuItem.label": {
     "Open in form builder": "Form oluşturucuda aç"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Form oluşturucuda aç"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Formun adı",
+    "Only published forms are reachable from their public link": "Yalnızca yayınlanan formlara herkese açık bağlantılarından ulaşılabilir",
+    "Records, links and fields of the form, edited in the form builder": "Formun kayıtları, bağlantıları ve alanları; form oluşturucuda düzenlenir"
   },
   "fieldMetadata.label": {
     "Definition": "Tanım",
@@ -83,6 +101,9 @@
     "Form builder": "Form oluşturucu",
     "Forms": "Formlar"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Kayıt oluşturan veya güncelleyen, gömülebilir bir form"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Formlar"
   },
@@ -90,6 +111,7 @@
     "Form": "Form"
   },
   "pageLayout.name": {
+    "Form": "Form",
     "Form builder": "Form oluşturucu"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Zaman çizelgesi"
   },
   "view.name": {
-    "All forms": "Tüm formlar"
+    "All forms": "Tüm formlar",
+    "Form fields": "Form alanları"
   }
 }

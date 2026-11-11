@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Un camp ocult no es mostra als visitants i sempre rep el seu valor per defecte.",
+  "Add a field": "Afegeix un camp",
   "Add a record": "Afegeix un registre",
+  "Add a record and a field to see the form here.": "Afegeix un registre i un camp per veure aquí el formulari.",
   "Add at least one visible field before publishing.": "Afegeix almenys un camp visible abans de publicar.",
   "Add link": "Afegeix un vincle",
-  "Add record": "Afegeix el registre",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Afegeix els registres que un enviament crea o actualitza i després els camps que vols demanar. Els camps que Twenty exigeix s’afegeixen automàticament.",
   "Always create": "Crea sempre",
+  "Cancel": "Cancel·la",
+  "Choose New form to create your first form.": "Tria Formulari nou per crear el teu primer formulari.",
+  "Choose a field": "Tria un camp",
   "Choose a form": "Tria un formulari",
   "Choose a record": "Tria un registre",
   "Choose an object": "Tria un objecte",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "No s’ha pogut crear el formulari: {error}",
   "Default value": "Valor per defecte",
   "Description": "Descripció",
+  "Discard changes": "Descarta els canvis",
   "Draft": "Esborrany",
   "Embed code": "Codi d’inserció",
   "Field": "Camp",
-  "Fields Twenty requires are always included; system fields are never offered.": "Els camps que Twenty exigeix sempre s’inclouen; els camps del sistema mai no s’ofereixen.",
+  "Fields": "Camps",
   "First record": "Primer registre",
   "Fix the link loop before saving.": "Corregeix el bucle de vincles abans de desar.",
   "Form": "Formulari",
   "Form saved": "Formulari desat",
   "Form saved and live": "Formulari desat i actiu",
-  "Form settings and sharing": "Configuració del formulari i compartició",
   "Hidden": "Ocult",
+  "Hidden, filled in automatically:": "Ocults, emplenats automàticament:",
   "Label on the form": "Etiqueta al formulari",
   "Linked through": "Vinculat mitjançant",
-  "Links between records": "Vincles entre registres",
+  "Links": "Vincles",
   "Live": "Actiu",
   "Message after submitting": "Missatge després de l’enviament",
+  "Move down": "Mou avall",
+  "Move up": "Mou amunt",
   "Name of the new form": "Nom del formulari nou",
   "New form": "Formulari nou",
   "No default": "Sense valor per defecte",
+  "No fields yet. Add the first one below.": "Encara no hi ha camps. Afegeix el primer a sota.",
   "No form yet": "Encara no hi ha cap formulari",
-  "Not available": "No disponible",
+  "No links yet.": "Encara no hi ha vincles.",
   "Not live yet": "Encara no és actiu",
   "On submit": "En enviar",
+  "Open form": "Obre el formulari",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Enganxa això a l’HTML de qualsevol pàgina. El formulari segueix l’idioma del visitant.",
+  "Preview": "Previsualització",
   "Public link": "Enllaç públic",
-  "Published – anyone with the link can submit": "Publicat – qualsevol persona amb l’enllaç el pot enviar",
-  "Records and fields": "Registres i camps",
+  "Published": "Publicat",
   "Remove": "Treu",
   "Remove record": "Treu el registre",
   "Required": "Obligatori",
   "Required by Twenty": "Exigit per Twenty",
   "Save": "Desa",
+  "Save or discard your changes to switch forms.": "Desa o descarta els canvis per canviar de formulari.",
   "Saved": "Desat",
   "Saving failed: {error}": "No s’ha pogut desar: {error}",
   "Second record": "Segon registre",
+  "Section title": "Títol de la secció",
+  "Set a default value first to hide a required field.": "Defineix primer un valor per defecte per ocultar un camp obligatori.",
+  "Settings": "Configuració",
+  "Share": "Comparteix",
   "Submit button": "Botó d’enviament",
+  "The form builder page was not found.": "No s’ha trobat la pàgina del creador de formularis.",
   "The forms could not be loaded": "No s’han pogut carregar els formularis",
   "These links form a loop": "Aquests vincles formen un bucle",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Aquests dos registres no es poden vincular: els seus objectes no tenen cap relació a Twenty. Afegeix primer un camp de relació a Configuració → Model de dades.",
   "This object has required fields a form cannot fill": "Aquest objecte té camps obligatoris que un formulari no pot omplir",
   "This object no longer exists": "Aquest objecte ja no existeix",
-  "Tick Published and save to get the public link and the embed code.": "Marca Publicat i desa per obtenir l’enllaç públic i el codi d’inserció.",
   "Ticked": "Marcat",
   "Title": "Títol",
   "Try again": "Torna-ho a provar",
-  "Unsaved changes": "Canvis sense desar",
+  "Turn on Published and save to get the public link and the embed code.": "Activa Publicat i desa per obtenir l’enllaç públic i el codi d’inserció.",
   "Untitled form": "Formulari sense títol",
   "Update when {field} matches": "Actualitza quan {field} coincideixi",
   "Used to match": "Utilitzat per a la coincidència",
   "via {relation}": "mitjançant {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. La creació d’aquest registre falla tret que un vincle els ompli.",
-  "{object} – section title": "{object} – títol de la secció",
   "commandMenuItem.label": {
     "Open in form builder": "Obre al creador de formularis"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Obre al creador de formularis"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Nom del formulari",
+    "Only published forms are reachable from their public link": "Només els formularis publicats són accessibles des del seu enllaç públic",
+    "Records, links and fields of the form, edited in the form builder": "Registres, vincles i camps del formulari, editats al creador de formularis"
   },
   "fieldMetadata.label": {
     "Definition": "Definició",
@@ -83,6 +101,9 @@
     "Form builder": "Creador de formularis",
     "Forms": "Formularis"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Un formulari inserible que crea o actualitza registres"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Formularis"
   },
@@ -90,6 +111,7 @@
     "Form": "Formulari"
   },
   "pageLayout.name": {
+    "Form": "Formulari",
     "Form builder": "Creador de formularis"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Cronologia"
   },
   "view.name": {
-    "All forms": "Tots els formularis"
+    "All forms": "Tots els formularis",
+    "Form fields": "Camps del formulari"
   }
 }

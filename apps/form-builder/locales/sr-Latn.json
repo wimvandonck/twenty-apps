@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Skriveno polje se ne prikazuje posetiocima i uvek dobija podrazumevanu vrednost.",
+  "Add a field": "Dodaj polje",
   "Add a record": "Dodaj zapis",
+  "Add a record and a field to see the form here.": "Dodajte zapis i polje da biste ovde videli obrazac.",
   "Add at least one visible field before publishing.": "Dodajte bar jedno vidljivo polje pre objavljivanja.",
   "Add link": "Dodaj vezu",
-  "Add record": "Dodaj zapis",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Dodajte zapise koje slanje kreira ili ažurira, a zatim polja koja želite da tražite. Polja koja Twenty zahteva dodaju se automatski.",
   "Always create": "Uvek kreiraj",
+  "Cancel": "Otkaži",
+  "Choose New form to create your first form.": "Izaberite Novi obrazac da biste napravili svoj prvi obrazac.",
+  "Choose a field": "Izaberite polje",
   "Choose a form": "Izaberite obrazac",
   "Choose a record": "Izaberite zapis",
   "Choose an object": "Izaberite objekat",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Kreiranje obrasca nije uspelo: {error}",
   "Default value": "Podrazumevana vrednost",
   "Description": "Opis",
+  "Discard changes": "Odbaci izmene",
   "Draft": "Nacrt",
   "Embed code": "Kôd za ugradnju",
   "Field": "Polje",
-  "Fields Twenty requires are always included; system fields are never offered.": "Polja koja Twenty zahteva uvek su uključena; sistemska polja se nikada ne nude.",
+  "Fields": "Polja",
   "First record": "Prvi zapis",
   "Fix the link loop before saving.": "Ispravite petlju u vezama pre čuvanja.",
   "Form": "Obrazac",
   "Form saved": "Obrazac je sačuvan",
   "Form saved and live": "Obrazac je sačuvan i aktivan",
-  "Form settings and sharing": "Podešavanja obrasca i deljenje",
   "Hidden": "Skriveno",
+  "Hidden, filled in automatically:": "Skriveno, popunjava se automatski:",
   "Label on the form": "Oznaka u obrascu",
   "Linked through": "Povezano preko",
-  "Links between records": "Veze između zapisa",
+  "Links": "Veze",
   "Live": "Aktivno",
   "Message after submitting": "Poruka nakon slanja",
+  "Move down": "Pomeri nadole",
+  "Move up": "Pomeri nagore",
   "Name of the new form": "Naziv novog obrasca",
   "New form": "Novi obrazac",
   "No default": "Bez podrazumevane vrednosti",
+  "No fields yet. Add the first one below.": "Još nema polja. Dodajte prvo ispod.",
   "No form yet": "Još nema obrazaca",
-  "Not available": "Nije dostupno",
+  "No links yet.": "Još nema veza.",
   "Not live yet": "Još nije aktivno",
   "On submit": "Pri slanju",
+  "Open form": "Otvori obrazac",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Nalepite ovo u HTML bilo koje stranice. Obrazac prati jezik posetioca.",
+  "Preview": "Pregled",
   "Public link": "Javna veza",
-  "Published – anyone with the link can submit": "Objavljeno – svako ko ima vezu može da pošalje",
-  "Records and fields": "Zapisi i polja",
+  "Published": "Objavljeno",
   "Remove": "Ukloni",
   "Remove record": "Ukloni zapis",
   "Required": "Obavezno",
   "Required by Twenty": "Zahteva Twenty",
   "Save": "Sačuvaj",
+  "Save or discard your changes to switch forms.": "Sačuvajte ili odbacite izmene da biste promenili obrazac.",
   "Saved": "Sačuvano",
   "Saving failed: {error}": "Čuvanje nije uspelo: {error}",
   "Second record": "Drugi zapis",
+  "Section title": "Naslov odeljka",
+  "Set a default value first to hide a required field.": "Prvo podesite podrazumevanu vrednost da biste sakrili obavezno polje.",
+  "Settings": "Podešavanja",
+  "Share": "Deli",
   "Submit button": "Dugme za slanje",
+  "The form builder page was not found.": "Stranica kreatora obrazaca nije pronađena.",
   "The forms could not be loaded": "Obrasci nisu mogli da se učitaju",
   "These links form a loop": "Ove veze čine petlju",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Ova dva zapisa ne mogu da se povežu: njihovi objekti nemaju relaciju u Twenty-ju. Prvo dodajte polje relacije u Podešavanja → Model podataka.",
   "This object has required fields a form cannot fill": "Ovaj objekat ima obavezna polja koja obrazac ne može da popuni",
   "This object no longer exists": "Ovaj objekat više ne postoji",
-  "Tick Published and save to get the public link and the embed code.": "Označite Objavljeno i sačuvajte da biste dobili javnu vezu i kôd za ugradnju.",
   "Ticked": "Označeno",
   "Title": "Naslov",
   "Try again": "Pokušaj ponovo",
-  "Unsaved changes": "Nesačuvane izmene",
+  "Turn on Published and save to get the public link and the embed code.": "Uključite Objavljeno i sačuvajte da biste dobili javnu vezu i kôd za ugradnju.",
   "Untitled form": "Obrazac bez naslova",
   "Update when {field} matches": "Ažuriraj kada se {field} podudara",
   "Used to match": "Koristi se za podudaranje",
   "via {relation}": "preko {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Kreiranje ovog zapisa neće uspeti osim ako ih veza ne popuni.",
-  "{object} – section title": "{object} – naslov odeljka",
   "commandMenuItem.label": {
     "Open in form builder": "Otvori u kreatoru obrazaca"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Otvori u kreatoru obrazaca"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Naziv obrasca",
+    "Only published forms are reachable from their public link": "Samo objavljeni obrasci dostupni su preko svoje javne veze",
+    "Records, links and fields of the form, edited in the form builder": "Zapisi, veze i polja obrasca, uređuju se u kreatoru obrazaca"
   },
   "fieldMetadata.label": {
     "Definition": "Definicija",
@@ -83,6 +101,9 @@
     "Form builder": "Kreator obrazaca",
     "Forms": "Obrasci"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Obrazac za ugradnju koji kreira ili ažurira zapise"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Obrasci"
   },
@@ -90,6 +111,7 @@
     "Form": "Obrazac"
   },
   "pageLayout.name": {
+    "Form": "Obrazac",
     "Form builder": "Kreator obrazaca"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Vremenska linija"
   },
   "view.name": {
-    "All forms": "Svi obrasci"
+    "All forms": "Svi obrasci",
+    "Form fields": "Polja obrasca"
   }
 }

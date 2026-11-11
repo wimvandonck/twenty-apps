@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Et skjult felt vises ikke for besøgende og får altid sin standardværdi.",
+  "Add a field": "Tilføj et felt",
   "Add a record": "Tilføj en post",
+  "Add a record and a field to see the form here.": "Tilføj en post og et felt for at se formularen her.",
   "Add at least one visible field before publishing.": "Tilføj mindst ét synligt felt, før du udgiver.",
   "Add link": "Tilføj link",
-  "Add record": "Tilføj post",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Tilføj de poster, som en indsendelse opretter eller opdaterer, og derefter de felter, der skal spørges om. Felter, som Twenty kræver, tilføjes automatisk.",
   "Always create": "Opret altid",
+  "Cancel": "Annuller",
+  "Choose New form to create your first form.": "Vælg Ny formular for at oprette din første formular.",
+  "Choose a field": "Vælg et felt",
   "Choose a form": "Vælg en formular",
   "Choose a record": "Vælg en post",
   "Choose an object": "Vælg et objekt",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Formularen kunne ikke oprettes: {error}",
   "Default value": "Standardværdi",
   "Description": "Beskrivelse",
+  "Discard changes": "Kassér ændringer",
   "Draft": "Kladde",
   "Embed code": "Indlejringskode",
   "Field": "Felt",
-  "Fields Twenty requires are always included; system fields are never offered.": "Felter, som Twenty kræver, er altid med; systemfelter tilbydes aldrig.",
+  "Fields": "Felter",
   "First record": "Første post",
   "Fix the link loop before saving.": "Ret løkken i linkene, før du gemmer.",
   "Form": "Formular",
   "Form saved": "Formular gemt",
   "Form saved and live": "Formular gemt og live",
-  "Form settings and sharing": "Formularindstillinger og deling",
   "Hidden": "Skjult",
+  "Hidden, filled in automatically:": "Skjult, udfyldes automatisk:",
   "Label on the form": "Etiket i formularen",
   "Linked through": "Forbundet via",
-  "Links between records": "Links mellem poster",
+  "Links": "Links",
   "Live": "Live",
   "Message after submitting": "Besked efter indsendelse",
+  "Move down": "Flyt ned",
+  "Move up": "Flyt op",
   "Name of the new form": "Navn på den nye formular",
   "New form": "Ny formular",
   "No default": "Ingen standardværdi",
+  "No fields yet. Add the first one below.": "Ingen felter endnu. Tilføj det første nedenfor.",
   "No form yet": "Ingen formular endnu",
-  "Not available": "Ikke tilgængelig",
+  "No links yet.": "Ingen links endnu.",
   "Not live yet": "Ikke live endnu",
   "On submit": "Ved indsendelse",
+  "Open form": "Åbn formular",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Indsæt dette i HTML-koden på en hvilken som helst side. Formularen følger den besøgendes sprog.",
+  "Preview": "Forhåndsvisning",
   "Public link": "Offentligt link",
-  "Published – anyone with the link can submit": "Udgivet – alle med linket kan indsende",
-  "Records and fields": "Poster og felter",
+  "Published": "Udgivet",
   "Remove": "Fjern",
   "Remove record": "Fjern post",
   "Required": "Obligatorisk",
   "Required by Twenty": "Krævet af Twenty",
   "Save": "Gem",
+  "Save or discard your changes to switch forms.": "Gem eller kassér dine ændringer for at skifte formular.",
   "Saved": "Gemt",
   "Saving failed: {error}": "Kunne ikke gemme: {error}",
   "Second record": "Anden post",
+  "Section title": "Afsnitstitel",
+  "Set a default value first to hide a required field.": "Angiv først en standardværdi for at skjule et obligatorisk felt.",
+  "Settings": "Indstillinger",
+  "Share": "Del",
   "Submit button": "Send-knap",
+  "The form builder page was not found.": "Siden med formularbyggeren blev ikke fundet.",
   "The forms could not be loaded": "Formularerne kunne ikke indlæses",
   "These links form a loop": "Disse links danner en løkke",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Disse to poster kan ikke forbindes: deres objekter har ingen relation i Twenty. Tilføj først et relationsfelt under Indstillinger → Datamodel.",
   "This object has required fields a form cannot fill": "Dette objekt har obligatoriske felter, som en formular ikke kan udfylde",
   "This object no longer exists": "Dette objekt findes ikke længere",
-  "Tick Published and save to get the public link and the embed code.": "Sæt kryds ved Udgivet, og gem for at få det offentlige link og indlejringskoden.",
   "Ticked": "Afkrydset",
   "Title": "Titel",
   "Try again": "Prøv igen",
-  "Unsaved changes": "Ikke-gemte ændringer",
+  "Turn on Published and save to get the public link and the embed code.": "Slå Udgivet til, og gem for at få det offentlige link og indlejringskoden.",
   "Untitled form": "Formular uden titel",
   "Update when {field} matches": "Opdater, når {field} matcher",
   "Used to match": "Bruges til match",
   "via {relation}": "via {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Oprettelsen af denne post mislykkes, medmindre et link udfylder dem.",
-  "{object} – section title": "{object} – afsnitstitel",
   "commandMenuItem.label": {
     "Open in form builder": "Åbn i formularbygger"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Åbn i formularbygger"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Formularens navn",
+    "Only published forms are reachable from their public link": "Kun udgivne formularer kan nås via deres offentlige link",
+    "Records, links and fields of the form, edited in the form builder": "Formularens poster, links og felter, redigeret i formularbyggeren"
   },
   "fieldMetadata.label": {
     "Definition": "Definition",
@@ -83,6 +101,9 @@
     "Form builder": "Formularbygger",
     "Forms": "Formularer"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "En formular, der kan indlejres, og som opretter eller opdaterer poster"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Formularer"
   },
@@ -90,6 +111,7 @@
     "Form": "Formular"
   },
   "pageLayout.name": {
+    "Form": "Formular",
     "Form builder": "Formularbygger"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Tidslinje"
   },
   "view.name": {
-    "All forms": "Alle formularer"
+    "All forms": "Alle formularer",
+    "Form fields": "Formularfelter"
   }
 }

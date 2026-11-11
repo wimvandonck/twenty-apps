@@ -1,10 +1,14 @@
 {
-  "A hidden field is not shown to visitors and always gets its default value.": "Ένα κρυφό πεδίο δεν εμφανίζεται στους επισκέπτες και λαμβάνει πάντα την προεπιλεγμένη τιμή του.",
+  "Add a field": "Προσθήκη πεδίου",
   "Add a record": "Προσθήκη εγγραφής",
+  "Add a record and a field to see the form here.": "Προσθέστε μια εγγραφή και ένα πεδίο για να δείτε εδώ τη φόρμα.",
   "Add at least one visible field before publishing.": "Προσθέστε τουλάχιστον ένα ορατό πεδίο πριν από τη δημοσίευση.",
   "Add link": "Προσθήκη σύνδεσης",
-  "Add record": "Προσθήκη εγγραφής",
+  "Add the records a submission creates or updates, then the fields to ask for. Fields Twenty requires are added automatically.": "Προσθέστε τις εγγραφές που δημιουργεί ή ενημερώνει μια υποβολή και έπειτα τα πεδία που θα ζητηθούν. Τα πεδία που απαιτεί το Twenty προστίθενται αυτόματα.",
   "Always create": "Πάντα δημιουργία",
+  "Cancel": "Άκυρο",
+  "Choose New form to create your first form.": "Επιλέξτε «Νέα φόρμα» για να δημιουργήσετε την πρώτη σας φόρμα.",
+  "Choose a field": "Επιλέξτε πεδίο",
   "Choose a form": "Επιλέξτε φόρμα",
   "Choose a record": "Επιλέξτε εγγραφή",
   "Choose an object": "Επιλέξτε αντικείμενο",
@@ -16,63 +20,77 @@
   "Creating the form failed: {error}": "Η δημιουργία της φόρμας απέτυχε: {error}",
   "Default value": "Προεπιλεγμένη τιμή",
   "Description": "Περιγραφή",
+  "Discard changes": "Απόρριψη αλλαγών",
   "Draft": "Πρόχειρο",
   "Embed code": "Κώδικας ενσωμάτωσης",
   "Field": "Πεδίο",
-  "Fields Twenty requires are always included; system fields are never offered.": "Τα πεδία που απαιτεί το Twenty περιλαμβάνονται πάντα· τα πεδία συστήματος δεν προσφέρονται ποτέ.",
+  "Fields": "Πεδία",
   "First record": "Πρώτη εγγραφή",
   "Fix the link loop before saving.": "Διορθώστε τον βρόχο των συνδέσεων πριν από την αποθήκευση.",
   "Form": "Φόρμα",
   "Form saved": "Η φόρμα αποθηκεύτηκε",
   "Form saved and live": "Η φόρμα αποθηκεύτηκε και είναι ενεργή",
-  "Form settings and sharing": "Ρυθμίσεις φόρμας και κοινοποίηση",
   "Hidden": "Κρυφό",
+  "Hidden, filled in automatically:": "Κρυφά, συμπληρώνονται αυτόματα:",
   "Label on the form": "Ετικέτα στη φόρμα",
   "Linked through": "Σύνδεση μέσω",
-  "Links between records": "Συνδέσεις μεταξύ εγγραφών",
+  "Links": "Συνδέσεις",
   "Live": "Ενεργή",
   "Message after submitting": "Μήνυμα μετά την υποβολή",
+  "Move down": "Μετακίνηση κάτω",
+  "Move up": "Μετακίνηση επάνω",
   "Name of the new form": "Όνομα της νέας φόρμας",
   "New form": "Νέα φόρμα",
   "No default": "Χωρίς προεπιλεγμένη τιμή",
+  "No fields yet. Add the first one below.": "Δεν υπάρχουν ακόμη πεδία. Προσθέστε το πρώτο παρακάτω.",
   "No form yet": "Δεν υπάρχει ακόμη φόρμα",
-  "Not available": "Μη διαθέσιμο",
+  "No links yet.": "Δεν υπάρχουν ακόμη συνδέσεις.",
   "Not live yet": "Δεν είναι ακόμη ενεργή",
   "On submit": "Κατά την υποβολή",
+  "Open form": "Άνοιγμα φόρμας",
   "Paste this into the HTML of any page. The form follows the visitor’s language.": "Επικολλήστε αυτό στο HTML οποιασδήποτε σελίδας. Η φόρμα ακολουθεί τη γλώσσα του επισκέπτη.",
+  "Preview": "Προεπισκόπηση",
   "Public link": "Δημόσιος σύνδεσμος",
-  "Published – anyone with the link can submit": "Δημοσιευμένη – οποιοσδήποτε έχει τον σύνδεσμο μπορεί να την υποβάλει",
-  "Records and fields": "Εγγραφές και πεδία",
+  "Published": "Δημοσιευμένη",
   "Remove": "Αφαίρεση",
   "Remove record": "Αφαίρεση εγγραφής",
   "Required": "Υποχρεωτικό",
   "Required by Twenty": "Απαιτείται από το Twenty",
   "Save": "Αποθήκευση",
+  "Save or discard your changes to switch forms.": "Αποθηκεύστε ή απορρίψτε τις αλλαγές σας για να αλλάξετε φόρμα.",
   "Saved": "Αποθηκεύτηκε",
   "Saving failed: {error}": "Η αποθήκευση απέτυχε: {error}",
   "Second record": "Δεύτερη εγγραφή",
+  "Section title": "Τίτλος ενότητας",
+  "Set a default value first to hide a required field.": "Ορίστε πρώτα μια προεπιλεγμένη τιμή για να αποκρύψετε ένα υποχρεωτικό πεδίο.",
+  "Settings": "Ρυθμίσεις",
+  "Share": "Κοινοποίηση",
   "Submit button": "Κουμπί υποβολής",
+  "The form builder page was not found.": "Η σελίδα του δημιουργού φορμών δεν βρέθηκε.",
   "The forms could not be loaded": "Δεν ήταν δυνατή η φόρτωση των φορμών",
   "These links form a loop": "Αυτές οι συνδέσεις σχηματίζουν βρόχο",
   "These two records cannot be linked: their objects have no relation in Twenty. Add a relation field in Settings → Data model first.": "Αυτές οι δύο εγγραφές δεν μπορούν να συνδεθούν: τα αντικείμενά τους δεν έχουν σχέση στο Twenty. Προσθέστε πρώτα ένα πεδίο σχέσης στις Ρυθμίσεις → Μοντέλο δεδομένων.",
   "This object has required fields a form cannot fill": "Αυτό το αντικείμενο έχει υποχρεωτικά πεδία που μια φόρμα δεν μπορεί να συμπληρώσει",
   "This object no longer exists": "Αυτό το αντικείμενο δεν υπάρχει πλέον",
-  "Tick Published and save to get the public link and the embed code.": "Επιλέξτε «Δημοσιευμένη» και αποθηκεύστε για να λάβετε τον δημόσιο σύνδεσμο και τον κώδικα ενσωμάτωσης.",
   "Ticked": "Επιλεγμένο",
   "Title": "Τίτλος",
   "Try again": "Δοκιμάστε ξανά",
-  "Unsaved changes": "Μη αποθηκευμένες αλλαγές",
+  "Turn on Published and save to get the public link and the embed code.": "Ενεργοποιήστε το «Δημοσιευμένη» και αποθηκεύστε για να λάβετε τον δημόσιο σύνδεσμο και τον κώδικα ενσωμάτωσης.",
   "Untitled form": "Φόρμα χωρίς τίτλο",
   "Update when {field} matches": "Ενημέρωση όταν ταιριάζει το πεδίο {field}",
   "Used to match": "Χρησιμοποιείται για αντιστοίχιση",
   "via {relation}": "μέσω {relation}",
   "{fields}. Creating this record fails unless a link fills them.": "{fields}. Η δημιουργία αυτής της εγγραφής αποτυγχάνει, εκτός αν τα συμπληρώσει μια σύνδεση.",
-  "{object} – section title": "{object} – τίτλος ενότητας",
   "commandMenuItem.label": {
     "Open in form builder": "Άνοιγμα στον δημιουργό φορμών"
   },
   "commandMenuItem.shortLabel": {
     "Open in form builder": "Άνοιγμα στον δημιουργό φορμών"
+  },
+  "fieldMetadata.description": {
+    "Name of the form": "Όνομα της φόρμας",
+    "Only published forms are reachable from their public link": "Μόνο οι δημοσιευμένες φόρμες είναι προσβάσιμες από τον δημόσιο σύνδεσμό τους",
+    "Records, links and fields of the form, edited in the form builder": "Εγγραφές, συνδέσεις και πεδία της φόρμας, με επεξεργασία στον δημιουργό φορμών"
   },
   "fieldMetadata.label": {
     "Definition": "Ορισμός",
@@ -83,6 +101,9 @@
     "Form builder": "Δημιουργός φορμών",
     "Forms": "Φόρμες"
   },
+  "objectMetadata.description": {
+    "An embeddable form that creates or updates records": "Μια ενσωματώσιμη φόρμα που δημιουργεί ή ενημερώνει εγγραφές"
+  },
   "objectMetadata.labelPlural": {
     "Forms": "Φόρμες"
   },
@@ -90,6 +111,7 @@
     "Form": "Φόρμα"
   },
   "pageLayout.name": {
+    "Form": "Φόρμα",
     "Form builder": "Δημιουργός φορμών"
   },
   "pageLayoutTab.title": {
@@ -102,6 +124,7 @@
     "Timeline": "Χρονολόγιο"
   },
   "view.name": {
-    "All forms": "Όλες οι φόρμες"
+    "All forms": "Όλες οι φόρμες",
+    "Form fields": "Πεδία φόρμας"
   }
 }

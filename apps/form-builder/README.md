@@ -4,11 +4,12 @@ A Twenty app for building public forms that create or update linked records, and
 
 # Building a form
 
-Open **Form builder** in the sidebar. It is a full page: pick a form at the top, or name a new one and choose **Create form**. From a form's record (or with one form selected in the list), the **Open in form builder** button takes you straight to that form. The builder has three tabs:
+Open **Form builder** in the sidebar, or use the **Open in form builder** button on a form's record. The page shows the editor on the left and a live preview of the form on the right. In the header you pick or create a form, switch **Published** on or off, and save or discard your changes.
 
-- **Records and fields** – add the objects a submission writes. Each record is always created, or updates an existing record when a text or email field you choose matches. Per field you set the label, a default value, whether it is required and whether it is hidden. Fields Twenty requires are always included and required; system and read-only fields are never offered.
-- **Links between records** – choose two records and the builder finds how they relate: through a relation field in either direction, or through a junction object such as note targets. When there are several ways, you pick one. Two objects without any relation in Twenty cannot be linked until you add a relation field in the data model.
-- **Form settings and sharing** – set the title and messages, tick **Published**, save, and copy the public link or the embed code.
+- **Fields** – add the records a submission writes and, per record, the fields to ask for. Each record is always created, or updates an existing record when a text or email field you choose matches. Per field you set the label, a default value, whether it is required and whether it is hidden. Records and fields can be reordered and removed. Fields Twenty requires are added automatically and cannot be removed; system and read-only fields are never offered.
+- **Links** – choose two records and the builder finds how they relate: through a relation field in either direction, or through a junction object such as note targets. When there are several ways, you pick one. Two objects without any relation in Twenty cannot be linked until you add a relation field in the data model.
+- **Settings** – title, description, submit button and the message shown after submitting.
+- **Share** – the public link and the embed code, once the form is published and saved.
 
 A default value prefills a visible field. A hidden field is not shown to visitors and gets its default, if it has one, whatever is posted. A required field can only be hidden once it has a default.
 

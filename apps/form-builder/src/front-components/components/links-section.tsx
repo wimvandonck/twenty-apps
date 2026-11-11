@@ -64,7 +64,7 @@ export const LinksSection = ({ records, objects, links, hasCycle, onChange }: Li
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: theme.spacing[3] }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: theme.spacing[3], maxWidth: 880 }}>
       <Text color="secondary">
         {t('Connect the records of one submission, for example the new person to the new company.')}
       </Text>
@@ -146,6 +146,9 @@ export const LinksSection = ({ records, objects, links, hasCycle, onChange }: Li
           )}
         </div>
       ))}
+      {links.length === 0 && drafts.length === 0 && (
+        <Text color="light">{t('No links yet.')}</Text>
+      )}
       <div>
         <Button
           disabled={records.length < 2}
