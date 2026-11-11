@@ -8,4 +8,5 @@ export const EMPTY_FORM_DEFINITION: FormDefinition = {
   successMessage: 'Thank you!',
   records: [],
   links: [],
+  lists: [],
 };

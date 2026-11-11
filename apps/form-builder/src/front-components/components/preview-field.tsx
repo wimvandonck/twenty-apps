@@ -1,5 +1,6 @@
 import { type CSSProperties } from 'react';
 
+import { DEFAULT_NOW, DEFAULT_TODAY } from 'src/constants/relative-defaults';
 import { type FormField } from 'src/types/form-field';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
 
@@ -40,16 +41,28 @@ const Tick = ({ checked }: { checked: boolean }) => (
   />
 );
 
-const Part = ({ label }: { label: string }) => (
+const Part = ({ label, value }: { label: string; value?: string }) => (
   <div>
     <div style={PART_LABEL}>{label}</div>
-    <div style={BOX} />
+    <div style={BOX}>{value}</div>
   </div>
 );
 
 // A static picture of one field as visitors will see it.
 export const PreviewField = ({ field, messages }: PreviewFieldProps) => {
-  const text = typeof field.defaultValue === 'string' ? field.defaultValue : '';
+  const stored = typeof field.defaultValue === 'string' ? field.defaultValue : '';
+  // Dates are shown the way the visitor's browser will write them.
+  const text =
+    field.type === 'DATE' && stored !== ''
+      ? (stored === DEFAULT_TODAY ? new Date() : new Date(`${stored}T00:00`)).toLocaleDateString()
+      : field.type === 'DATE_TIME' && stored !== ''
+        ? (stored === DEFAULT_NOW ? new Date() : new Date(stored)).toLocaleString(undefined, {
+            dateStyle: 'short',
+            timeStyle: 'short',
+          })
+        : stored;
+  const parts: Record<string, string> =
+    typeof field.defaultValue === 'object' && !Array.isArray(field.defaultValue) ? field.defaultValue : {};
   const optionLabel = (value: string) => field.options?.find((option) => option.value === value)?.label ?? value;
   const label = (
     <div style={LABEL}>
@@ -85,22 +98,22 @@ export const PreviewField = ({ field, messages }: PreviewFieldProps) => {
       )}
       {field.type === 'FULL_NAME' && (
         <div style={ROW}>
-          <Part label={messages.firstName} />
-          <Part label={messages.lastName} />
+          <Part label={messages.firstName} value={parts.firstName} />
+          <Part label={messages.lastName} value={parts.lastName} />
         </div>
       )}
       {field.type === 'CURRENCY' && (
         <div style={ROW}>
-          <Part label={messages.amount} />
-          <Part label={messages.currency} />
+          <Part label={messages.amount} value={parts.amount} />
+          <Part label={messages.currency} value={parts.currencyCode} />
         </div>
       )}
       {field.type === 'ADDRESS' && (
         <div style={ROW}>
-          <Part label={messages.street} />
-          <Part label={messages.postcode} />
-          <Part label={messages.city} />
-          <Part label={messages.country} />
+          <Part label={messages.street} value={parts.street} />
+          <Part label={messages.postcode} value={parts.postcode} />
+          <Part label={messages.city} value={parts.city} />
+          <Part label={messages.country} value={parts.country} />
         </div>
       )}
       {field.type === 'SELECT' && (

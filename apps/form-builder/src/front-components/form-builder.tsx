@@ -15,17 +15,21 @@ import { EMPTY_FORM_DEFINITION } from 'src/constants/empty-form-definition';
 import { FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identifiers';
 import { FormPreview } from 'src/front-components/components/form-preview';
 import { LinksSection } from 'src/front-components/components/links-section';
+import { ListsSection } from 'src/front-components/components/lists-section';
 import { OptionSelect } from 'src/front-components/components/option-select';
 import { RecordCard } from 'src/front-components/components/record-card';
 import { SettingsSection } from 'src/front-components/components/settings-section';
 import { ShareSection } from 'src/front-components/components/share-section';
 import { fetchForms } from 'src/twenty-client/fetch-forms';
+import { fetchLists } from 'src/twenty-client/fetch-lists';
 import { fetchObjectMetadata } from 'src/twenty-client/fetch-object-metadata';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type FormSummary } from 'src/types/form-summary';
+import { type ListSummary } from 'src/types/list-summary';
 import { type ObjectMetadata } from 'src/types/object-metadata';
 import { moveItem } from 'src/utils/move-item.util';
 import { createFormRecord } from 'src/utils/create-form-record.util';
+import { getFormSteps } from 'src/utils/get-form-steps.util';
 import { normalizeDefinition } from 'src/utils/normalize-definition.util';
 import { parseFormDefinition } from 'src/utils/parse-form-definition.util';
 import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
@@ -33,7 +37,7 @@ import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
 type LoadState =
   | { status: 'LOADING' }
   | { status: 'ERROR'; message: string }
-  | { status: 'READY'; objects: ObjectMetadata[] };
+  | { status: 'READY'; objects: ObjectMetadata[]; lists: ListSummary[] | null };
 
 type CreatedFormResponse = { data: { createForm: { id: string } } };
 
@@ -71,7 +75,11 @@ const FormBuilder = () => {
     setLoadState({ status: 'LOADING' });
 
     try {
-      const [objects, loadedForms] = await Promise.all([fetchObjectMetadata(), fetchForms(client)]);
+      const [objects, loadedForms, lists] = await Promise.all([
+        fetchObjectMetadata(),
+        fetchForms(client),
+        fetchLists(client),
+      ]);
       const preferredFormId = requestedFormId ?? localStorage.getItem(LAST_FORM_KEY);
       const initialForm = loadedForms.find(({ id }) => id === preferredFormId) ?? loadedForms[0];
 
@@ -81,7 +89,7 @@ const FormBuilder = () => {
         openForm(initialForm, objects);
       }
 
-      setLoadState({ status: 'READY', objects });
+      setLoadState({ status: 'READY', objects, lists });
     } catch (error) {
       setLoadState({ status: 'ERROR', message: error instanceof Error ? error.message : String(error) });
     }
@@ -115,7 +123,7 @@ const FormBuilder = () => {
   const { objects } = loadState;
   const selectableObjects = objects.filter(({ isSelectable }) => isSelectable);
   const hasCycle = sortRecordsByLinks(definition.records, definition.links) === null;
-  const hasVisibleField = definition.records.some(({ fields }) => fields.some(({ hidden }) => hidden !== true));
+  const hasVisibleField = getFormSteps(definition).length > 0;
   const isDirty = JSON.stringify(definition) !== saved.snapshot || isPublished !== saved.isPublished;
   const blocker = hasCycle
     ? t('Fix the link loop before saving.')
@@ -286,6 +294,7 @@ const FormBuilder = () => {
               <Tabs.List aria-label={t('Form')}>
                 <Tabs.Tab value="fields">{t('Fields')}</Tabs.Tab>
                 <Tabs.Tab value="links">{t('Links')}</Tabs.Tab>
+                <Tabs.Tab value="lists">{t('Lists')}</Tabs.Tab>
                 <Tabs.Tab value="settings">{t('Settings')}</Tabs.Tab>
                 <Tabs.Tab value="share">{t('Share')}</Tabs.Tab>
                 <Tabs.Indicator />
@@ -334,6 +343,16 @@ const FormBuilder = () => {
                   />
                 </div>
               </Tabs.Panel>
+              <Tabs.Panel value="lists">
+                <div style={panelStyle}>
+                  <ListsSection
+                    lists={definition.lists}
+                    records={definition.records}
+                    availableLists={loadState.lists}
+                    onChange={(lists) => applyDefinition({ lists })}
+                  />
+                </div>
+              </Tabs.Panel>
               <Tabs.Panel value="settings">
                 <div style={panelStyle}>
                   <SettingsSection definition={definition} onChange={applyDefinition} />
@@ -362,6 +381,6 @@ const FormBuilder = () => {
 export default defineFrontComponent({
   universalIdentifier: FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER,
   name: 'form-builder',
-  description: 'Full-page builder for forms: records, fields, links and sharing.',
+  description: 'Full-page builder for forms: records, fields, steps, links, lists and sharing.',
   component: FormBuilder,
 });

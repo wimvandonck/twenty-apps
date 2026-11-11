@@ -1,5 +1,7 @@
 import { type FormRecord } from 'src/types/form-record';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
+import { isPageBreak } from 'src/utils/is-page-break.util';
+import { resolveDefaultValue } from 'src/utils/resolve-default-value.util';
 import { toFieldValue } from 'src/utils/to-field-value.util';
 
 // Builds the data to write for one record. Only fields of the definition are
@@ -9,14 +11,19 @@ export const buildRecordData = (
   record: FormRecord,
   values: Record<string, unknown>,
   messages: PublicFormMessages,
+  now = new Date(),
 ): { data: Record<string, unknown>; errors: string[] } => {
   const data: Record<string, unknown> = {};
   const errors: string[] = [];
 
   for (const field of record.fields) {
+    if (isPageBreak(field)) {
+      continue;
+    }
+
     const result = toFieldValue(
       field,
-      field.hidden === true ? field.defaultValue : values[field.name],
+      field.hidden === true ? resolveDefaultValue(field, now) : values[field.name],
     );
 
     if (result.status === 'VALID') {

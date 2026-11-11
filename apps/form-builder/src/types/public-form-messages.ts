@@ -8,6 +8,9 @@ export type PublicFormMessages = {
   postcode: string;
   city: string;
   country: string;
+  next: string;
+  back: string;
+  step: string;
   required: string;
   invalidNumber: string;
   invalidDate: string;

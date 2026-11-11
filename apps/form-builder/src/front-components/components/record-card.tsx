@@ -2,7 +2,7 @@ import { useTranslate } from 'twenty-sdk/front-component';
 import { Callout } from 'twenty-ui/components/feedback';
 import { LightIconButton } from 'twenty-ui/components/input';
 import { IconArrowDown, IconArrowUp, IconTrash } from 'twenty-ui/icon';
-import { Field, Input } from 'twenty-ui/primitives/input';
+import { Button, Field, Input } from 'twenty-ui/primitives/input';
 import { Heading, Text } from 'twenty-ui/primitives/typography';
 import { useTheme } from 'twenty-ui/theme';
 
@@ -13,6 +13,7 @@ import { type FormField } from 'src/types/form-field';
 import { type FormRecord } from 'src/types/form-record';
 import { type ObjectMetadata } from 'src/types/object-metadata';
 import { getBlockingFields } from 'src/utils/get-blocking-fields.util';
+import { isPageBreak } from 'src/utils/is-page-break.util';
 import { isRequiredField } from 'src/utils/is-required-field.util';
 import { isSelectableField } from 'src/utils/is-selectable-field.util';
 import { moveItem } from 'src/utils/move-item.util';
@@ -44,6 +45,16 @@ export const RecordCard = ({ record, object, isFirst, isLast, onChange, onMove, 
   const objectLabel = object?.labelSingular ?? record.objectNameSingular;
 
   const setFields = (fields: FormField[]) => onChange({ ...record, fields });
+  const addPageBreak = () => {
+    const taken = [...record.fields, ...(object?.fields ?? [])].map(({ name }) => name);
+    let index = 1;
+
+    while (taken.includes(`pageBreak${index}`)) {
+      index += 1;
+    }
+
+    setFields([...record.fields, { name: `pageBreak${index}`, label: '', type: 'PAGE_BREAK', required: false }]);
+  };
 
   return (
     <section
@@ -104,7 +115,7 @@ export const RecordCard = ({ record, object, isFirst, isLast, onChange, onMove, 
         <Text color="secondary">{t('No fields yet. Add the first one below.')}</Text>
       ) : (
         <div style={{ overflowX: 'auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: FIELD_GRID, gap: theme.spacing[2], alignItems: 'center', minWidth: 620 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: FIELD_GRID, gap: theme.spacing[2], alignItems: 'start', minWidth: 620 }}>
             {[t('Field'), t('Label on the form'), t('Default value'), t('Required'), t('Hidden'), ''].map((heading, index) => (
               <Text key={index} size="xs" weight="semibold" color="light">
                 {heading}
@@ -117,7 +128,7 @@ export const RecordCard = ({ record, object, isFirst, isLast, onChange, onMove, 
                 <FieldRow
                   key={field.name}
                   field={field}
-                  sourceLabel={metadata?.label ?? field.name}
+                  sourceLabel={isPageBreak(field) ? t('Page break') : (metadata?.label ?? field.name)}
                   isRequiredByTwenty={metadata !== undefined && isRequiredField(metadata)}
                   isMatchField={record.mode === 'UPSERT' && record.matchFieldName === field.name}
                   isFirst={index === 0}
@@ -133,23 +144,26 @@ export const RecordCard = ({ record, object, isFirst, isLast, onChange, onMove, 
           </div>
         </div>
       )}
-      {available.length > 0 && (
-        <div style={{ maxWidth: 320 }}>
-          <OptionSelect
-            label={t('Add a field')}
-            value=""
-            options={available.map(({ name, label }) => ({ value: name, label }))}
-            placeholder={t('Choose a field')}
-            onChange={(name) => {
-              const metadata = available.find((candidate) => candidate.name === name);
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', gap: theme.spacing[3] }}>
+        {available.length > 0 && (
+          <div style={{ flex: '0 1 320px', minWidth: 0 }}>
+            <OptionSelect
+              label={t('Add a field')}
+              value=""
+              options={available.map(({ name, label }) => ({ value: name, label }))}
+              placeholder={t('Choose a field')}
+              onChange={(name) => {
+                const metadata = available.find((candidate) => candidate.name === name);
 
-              if (metadata !== undefined) {
-                setFields([...record.fields, toFormField(metadata)]);
-              }
-            }}
-          />
-        </div>
-      )}
+                if (metadata !== undefined) {
+                  setFields([...record.fields, toFormField(metadata)]);
+                }
+              }}
+            />
+          </div>
+        )}
+        <Button onClick={addPageBreak}>{t('Add page break')}</Button>
+      </div>
     </section>
   );
 };

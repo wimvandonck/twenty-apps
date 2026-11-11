@@ -96,6 +96,8 @@ export const toFieldValue = (field: FormField, raw: unknown): FieldValue => {
 
       return valid({ amountMicros: Math.round(number * 1_000_000), currencyCode });
     }
+    case 'PAGE_BREAK':
+      return EMPTY;
     case 'ADDRESS': {
       const { street = '', city = '', postcode = '', country = '' } = asParts(raw);
 

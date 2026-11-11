@@ -3,8 +3,11 @@ export const FORM_PAGE_STYLE = `
 body{margin:0;padding:16px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.5;color:#333;background:transparent}
 main{max-width:560px;margin:0 auto}
 h1{font-size:20px;font-weight:600;margin:0 0 4px}
+[hidden]{display:none!important}
 h2{font-size:14px;font-weight:600;margin:24px 0 8px;padding-bottom:6px;border-bottom:1px solid #ebebeb}
+h2.step-title{font-size:16px;margin:0 0 12px;padding:0;border:0}
 p{margin:0 0 12px;color:#666}
+.progress{font-size:12px;color:#888;margin:0 0 8px}
 .field{margin:0 0 12px}
 .field>label,.field>span.label,legend{display:block;font-size:13px;font-weight:500;margin:0 0 4px;padding:0}
 .required{color:#e5484d}
@@ -15,7 +18,9 @@ fieldset{border:0;margin:0 0 12px;padding:0}
 .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
 .check{display:flex;align-items:center;gap:8px;font-weight:400}
 .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-button{margin-top:8px;padding:8px 16px;font:inherit;font-weight:500;color:#fff;background:#3e63dd;border:0;border-radius:4px;cursor:pointer}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+button{padding:8px 16px;font:inherit;font-weight:500;color:#fff;background:#3e63dd;border:0;border-radius:4px;cursor:pointer}
+button.secondary{color:#333;background:#fff;border:1px solid #d6d6d6}
 button:disabled{opacity:.6;cursor:default}
 .message{margin-top:12px;padding:10px 12px;border-radius:4px}
 .message.error{color:#b4232a;background:#fdecec}

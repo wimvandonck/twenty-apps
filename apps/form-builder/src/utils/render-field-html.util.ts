@@ -1,4 +1,5 @@
 import { CURRENCY_CODES } from 'src/constants/currency-codes';
+import { DEFAULT_TODAY } from 'src/constants/relative-defaults';
 import { type FormField } from 'src/types/form-field';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
 import { escapeHtml } from 'src/utils/escape-html.util';
@@ -6,7 +7,6 @@ import { escapeHtml } from 'src/utils/escape-html.util';
 const INPUT_TYPES: Partial<Record<FormField['type'], string>> = {
   TEXT: 'text',
   NUMBER: 'number',
-  DATE: 'date',
   EMAILS: 'email',
   PHONES: 'tel',
   LINKS: 'url',
@@ -27,6 +27,11 @@ export const renderFieldHtml = (
   const defaults = Array.isArray(field.defaultValue) ? field.defaultValue : [field.defaultValue];
   const prefill = typeof field.defaultValue === 'string' ? escapeHtml(field.defaultValue) : '';
   const value = prefill === '' ? '' : ` value="${prefill}"`;
+  // "today", "now" and a date and time depend on the visitor's clock and
+  // time zone, so the page script fills those in.
+  const computed = prefill === '' ? '' : ` data-default="${prefill}"`;
+  const parts: Record<string, string> =
+    typeof field.defaultValue === 'object' && !Array.isArray(field.defaultValue) ? field.defaultValue : {};
   const options = (field.options ?? [])
     .map((option) => ({
       value: escapeHtml(option.value),
@@ -35,7 +40,7 @@ export const renderFieldHtml = (
     }));
 
   const part = (name: string, partLabel: string, type = 'text', partRequired = required) =>
-    `<div><label for="${id}-${name}">${escapeHtml(partLabel)}</label><input id="${id}-${name}" type="${type}" ${target} data-part="${name}"${type === 'number' ? ' step="any"' : ''}${partRequired}></div>`;
+    `<div><label for="${id}-${name}">${escapeHtml(partLabel)}</label><input id="${id}-${name}" type="${type}" ${target} data-part="${name}"${type === 'number' ? ' step="any"' : ''}${parts[name] ? ` value="${escapeHtml(parts[name])}"` : ''}${partRequired}></div>`;
 
   switch (field.type) {
     case 'BOOLEAN':
@@ -43,7 +48,9 @@ export const renderFieldHtml = (
     case 'RICH_TEXT':
       return `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" ${target}${required}>${prefill}</textarea></div>`;
     case 'DATE_TIME':
-      return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="datetime-local" ${target} data-kind="datetime"${required}></div>`;
+      return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="datetime-local" ${target} data-kind="datetime"${computed}${required}></div>`;
+    case 'DATE':
+      return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="date" ${target}${field.defaultValue === DEFAULT_TODAY ? computed : value}${required}></div>`;
     case 'SELECT':
       return `<div class="field"><label for="${id}">${label}</label><select id="${id}" ${target}${required}><option value=""></option>${options
         .map((option) => `<option value="${option.value}"${option.chosen ? ' selected' : ''}>${option.label}</option>`)
@@ -59,7 +66,7 @@ export const renderFieldHtml = (
       return `<fieldset><legend>${label}</legend><div class="row">${part('firstName', messages.firstName)}${part('lastName', messages.lastName)}</div></fieldset>`;
     case 'CURRENCY':
       return `<fieldset><legend>${label}</legend><div class="row">${part('amount', messages.amount, 'number')}<div><label for="${id}-currencyCode">${escapeHtml(messages.currency)}</label><select id="${id}-currencyCode" ${target} data-part="currencyCode">${CURRENCY_CODES.map(
-        (code) => `<option value="${code}">${code}</option>`,
+        (code) => `<option value="${code}"${parts.currencyCode === code ? ' selected' : ''}>${code}</option>`,
       ).join('')}</select></div></div></fieldset>`;
     case 'ADDRESS':
       return `<fieldset><legend>${label}</legend><div class="row">${part('street', messages.street)}${part('postcode', messages.postcode, 'text', '')}${part('city', messages.city, 'text', '')}${part('country', messages.country, 'text', '')}</div></fieldset>`;
