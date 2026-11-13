@@ -7,6 +7,6 @@ export default defineNavigationMenuItem({
   name: 'Shop',
   icon: 'IconShoppingBag',
   color: 'green',
-  position: 2,
+  position: 4,
   type: NavigationMenuItemType.FOLDER,
 });

@@ -7,6 +7,6 @@ export default defineNavigationMenuItem({
   name: 'Fundraising',
   icon: 'IconHeartHandshake',
   color: 'red',
-  position: 1,
+  position: 3,
   type: NavigationMenuItemType.FOLDER,
 });

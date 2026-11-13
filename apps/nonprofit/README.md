@@ -40,6 +40,22 @@ Organisations differ, so nearly everything is optional. Leave ticket types out f
 - **Answers** on a registration is a JSON field for questions specific to one event. Recurring questions have their own fields: dietary requirements, accessibility needs and remarks.
 - **Totals** (order total, line total) are stored values. Twenty has no formula fields, so they will be calculated by a logic function later.
 
+# Demo data
+
+`scripts/seed-demo-data.mjs` fills a workspace with linked demo data for a Belgian non-profit: 12 people, 10 companies, 10 events with ticket types and registrations, campaigns, one-off and recurring donations, products, orders with order lines, payments, and tasks and notes on those records.
+
+Demo people have an `@example.org` address and demo companies an `.example` domain, so they never mix with real contacts. The clean command removes exactly the records the script creates.
+
+```bash
+TWENTY_API_URL=https://your-workspace.twenty.com TWENTY_API_KEY=your-api-key yarn seed:demo
+```
+
+```bash
+TWENTY_API_URL=https://your-workspace.twenty.com TWENTY_API_KEY=your-api-key yarn seed:demo:clean
+```
+
+If a workflow in the workspace links new people to a company by their email domain, the script waits for it, puts back the intended companies and removes the `example.org` company the workflow created.
+
 # Languages
 
 Object names, field labels, descriptions, views and the navigation are translated into the 33 languages Twenty supports, in `locales/`. Select option labels such as "Confirmed" or "Monthly" are not covered: `twenty app translations extract` does not extract them. The translations were machine-written and have not been reviewed by native speakers.

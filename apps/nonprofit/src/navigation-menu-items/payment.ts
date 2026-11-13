@@ -7,7 +7,7 @@ export default defineNavigationMenuItem({
   name: 'Payments',
   icon: 'IconCreditCard',
   color: 'purple',
-  position: 3,
+  position: 5,
   type: NavigationMenuItemType.OBJECT,
   targetObjectUniversalIdentifier: PAYMENT_OBJECT_UNIVERSAL_IDENTIFIER,
 });

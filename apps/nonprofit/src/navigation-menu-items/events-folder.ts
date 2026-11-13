@@ -7,6 +7,6 @@ export default defineNavigationMenuItem({
   name: 'Events',
   icon: 'IconCalendarEvent',
   color: 'blue',
-  position: 0,
+  position: 2,
   type: NavigationMenuItemType.FOLDER,
 });

@@ -1,5 +1,7 @@
 import { defineNavigationMenuItem, NavigationMenuItemType } from 'twenty-sdk/define';
 
+import { FORMS_FOLDER_NAVIGATION_MENU_ITEM_UNIVERSAL_IDENTIFIER } from 'src/navigation-menu-items/forms-folder';
+
 export default defineNavigationMenuItem({
   universalIdentifier: '2f5de7b2-e093-4985-b669-1d0987b399d2',
   name: 'Forms',
@@ -8,4 +10,5 @@ export default defineNavigationMenuItem({
   position: 0,
   type: NavigationMenuItemType.OBJECT,
   targetObjectUniversalIdentifier: '483eccf6-59f8-4cac-a368-bf1d06ad7e06',
+  folderUniversalIdentifier: FORMS_FOLDER_NAVIGATION_MENU_ITEM_UNIVERSAL_IDENTIFIER,
 });
