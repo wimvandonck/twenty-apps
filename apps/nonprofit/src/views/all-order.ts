@@ -1,0 +1,96 @@
+import { defineView } from 'twenty-sdk/define';
+
+import {
+  ORDER_COMPANY_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_CUSTOMER_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_DELIVERY_METHOD_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_NOTE_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_OBJECT_UNIVERSAL_IDENTIFIER,
+  ORDER_ORDERED_AT_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_PAYMENT_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_SHIPPING_ADDRESS_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_STATUS_FIELD_UNIVERSAL_IDENTIFIER,
+  ORDER_TOTAL_FIELD_UNIVERSAL_IDENTIFIER,
+} from 'src/constants/data-model';
+
+export default defineView({
+  universalIdentifier: '8fdb5410-5fe7-42ba-a8ef-f8ba96eb5b54',
+  name: 'All orders',
+  objectUniversalIdentifier: ORDER_OBJECT_UNIVERSAL_IDENTIFIER,
+  type: 'TABLE',
+  icon: 'IconList',
+  position: 0,
+  fields: [
+    {
+      universalIdentifier: 'd85e637c-68a6-4cec-ad2f-fe6e4df92340',
+      fieldMetadataUniversalIdentifier: ORDER_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 0,
+      isVisible: true,
+      size: 220,
+    },
+    {
+      universalIdentifier: 'b723a71c-5e27-44a7-a717-5ca25f30c393',
+      fieldMetadataUniversalIdentifier: ORDER_CUSTOMER_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 1,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: 'cc45659f-789a-4f8c-99ef-c04b2a8bb1b6',
+      fieldMetadataUniversalIdentifier: ORDER_COMPANY_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 2,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '1b10004f-c4df-4088-a9be-8558e26c37e0',
+      fieldMetadataUniversalIdentifier: ORDER_PAYMENT_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 3,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '85fe75a4-e522-4fcd-b22a-9023b47812e0',
+      fieldMetadataUniversalIdentifier: ORDER_STATUS_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 4,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '406a97ad-45f0-4681-83fd-6bbe65470544',
+      fieldMetadataUniversalIdentifier: ORDER_TOTAL_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 5,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '5278033b-cbb4-462c-9bea-2930ff7b3cdb',
+      fieldMetadataUniversalIdentifier: ORDER_ORDERED_AT_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 6,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '3661b709-c80b-4c3c-a09d-021429fabb03',
+      fieldMetadataUniversalIdentifier: ORDER_DELIVERY_METHOD_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 7,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '340a70ec-76fc-4155-8aa3-0c14b8fddfb6',
+      fieldMetadataUniversalIdentifier: ORDER_SHIPPING_ADDRESS_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 8,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '827688b7-9b73-429f-90ea-140f4dcffcef',
+      fieldMetadataUniversalIdentifier: ORDER_NOTE_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 9,
+      isVisible: true,
+      size: 160,
+    },
+  ],
+});

@@ -1,0 +1,100 @@
+import { defineView } from 'twenty-sdk/define';
+
+import {
+  PRODUCT_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
+  PRODUCT_IS_ACTIVE_FIELD_UNIVERSAL_IDENTIFIER,
+  PRODUCT_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+  PRODUCT_OBJECT_UNIVERSAL_IDENTIFIER,
+  PRODUCT_ORDER_LINES_FIELD_UNIVERSAL_IDENTIFIER,
+  PRODUCT_PRICE_FIELD_UNIVERSAL_IDENTIFIER,
+  PRODUCT_SKU_FIELD_UNIVERSAL_IDENTIFIER,
+  PRODUCT_STOCK_FIELD_UNIVERSAL_IDENTIFIER,
+} from 'src/constants/data-model';
+
+export default defineView({
+  universalIdentifier: '85672713-9d69-4704-9308-8a2dfa7da03f',
+  name: 'Product fields',
+  objectUniversalIdentifier: PRODUCT_OBJECT_UNIVERSAL_IDENTIFIER,
+  type: 'FIELDS_WIDGET',
+  icon: 'IconListDetails',
+  position: 0,
+  fields: [
+    {
+      universalIdentifier: '4013211f-7c6f-440f-948b-8f76a60e7c98',
+      fieldMetadataUniversalIdentifier: PRODUCT_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 0,
+      isVisible: true,
+      size: 220,
+    },
+    {
+      universalIdentifier: '0d484d83-841e-46c2-9bb6-280ba812b3dc',
+      fieldMetadataUniversalIdentifier: PRODUCT_SKU_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 1,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '6ba2122f-c670-46cb-af40-4cdb75730e37',
+      fieldMetadataUniversalIdentifier: PRODUCT_PRICE_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 2,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: 'b45e2f85-d3ce-473c-b89e-b299c7e0934e',
+      fieldMetadataUniversalIdentifier: PRODUCT_STOCK_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 3,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '14a1d2a5-e60b-41a6-b06e-b4360f8d7c08',
+      fieldMetadataUniversalIdentifier: PRODUCT_IS_ACTIVE_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 4,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '86dcc4fd-d98c-465e-b148-6b386fdff90e',
+      fieldMetadataUniversalIdentifier: PRODUCT_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 5,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: 'd56f0713-f8db-485a-bfe1-ac8adfe23c9b',
+      fieldMetadataUniversalIdentifier: PRODUCT_ORDER_LINES_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 6,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '73efc80d-e249-4131-9397-e54e2e9a1c58',
+      fieldMetadataUniversalIdentifier: '2f56c357-4f4f-5e46-a803-fa74f2fd0a87',
+      position: 7,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '0aa42a64-ecd2-4f52-83f3-ca8705cf6ec7',
+      fieldMetadataUniversalIdentifier: '6bdff27a-f526-5e85-a255-c3498f079305',
+      position: 8,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '50a20bbd-d814-48be-b4f7-cf5546883d58',
+      fieldMetadataUniversalIdentifier: '1ad816ce-3463-512f-af32-baa16850b94f',
+      position: 9,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '690918a7-ac02-4385-a74e-235aacf8d585',
+      fieldMetadataUniversalIdentifier: 'd1301449-ab52-5aca-8d25-4fae54bb77a5',
+      position: 10,
+      isVisible: true,
+      size: 160,
+    },
+  ],
+});
