@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Alapértelmezett szöveg a jelölőnégyzet mellett az űrlapokon",
+    "Explanation on the preferences page": "Magyarázat a beállítások oldalán",
+    "Groups the changes of one form submission": "Egy űrlapbeküldés változásait csoportosítja",
+    "Inactive types are hidden on forms and the preferences page": "Az inaktív típusok rejtve vannak az űrlapokon és a beállítások oldalán",
+    "Lets people join or leave this list on the preferences page": "Lehetővé teszi a listához csatlakozást vagy kilépést a beállítások oldalán",
+    "Link that confirms the consent while it is pending": "Link, amely megerősíti a hozzájárulást, amíg függőben van",
+    "Personal link to the email preferences page": "Személyes link az e-mail-beállítások oldalára",
+    "Shown on the preferences page": "Megjelenik a beállítások oldalán",
+    "The text as the person saw it": "A szöveg úgy, ahogy a személy látta"
+  },
+  "fieldMetadata.label": {
+    "Action": "Művelet",
+    "Active": "Aktív",
+    "Changes": "Változások",
+    "Confirmation link": "Megerősítő link",
+    "Confirmation sent at": "Megerősítés elküldve",
+    "Consent": "Hozzájárulás",
+    "Consent text": "Hozzájárulás szövege",
+    "Consents": "Hozzájárulások",
+    "Description": "Leírás",
+    "Email type": "E-mail-típus",
+    "Form": "Űrlap",
+    "Granted at": "Megadva",
+    "IP address": "IP-cím",
+    "Language": "Nyelv",
+    "Lists": "Listák",
+    "Name": "Név",
+    "Note": "Jegyzet",
+    "Occurred at": "Időpont",
+    "Person": "Személy",
+    "Preferences link": "Beállítások linkje",
+    "Required email type": "Kötelező e-mail-típus",
+    "Show on preferences page": "Megjelenítés a beállítások oldalán",
+    "Shown text": "Megjelenített szöveg",
+    "Source": "Forrás",
+    "Status": "Állapot",
+    "Submission ID": "Beküldés azonosítója",
+    "User agent": "Böngésző",
+    "Withdrawn at": "Visszavonva"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Hozzájárulások",
+    "Email types": "E-mail-típusok"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Hozzájárulást igénylő e-mail-típus, például a hírlevél",
+    "A person's current consent for one email type": "Egy személy jelenlegi hozzájárulása egy e-mail-típushoz",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Egy feliratkozás, megerősítés vagy visszavonás, bizonyítékként megőrizve"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Hozzájárulás-változások",
+    "Consents": "Hozzájárulások",
+    "Email types": "E-mail-típusok"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Hozzájárulás",
+    "Consent change": "Hozzájárulás-változás",
+    "Email type": "E-mail-típus"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Hozzájárulás-változás elrendezése",
+    "Consent layout": "Hozzájárulás elrendezése",
+    "Email type layout": "E-mail-típus elrendezése"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Kezdőlap",
+    "Timeline": "Idővonal"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Mezők",
+    "Timeline": "Idővonal"
+  },
+  "view.name": {
+    "All consent changes": "Összes hozzájárulás-változás",
+    "All consents": "Összes hozzájárulás",
+    "All email types": "Összes e-mail-típus",
+    "Consent change fields": "Hozzájárulás-változás mezői",
+    "Consent fields": "Hozzájárulás mezői",
+    "Email type fields": "E-mail-típus mezői"
+  }
+}

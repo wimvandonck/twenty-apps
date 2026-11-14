@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Standardtekst ved avkrysningsruten i skjemaer",
+    "Explanation on the preferences page": "Forklaring på innstillingssiden",
+    "Groups the changes of one form submission": "Samler endringene fra én skjemainnsending",
+    "Inactive types are hidden on forms and the preferences page": "Inaktive typer skjules i skjemaer og på innstillingssiden",
+    "Lets people join or leave this list on the preferences page": "Lar folk bli med på eller forlate listen på innstillingssiden",
+    "Link that confirms the consent while it is pending": "Lenke som bekrefter samtykket mens det venter",
+    "Personal link to the email preferences page": "Personlig lenke til siden med e-postinnstillinger",
+    "Shown on the preferences page": "Vises på innstillingssiden",
+    "The text as the person saw it": "Teksten slik personen så den"
+  },
+  "fieldMetadata.label": {
+    "Action": "Handling",
+    "Active": "Aktiv",
+    "Changes": "Endringer",
+    "Confirmation link": "Bekreftelseslenke",
+    "Confirmation sent at": "Bekreftelse sendt",
+    "Consent": "Samtykke",
+    "Consent text": "Samtykketekst",
+    "Consents": "Samtykker",
+    "Description": "Beskrivelse",
+    "Email type": "E-posttype",
+    "Form": "Skjema",
+    "Granted at": "Gitt",
+    "IP address": "IP-adresse",
+    "Language": "Språk",
+    "Lists": "Lister",
+    "Name": "Navn",
+    "Note": "Notat",
+    "Occurred at": "Tidspunkt",
+    "Person": "Person",
+    "Preferences link": "Innstillingslenke",
+    "Required email type": "Påkrevd e-posttype",
+    "Show on preferences page": "Vis på innstillingssiden",
+    "Shown text": "Vist tekst",
+    "Source": "Kilde",
+    "Status": "Status",
+    "Submission ID": "Innsendings-ID",
+    "User agent": "Nettleser",
+    "Withdrawn at": "Trukket tilbake"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Samtykker",
+    "Email types": "E-posttyper"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "En type e-post som krever samtykke, som nyhetsbrevet",
+    "A person's current consent for one email type": "En persons nåværende samtykke for én e-posttype",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Én påmelding, bekreftelse eller tilbaketrekking, lagret som bevis"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Samtykkeendringer",
+    "Consents": "Samtykker",
+    "Email types": "E-posttyper"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Samtykke",
+    "Consent change": "Samtykkeendring",
+    "Email type": "E-posttype"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Oppsett for samtykkeendring",
+    "Consent layout": "Oppsett for samtykke",
+    "Email type layout": "Oppsett for e-posttype"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Start",
+    "Timeline": "Tidslinje"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Felt",
+    "Timeline": "Tidslinje"
+  },
+  "view.name": {
+    "All consent changes": "Alle samtykkeendringer",
+    "All consents": "Alle samtykker",
+    "All email types": "Alle e-posttyper",
+    "Consent change fields": "Felt for samtykkeendring",
+    "Consent fields": "Felt for samtykke",
+    "Email type fields": "Felt for e-posttype"
+  }
+}

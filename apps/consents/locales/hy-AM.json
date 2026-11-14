@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Ձևերում վանդակի կողքի կանխադրված տեքստ",
+    "Explanation on the preferences page": "Բացատրություն նախընտրությունների էջում",
+    "Groups the changes of one form submission": "Խմբավորում է մեկ ձևի ուղարկման փոփոխությունները",
+    "Inactive types are hidden on forms and the preferences page": "Ոչ ակտիվ տեսակները թաքցված են ձևերում և նախընտրությունների էջում",
+    "Lets people join or leave this list on the preferences page": "Թույլ է տալիս միանալ ցուցակին կամ դուրս գալ նախընտրությունների էջում",
+    "Link that confirms the consent while it is pending": "Հղում, որը հաստատում է համաձայնությունը, քանի դեռ սպասվում է",
+    "Personal link to the email preferences page": "Անձնական հղում նամակների նախընտրությունների էջին",
+    "Shown on the preferences page": "Ցուցադրվում է նախընտրությունների էջում",
+    "The text as the person saw it": "Տեքստը այնպես, ինչպես անձը տեսել է"
+  },
+  "fieldMetadata.label": {
+    "Action": "Գործողություն",
+    "Active": "Ակտիվ",
+    "Changes": "Փոփոխություններ",
+    "Confirmation link": "Հաստատման հղում",
+    "Confirmation sent at": "Հաստատումն ուղարկվել է",
+    "Consent": "Համաձայնություն",
+    "Consent text": "Համաձայնության տեքստ",
+    "Consents": "Համաձայնություններ",
+    "Description": "Նկարագրություն",
+    "Email type": "Նամակի տեսակ",
+    "Form": "Ձև",
+    "Granted at": "Տրվել է",
+    "IP address": "IP հասցե",
+    "Language": "Լեզու",
+    "Lists": "Ցուցակներ",
+    "Name": "Անուն",
+    "Note": "Նշում",
+    "Occurred at": "Ժամանակ",
+    "Person": "Անձ",
+    "Preferences link": "Նախընտրությունների հղում",
+    "Required email type": "Պահանջվող նամակի տեսակ",
+    "Show on preferences page": "Ցույց տալ նախընտրությունների էջում",
+    "Shown text": "Ցուցադրված տեքստ",
+    "Source": "Աղբյուր",
+    "Status": "Կարգավիճակ",
+    "Submission ID": "Ուղարկման ID",
+    "User agent": "Դիտարկիչ",
+    "Withdrawn at": "Հետ է կանչվել"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Համաձայնություններ",
+    "Email types": "Նամակների տեսակներ"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Նամակի տեսակ, որը համաձայնություն է պահանջում, օրինակ՝ տեղեկագիրը",
+    "A person's current consent for one email type": "Անձի ընթացիկ համաձայնությունը մեկ նամակի տեսակի համար",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Մեկ բաժանորդագրություն, հաստատում կամ հետկանչ՝ պահված որպես ապացույց"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Համաձայնության փոփոխություններ",
+    "Consents": "Համաձայնություններ",
+    "Email types": "Նամակների տեսակներ"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Համաձայնություն",
+    "Consent change": "Համաձայնության փոփոխություն",
+    "Email type": "Նամակի տեսակ"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Համաձայնության փոփոխության դասավորություն",
+    "Consent layout": "Համաձայնության դասավորություն",
+    "Email type layout": "Նամակի տեսակի դասավորություն"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Գլխավոր",
+    "Timeline": "Ժամանակագրություն"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Դաշտեր",
+    "Timeline": "Ժամանակագրություն"
+  },
+  "view.name": {
+    "All consent changes": "Համաձայնության բոլոր փոփոխությունները",
+    "All consents": "Բոլոր համաձայնությունները",
+    "All email types": "Նամակների բոլոր տեսակները",
+    "Consent change fields": "Համաձայնության փոփոխության դաշտեր",
+    "Consent fields": "Համաձայնության դաշտեր",
+    "Email type fields": "Նամակի տեսակի դաշտեր"
+  }
+}

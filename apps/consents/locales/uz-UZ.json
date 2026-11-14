@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Shakllardagi belgi yonidagi standart matn",
+    "Explanation on the preferences page": "Sozlamalar sahifasidagi izoh",
+    "Groups the changes of one form submission": "Bitta shakl yuborilishidagi o'zgarishlarni guruhlaydi",
+    "Inactive types are hidden on forms and the preferences page": "Nofaol turlar shakllarda va sozlamalar sahifasida yashiriladi",
+    "Lets people join or leave this list on the preferences page": "Sozlamalar sahifasida ro'yxatga qo'shilish yoki chiqishga imkon beradi",
+    "Link that confirms the consent while it is pending": "Kutilayotgan rozilikni tasdiqlaydigan havola",
+    "Personal link to the email preferences page": "Xat sozlamalari sahifasiga shaxsiy havola",
+    "Shown on the preferences page": "Sozlamalar sahifasida ko'rsatiladi",
+    "The text as the person saw it": "Shaxs ko'rgan ko'rinishdagi matn"
+  },
+  "fieldMetadata.label": {
+    "Action": "Amal",
+    "Active": "Faol",
+    "Changes": "O'zgarishlar",
+    "Confirmation link": "Tasdiqlash havolasi",
+    "Confirmation sent at": "Tasdiq yuborilgan",
+    "Consent": "Rozilik",
+    "Consent text": "Rozilik matni",
+    "Consents": "Roziliklar",
+    "Description": "Tavsif",
+    "Email type": "Xat turi",
+    "Form": "Shakl",
+    "Granted at": "Berilgan",
+    "IP address": "IP manzil",
+    "Language": "Til",
+    "Lists": "Ro'yxatlar",
+    "Name": "Nomi",
+    "Note": "Eslatma",
+    "Occurred at": "Vaqt",
+    "Person": "Shaxs",
+    "Preferences link": "Sozlamalar havolasi",
+    "Required email type": "Talab qilinadigan xat turi",
+    "Show on preferences page": "Sozlamalar sahifasida ko'rsatish",
+    "Shown text": "Ko'rsatilgan matn",
+    "Source": "Manba",
+    "Status": "Holat",
+    "Submission ID": "Yuborish ID",
+    "User agent": "Brauzer",
+    "Withdrawn at": "Qaytarib olingan"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Roziliklar",
+    "Email types": "Xat turlari"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Rozilik talab qiladigan xat turi, masalan, axborot byulleteni",
+    "A person's current consent for one email type": "Shaxsning bitta xat turi uchun joriy roziligi",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Dalil sifatida saqlangan bitta obuna, tasdiq yoki qaytarib olish"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Rozilik o'zgarishlari",
+    "Consents": "Roziliklar",
+    "Email types": "Xat turlari"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Rozilik",
+    "Consent change": "Rozilik o'zgarishi",
+    "Email type": "Xat turi"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Rozilik o'zgarishi joylashuvi",
+    "Consent layout": "Rozilik joylashuvi",
+    "Email type layout": "Xat turi joylashuvi"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Bosh sahifa",
+    "Timeline": "Vaqt jadvali"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Maydonlar",
+    "Timeline": "Vaqt jadvali"
+  },
+  "view.name": {
+    "All consent changes": "Barcha rozilik o'zgarishlari",
+    "All consents": "Barcha roziliklar",
+    "All email types": "Barcha xat turlari",
+    "Consent change fields": "Rozilik o'zgarishi maydonlari",
+    "Consent fields": "Rozilik maydonlari",
+    "Email type fields": "Xat turi maydonlari"
+  }
+}

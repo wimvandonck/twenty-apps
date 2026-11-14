@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Formlarda kutunun yanındaki varsayılan metin",
+    "Explanation on the preferences page": "Tercihler sayfasındaki açıklama",
+    "Groups the changes of one form submission": "Bir form gönderiminin değişikliklerini gruplar",
+    "Inactive types are hidden on forms and the preferences page": "Etkin olmayan türler formlarda ve tercihler sayfasında gizlenir",
+    "Lets people join or leave this list on the preferences page": "Tercihler sayfasında bu listeye katılmayı veya ayrılmayı sağlar",
+    "Link that confirms the consent while it is pending": "Beklemedeyken onayı doğrulayan bağlantı",
+    "Personal link to the email preferences page": "E-posta tercihleri sayfasına kişisel bağlantı",
+    "Shown on the preferences page": "Tercihler sayfasında gösterilir",
+    "The text as the person saw it": "Kişinin gördüğü haliyle metin"
+  },
+  "fieldMetadata.label": {
+    "Action": "Eylem",
+    "Active": "Etkin",
+    "Changes": "Değişiklikler",
+    "Confirmation link": "Doğrulama bağlantısı",
+    "Confirmation sent at": "Doğrulama gönderildi",
+    "Consent": "Onay",
+    "Consent text": "Onay metni",
+    "Consents": "Onaylar",
+    "Description": "Açıklama",
+    "Email type": "E-posta türü",
+    "Form": "Form",
+    "Granted at": "Verildiği tarih",
+    "IP address": "IP adresi",
+    "Language": "Dil",
+    "Lists": "Listeler",
+    "Name": "Ad",
+    "Note": "Not",
+    "Occurred at": "Zaman",
+    "Person": "Kişi",
+    "Preferences link": "Tercihler bağlantısı",
+    "Required email type": "Gerekli e-posta türü",
+    "Show on preferences page": "Tercihler sayfasında göster",
+    "Shown text": "Gösterilen metin",
+    "Source": "Kaynak",
+    "Status": "Durum",
+    "Submission ID": "Gönderim kimliği",
+    "User agent": "Tarayıcı",
+    "Withdrawn at": "Geri çekildiği tarih"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Onaylar",
+    "Email types": "E-posta türleri"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Onay gerektiren bir e-posta türü, örneğin bülten",
+    "A person's current consent for one email type": "Bir kişinin bir e-posta türü için güncel onayı",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Kanıt olarak saklanan bir kayıt olma, doğrulama veya geri çekme"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Onay değişiklikleri",
+    "Consents": "Onaylar",
+    "Email types": "E-posta türleri"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Onay",
+    "Consent change": "Onay değişikliği",
+    "Email type": "E-posta türü"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Onay değişikliği düzeni",
+    "Consent layout": "Onay düzeni",
+    "Email type layout": "E-posta türü düzeni"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Ana sayfa",
+    "Timeline": "Zaman çizelgesi"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Alanlar",
+    "Timeline": "Zaman çizelgesi"
+  },
+  "view.name": {
+    "All consent changes": "Tüm onay değişiklikleri",
+    "All consents": "Tüm onaylar",
+    "All email types": "Tüm e-posta türleri",
+    "Consent change fields": "Onay değişikliği alanları",
+    "Consent fields": "Onay alanları",
+    "Email type fields": "E-posta türü alanları"
+  }
+}

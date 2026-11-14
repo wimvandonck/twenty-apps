@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "양식 확인란 옆의 기본 문구",
+    "Explanation on the preferences page": "설정 페이지의 설명",
+    "Groups the changes of one form submission": "한 번의 양식 제출 변경을 묶습니다",
+    "Inactive types are hidden on forms and the preferences page": "비활성 유형은 양식과 설정 페이지에 표시되지 않습니다",
+    "Lets people join or leave this list on the preferences page": "설정 페이지에서 이 목록에 가입하거나 탈퇴할 수 있게 합니다",
+    "Link that confirms the consent while it is pending": "대기 중인 동의를 확인하는 링크",
+    "Personal link to the email preferences page": "이메일 설정 페이지로 가는 개인 링크",
+    "Shown on the preferences page": "설정 페이지에 표시됨",
+    "The text as the person saw it": "본인이 본 그대로의 문구"
+  },
+  "fieldMetadata.label": {
+    "Action": "작업",
+    "Active": "활성",
+    "Changes": "변경",
+    "Confirmation link": "확인 링크",
+    "Confirmation sent at": "확인 발송 시각",
+    "Consent": "동의",
+    "Consent text": "동의 문구",
+    "Consents": "동의",
+    "Description": "설명",
+    "Email type": "이메일 유형",
+    "Form": "양식",
+    "Granted at": "동의 시각",
+    "IP address": "IP 주소",
+    "Language": "언어",
+    "Lists": "목록",
+    "Name": "이름",
+    "Note": "메모",
+    "Occurred at": "시각",
+    "Person": "사람",
+    "Preferences link": "설정 링크",
+    "Required email type": "필수 이메일 유형",
+    "Show on preferences page": "설정 페이지에 표시",
+    "Shown text": "표시된 문구",
+    "Source": "출처",
+    "Status": "상태",
+    "Submission ID": "제출 ID",
+    "User agent": "브라우저",
+    "Withdrawn at": "철회 시각"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "동의",
+    "Email types": "이메일 유형"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "뉴스레터처럼 동의가 필요한 이메일 유형",
+    "A person's current consent for one email type": "한 이메일 유형에 대한 사람의 현재 동의",
+    "One opt-in, confirmation or withdrawal, kept as proof": "증거로 보관되는 한 번의 가입, 확인 또는 철회"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "동의 변경",
+    "Consents": "동의",
+    "Email types": "이메일 유형"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "동의",
+    "Consent change": "동의 변경",
+    "Email type": "이메일 유형"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "동의 변경 레이아웃",
+    "Consent layout": "동의 레이아웃",
+    "Email type layout": "이메일 유형 레이아웃"
+  },
+  "pageLayoutTab.title": {
+    "Home": "홈",
+    "Timeline": "타임라인"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "필드",
+    "Timeline": "타임라인"
+  },
+  "view.name": {
+    "All consent changes": "모든 동의 변경",
+    "All consents": "모든 동의",
+    "All email types": "모든 이메일 유형",
+    "Consent change fields": "동의 변경 필드",
+    "Consent fields": "동의 필드",
+    "Email type fields": "이메일 유형 필드"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Văn bản mặc định cạnh ô chọn trong biểu mẫu",
+    "Explanation on the preferences page": "Giải thích trên trang tùy chọn",
+    "Groups the changes of one form submission": "Nhóm các thay đổi của một lần gửi biểu mẫu",
+    "Inactive types are hidden on forms and the preferences page": "Loại không hoạt động bị ẩn trong biểu mẫu và trang tùy chọn",
+    "Lets people join or leave this list on the preferences page": "Cho phép tham gia hoặc rời danh sách này trên trang tùy chọn",
+    "Link that confirms the consent while it is pending": "Liên kết xác nhận sự đồng ý khi đang chờ",
+    "Personal link to the email preferences page": "Liên kết cá nhân tới trang tùy chọn email",
+    "Shown on the preferences page": "Hiển thị trên trang tùy chọn",
+    "The text as the person saw it": "Văn bản như người đó đã thấy"
+  },
+  "fieldMetadata.label": {
+    "Action": "Hành động",
+    "Active": "Hoạt động",
+    "Changes": "Thay đổi",
+    "Confirmation link": "Liên kết xác nhận",
+    "Confirmation sent at": "Đã gửi xác nhận lúc",
+    "Consent": "Đồng ý",
+    "Consent text": "Nội dung đồng ý",
+    "Consents": "Đồng ý",
+    "Description": "Mô tả",
+    "Email type": "Loại email",
+    "Form": "Biểu mẫu",
+    "Granted at": "Đồng ý lúc",
+    "IP address": "Địa chỉ IP",
+    "Language": "Ngôn ngữ",
+    "Lists": "Danh sách",
+    "Name": "Tên",
+    "Note": "Ghi chú",
+    "Occurred at": "Thời điểm",
+    "Person": "Người",
+    "Preferences link": "Liên kết tùy chọn",
+    "Required email type": "Loại email bắt buộc",
+    "Show on preferences page": "Hiển thị trên trang tùy chọn",
+    "Shown text": "Văn bản đã hiển thị",
+    "Source": "Nguồn",
+    "Status": "Trạng thái",
+    "Submission ID": "ID lần gửi",
+    "User agent": "Trình duyệt",
+    "Withdrawn at": "Rút lại lúc"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Đồng ý",
+    "Email types": "Loại email"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Một loại email cần sự đồng ý, như bản tin",
+    "A person's current consent for one email type": "Sự đồng ý hiện tại của một người cho một loại email",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Một lần đăng ký, xác nhận hoặc rút lại, được lưu làm bằng chứng"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Các thay đổi đồng ý",
+    "Consents": "Đồng ý",
+    "Email types": "Loại email"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Đồng ý",
+    "Consent change": "Thay đổi đồng ý",
+    "Email type": "Loại email"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Bố cục thay đổi đồng ý",
+    "Consent layout": "Bố cục đồng ý",
+    "Email type layout": "Bố cục loại email"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Trang chủ",
+    "Timeline": "Dòng thời gian"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Trường",
+    "Timeline": "Dòng thời gian"
+  },
+  "view.name": {
+    "All consent changes": "Tất cả thay đổi đồng ý",
+    "All consents": "Tất cả đồng ý",
+    "All email types": "Tất cả loại email",
+    "Consent change fields": "Trường của thay đổi đồng ý",
+    "Consent fields": "Trường của đồng ý",
+    "Email type fields": "Trường của loại email"
+  }
+}

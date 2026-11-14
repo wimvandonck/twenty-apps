@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "表单中复选框旁的默认文本",
+    "Explanation on the preferences page": "偏好设置页上的说明",
+    "Groups the changes of one form submission": "归组一次表单提交的变更",
+    "Inactive types are hidden on forms and the preferences page": "停用的类型不会在表单和偏好设置页中显示",
+    "Lets people join or leave this list on the preferences page": "允许在偏好设置页加入或退出此列表",
+    "Link that confirms the consent while it is pending": "在待确认期间确认同意的链接",
+    "Personal link to the email preferences page": "指向邮件偏好设置页的个人链接",
+    "Shown on the preferences page": "显示在偏好设置页上",
+    "The text as the person saw it": "本人看到的文本"
+  },
+  "fieldMetadata.label": {
+    "Action": "操作",
+    "Active": "启用",
+    "Changes": "变更",
+    "Confirmation link": "确认链接",
+    "Confirmation sent at": "确认发送时间",
+    "Consent": "同意",
+    "Consent text": "同意文本",
+    "Consents": "同意",
+    "Description": "描述",
+    "Email type": "邮件类型",
+    "Form": "表单",
+    "Granted at": "同意时间",
+    "IP address": "IP 地址",
+    "Language": "语言",
+    "Lists": "列表",
+    "Name": "名称",
+    "Note": "备注",
+    "Occurred at": "时间",
+    "Person": "人员",
+    "Preferences link": "偏好链接",
+    "Required email type": "必需的邮件类型",
+    "Show on preferences page": "在偏好设置页显示",
+    "Shown text": "显示的文本",
+    "Source": "来源",
+    "Status": "状态",
+    "Submission ID": "提交 ID",
+    "User agent": "浏览器",
+    "Withdrawn at": "撤回时间"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "同意",
+    "Email types": "邮件类型"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "需要同意的一种邮件类型，例如通讯",
+    "A person's current consent for one email type": "某人对一种邮件类型的当前同意",
+    "One opt-in, confirmation or withdrawal, kept as proof": "一次订阅、确认或撤回，作为凭证保存"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "同意变更",
+    "Consents": "同意",
+    "Email types": "邮件类型"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "同意",
+    "Consent change": "同意变更",
+    "Email type": "邮件类型"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "同意变更布局",
+    "Consent layout": "同意布局",
+    "Email type layout": "邮件类型布局"
+  },
+  "pageLayoutTab.title": {
+    "Home": "首页",
+    "Timeline": "时间线"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "字段",
+    "Timeline": "时间线"
+  },
+  "view.name": {
+    "All consent changes": "全部同意变更",
+    "All consents": "全部同意",
+    "All email types": "全部邮件类型",
+    "Consent change fields": "同意变更字段",
+    "Consent fields": "同意字段",
+    "Email type fields": "邮件类型字段"
+  }
+}

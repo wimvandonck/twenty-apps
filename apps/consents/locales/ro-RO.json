@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Text implicit lângă casetă în formulare",
+    "Explanation on the preferences page": "Explicație pe pagina de preferințe",
+    "Groups the changes of one form submission": "Grupează modificările unei trimiteri de formular",
+    "Inactive types are hidden on forms and the preferences page": "Tipurile inactive sunt ascunse în formulare și pe pagina de preferințe",
+    "Lets people join or leave this list on the preferences page": "Permite înscrierea în listă sau părăsirea ei pe pagina de preferințe",
+    "Link that confirms the consent while it is pending": "Link care confirmă consimțământul cât timp este în așteptare",
+    "Personal link to the email preferences page": "Link personal către pagina de preferințe de e-mail",
+    "Shown on the preferences page": "Afișat pe pagina de preferințe",
+    "The text as the person saw it": "Textul așa cum l-a văzut persoana"
+  },
+  "fieldMetadata.label": {
+    "Action": "Acțiune",
+    "Active": "Activ",
+    "Changes": "Modificări",
+    "Confirmation link": "Link de confirmare",
+    "Confirmation sent at": "Confirmare trimisă la",
+    "Consent": "Consimțământ",
+    "Consent text": "Text de consimțământ",
+    "Consents": "Consimțăminte",
+    "Description": "Descriere",
+    "Email type": "Tip de e-mail",
+    "Form": "Formular",
+    "Granted at": "Acordat la",
+    "IP address": "Adresă IP",
+    "Language": "Limbă",
+    "Lists": "Liste",
+    "Name": "Nume",
+    "Note": "Notă",
+    "Occurred at": "Moment",
+    "Person": "Persoană",
+    "Preferences link": "Link de preferințe",
+    "Required email type": "Tip de e-mail necesar",
+    "Show on preferences page": "Afișează pe pagina de preferințe",
+    "Shown text": "Text afișat",
+    "Source": "Sursă",
+    "Status": "Stare",
+    "Submission ID": "ID trimitere",
+    "User agent": "Browser",
+    "Withdrawn at": "Retras la"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Consimțăminte",
+    "Email types": "Tipuri de e-mail"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Un tip de e-mail care necesită consimțământ, cum ar fi buletinul informativ",
+    "A person's current consent for one email type": "Consimțământul actual al unei persoane pentru un tip de e-mail",
+    "One opt-in, confirmation or withdrawal, kept as proof": "O înscriere, confirmare sau retragere, păstrată ca dovadă"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Modificări de consimțământ",
+    "Consents": "Consimțăminte",
+    "Email types": "Tipuri de e-mail"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Consimțământ",
+    "Consent change": "Modificare de consimțământ",
+    "Email type": "Tip de e-mail"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Aspectul modificării de consimțământ",
+    "Consent layout": "Aspectul consimțământului",
+    "Email type layout": "Aspectul tipului de e-mail"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Acasă",
+    "Timeline": "Cronologie"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Câmpuri",
+    "Timeline": "Cronologie"
+  },
+  "view.name": {
+    "All consent changes": "Toate modificările de consimțământ",
+    "All consents": "Toate consimțămintele",
+    "All email types": "Toate tipurile de e-mail",
+    "Consent change fields": "Câmpurile modificării de consimțământ",
+    "Consent fields": "Câmpurile consimțământului",
+    "Email type fields": "Câmpurile tipului de e-mail"
+  }
+}

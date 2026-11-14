@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Подразумевани текст поред поља у обрасцима",
+    "Explanation on the preferences page": "Објашњење на страници подешавања",
+    "Groups the changes of one form submission": "Групише промене једне пријаве обрасца",
+    "Inactive types are hidden on forms and the preferences page": "Неактивне врсте су скривене у обрасцима и на страници подешавања",
+    "Lets people join or leave this list on the preferences page": "Омогућава приступање листи или напуштање на страници подешавања",
+    "Link that confirms the consent while it is pending": "Веза која потврђује сагласност док чека",
+    "Personal link to the email preferences page": "Лична веза ка страници подешавања е-поште",
+    "Shown on the preferences page": "Приказано на страници подешавања",
+    "The text as the person saw it": "Текст онакав каквог га је особа видела"
+  },
+  "fieldMetadata.label": {
+    "Action": "Радња",
+    "Active": "Активно",
+    "Changes": "Промене",
+    "Confirmation link": "Веза за потврду",
+    "Confirmation sent at": "Потврда послата",
+    "Consent": "Сагласност",
+    "Consent text": "Текст сагласности",
+    "Consents": "Сагласности",
+    "Description": "Опис",
+    "Email type": "Врста е-поште",
+    "Form": "Образац",
+    "Granted at": "Дато",
+    "IP address": "IP адреса",
+    "Language": "Језик",
+    "Lists": "Листе",
+    "Name": "Назив",
+    "Note": "Белешка",
+    "Occurred at": "Време",
+    "Person": "Особа",
+    "Preferences link": "Веза за подешавања",
+    "Required email type": "Обавезна врста е-поште",
+    "Show on preferences page": "Прикажи на страници подешавања",
+    "Shown text": "Приказани текст",
+    "Source": "Извор",
+    "Status": "Статус",
+    "Submission ID": "ID пријаве",
+    "User agent": "Прегледач",
+    "Withdrawn at": "Повучено"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Сагласности",
+    "Email types": "Врсте е-поште"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Врста е-поште за коју је потребна сагласност, као билтен",
+    "A person's current consent for one email type": "Тренутна сагласност особе за једну врсту е-поште",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Једна пријава, потврда или повлачење, сачувана као доказ"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Промене сагласности",
+    "Consents": "Сагласности",
+    "Email types": "Врсте е-поште"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Сагласност",
+    "Consent change": "Промена сагласности",
+    "Email type": "Врста е-поште"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Распоред промене сагласности",
+    "Consent layout": "Распоред сагласности",
+    "Email type layout": "Распоред врсте е-поште"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Почетна",
+    "Timeline": "Временска линија"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поља",
+    "Timeline": "Временска линија"
+  },
+  "view.name": {
+    "All consent changes": "Све промене сагласности",
+    "All consents": "Све сагласности",
+    "All email types": "Све врсте е-поште",
+    "Consent change fields": "Поља промене сагласности",
+    "Consent fields": "Поља сагласности",
+    "Email type fields": "Поља врсте е-поште"
+  }
+}

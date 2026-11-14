@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Προεπιλεγμένο κείμενο δίπλα στο πλαίσιο στις φόρμες",
+    "Explanation on the preferences page": "Εξήγηση στη σελίδα προτιμήσεων",
+    "Groups the changes of one form submission": "Ομαδοποιεί τις αλλαγές μιας υποβολής φόρμας",
+    "Inactive types are hidden on forms and the preferences page": "Οι ανενεργοί τύποι κρύβονται στις φόρμες και στη σελίδα προτιμήσεων",
+    "Lets people join or leave this list on the preferences page": "Επιτρέπει εγγραφή ή αποχώρηση από τη λίστα στη σελίδα προτιμήσεων",
+    "Link that confirms the consent while it is pending": "Σύνδεσμος που επιβεβαιώνει τη συναίνεση όσο εκκρεμεί",
+    "Personal link to the email preferences page": "Προσωπικός σύνδεσμος για τη σελίδα προτιμήσεων email",
+    "Shown on the preferences page": "Εμφανίζεται στη σελίδα προτιμήσεων",
+    "The text as the person saw it": "Το κείμενο όπως το είδε το άτομο"
+  },
+  "fieldMetadata.label": {
+    "Action": "Ενέργεια",
+    "Active": "Ενεργό",
+    "Changes": "Αλλαγές",
+    "Confirmation link": "Σύνδεσμος επιβεβαίωσης",
+    "Confirmation sent at": "Η επιβεβαίωση στάλθηκε",
+    "Consent": "Συναίνεση",
+    "Consent text": "Κείμενο συναίνεσης",
+    "Consents": "Συναινέσεις",
+    "Description": "Περιγραφή",
+    "Email type": "Τύπος email",
+    "Form": "Φόρμα",
+    "Granted at": "Δόθηκε",
+    "IP address": "Διεύθυνση IP",
+    "Language": "Γλώσσα",
+    "Lists": "Λίστες",
+    "Name": "Όνομα",
+    "Note": "Σημείωση",
+    "Occurred at": "Χρόνος",
+    "Person": "Άτομο",
+    "Preferences link": "Σύνδεσμος προτιμήσεων",
+    "Required email type": "Απαιτούμενος τύπος email",
+    "Show on preferences page": "Εμφάνιση στη σελίδα προτιμήσεων",
+    "Shown text": "Κείμενο που εμφανίστηκε",
+    "Source": "Πηγή",
+    "Status": "Κατάσταση",
+    "Submission ID": "Αναγνωριστικό υποβολής",
+    "User agent": "Πρόγραμμα περιήγησης",
+    "Withdrawn at": "Ανακλήθηκε"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Συναινέσεις",
+    "Email types": "Τύποι email"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Ένας τύπος email που χρειάζεται συναίνεση, όπως το ενημερωτικό δελτίο",
+    "A person's current consent for one email type": "Η τρέχουσα συναίνεση ενός ατόμου για έναν τύπο email",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Μία εγγραφή, επιβεβαίωση ή ανάκληση, που φυλάσσεται ως απόδειξη"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Αλλαγές συναίνεσης",
+    "Consents": "Συναινέσεις",
+    "Email types": "Τύποι email"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Συναίνεση",
+    "Consent change": "Αλλαγή συναίνεσης",
+    "Email type": "Τύπος email"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Διάταξη αλλαγής συναίνεσης",
+    "Consent layout": "Διάταξη συναίνεσης",
+    "Email type layout": "Διάταξη τύπου email"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Αρχική",
+    "Timeline": "Χρονολόγιο"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Πεδία",
+    "Timeline": "Χρονολόγιο"
+  },
+  "view.name": {
+    "All consent changes": "Όλες οι αλλαγές συναίνεσης",
+    "All consents": "Όλες οι συναινέσεις",
+    "All email types": "Όλοι οι τύποι email",
+    "Consent change fields": "Πεδία αλλαγής συναίνεσης",
+    "Consent fields": "Πεδία συναίνεσης",
+    "Email type fields": "Πεδία τύπου email"
+  }
+}

@@ -92,7 +92,7 @@ People who existed before the signing secret was set get their preferences link 
 
 # Languages
 
-The mail and the public pages are in Dutch, French and English and follow the language of the form or the browser; other languages get English. Add `?lang=fr` to a page link to force one. Object and field labels are translated into Dutch and French in `locales/`.
+The mail and the public pages are in Dutch, French and English and follow the language of the form or the browser; other languages get English. Add `?lang=fr` to a page link to force one. Object and field labels are translated into the 33 languages Twenty supports in `locales/`; the translations were machine-written and have not been reviewed by native speakers.
 
 # Development
 

@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Standardtext neben dem Kästchen in Formularen",
+    "Explanation on the preferences page": "Erklärung auf der Einstellungsseite",
+    "Groups the changes of one form submission": "Fasst die Änderungen einer Formulareinsendung zusammen",
+    "Inactive types are hidden on forms and the preferences page": "Inaktive Arten werden in Formularen und auf der Einstellungsseite ausgeblendet",
+    "Lets people join or leave this list on the preferences page": "Ermöglicht, dieser Liste auf der Einstellungsseite beizutreten oder sie zu verlassen",
+    "Link that confirms the consent while it is pending": "Link, der die Einwilligung bestätigt, solange sie aussteht",
+    "Personal link to the email preferences page": "Persönlicher Link zur Seite mit E-Mail-Einstellungen",
+    "Shown on the preferences page": "Auf der Einstellungsseite gezeigt",
+    "The text as the person saw it": "Der Text, wie die Person ihn gesehen hat"
+  },
+  "fieldMetadata.label": {
+    "Action": "Aktion",
+    "Active": "Aktiv",
+    "Changes": "Änderungen",
+    "Confirmation link": "Bestätigungslink",
+    "Confirmation sent at": "Bestätigung gesendet am",
+    "Consent": "Einwilligung",
+    "Consent text": "Einwilligungstext",
+    "Consents": "Einwilligungen",
+    "Description": "Beschreibung",
+    "Email type": "E-Mail-Art",
+    "Form": "Formular",
+    "Granted at": "Erteilt am",
+    "IP address": "IP-Adresse",
+    "Language": "Sprache",
+    "Lists": "Listen",
+    "Name": "Name",
+    "Note": "Notiz",
+    "Occurred at": "Zeitpunkt",
+    "Person": "Person",
+    "Preferences link": "Einstellungslink",
+    "Required email type": "Erforderliche E-Mail-Art",
+    "Show on preferences page": "Auf der Einstellungsseite zeigen",
+    "Shown text": "Gezeigter Text",
+    "Source": "Quelle",
+    "Status": "Status",
+    "Submission ID": "Einsendungs-ID",
+    "User agent": "Browser",
+    "Withdrawn at": "Zurückgezogen am"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Einwilligungen",
+    "Email types": "E-Mail-Arten"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Eine E-Mail-Art, die eine Einwilligung braucht, etwa der Newsletter",
+    "A person's current consent for one email type": "Die aktuelle Einwilligung einer Person für eine E-Mail-Art",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Eine Anmeldung, Bestätigung oder Rücknahme, als Nachweis aufbewahrt"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Einwilligungsänderungen",
+    "Consents": "Einwilligungen",
+    "Email types": "E-Mail-Arten"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Einwilligung",
+    "Consent change": "Einwilligungsänderung",
+    "Email type": "E-Mail-Art"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Layout der Einwilligungsänderung",
+    "Consent layout": "Layout der Einwilligung",
+    "Email type layout": "Layout der E-Mail-Art"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Start",
+    "Timeline": "Zeitleiste"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Felder",
+    "Timeline": "Zeitleiste"
+  },
+  "view.name": {
+    "All consent changes": "Alle Einwilligungsänderungen",
+    "All consents": "Alle Einwilligungen",
+    "All email types": "Alle E-Mail-Arten",
+    "Consent change fields": "Felder der Einwilligungsänderung",
+    "Consent fields": "Felder der Einwilligung",
+    "Email type fields": "Felder der E-Mail-Art"
+  }
+}

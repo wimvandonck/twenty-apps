@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Výchozí text u políčka ve formulářích",
+    "Explanation on the preferences page": "Vysvětlení na stránce předvoleb",
+    "Groups the changes of one form submission": "Seskupuje změny jednoho odeslání formuláře",
+    "Inactive types are hidden on forms and the preferences page": "Neaktivní druhy jsou skryté ve formulářích a na stránce předvoleb",
+    "Lets people join or leave this list on the preferences page": "Umožňuje připojit se k seznamu nebo jej opustit na stránce předvoleb",
+    "Link that confirms the consent while it is pending": "Odkaz, který potvrdí souhlas, dokud čeká",
+    "Personal link to the email preferences page": "Osobní odkaz na stránku předvoleb e-mailu",
+    "Shown on the preferences page": "Zobrazeno na stránce předvoleb",
+    "The text as the person saw it": "Text tak, jak ho osoba viděla"
+  },
+  "fieldMetadata.label": {
+    "Action": "Akce",
+    "Active": "Aktivní",
+    "Changes": "Změny",
+    "Confirmation link": "Potvrzovací odkaz",
+    "Confirmation sent at": "Potvrzení odesláno",
+    "Consent": "Souhlas",
+    "Consent text": "Text souhlasu",
+    "Consents": "Souhlasy",
+    "Description": "Popis",
+    "Email type": "Druh e-mailu",
+    "Form": "Formulář",
+    "Granted at": "Uděleno",
+    "IP address": "IP adresa",
+    "Language": "Jazyk",
+    "Lists": "Seznamy",
+    "Name": "Název",
+    "Note": "Poznámka",
+    "Occurred at": "Čas",
+    "Person": "Osoba",
+    "Preferences link": "Odkaz na předvolby",
+    "Required email type": "Požadovaný druh e-mailu",
+    "Show on preferences page": "Zobrazit na stránce předvoleb",
+    "Shown text": "Zobrazený text",
+    "Source": "Zdroj",
+    "Status": "Stav",
+    "Submission ID": "ID odeslání",
+    "User agent": "Prohlížeč",
+    "Withdrawn at": "Odvoláno"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Souhlasy",
+    "Email types": "Druhy e-mailů"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Druh e-mailu, který vyžaduje souhlas, například zpravodaj",
+    "A person's current consent for one email type": "Aktuální souhlas osoby s jedním druhem e-mailu",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Jedno přihlášení, potvrzení nebo odvolání, uchované jako důkaz"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Změny souhlasů",
+    "Consents": "Souhlasy",
+    "Email types": "Druhy e-mailů"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Souhlas",
+    "Consent change": "Změna souhlasu",
+    "Email type": "Druh e-mailu"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Rozvržení změny souhlasu",
+    "Consent layout": "Rozvržení souhlasu",
+    "Email type layout": "Rozvržení druhu e-mailu"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Domů",
+    "Timeline": "Časová osa"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Pole",
+    "Timeline": "Časová osa"
+  },
+  "view.name": {
+    "All consent changes": "Všechny změny souhlasů",
+    "All consents": "Všechny souhlasy",
+    "All email types": "Všechny druhy e-mailů",
+    "Consent change fields": "Pole změny souhlasu",
+    "Consent fields": "Pole souhlasu",
+    "Email type fields": "Pole druhu e-mailu"
+  }
+}

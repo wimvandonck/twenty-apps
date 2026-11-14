@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "النص الافتراضي بجانب المربع في النماذج",
+    "Explanation on the preferences page": "شرح في صفحة التفضيلات",
+    "Groups the changes of one form submission": "يجمع تغييرات إرسال نموذج واحد",
+    "Inactive types are hidden on forms and the preferences page": "الأنواع غير النشطة مخفية في النماذج وصفحة التفضيلات",
+    "Lets people join or leave this list on the preferences page": "يتيح الانضمام إلى هذه القائمة أو مغادرتها في صفحة التفضيلات",
+    "Link that confirms the consent while it is pending": "رابط يؤكد الموافقة ما دامت معلّقة",
+    "Personal link to the email preferences page": "رابط شخصي لصفحة تفضيلات البريد",
+    "Shown on the preferences page": "يظهر في صفحة التفضيلات",
+    "The text as the person saw it": "النص كما رآه الشخص"
+  },
+  "fieldMetadata.label": {
+    "Action": "الإجراء",
+    "Active": "نشط",
+    "Changes": "التغييرات",
+    "Confirmation link": "رابط التأكيد",
+    "Confirmation sent at": "أُرسل التأكيد في",
+    "Consent": "الموافقة",
+    "Consent text": "نص الموافقة",
+    "Consents": "الموافقات",
+    "Description": "الوصف",
+    "Email type": "نوع البريد",
+    "Form": "النموذج",
+    "Granted at": "مُنحت في",
+    "IP address": "عنوان IP",
+    "Language": "اللغة",
+    "Lists": "القوائم",
+    "Name": "الاسم",
+    "Note": "ملاحظة",
+    "Occurred at": "الوقت",
+    "Person": "الشخص",
+    "Preferences link": "رابط التفضيلات",
+    "Required email type": "نوع البريد المطلوب",
+    "Show on preferences page": "عرض في صفحة التفضيلات",
+    "Shown text": "النص المعروض",
+    "Source": "المصدر",
+    "Status": "الحالة",
+    "Submission ID": "معرّف الإرسال",
+    "User agent": "المتصفح",
+    "Withdrawn at": "سُحبت في"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "الموافقات",
+    "Email types": "أنواع البريد"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "نوع من البريد يحتاج إلى موافقة، مثل النشرة الإخبارية",
+    "A person's current consent for one email type": "موافقة الشخص الحالية على نوع بريد واحد",
+    "One opt-in, confirmation or withdrawal, kept as proof": "اشتراك أو تأكيد أو سحب واحد، محفوظ كدليل"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "تغييرات الموافقة",
+    "Consents": "الموافقات",
+    "Email types": "أنواع البريد"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "الموافقة",
+    "Consent change": "تغيير الموافقة",
+    "Email type": "نوع البريد"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "تخطيط تغيير الموافقة",
+    "Consent layout": "تخطيط الموافقة",
+    "Email type layout": "تخطيط نوع البريد"
+  },
+  "pageLayoutTab.title": {
+    "Home": "الرئيسية",
+    "Timeline": "الخط الزمني"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "الحقول",
+    "Timeline": "الخط الزمني"
+  },
+  "view.name": {
+    "All consent changes": "كل تغييرات الموافقة",
+    "All consents": "كل الموافقات",
+    "All email types": "كل أنواع البريد",
+    "Consent change fields": "حقول تغيير الموافقة",
+    "Consent fields": "حقول الموافقة",
+    "Email type fields": "حقول نوع البريد"
+  }
+}
