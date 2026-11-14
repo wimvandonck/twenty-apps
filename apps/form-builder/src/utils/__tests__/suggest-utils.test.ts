@@ -100,6 +100,7 @@ describe('suggestPayment', () => {
       amountFields: [],
       totalFields: [{ recordKey: 'order', fieldName: 'total' }],
       createPayment: true,
+    checkout: 'NONE',
       payerRecordKey: 'person',
       paymentLinks: [
         { recordKey: 'order', joinColumnName: 'paymentId' },

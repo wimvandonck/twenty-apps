@@ -1,0 +1,20 @@
+{
+  "en": {
+    "successTitle": "Thank you for your payment",
+    "successText": "Your payment went through. You can close this page.",
+    "cancelTitle": "Payment cancelled",
+    "cancelText": "Nothing was paid. Your registration or order is kept."
+  },
+  "nl": {
+    "successTitle": "Bedankt voor je betaling",
+    "successText": "Je betaling is gelukt. Je mag deze pagina sluiten.",
+    "cancelTitle": "Betaling geannuleerd",
+    "cancelText": "Er is niets betaald. Je inschrijving of bestelling blijft bewaard."
+  },
+  "fr": {
+    "successTitle": "Merci pour votre paiement",
+    "successText": "Votre paiement a réussi. Vous pouvez fermer cette page.",
+    "cancelTitle": "Paiement annulé",
+    "cancelText": "Rien n’a été payé. Votre inscription ou commande est conservée."
+  }
+}

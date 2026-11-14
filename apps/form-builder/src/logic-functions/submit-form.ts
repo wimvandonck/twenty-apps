@@ -2,6 +2,7 @@ import { RestApiClient } from 'twenty-client-sdk/rest';
 import { defineLogicFunction } from 'twenty-sdk/define';
 import { Response, type RoutePayload } from 'twenty-sdk/logic-function';
 
+import { createCheckoutApi } from 'src/twenty-client/create-checkout-api';
 import { createConsentApi } from 'src/twenty-client/create-consent-api';
 import { createRecordApi } from 'src/twenty-client/create-record-api';
 import { createRelationRecordLoader } from 'src/twenty-client/create-relation-record-loader';
@@ -11,6 +12,7 @@ import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
 import { loadPickerChoices } from 'src/utils/load-picker-choices.util';
 import { loadRelationOptions } from 'src/utils/load-relation-options.util';
 import { processSubmission } from 'src/utils/process-submission.util';
+import { startOnlinePayment } from 'src/utils/start-online-payment.util';
 
 const json = (status: number, body: unknown) =>
   new Response(JSON.stringify(body), {
@@ -65,9 +67,18 @@ const handler = async (event: RoutePayload) => {
     visitor: { ...(ipAddress ? { ipAddress } : {}), ...(userAgent ? { userAgent } : {}) },
   });
 
-  return result.ok
-    ? json(200, { ok: true })
-    : json(result.status, { ok: false, errors: result.errors });
+  if (!result.ok) {
+    return json(result.status, { ok: false, errors: result.errors });
+  }
+
+  const redirectUrl = await startOnlinePayment(
+    createCheckoutApi(client),
+    definition.payment,
+    result,
+    typeof body.language === 'string' ? body.language : undefined,
+  );
+
+  return json(200, redirectUrl ? { ok: true, redirectUrl } : { ok: true });
 };
 
 export default defineLogicFunction({

@@ -31,6 +31,7 @@ export const suggestPayment = (records: FormRecord[], pickers: FormPicker[], obj
         : [],
     ),
     createPayment: true,
+    checkout: 'NONE',
     payerRecordKey: records.find(({ objectNameSingular }) => objectNameSingular === LIST_PERSON_OBJECT_NAME_SINGULAR)?.key ?? null,
     paymentLinks: [
       ...records.flatMap((record) => {

@@ -187,5 +187,6 @@
   "Who pays": "Wie betaalt",
   "{column} is copied from the choice": "{column} wordt overgenomen van de keuze",
   "{column} points at {record}": "{column} verwijst naar {record}",
-  "{line} has no relation to {source}.": "{line} heeft geen relatie met {source}."
+  "{line} has no relation to {source}.": "{line} heeft geen relatie met {source}.",
+  "Pay online with Stripe right after sending (needs the Stripe payments app)": "Meteen online betalen met Stripe na het versturen (vereist de Stripe payments-app)"
 }

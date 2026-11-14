@@ -111,6 +111,7 @@ describe('computeTotal', () => {
     amountFields: [{ recordKey: 'donation', fieldName: 'amount' }],
     totalFields: [],
     createPayment: true,
+    checkout: 'NONE',
     payerRecordKey: 'person',
     paymentLinks: [],
   };
@@ -137,6 +138,7 @@ const SHOP: FormDefinition = {
     amountFields: [],
     totalFields: [{ recordKey: 'order', fieldName: 'total' }],
     createPayment: true,
+    checkout: 'NONE',
     payerRecordKey: 'person',
     paymentLinks: [{ recordKey: 'order', joinColumnName: 'paymentId' }],
   },

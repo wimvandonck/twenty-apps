@@ -320,6 +320,7 @@ const parsePayment = (value: unknown, recordKeys: string[], pickerKeys: string[]
     amountFields,
     totalFields,
     createPayment: value.createPayment === true,
+    checkout: value.checkout === 'STRIPE' ? 'STRIPE' : 'NONE',
     payerRecordKey,
     paymentLinks: paymentLinks.map((link) => {
       const entry = link as Record<string, unknown>;

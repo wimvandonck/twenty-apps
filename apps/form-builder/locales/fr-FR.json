@@ -187,5 +187,6 @@
   "Who pays": "Qui paie",
   "{column} is copied from the choice": "{column} est repris du choix",
   "{column} points at {record}": "{column} pointe vers {record}",
-  "{line} has no relation to {source}.": "{line} n’a pas de relation avec {source}."
+  "{line} has no relation to {source}.": "{line} n’a pas de relation avec {source}.",
+  "Pay online with Stripe right after sending (needs the Stripe payments app)": "Payer en ligne avec Stripe juste après l’envoi (nécessite l’app Stripe payments)"
 }

@@ -9,6 +9,8 @@ export type FormPayment = {
   totalFields: Array<{ recordKey: string; fieldName: string }>;
   // Whether a payment record is created when the total is above zero.
   createPayment: boolean;
+  // Whether the visitor pays online right after sending, through the Stripe app.
+  checkout: 'NONE' | 'STRIPE';
   // The person record who pays.
   payerRecordKey: string | null;
   // Columns that point at the payment, on records of the submission or on

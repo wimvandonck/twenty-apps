@@ -317,6 +317,13 @@ export const PickersSection = ({ definition, objects, loadRecords, onChange }: P
               checked={payment.createPayment}
               onChange={(createPayment) => onChange({ payment: { ...payment, createPayment } })}
             />
+            {payment.createPayment && (
+              <LabelledCheckbox
+                label={t('Pay online with Stripe right after sending (needs the Stripe payments app)')}
+                checked={payment.checkout === 'STRIPE'}
+                onChange={(checked) => onChange({ payment: { ...payment, checkout: checked ? 'STRIPE' : 'NONE' } })}
+              />
+            )}
             {currencyFields.length > 0 && <Text color="secondary">{t('Amounts the visitor enters that count towards the total')}</Text>}
             {currencyFields
               .filter(({ recordKey, fieldName }) => isAsked(recordKey, fieldName))
