@@ -180,6 +180,40 @@ const PAYMENTS = [
   { key: 'p-ord-7', amount: 350, status: 'PAID', method: 'BANK_TRANSFER', provider: 'MANUAL', paidAt: '2026-11-10T00:00:00Z' },
   { key: 'p-ord-8', payer: 'kobe', amount: 15, status: 'REFUNDED', method: 'BANCONTACT', provider: 'MOLLIE', paidAt: '2026-09-15T11:00:00Z' },
   { key: 'p-ord-9', payer: 'lotte', amount: 18, status: 'PAID', method: 'CASH', provider: 'MANUAL', paidAt: '2026-06-27T19:00:00Z' },
+  { key: 'p-mem-an', payer: 'an', amount: 40, status: 'PAID', method: 'BANCONTACT', provider: 'STRIPE', paidAt: '2026-01-12T09:00:00Z' },
+  { key: 'p-mem-bram', payer: 'bram', amount: 25, status: 'PAID', method: 'CREDIT_CARD', provider: 'STRIPE', paidAt: '2026-03-02T18:30:00Z' },
+  { key: 'p-mem-hanne', payer: 'hanne', amount: 25, status: 'OPEN', provider: 'STRIPE' },
+  { key: 'p-mem-ilias', payer: 'ilias', amount: 25, status: 'PAID', method: 'BANK_TRANSFER', provider: 'MANUAL', paidAt: '2025-02-01T00:00:00Z' },
+];
+
+const MEMBERSHIP_TYPES = [
+  { key: 'single', name: 'Lid (demo)', price: 25, duration: 'ONE_YEAR', description: 'Lid voor één persoon, een jaar lang' },
+  { key: 'family', name: 'Gezinslid (demo)', price: 40, duration: 'ONE_YEAR', description: 'Lid voor het hele gezin' },
+  { key: 'honorary', name: 'Erelid (demo)', price: 0, duration: 'LIFETIME', description: 'Levenslang, op uitnodiging van het bestuur' },
+];
+
+const MEMBERSHIPS = [
+  { member: 'an', type: 'family', status: 'ACTIVE', startsOn: '2026-01-12', endsOn: '2027-01-11', amount: 40, payment: 'p-mem-an' },
+  { member: 'bram', type: 'single', status: 'ACTIVE', startsOn: '2026-03-02', endsOn: '2027-03-01', amount: 25, payment: 'p-mem-bram' },
+  { member: 'hanne', type: 'single', status: 'PENDING', startsOn: '2026-11-10', endsOn: '2027-11-09', amount: 25, payment: 'p-mem-hanne' },
+  { member: 'ilias', type: 'single', status: 'EXPIRED', startsOn: '2025-02-01', endsOn: '2026-01-31', amount: 25, payment: 'p-mem-ilias' },
+  { member: 'lotte', type: 'honorary', status: 'ACTIVE', startsOn: '2019-05-01', amount: 0 },
+  { company: 'bakkerij', type: 'single', status: 'ACTIVE', startsOn: '2026-02-15', endsOn: '2027-02-14', amount: 25, note: 'Lidmaatschap op naam van de zaak' },
+];
+
+// Only seeded when the Consents app is installed.
+const EMAIL_TYPES = [
+  { key: 'news', name: 'Nieuwsbrief (demo)', description: 'Elke maand nieuws over onze werking', consentText: 'Ja, stuur me de maandelijkse nieuwsbrief' },
+  { key: 'events', name: 'Uitnodigingen (demo)', description: 'Uitnodigingen voor evenementen', consentText: 'Ja, nodig me uit voor evenementen' },
+];
+
+const CONSENTS = [
+  { person: 'an', type: 'news', changes: [['GRANTED', 'IMPORT', '2025-09-01T10:00:00Z']] },
+  { person: 'an', type: 'events', changes: [['GRANTED', 'IMPORT', '2025-09-01T10:00:00Z']] },
+  { person: 'bram', type: 'news', changes: [['REQUESTED', 'FORM', '2026-10-05T19:30:00Z'], ['CONFIRMED', 'FORM', '2026-10-05T19:34:00Z']] },
+  { person: 'charlotte', type: 'news', changes: [['GRANTED', 'IMPORT', '2025-09-01T10:00:00Z'], ['WITHDRAWN', 'PREFERENCE_PAGE', '2026-08-14T07:12:00Z']] },
+  { person: 'emma', type: 'events', changes: [['GRANTED', 'MANUAL', '2026-05-20T12:00:00Z']] },
+  { person: 'jana', type: 'news', changes: [['REQUESTED', 'FORM', '2026-11-12T21:05:00Z']] },
 ];
 
 const REGISTRATIONS = [
@@ -273,6 +307,18 @@ const createKeyed = async (mutation, inputType, items, toInput) => {
   return Object.fromEntries(items.map((item, index) => [item.key, ids[index]]));
 };
 
+const membershipName = (m) =>
+  `${m.member ? fullName(m.member) : COMPANIES.find((c) => c.key === m.company).name} – ${MEMBERSHIP_TYPES.find((t) => t.key === m.type).name}`;
+
+const hasConsentsApp = async () => {
+  try {
+    await graphql('query { emailTypes(first: 1) { totalCount } }');
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 const fullName = (key) => {
   const person = PEOPLE.find((p) => p.key === key);
   return `${person.firstName} ${person.lastName}`;
@@ -353,8 +399,15 @@ const clean = async () => {
     ['destroyRecurringDonations', 'RecurringDonationFilterInput', RECURRING_DONATIONS.map(recurringName)],
     ['destroyCampaigns', 'CampaignFilterInput', CAMPAIGNS.map((c) => c.name)],
     ['destroyProducts', 'ProductFilterInput', PRODUCTS.map((p) => p.name)],
+    ['destroyMemberships', 'MembershipFilterInput', MEMBERSHIPS.map(membershipName)],
+    ['destroyMembershipTypes', 'MembershipTypeFilterInput', MEMBERSHIP_TYPES.map((t) => t.name)],
     ['destroyPayments', 'PaymentFilterInput', PAYMENTS.map((_, index) => paymentName(index))],
   ];
+
+  // Consents and their changes go with their people.
+  if (await hasConsentsApp()) {
+    byName.push(['destroyEmailTypes', 'EmailTypeFilterInput', EMAIL_TYPES.map((t) => t.name)]);
+  }
 
   for (const [mutation, filterType, names] of byName) {
     const result = await graphql(
@@ -552,6 +605,69 @@ const seed = async () => {
     }),
   );
 
+  const membershipTypes = await createKeyed('createMembershipTypes', 'MembershipTypeCreateInput', MEMBERSHIP_TYPES, (t) => ({
+    name: t.name,
+    price: eur(t.price),
+    duration: t.duration,
+    description: t.description,
+    isAvailable: true,
+  }));
+
+  await createMany(
+    'createMemberships',
+    'MembershipCreateInput',
+    MEMBERSHIPS.map((m) => ({
+      name: membershipName(m),
+      status: m.status,
+      startsOn: m.startsOn,
+      endsOn: m.endsOn ?? null,
+      amount: eur(m.amount),
+      note: m.note ?? null,
+      membershipTypeId: membershipTypes[m.type],
+      memberId: m.member ? people[m.member] : null,
+      companyId: m.company ? companies[m.company] : null,
+      paymentId: m.payment ? payments[m.payment] : null,
+    })),
+  );
+
+  let consentCount = 0;
+
+  if (await hasConsentsApp()) {
+    const emailTypes = await createKeyed('createEmailTypes', 'EmailTypeCreateInput', EMAIL_TYPES, (t) => ({
+      name: t.name,
+      description: t.description,
+      consentText: t.consentText,
+      isActive: true,
+    }));
+    // Consents start empty; the Consents app derives their status from the changes.
+    const consentIds = await createMany(
+      'createConsents',
+      'ConsentCreateInput',
+      CONSENTS.map((c) => ({
+        name: `${fullName(c.person)} – ${EMAIL_TYPES.find((t) => t.key === c.type).name}`,
+        personId: people[c.person],
+        emailTypeId: emailTypes[c.type],
+      })),
+    );
+
+    await createMany(
+      'createConsentChanges',
+      'ConsentChangeCreateInput',
+      CONSENTS.flatMap((c, index) =>
+        c.changes.map(([action, source, occurredAt]) => ({
+          name: `${action} ${occurredAt.slice(0, 16).replace('T', ' ')}`,
+          consentId: consentIds[index],
+          action,
+          source,
+          occurredAt,
+          shownText: source === 'FORM' ? EMAIL_TYPES.find((t) => t.key === c.type).consentText : null,
+          note: source === 'IMPORT' ? 'Overgenomen uit de vorige ledenlijst' : null,
+        })),
+      ),
+    );
+    consentCount = CONSENTS.length;
+  }
+
   const targetIds = { person: people, company: companies, organizedEvent: events, campaign: campaigns, product: products };
   const targetField = (object) => `target${capitalize(object)}Id`;
 
@@ -591,6 +707,9 @@ const seed = async () => {
       `${ORDERS.length} orders`,
       `${orderLines().length} order lines`,
       `${PAYMENTS.length} payments`,
+      `${MEMBERSHIP_TYPES.length} membership types`,
+      `${MEMBERSHIPS.length} memberships`,
+      `${consentCount} consents`,
       `${TASKS.length} tasks`,
       `${NOTES.length} notes`,
     ].join('\n'),

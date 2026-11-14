@@ -52,7 +52,7 @@ Organisations differ, so nearly everything is optional. Leave ticket types out f
 
 # Demo data
 
-`scripts/seed-demo-data.mjs` fills a workspace with linked demo data for a Belgian non-profit: 12 people, 10 companies, 10 events with ticket types and registrations, campaigns, one-off and recurring donations, products, orders with order lines, payments, and tasks and notes on those records.
+`scripts/seed-demo-data.mjs` fills a workspace with linked demo data for a Belgian non-profit: 12 people, 10 companies, 10 events with ticket types and registrations, campaigns, one-off and recurring donations, products, orders with order lines, membership types and memberships, payments, and tasks and notes on those records. When the Consents app is installed, it also adds two email types and consents with their history (granted, confirmed, withdrawn and one still pending).
 
 Demo people have an `@example.org` address and demo companies an `.example` domain, so they never mix with real contacts. The clean command removes exactly the records the script creates.
 
