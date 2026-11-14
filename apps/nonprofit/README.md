@@ -38,6 +38,7 @@ On people and companies, the matching lists appear: registrations, booked regist
 
 - **A new membership** gets a name (member and type), today as start date, an end date from its type and the type's price as amount, for whatever was left empty. One year ends the day before the same date a year later, a calendar year on 31 December, one month the day before the same date a month later, and a lifetime membership never.
 - **When a payment's status changes**, its registrations get the same payment status (unpaid, paid or refunded). Paid makes pending memberships active and open orders paid; refunded cancels its memberships and refunds its orders. Records already moved on, such as a shipped order, are left alone.
+- **A registration, membership or order linked to a payment** takes over that payment's status at once: unpaid while it is open, paid once it is paid.
 - **Every night**, active memberships whose end date has passed become expired.
 
 # Optional by design
