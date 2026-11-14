@@ -19,8 +19,9 @@ When a dynamic segment is recalculated:
 - people who matched before and no longer do leave it
 - people who still match but were removed from the list by hand, or unsubscribed, are not put back
 - people added to the list by hand who never matched are left alone
+- on a list that requires an email type in the Consents app, only people who gave that consent join. The others are skipped and join as soon as they give it
 
-**Matches**, **Last calculated** and **Last result** show the outcome. **Last result** reads, for example, "2 joined, 1 left", or explains what went wrong.
+**Matches**, **Last calculated** and **Last result** show the outcome. **Last result** reads, for example, "2 joined, 1 left, 3 skipped without consent", or explains what went wrong.
 
 # Writing a definition
 
@@ -64,7 +65,6 @@ Filters use Twenty's GraphQL filter format. Anywhere in a filter or a value, `@t
 
 - Not real-time: dynamic segments are at most 15 minutes behind.
 - The base is always people. A `related` condition follows one link from the linked object to the person; links over several steps come later.
-- People are not checked against consents: a list that requires an email type in the Consents app can get members without that consent.
 - Grouping linked records per person works but isn't documented by Twenty, so an update could change it.
 
 # Development

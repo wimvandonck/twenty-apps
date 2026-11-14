@@ -1,9 +1,17 @@
 import { type TwentyApi } from 'src/twenty-client/create-twenty-api';
+import { applyConsent } from 'src/utils/apply-consent.util';
 import { computeListChanges } from 'src/utils/compute-list-changes.util';
 import { evaluateDefinition } from 'src/utils/evaluate-definition.util';
 import { parseDefinition } from 'src/utils/parse-definition.util';
 
-export type RecalculateResult = { segmentId: string; matched?: number; added?: number; removed?: number; error?: string };
+export type RecalculateResult = {
+  segmentId: string;
+  matched?: number;
+  added?: number;
+  removed?: number;
+  skipped?: number;
+  error?: string;
+};
 
 const toIdSet = (value: unknown): Set<string> =>
   new Set(Array.isArray(value) ? value.filter((id): id is string => typeof id === 'string') : []);
@@ -37,7 +45,13 @@ export const recalculateSegment = async (
       segment.mode === 'STATIC',
     );
 
-    for (const personId of changes.add) {
+    const requiredEmailTypeId = await api.fetchRequiredEmailTypeId(segment.listId);
+    const consent = applyConsent(
+      changes.add,
+      requiredEmailTypeId ? await api.fetchConsentedPersonIds(requiredEmailTypeId) : null,
+    );
+
+    for (const personId of consent.add) {
       await api.addListMember(segment.listId, personId);
     }
 
@@ -49,14 +63,25 @@ export const recalculateSegment = async (
       }
     }
 
+    // People skipped for lack of consent are not remembered as matched, so
+    // they join once they give consent.
+    const skipped = new Set(consent.skipped);
+    const skippedText = skipped.size > 0 ? `, ${skipped.size} skipped without consent` : '';
+
     await api.updateSegment(segment.id, {
       memberCount: matched.size,
       lastCalculatedAt: now.toISOString(),
-      lastResult: `${changes.add.length} joined, ${changes.remove.length} left`,
-      matchedPersonIds: [...matched].sort(),
+      lastResult: `${consent.add.length} joined, ${changes.remove.length} left${skippedText}`,
+      matchedPersonIds: [...matched].filter((id) => !skipped.has(id)).sort(),
     });
 
-    return { segmentId, matched: matched.size, added: changes.add.length, removed: changes.remove.length };
+    return {
+      segmentId,
+      matched: matched.size,
+      added: consent.add.length,
+      removed: changes.remove.length,
+      skipped: skipped.size,
+    };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
 

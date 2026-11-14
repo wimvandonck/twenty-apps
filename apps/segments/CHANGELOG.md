@@ -2,6 +2,10 @@
 
 All notable changes to this application are documented in this file.
 
+## Unreleased
+
+- Lists that require an email type in the Consents app only get members who gave that consent
+
 ## 0.1.0
 
 - Segments with conditions on linked records (count, sum, average, minimum, maximum), on people's own fields and on list membership, combined with ALL and ANY

@@ -153,6 +153,33 @@ export const createTwentyApi = (client: RestApiClient = new RestApiClient()) => 
     removeListMember: async (memberId: string) => {
       await client.delete(`/rest/messageListMembers/${memberId}`);
     },
+    // The Consents app adds a required email type to lists. Without that app
+    // the field does not exist and no consent is required.
+    fetchRequiredEmailTypeId: async (listId: string): Promise<string | null> => {
+      try {
+        const data = await graphql<{ messageList: { requiredEmailTypeId: string | null } | null }>(
+          `query ($id: UUID!) { messageList(filter: { id: { eq: $id } }) { requiredEmailTypeId } }`,
+          { id: listId },
+        );
+
+        return data.messageList?.requiredEmailTypeId ?? null;
+      } catch (error) {
+        if (error instanceof Error && error.message.includes('requiredEmailTypeId')) {
+          return null;
+        }
+
+        throw error;
+      }
+    },
+    fetchConsentedPersonIds: async (emailTypeId: string): Promise<Set<string>> =>
+      new Set(
+        (
+          await fetchAll<{ personId: string }>('consents', 'personId', {
+            emailTypeId: { eq: emailTypeId },
+            status: { eq: 'GRANTED' },
+          })
+        ).map((consent) => consent.personId),
+      ),
     updateSegment: async (id: string, data: Record<string, unknown>) => {
       await client.patch(`/rest/segments/${id}`, data);
     },
