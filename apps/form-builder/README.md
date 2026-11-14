@@ -40,7 +40,9 @@ After changing a string in the builder, update every file in `locales/` by hand.
 
 Both routes are public. A submission can only set the fields stored in the form's definition, only on published forms, and is validated in full before anything is written. If a write fails halfway, the records and list memberships that submission created are removed again. A hidden input catches simple bots.
 
-Supported field types: text, number, boolean, date, date and time, select, multi-select, emails, phones, links, full name, currency, address and rich text.
+Supported field types: text, number, boolean, date, date and time, select, multi-select, emails, phones, links, full name, currency, address, rich text and relations to one existing record.
+
+A **relation** field, such as the event of a registration, shows the records that exist in Twenty when the form is opened (up to 200, by name), and a submission can only pick one of them. Hide it with a default to fix the record, for example one event per form. Relations between records of the same submission still go through **Links**.
 
 # Development
 

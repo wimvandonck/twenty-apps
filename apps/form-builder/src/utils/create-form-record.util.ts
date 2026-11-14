@@ -9,6 +9,7 @@ import { toFormField } from 'src/utils/to-form-field.util';
 export const createFormRecord = (
   object: ObjectMetadata,
   existingKeys: string[],
+  objects: ObjectMetadata[] = [],
 ): FormRecord => {
   let index = 1;
   let key = object.nameSingular;
@@ -26,6 +27,6 @@ export const createFormRecord = (
     mode: 'CREATE',
     fields: object.fields
       .filter((field) => isSelectableField(field) && isRequiredField(field))
-      .map(toFormField),
+      .map((field) => toFormField(field, objects)),
   };
 };

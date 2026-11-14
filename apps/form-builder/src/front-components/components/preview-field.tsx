@@ -116,7 +116,7 @@ export const PreviewField = ({ field, messages }: PreviewFieldProps) => {
           <Part label={messages.country} value={parts.country} />
         </div>
       )}
-      {field.type === 'SELECT' && (
+      {(field.type === 'SELECT' || field.type === 'RELATION') && (
         <div style={{ ...BOX, display: 'flex', justifyContent: 'space-between', gap: 8 }}>
           <span>{text === '' ? '' : optionLabel(text)}</span>
           <span aria-hidden="true" style={{ color: '#999' }}>
@@ -125,7 +125,7 @@ export const PreviewField = ({ field, messages }: PreviewFieldProps) => {
         </div>
       )}
       {field.type === 'RICH_TEXT' && <div style={{ ...BOX, minHeight: 80, whiteSpace: 'pre-wrap' }}>{text}</div>}
-      {!['MULTI_SELECT', 'FULL_NAME', 'CURRENCY', 'ADDRESS', 'SELECT', 'RICH_TEXT'].includes(field.type) && (
+      {!['MULTI_SELECT', 'FULL_NAME', 'CURRENCY', 'ADDRESS', 'SELECT', 'RELATION', 'RICH_TEXT'].includes(field.type) && (
         <div style={BOX}>{text}</div>
       )}
     </div>

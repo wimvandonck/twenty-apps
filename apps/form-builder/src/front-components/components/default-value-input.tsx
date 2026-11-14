@@ -48,7 +48,7 @@ export const DefaultValueInput = ({ field, onChange }: DefaultValueInputProps) =
     );
   }
 
-  if (field.type === 'SELECT') {
+  if ((field.type === 'SELECT' || field.type === 'RELATION')) {
     return (
       <OptionSelect
         label={label}

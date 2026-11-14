@@ -27,7 +27,8 @@ export const buildRecordData = (
     );
 
     if (result.status === 'VALID') {
-      data[field.name] = result.value;
+      // A relation fills its join column with the chosen record's id.
+      data[field.relation?.joinColumnName ?? field.name] = result.value;
     } else if (result.status === 'INVALID') {
       errors.push(messages[result.reason].replace('{label}', field.label));
     } else if (field.required) {

@@ -52,6 +52,7 @@ export const renderFieldHtml = (
     case 'DATE':
       return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="date" ${target}${field.defaultValue === DEFAULT_TODAY ? computed : value}${required}></div>`;
     case 'SELECT':
+    case 'RELATION':
       return `<div class="field"><label for="${id}">${label}</label><select id="${id}" ${target}${required}><option value=""></option>${options
         .map((option) => `<option value="${option.value}"${option.chosen ? ' selected' : ''}>${option.label}</option>`)
         .join('')}</select></div>`;

@@ -22,6 +22,7 @@ import { RecordCard } from 'src/front-components/components/record-card';
 import { SettingsSection } from 'src/front-components/components/settings-section';
 import { ShareSection } from 'src/front-components/components/share-section';
 import { fetchForms } from 'src/twenty-client/fetch-forms';
+import { createRelationRecordLoader } from 'src/twenty-client/create-relation-record-loader';
 import { fetchEmailTypes } from 'src/twenty-client/fetch-email-types';
 import { fetchLists } from 'src/twenty-client/fetch-lists';
 import { fetchObjectMetadata } from 'src/twenty-client/fetch-object-metadata';
@@ -55,6 +56,7 @@ const FormBuilder = () => {
   const theme = useTheme();
   const { t } = useTranslate();
   const client = useMemo(() => new RestApiClient(), []);
+  const relationRecordLoader = useMemo(() => createRelationRecordLoader(client), [client]);
   // Set when the page is opened from a form record's button.
   const requestedFormId = new URLSearchParams(useLocation()?.search ?? '').get('formId');
 
@@ -198,7 +200,7 @@ const FormBuilder = () => {
 
     if (object !== undefined) {
       applyDefinition({
-        records: [...definition.records, createFormRecord(object, definition.records.map(({ key }) => key))],
+        records: [...definition.records, createFormRecord(object, definition.records.map(({ key }) => key), objects)],
       });
     }
   };
@@ -319,6 +321,8 @@ const FormBuilder = () => {
                       key={record.key}
                       record={record}
                       object={objects.find(({ nameSingular }) => nameSingular === record.objectNameSingular)}
+                      objects={objects}
+                      loadRelationRecords={relationRecordLoader}
                       isFirst={index === 0}
                       isLast={index === definition.records.length - 1}
                       onChange={(next) =>

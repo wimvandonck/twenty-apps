@@ -59,6 +59,7 @@ export const toFieldValue = (field: FormField, raw: unknown): FieldValue => {
         : valid(new Date(time).toISOString());
     }
     case 'SELECT':
+    case 'RELATION':
       if (text === '') return EMPTY;
 
       return optionValues.includes(text) ? valid(text) : invalid('invalidChoice');

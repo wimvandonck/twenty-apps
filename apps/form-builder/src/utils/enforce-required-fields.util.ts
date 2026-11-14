@@ -15,6 +15,7 @@ import { toFormField } from 'src/utils/to-form-field.util';
 export const enforceRequiredFields = (
   record: FormRecord,
   object: ObjectMetadata | undefined,
+  objects: ObjectMetadata[] = [],
 ): FormRecord => {
   if (object === undefined) {
     return record;
@@ -38,7 +39,7 @@ export const enforceRequiredFields = (
 
     const required = isForced(metadata.name) || selected.required;
     const field: FormField = {
-      ...toFormField(metadata),
+      ...toFormField(metadata, objects),
       label: selected.label,
       required,
       ...(selected.defaultValue !== undefined ? { defaultValue: selected.defaultValue } : {}),
@@ -49,7 +50,7 @@ export const enforceRequiredFields = (
   });
   const missing = selectable
     .filter(({ name }) => isForced(name) && !kept.some((field) => field.name === name))
-    .map((metadata) => ({ ...toFormField(metadata), required: true }));
+    .map((metadata) => ({ ...toFormField(metadata, objects), required: true }));
 
   return { ...record, fields: [...kept, ...missing] };
 };

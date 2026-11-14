@@ -15,6 +15,7 @@ export const normalizeDefinition = (
     enforceRequiredFields(
       record,
       objects.find(({ nameSingular }) => nameSingular === record.objectNameSingular),
+      objects,
     ),
   );
 

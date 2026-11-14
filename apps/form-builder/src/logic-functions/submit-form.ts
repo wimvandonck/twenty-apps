@@ -4,9 +4,11 @@ import { Response, type RoutePayload } from 'twenty-sdk/logic-function';
 
 import { createConsentApi } from 'src/twenty-client/create-consent-api';
 import { createRecordApi } from 'src/twenty-client/create-record-api';
+import { createRelationRecordLoader } from 'src/twenty-client/create-relation-record-loader';
 import { fetchPublishedForm } from 'src/twenty-client/fetch-published-form';
 import { type SubmissionOptIns, type SubmissionValues } from 'src/types/submission-values';
 import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
+import { loadRelationOptions } from 'src/utils/load-relation-options.util';
 import { processSubmission } from 'src/utils/process-submission.util';
 
 const json = (status: number, body: unknown) =>
@@ -28,7 +30,10 @@ const handler = async (event: RoutePayload) => {
     typeof body.language === 'string' ? body.language : undefined,
     event.headers?.['accept-language'],
   );
-  const definition = await fetchPublishedForm(client, event.pathParameters?.formId);
+  const published = await fetchPublishedForm(client, event.pathParameters?.formId);
+  // A relation is checked against the records that exist now.
+  const definition =
+    published === null ? null : await loadRelationOptions(published, createRelationRecordLoader(client));
 
   if (definition === null) {
     return json(404, { ok: false, errors: [messages.unavailableText] });
