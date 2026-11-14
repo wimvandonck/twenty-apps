@@ -1,6 +1,7 @@
 import { RestApiClient } from 'twenty-client-sdk/rest';
 
 import { type SyncedList, type TwentyDeps } from 'src/types/brevo-deps';
+import { fetchAllPages, type PageGetter } from 'src/utils/fetch-all-pages.util';
 
 type Row = { id: string } & Record<string, unknown>;
 
@@ -14,13 +15,10 @@ const toList = (row: Row): SyncedList => ({
 
 // The people, consents and lists the sync reads, over Twenty's REST API.
 export const createTwentyDeps = (client: RestApiClient = new RestApiClient()): TwentyDeps => {
-  const list = async (namePlural: string, filter?: string, limit = 200): Promise<Row[]> => {
-    const response = await client.get<{ data: Record<string, Row[]> }>(`/rest/${namePlural}`, {
-      query: { limit, ...(filter ? { filter } : {}) },
-    });
-
-    return Object.values(response.data)[0] ?? [];
-  };
+  const get: PageGetter = (path, query) => client.get(path, { query });
+  // Every matching record, past the 200 one call returns.
+  const list = (namePlural: string, filter?: string, max = 10_000): Promise<Row[]> =>
+    fetchAllPages<Row>(get, `/rest/${namePlural}`, filter ? { filter } : {}, max);
   const one = async (namePlural: string, id: string): Promise<Row | null> => {
     try {
       return Object.values((await client.get<{ data: Record<string, Row | null> }>(`/rest/${namePlural}/${id}`)).data)[0] ?? null;
@@ -62,7 +60,7 @@ export const createTwentyDeps = (client: RestApiClient = new RestApiClient()): T
       await client.patch(`/rest/messageLists/${listId}`, { brevoListId });
     },
     getMemberPersonIds: async (listId) =>
-      (await list('messageListMembers', `listId[eq]:"${listId}"`, 500)).map((member) => String(member.personId)),
+      (await list('messageListMembers', `listId[eq]:"${listId}"`)).map((member) => String(member.personId)),
     findPersonIdByEmail: async (email) =>
       (await list('people', `emails.primaryEmail[ilike]:"${email.replace(/"/g, '')}"`, 1))[0]?.id ?? null,
     withdrawAllConsents: async (personId) => {

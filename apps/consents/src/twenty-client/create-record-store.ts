@@ -2,6 +2,7 @@ import { RestApiClient } from 'twenty-client-sdk/rest';
 
 import { type RecordStore, type StoredRecord } from 'src/types/record-store';
 import { buildRestFilter } from 'src/utils/build-rest-filter.util';
+import { fetchAllPages } from 'src/utils/fetch-all-pages.util';
 
 type ListResponse = { data: Record<string, StoredRecord[]> };
 type OneResponse = { data: Record<string, StoredRecord | null> };
@@ -22,6 +23,16 @@ export const createRecordStore = (client: RestApiClient = new RestApiClient()): 
       const direction = options.orderBy.direction === 'asc' ? 'AscNullsFirst' : 'DescNullsLast';
 
       query.order_by = `${options.orderBy.field}[${direction}]`;
+    }
+
+    // More than one call returns: follow the cursor.
+    if (!options?.limit || options.limit > 200) {
+      return fetchAllPages<StoredRecord>(
+        (path, pageQuery) => client.get(path, { query: pageQuery }),
+        `/rest/${name}`,
+        Object.fromEntries(Object.entries(query).filter(([key]) => key !== 'limit')),
+        options?.limit,
+      );
     }
 
     const response = await client.get<ListResponse>(`/rest/${name}`, { query });

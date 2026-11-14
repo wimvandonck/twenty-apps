@@ -5,9 +5,11 @@ import { Response, type RoutePayload } from 'twenty-sdk/logic-function';
 import { createCheckoutApi } from 'src/twenty-client/create-checkout-api';
 import { createConsentApi } from 'src/twenty-client/create-consent-api';
 import { createRecordApi } from 'src/twenty-client/create-record-api';
+import { createRecordByIdLoader } from 'src/twenty-client/create-record-by-id-loader';
 import { createRelationRecordLoader } from 'src/twenty-client/create-relation-record-loader';
 import { fetchPublishedForm } from 'src/twenty-client/fetch-published-form';
 import { type SubmissionOptIns, type SubmissionValues } from 'src/types/submission-values';
+import { addChosenRelations } from 'src/utils/add-chosen-relations.util';
 import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
 import { loadPickerChoices } from 'src/utils/load-picker-choices.util';
 import { loadRelationOptions } from 'src/utils/load-relation-options.util';
@@ -57,7 +59,9 @@ const handler = async (event: RoutePayload) => {
   ) as SubmissionOptIns;
   const ipAddress = event.headers?.['x-forwarded-for']?.split(',')[0]?.trim();
   const userAgent = event.headers?.['user-agent']?.slice(0, 500);
-  const result = await processSubmission(definition, values, createRecordApi(client), messages, optIns, {
+  // A record outside the listed choices may still be chosen or fixed, as long as it exists.
+  const checked = await addChosenRelations(definition, values, createRecordByIdLoader(client));
+  const result = await processSubmission(checked, values, createRecordApi(client), messages, optIns, {
     consentApi: createConsentApi(client),
     // Prices come from the records in Twenty, never from the browser.
     pickerChoices: await loadPickerChoices(definition, createRelationRecordLoader(client)),
