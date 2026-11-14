@@ -4,11 +4,16 @@ import { type RecordStore } from 'src/types/record-store';
 import { personName } from 'src/utils/person-name.util';
 import { toConsentRecord } from 'src/utils/to-consent-record.util';
 
-// Pending consents whose confirmation mail has not gone out yet.
+// Pending consents whose confirmation mail has not gone out yet, newest
+// first, so old requests that can no longer be sent never crowd out new ones.
 export const fetchPendingConsents = async (store: RecordStore): Promise<PendingConsent[]> => {
-  const consents = (await store.find('consents', { status: 'PENDING', confirmationSentAt: null }, { limit: 200 })).map(
-    toConsentRecord,
-  );
+  const consents = (
+    await store.find(
+      'consents',
+      { status: 'PENDING', confirmationSentAt: null },
+      { orderBy: { field: 'createdAt', direction: 'desc' }, limit: 100 },
+    )
+  ).map(toConsentRecord);
 
   return Promise.all(
     consents.map(async (consent) => {

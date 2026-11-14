@@ -10,7 +10,17 @@ import { toConsentRecord } from 'src/utils/to-consent-record.util';
 // Reacts to a status that does not match the history: someone edited it in
 // Twenty. Granted and withdrawn are logged as a manual change; anything else
 // (pending, empty) cannot be proven and is put back.
-export const handleStatusEdit = async (store: RecordStore, config: AppConfig, consentId: string, now: number): Promise<void> => {
+//
+// The edit from the event guards against events handled late: an edit the
+// record no longer shows, or one older than the latest change, is the app's
+// own write in progress or already superseded.
+export const handleStatusEdit = async (
+  store: RecordStore,
+  config: AppConfig,
+  consentId: string,
+  now: number,
+  edit?: { status: string | null; updatedAt: string | null },
+): Promise<void> => {
   const record = await store.findOne('consents', consentId);
 
   if (!record) {
@@ -18,7 +28,13 @@ export const handleStatusEdit = async (store: RecordStore, config: AppConfig, co
   }
 
   const consent = toConsentRecord(record);
-  const derived = deriveStatus((await fetchChanges(store, consentId)).map((change) => change.action));
+  const changes = await fetchChanges(store, consentId);
+  const derived = deriveStatus(changes.map((change) => change.action));
+  const latestCreatedAt = changes[changes.length - 1]?.createdAt ?? null;
+
+  if (edit && ((edit.status ?? null) !== consent.status || (edit.updatedAt && latestCreatedAt && latestCreatedAt > edit.updatedAt))) {
+    return;
+  }
 
   if (consent.status === derived) {
     return;

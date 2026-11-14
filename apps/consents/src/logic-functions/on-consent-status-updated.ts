@@ -5,12 +5,17 @@ import { handleStatusEdit } from 'src/utils/handle-status-edit.util';
 import { readAppConfig } from 'src/utils/read-app-config.util';
 
 // A status edited by hand in Twenty is logged as a manual change.
-const handler = async (event: DatabaseEventPayload<ObjectRecordUpdateEvent<{ status?: string | null }>>) => {
+const handler = async (event: DatabaseEventPayload<ObjectRecordUpdateEvent<{ status?: string | null; updatedAt?: string | null }>>) => {
   if (event.properties.before?.status === event.properties.after?.status) {
     return { checked: false };
   }
 
-  await handleStatusEdit(createRecordStore(), readAppConfig(), event.recordId, Date.now());
+  const after = event.properties.after;
+
+  await handleStatusEdit(createRecordStore(), readAppConfig(), event.recordId, Date.now(), {
+    status: after?.status ?? null,
+    updatedAt: after?.updatedAt ?? null,
+  });
 
   return { checked: true };
 };

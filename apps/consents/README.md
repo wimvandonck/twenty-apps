@@ -51,11 +51,11 @@ POST /s/consents/changes
 
 `action` is `REQUESTED` (needs confirmation), `CONFIRMED`, `GRANTED` (counts at once) or `WITHDRAWN`. `ipAddress` and `userAgent` are the visitor's, for a caller that relays a public request. The answer lists the resulting status per email type and whether the confirmation mail went out.
 
-Someone who already gave consent and fills in a form again keeps their consent and gets no new mail. Changes can also be added by hand or imported as consent change records; the consent follows them.
+Someone who already gave consent and fills in a form again keeps their consent and gets no new mail. Changes can also be added by hand or imported as consent change records; the consent follows them. A consent created by hand or by an import with a status gets a manual change as proof.
 
 # Double opt-in
 
-All `REQUESTED` changes of one call share a submission. The consents become pending and get a **Confirmation link** that works for 30 days. One mail lists every email type of the submission, and one click confirms them all. A consent withdrawn before the click stays withdrawn.
+All `REQUESTED` changes of one call share a submission. The consents become pending and get a **Confirmation link** that works for 30 days. One mail lists every email type of the submission. The link opens a page with a confirm button, so mail scanners that open links do not confirm on the person's behalf; one click on that button confirms them all. A consent withdrawn before the click stays withdrawn.
 
 With a Brevo key the app sends the mail itself. A mail that fails because of Brevo's daily limit or an error on their side is retried every hour.
 
