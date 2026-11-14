@@ -4,6 +4,7 @@ All notable changes to this application are documented in this file.
 
 ## Unreleased
 
+- An editor on the segment page to build conditions, with a live count and example names
 - Lists that require an email type in the Consents app only get members who gave that consent
 
 ## 0.1.0

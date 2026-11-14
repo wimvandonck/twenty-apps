@@ -35,10 +35,17 @@ export type RelatedCondition = {
   value?: number | string;
 };
 
-// People matching a filter on their own fields.
+export type PropertyOperator = 'CONTAINS' | 'IS' | 'IS_NOT' | 'IS_EMPTY' | 'IS_NOT_EMPTY' | 'GTE' | 'LTE';
+
+// People matching a filter on their own fields. The editor also stores the
+// field, operator and value it built the filter from; the engine only
+// reads the filter.
 export type PropertyCondition = {
   type: 'property';
   filter: Record<string, unknown>;
+  field?: string;
+  operator?: PropertyOperator;
+  value?: string;
 };
 
 // People who are, or are not, on a list.
