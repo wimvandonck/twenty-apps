@@ -8,6 +8,7 @@ Monorepo for Twenty CRM apps. Each app lives in its own folder under `apps/` and
 | --- | --- |
 | `apps/form-builder` | Builds embeddable forms that create or update linked records |
 | `apps/nonprofit` | Data model for event registrations, donations, products and payments |
+| `apps/consents` | Email consents with proof, double opt-in and a preferences page |
 | `.claude/skills` | Twenty's official agent skills: `create-app`, `develop-app`, `manage-app` |
 
 # Working on an app
