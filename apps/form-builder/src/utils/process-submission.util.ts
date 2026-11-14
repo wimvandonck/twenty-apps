@@ -3,25 +3,39 @@ import {
   LIST_MEMBER_OBJECT_NAME_PLURAL,
   LIST_MEMBER_PERSON_JOIN_COLUMN,
 } from 'src/constants/list-objects';
+import { type ConsentApi } from 'src/types/consent-api';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
 import { type RecordApi } from 'src/types/record-api';
 import { type SubmissionResult } from 'src/types/submission-result';
 import { type SubmissionOptIns, type SubmissionValues } from 'src/types/submission-values';
+import { buildConsentChanges } from 'src/utils/build-consent-changes.util';
 import { buildMatchFilter } from 'src/utils/build-match-filter.util';
 import { buildRecordData } from 'src/utils/build-record-data.util';
 import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
 
+export type SubmissionOptions = {
+  // Records consents; without it, consent boxes are ignored.
+  consentApi?: ConsentApi;
+  // The consent boxes the visitor ticked: consent key -> true.
+  consents?: SubmissionOptIns;
+  language?: string;
+  visitor?: { ipAddress?: string; userAgent?: string };
+};
+
 // Validates a whole submission first, then writes the records in link order,
-// the junction records that connect them and the list memberships. If a
-// write fails, the records this submission created are removed again.
+// the junction records that connect them, the list memberships and the
+// consents. If a write fails, the records this submission created are
+// removed again.
 export const processSubmission = async (
   definition: FormDefinition,
   values: SubmissionValues,
   api: RecordApi,
   messages: PublicFormMessages,
   optIns: SubmissionOptIns = {},
+  options: SubmissionOptions = {},
 ): Promise<SubmissionResult> => {
+  const consents = options.consents ?? {};
   const orderedRecords = sortRecordsByLinks(definition.records, definition.links);
 
   if (orderedRecords === null) {
@@ -32,7 +46,12 @@ export const processSubmission = async (
     record,
     ...buildRecordData(record, values[record.key] ?? {}, messages),
   }));
-  const errors = built.flatMap((entry) => entry.errors);
+  const errors = [
+    ...built.flatMap((entry) => entry.errors),
+    ...definition.consents
+      .filter((consent) => consent.required && consents[consent.key] !== true)
+      .map((consent) => messages.required.replace('{label}', consent.label)),
+  ];
 
   if (errors.length > 0) {
     return { ok: false, status: 422, errors };
@@ -117,6 +136,16 @@ export const processSubmission = async (
         });
 
         created.push({ objectNamePlural: LIST_MEMBER_OBJECT_NAME_PLURAL, id });
+      }
+    }
+
+    if (options.consentApi) {
+      for (const [recordKey, changes] of buildConsentChanges(definition, consents, optIns, options.language)) {
+        const personId = recordIds.get(recordKey);
+
+        if (personId !== undefined) {
+          await options.consentApi.record({ personId, changes, ...options.visitor });
+        }
       }
     }
   } catch (error) {

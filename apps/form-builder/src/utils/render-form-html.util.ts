@@ -24,7 +24,16 @@ export const renderFormHtml = (
       return `<div class="field"><label class="check" for="${id}"><input id="${id}" type="checkbox" data-list="${escapeHtml(list.key)}"${list.checked ? ' checked' : ''}><span>${escapeHtml(list.label)}</span></label></div>`;
     })
     .join('');
-  // The boxes for lists go at the end of the last step.
+  const consentBoxes = definition.consents
+    .map((consent) => {
+      const id = escapeHtml(`consent-${consent.key}`);
+      const required = consent.required ? ' required' : '';
+      const marker = consent.required ? ' <span class="required" aria-hidden="true">*</span>' : '';
+
+      return `<div class="field"><label class="check" for="${id}"><input id="${id}" type="checkbox" data-consent="${escapeHtml(consent.key)}"${required}><span>${escapeHtml(consent.label)}${marker}</span></label></div>`;
+    })
+    .join('');
+  // The boxes for consents and lists go at the end of the last step.
   const stepsHtml = (steps.length > 0 ? steps : [{ title: '', sections: [] }])
     .map(
       (step, index, all) =>
@@ -35,7 +44,7 @@ export const renderFormHtml = (
                 .map((field) => renderFieldHtml(record.key, field, messages))
                 .join('')}</section>`,
           )
-          .join('')}${index === all.length - 1 ? optIns : ''}</div>`,
+          .join('')}${index === all.length - 1 ? consentBoxes + optIns : ''}</div>`,
     )
     .join('');
 

@@ -143,6 +143,14 @@ export const FORM_PAGE_SCRIPT = `
     return lists;
   }
 
+  function collectConsents() {
+    var consents = {};
+    form.querySelectorAll('[data-consent]').forEach(function (input) {
+      consents[input.dataset.consent] = input.checked;
+    });
+    return consents;
+  }
+
   form.noValidate = true;
 
   next.addEventListener('click', function () {
@@ -170,7 +178,7 @@ export const FORM_PAGE_SCRIPT = `
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ values: collect(), lists: collectLists(), website: form.elements.website.value, language: document.documentElement.lang })
+      body: JSON.stringify({ values: collect(), lists: collectLists(), consents: collectConsents(), website: form.elements.website.value, language: document.documentElement.lang })
     })
       .then(function (response) {
         return response.json().catch(function () { return {}; }).then(function (body) {

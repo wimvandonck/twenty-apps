@@ -116,6 +116,14 @@ export const FormPreview = ({ definition }: FormPreviewProps) => {
                 </div>
               ))}
               {isLast &&
+                definition.consents.map((consent) => (
+                  <PreviewField
+                    key={consent.key}
+                    field={{ name: consent.key, label: consent.label, type: 'BOOLEAN', required: consent.required }}
+                    messages={messages}
+                  />
+                ))}
+              {isLast &&
                 optIns.map((list) => (
                   <PreviewField
                     key={list.key}

@@ -50,6 +50,7 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
           optIn: false,
           label: t('Subscribe to {list}', { list: first.name }),
           checked: false,
+          emailTypeId: first.requiredEmailTypeId,
         },
       ]);
     }
@@ -70,7 +71,7 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
         // A list that was deleted in Twenty keeps the name it had.
         const listOptions = availableLists.some(({ id }) => id === list.listId)
           ? availableLists
-          : [...availableLists, { id: list.listId, name: list.listName }];
+          : [...availableLists, { id: list.listId, name: list.listName, requiredEmailTypeId: list.emailTypeId }];
 
         return (
           <div
@@ -104,6 +105,7 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
                     update(list.key, {
                       listId,
                       listName: chosen.name,
+                      emailTypeId: chosen.requiredEmailTypeId,
                       // Follow the list, unless the text was rewritten.
                       ...(list.label === t('Subscribe to {list}', { list: list.listName })
                         ? { label: t('Subscribe to {list}', { list: chosen.name }) }
@@ -128,6 +130,13 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
                 onChange={(mode) => update(list.key, { optIn: mode === OPT_IN })}
               />
             </div>
+            {list.emailTypeId !== null && (
+              <Text color="secondary">
+                {list.optIn
+                  ? t('This list requires consent: ticking the box also asks for it, with a confirmation email.')
+                  : t('This list requires consent, which an "Always" list does not ask for. Let the visitor tick a box instead.')}
+              </Text>
+            )}
             {list.optIn && (
               <Field.Root style={{ minWidth: 0 }}>
                 <Field.Label>{t('Label of the checkbox')}</Field.Label>
