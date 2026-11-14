@@ -179,16 +179,18 @@ const parseList = (value: unknown, records: FormRecord[]): FormList | null => {
   }
 
   const listName = asText(value.listName, '');
+  const emailTypeId = typeof value.emailTypeId === 'string' && UUID.test(value.emailTypeId) ? value.emailTypeId : null;
 
   return {
     key: value.key,
     listId: value.listId,
     listName,
     recordKey: value.recordKey as string,
-    optIn: value.optIn === true,
+    // A list that requires consent always asks: nobody joins it unasked.
+    optIn: value.optIn === true || emailTypeId !== null,
     label: asText(value.label, listName),
     checked: value.checked === true,
-    emailTypeId: typeof value.emailTypeId === 'string' && UUID.test(value.emailTypeId) ? value.emailTypeId : null,
+    emailTypeId,
   };
 };
 
@@ -290,7 +292,15 @@ const parsePicker = (value: unknown, recordKeys: string[]): FormPicker | null =>
 };
 
 // Returns undefined when the payment settings are malformed, null when there are none.
-const parsePayment = (value: unknown, recordKeys: string[], pickerKeys: string[]): FormPayment | null | undefined => {
+// A total or payment link on a record matched to an existing one would
+// overwrite that record, which may already be paid, and a failed submission
+// could not undo it. Those entries are dropped.
+const parsePayment = (
+  value: unknown,
+  recordKeys: string[],
+  pickerKeys: string[],
+  upsertKeys: string[],
+): FormPayment | null | undefined => {
   if (value === null || value === undefined) {
     return null;
   }
@@ -318,19 +328,18 @@ const parsePayment = (value: unknown, recordKeys: string[], pickerKeys: string[]
   return {
     currencyCode: value.currencyCode,
     amountFields,
-    totalFields,
+    totalFields: totalFields.filter(({ recordKey }) => !upsertKeys.includes(recordKey)),
     createPayment: value.createPayment === true,
     checkout: value.checkout === 'STRIPE' ? 'STRIPE' : 'NONE',
     payerRecordKey,
-    paymentLinks: paymentLinks.map((link) => {
-      const entry = link as Record<string, unknown>;
-
-      return {
+    paymentLinks: paymentLinks
+      .map((link) => link as Record<string, unknown>)
+      .filter((entry) => !upsertKeys.includes(entry.recordKey as string))
+      .map((entry) => ({
         ...(entry.recordKey !== undefined ? { recordKey: entry.recordKey as string } : {}),
         ...(entry.pickerKey !== undefined ? { pickerKey: entry.pickerKey as string } : {}),
         joinColumnName: entry.joinColumnName as string,
-      };
-    }),
+      })),
   };
 };
 
@@ -386,7 +395,8 @@ export const parseFormDefinition = (value: unknown): FormDefinition | null => {
     return null;
   }
 
-  const payment = parsePayment(value.payment, recordKeys, pickerKeys as string[]);
+  const upsertKeys = (records as FormRecord[]).filter(({ mode }) => mode === 'UPSERT').map(({ key }) => key);
+  const payment = parsePayment(value.payment, recordKeys, pickerKeys as string[], upsertKeys);
 
   if (payment === undefined) {
     return null;

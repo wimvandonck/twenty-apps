@@ -102,6 +102,10 @@ export const PickersSection = ({ definition, objects, loadRecords, onChange }: P
       .filter((field) => field.isActive && !field.isSystem && field.type === 'CURRENCY')
       .map((field) => ({ recordKey: record.key, fieldName: field.name, label: `${record.label} → ${field.label}` })),
   );
+  // A record matched to an existing one never takes the total.
+  const totalCandidates = currencyFields.filter(({ recordKey }) =>
+    definition.records.some((record) => record.key === recordKey && record.mode !== 'UPSERT'),
+  );
   const isAsked = (recordKey: string, fieldName: string) =>
     definition.records.some((record) => record.key === recordKey && record.fields.some((field) => field.name === fieldName && !field.hidden));
   const payment = definition.payment;
@@ -344,8 +348,8 @@ export const PickersSection = ({ definition, objects, loadRecords, onChange }: P
                   }
                 />
               ))}
-            {currencyFields.length > 0 && <Text color="secondary">{t('Fields that receive the total')}</Text>}
-            {currencyFields.map(({ recordKey, fieldName, label }) => (
+            {totalCandidates.length > 0 && <Text color="secondary">{t('Fields that receive the total')}</Text>}
+            {totalCandidates.map(({ recordKey, fieldName, label }) => (
               <LabelledCheckbox
                 key={`total-${recordKey}-${fieldName}`}
                 label={label}

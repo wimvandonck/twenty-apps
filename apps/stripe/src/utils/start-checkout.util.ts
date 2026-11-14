@@ -29,6 +29,21 @@ export const startCheckout = async (
     return { ok: false, error: 'This payment has no amount' };
   }
 
+  // Pending with a payment intent: a bank payment such as SEPA is on its way.
+  if (payment.status === 'PENDING' && payment.providerPaymentId?.startsWith('pi_')) {
+    return { ok: false, error: 'This payment is already being processed' };
+  }
+
+  // Pending with a session: a checkout is still open. Close it first, so the
+  // payer cannot pay both; Stripe refuses once it was paid.
+  if (payment.status === 'PENDING' && payment.providerPaymentId?.startsWith('cs_')) {
+    try {
+      await deps.expireCheckoutSession(payment.providerPaymentId);
+    } catch {
+      return { ok: false, error: 'This payment is already being processed' };
+    }
+  }
+
   const lang = input.locale ? `&lang=${encodeURIComponent(input.locale)}` : '';
   const session = await deps.createCheckoutSession(
     buildCheckoutParams({

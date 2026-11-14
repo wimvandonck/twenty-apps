@@ -8,6 +8,7 @@ import { type RecordApi } from 'src/types/record-api';
 import { buildPickerLines } from 'src/utils/build-picker-lines.util';
 import { computeTotal } from 'src/utils/compute-total.util';
 import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
+import { loadPickerChoices } from 'src/utils/load-picker-choices.util';
 import { parseFormDefinition } from 'src/utils/parse-form-definition.util';
 import { processSubmission } from 'src/utils/process-submission.util';
 import { renderFormHtml } from 'src/utils/render-form-html.util';
@@ -98,6 +99,15 @@ describe('buildPickerLines', () => {
     expect(buildPickerLines(single, TICKET_CHOICES, { choice: 'nope' }, MESSAGES, 'EUR').errors).toHaveLength(1);
   });
 
+  it('refuses more lines than one submission may create', () => {
+    const many = { ...TICKETS, maxQuantity: 100 };
+
+    expect(buildPickerLines(many, TICKET_CHOICES, { standard: '51' }, MESSAGES, 'EUR').errors).toEqual([
+      MESSAGES.tooMany.replace('{max}', '50'),
+    ]);
+    expect(buildPickerLines(many, TICKET_CHOICES, { standard: '50' }, MESSAGES, 'EUR').lines).toHaveLength(50);
+  });
+
   it('refuses a price in another currency', () => {
     const usd = [{ ...TICKET_CHOICES[0], currencyCode: 'USD' }];
 
@@ -179,6 +189,20 @@ describe('a shop submission', () => {
     expect(api.update).toHaveBeenCalledWith('orders', 'orders-id', { paymentId: 'payments-id' });
   });
 
+  it('refuses a submission whose pickers together make too many lines, before writing', async () => {
+    const api = createApi();
+    const two = { ...SHOP, pickers: [SHOP.pickers[0], { ...SHOP.pickers[0], key: 'picker3', maxQuantity: 100, line: { ...SHOP.pickers[0].line, quantityFieldName: null } }] };
+    const many = new Map([
+      ['picker2', [choice('mug', 'Mug', 8)]],
+      ['picker3', [choice('mug', 'Mug', 8)]],
+    ]);
+
+    expect(
+      await processSubmission(two, VALUES, api, MESSAGES, {}, { pickerChoices: many, picks: { picker2: { mug: '1' }, picker3: { mug: '50' } } }),
+    ).toMatchObject({ ok: false, status: 422 });
+    expect(api.create).not.toHaveBeenCalled();
+  });
+
   it('creates no payment for a free submission', async () => {
     const api = createApi();
     const free = new Map([['picker2', [choice('flyer', 'Flyer', null)]]]);
@@ -210,6 +234,20 @@ describe('pickers in the definition and on the page', () => {
     expect(parsed?.payment).toEqual(SHOP.payment);
   });
 
+  it('drops totals and payment links on records matched to an existing one', () => {
+    const parsed = parseFormDefinition({
+      ...SHOP,
+      payment: {
+        ...SHOP.payment,
+        totalFields: [...(SHOP.payment?.totalFields ?? []), { recordKey: 'person', fieldName: 'total' }],
+        paymentLinks: [...(SHOP.payment?.paymentLinks ?? []), { recordKey: 'person', joinColumnName: 'paymentId' }],
+      },
+    });
+
+    expect(parsed?.payment?.totalFields).toEqual(SHOP.payment?.totalFields);
+    expect(parsed?.payment?.paymentLinks).toEqual(SHOP.payment?.paymentLinks);
+  });
+
   it('rejects a picker that links to a record the form does not have', () => {
     const broken = { ...SHOP.pickers[0], line: { ...SHOP.pickers[0].line, links: [{ joinColumnName: 'orderId', recordKey: 'nope' }] } };
 
@@ -222,5 +260,39 @@ describe('pickers in the definition and on the page', () => {
     expect(html).toContain('Mug &lt;big&gt;');
     expect(html).toMatch(/<input[^>]*type="number"[^>]*data-picker="picker2"[^>]*data-choice="mug"[^>]*data-price="8000000"/);
     expect(html).toContain('data-total');
+  });
+});
+
+describe('loadPickerChoices', () => {
+  const form = (currencyCode: string): FormDefinition => ({ ...SHOP, payment: { ...(SHOP.payment as FormPayment), currencyCode } });
+  const load = (records: Array<Record<string, unknown>>, currencyCode = 'EUR') =>
+    loadPickerChoices(form(currencyCode), vi.fn(async () => records.map((record) => ({ ...record })) as never));
+
+  it('reads prices, also when they come back as text, and treats a missing price as free', async () => {
+    const choices = (
+      await load([
+        { id: 'a', name: 'A', price: { amountMicros: 8_000_000, currencyCode: 'EUR' } },
+        { id: 'b', name: 'B', price: { amountMicros: '5000000', currencyCode: 'EUR' } },
+        { id: 'c', name: 'C', price: { amountMicros: null, currencyCode: null } },
+      ])
+    ).get('picker2');
+
+    expect(choices?.map(({ id, priceMicros }) => [id, priceMicros])).toEqual([
+      ['a', 8_000_000],
+      ['b', 5_000_000],
+      ['c', null],
+    ]);
+  });
+
+  it('leaves out choices whose price cannot be read or is in another currency, instead of offering them for free', async () => {
+    const choices = (
+      await load([
+        { id: 'a', name: 'A', price: { amountMicros: 'abc', currencyCode: 'EUR' } },
+        { id: 'b', name: 'B', price: { amountMicros: 1_000_000, currencyCode: 'USD' } },
+        { id: 'c', name: 'C', price: { amountMicros: 1_000_000, currencyCode: 'EUR' } },
+      ])
+    ).get('picker2');
+
+    expect(choices?.map(({ id }) => id)).toEqual(['c']);
   });
 });

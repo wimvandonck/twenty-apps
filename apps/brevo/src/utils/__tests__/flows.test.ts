@@ -30,6 +30,7 @@ const brevo = (): Mocked<BrevoDeps> =>
   ({
     ensureBooleanAttribute: vi.fn(async () => undefined),
     createList: vi.fn(async () => 99),
+    deleteList: vi.fn(async () => undefined),
     upsertContact: vi.fn(async () => undefined),
     removeFromList: vi.fn(async () => undefined),
   }) as never;
@@ -70,6 +71,20 @@ describe('syncMembership', () => {
     expect(b.upsertContact.mock.calls[0][0]).toMatchObject({ listIds: [99] });
   });
 
+  it('uses the Brevo list another run created at the same time, and deletes its own', async () => {
+    const getList = vi
+      .fn()
+      .mockResolvedValueOnce({ id: 'climate', name: 'Klimaat', isSynced: true, brevoListId: null })
+      .mockResolvedValue({ id: 'climate', name: 'Klimaat', isSynced: true, brevoListId: 77 });
+    const t = twenty({ getList });
+    const b = brevo();
+
+    await syncMembership(t, b, 'climate', 'ann', true);
+
+    expect(b.deleteList).toHaveBeenCalledWith(99);
+    expect(b.upsertContact.mock.calls[0][0]).toMatchObject({ listIds: [77] });
+  });
+
   it('removes a member that left, and ignores lists that are not synced', async () => {
     const t = twenty({ getList: vi.fn(async (id: string) => ({ id, name: 'Klimaat', isSynced: true, brevoListId: 12 })) });
     const b = brevo();
@@ -88,9 +103,18 @@ describe('syncAll', () => {
   it('puts every member of every synced list in Brevo', async () => {
     const b = brevo();
 
-    expect(await syncAll(twenty(), b)).toEqual({ lists: 1, contacts: 2 });
+    expect(await syncAll(twenty(), b)).toEqual({ lists: 1, contacts: 2, failed: 0 });
     expect(b.upsertContact).toHaveBeenCalledTimes(2);
     expect(b.upsertContact.mock.calls[1][0]).toMatchObject({ listIds: [12] });
+  });
+
+  it('goes on after a contact Brevo refuses and counts it', async () => {
+    const b = brevo();
+
+    b.upsertContact.mockRejectedValueOnce(new Error('invalid email'));
+
+    expect(await syncAll(twenty(), b)).toEqual({ lists: 1, contacts: 1, failed: 1 });
+    expect(b.upsertContact).toHaveBeenCalledTimes(2);
   });
 });
 

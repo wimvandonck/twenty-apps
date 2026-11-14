@@ -33,6 +33,18 @@ export const handleStripeWebhook = async (
     return { status: 200, handled: false };
   }
 
+  // Only the current checkout changes a payment that is not paid: a late
+  // expiry of an older one must not make it payable again. Money received
+  // through any checkout is recorded.
+  const isCurrent =
+    payment.providerPaymentId === null ||
+    payment.providerPaymentId === change.sessionId ||
+    payment.providerPaymentId === change.paymentIntentId;
+
+  if (!isCurrent && change.patch.status !== 'PAID') {
+    return { status: 200, handled: false };
+  }
+
   const patch = { ...change.patch };
 
   if (patch.status === 'PAID' && change.paymentIntentId) {

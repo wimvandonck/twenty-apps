@@ -35,6 +35,7 @@ export const createStripeDeps = (config: StripeConfig, client: RestApiClient = n
       amountMicros: typeof amount.amountMicros === 'number' ? amount.amountMicros : null,
       currencyCode: amount.currencyCode ?? null,
       payerEmail: email && email !== '' ? email : null,
+      providerPaymentId: typeof payment.providerPaymentId === 'string' && payment.providerPaymentId !== '' ? payment.providerPaymentId : null,
     };
   },
   updatePayment: async (id, patch) => {
@@ -42,5 +43,8 @@ export const createStripeDeps = (config: StripeConfig, client: RestApiClient = n
   },
   createCheckoutSession: (params) =>
     stripeRequest<{ id: string; url: string }>(config.secretKey ?? '', 'POST', '/checkout/sessions', params),
+  expireCheckoutSession: async (sessionId) => {
+    await stripeRequest(config.secretKey ?? '', 'POST', `/checkout/sessions/${encodeURIComponent(sessionId)}/expire`, new URLSearchParams());
+  },
   fetchPaymentMethodType: (paymentIntentId) => fetchPaymentMethodType(config.secretKey ?? '', paymentIntentId),
 });

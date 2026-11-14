@@ -2,6 +2,10 @@ import { type FormPicker } from 'src/types/form-picker';
 import { type PickerChoice } from 'src/types/picker-choice';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
 
+// The most line records one submission may create, so an anonymous post
+// cannot make the function write until it times out halfway.
+export const MAX_LINES_PER_SUBMISSION = 50;
+
 export type PickerLines = { lines: Array<Record<string, unknown>>; totalMicros: number; errors: string[] };
 
 const money = (micros: number, currencyCode: string) => ({ amountMicros: micros, currencyCode });
@@ -82,6 +86,10 @@ export const buildPickerLines = (
     }
 
     totalMicros += unitMicros * quantity;
+  }
+
+  if (lines.length > MAX_LINES_PER_SUBMISSION) {
+    return { lines: [], totalMicros: 0, errors: [messages.tooMany.replace('{max}', String(MAX_LINES_PER_SUBMISSION))] };
   }
 
   if (errors.length === 0 && picker.required && lines.length === 0) {

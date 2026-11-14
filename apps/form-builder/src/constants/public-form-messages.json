@@ -24,7 +24,8 @@
     "unavailableText": "This form does not exist or is not published.",
     "misconfigured": "This form is misconfigured.",
     "total": "Total",
-    "free": "Free"
+    "free": "Free",
+    "tooMany": "You can choose at most {max} items at once"
   },
   "af-ZA": {
     "firstName": "Voornaam",
@@ -176,7 +177,8 @@
     "unavailableText": "Dieses Formular existiert nicht oder ist nicht veröffentlicht.",
     "misconfigured": "Dieses Formular ist falsch konfiguriert.",
     "total": "Gesamt",
-    "free": "Kostenlos"
+    "free": "Kostenlos",
+    "tooMany": "Sie können höchstens {max} Artikel auf einmal wählen"
   },
   "el-GR": {
     "firstName": "Όνομα",
@@ -305,7 +307,8 @@
     "unavailableText": "Ce formulaire n’existe pas ou n’est pas publié.",
     "misconfigured": "Ce formulaire est mal configuré.",
     "total": "Total",
-    "free": "Gratuit"
+    "free": "Gratuit",
+    "tooMany": "Vous pouvez choisir au maximum {max} articles à la fois"
   },
   "he-IL": {
     "firstName": "שם פרטי",
@@ -482,7 +485,8 @@
     "unavailableText": "Dit formulier bestaat niet of is niet gepubliceerd.",
     "misconfigured": "Dit formulier is verkeerd ingesteld.",
     "total": "Totaal",
-    "free": "Gratis"
+    "free": "Gratis",
+    "tooMany": "Je kunt maximaal {max} items tegelijk kiezen"
   },
   "no-NO": {
     "firstName": "Fornavn",

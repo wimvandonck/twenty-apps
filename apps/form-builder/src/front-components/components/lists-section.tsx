@@ -47,7 +47,8 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
           listId: first.id,
           listName: first.name,
           recordKey: people[0].key,
-          optIn: false,
+          // A list that requires consent can only be joined by ticking a box.
+          optIn: first.requiredEmailTypeId !== null,
           label: t('Subscribe to {list}', { list: first.name }),
           checked: false,
           emailTypeId: first.requiredEmailTypeId,
@@ -106,6 +107,7 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
                       listId,
                       listName: chosen.name,
                       emailTypeId: chosen.requiredEmailTypeId,
+                      ...(chosen.requiredEmailTypeId !== null ? { optIn: true } : {}),
                       // Follow the list, unless the text was rewritten.
                       ...(list.label === t('Subscribe to {list}', { list: list.listName })
                         ? { label: t('Subscribe to {list}', { list: chosen.name }) }
@@ -124,7 +126,7 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
                 label={t('Add to the list')}
                 value={list.optIn ? OPT_IN : ALWAYS}
                 options={[
-                  { value: ALWAYS, label: t('Always') },
+                  ...(list.emailTypeId === null ? [{ value: ALWAYS, label: t('Always') }] : []),
                   { value: OPT_IN, label: t('When the visitor ticks a box') },
                 ]}
                 onChange={(mode) => update(list.key, { optIn: mode === OPT_IN })}
@@ -132,9 +134,7 @@ export const ListsSection = ({ lists, records, availableLists, onChange }: Lists
             </div>
             {list.emailTypeId !== null && (
               <Text color="secondary">
-                {list.optIn
-                  ? t('This list requires consent: ticking the box also asks for it, with a confirmation email.')
-                  : t('This list requires consent, which an "Always" list does not ask for. Let the visitor tick a box instead.')}
+                {t('This list requires consent: ticking the box also asks for it, with a confirmation email.')}
               </Text>
             )}
             {list.optIn && (

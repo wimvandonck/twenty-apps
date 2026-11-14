@@ -59,8 +59,8 @@ const handler = async (event: RoutePayload) => {
   ) as SubmissionOptIns;
   const ipAddress = event.headers?.['x-forwarded-for']?.split(',')[0]?.trim();
   const userAgent = event.headers?.['user-agent']?.slice(0, 500);
-  // A record outside the listed choices may still be chosen or fixed, as long as it exists.
-  const checked = await addChosenRelations(definition, values, createRecordByIdLoader(client));
+  // A hidden relation may be fixed to any record that exists; a visible one only takes listed choices.
+  const checked = await addChosenRelations(definition, createRecordByIdLoader(client));
   const result = await processSubmission(checked, values, createRecordApi(client), messages, optIns, {
     consentApi: createConsentApi(client),
     // Prices come from the records in Twenty, never from the browser.

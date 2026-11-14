@@ -5,6 +5,7 @@ import { chunk } from 'src/utils/chunk.util';
 import { consentAttributeName } from 'src/utils/consent-attribute-name.util';
 import { isValidWebhookToken } from 'src/utils/is-valid-webhook-token.util';
 import { parseUnsubscribe } from 'src/utils/parse-unsubscribe.util';
+import { escapeLike, pickPersonByEmail } from 'src/utils/pick-person-by-email.util';
 
 describe('consentAttributeName', () => {
   it('turns an email type into a Brevo attribute name', () => {
@@ -69,5 +70,22 @@ describe('isValidWebhookToken', () => {
     expect(isValidWebhookToken('secret-tokeN', 'secret-token')).toBe(false);
     expect(isValidWebhookToken(undefined, 'secret-token')).toBe(false);
     expect(isValidWebhookToken('x', null)).toBe(false);
+  });
+});
+
+describe('pickPersonByEmail', () => {
+  const person = (id: string, primaryEmail: string) => ({ id, emails: { primaryEmail } });
+
+  it('takes the one person whose email is exactly this one, whatever the case', () => {
+    expect(pickPersonByEmail([person('a', 'john.doe@x.com'), person('b', 'John_Doe@x.com')], 'john_doe@X.com')).toBe('b');
+  });
+
+  it('gives nobody when no email or several match exactly', () => {
+    expect(pickPersonByEmail([person('a', 'john.doe@x.com')], 'john_doe@x.com')).toBeNull();
+    expect(pickPersonByEmail([person('a', 'ann@x.com'), person('b', 'ANN@x.com')], 'ann@x.com')).toBeNull();
+  });
+
+  it('escapes the wildcards of a like filter', () => {
+    expect(escapeLike('a_b%c\\d')).toBe('a\\_b\\%c\\\\d');
   });
 });

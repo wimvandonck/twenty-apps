@@ -18,7 +18,8 @@ It needs the Nonprofit app, whose `payment` object it reads and updates. The For
 
    The return addresses are optional; without them Stripe sends the visitor to this app's own thank-you or cancel page. The answer holds the checkout's `url`.
 2. The app creates a Checkout Session for the payment's name and amount, with the payer's email filled in, and sets the payment to **Pending** with provider **Stripe**.
-3. Stripe calls the app's webhook when the checkout completes, a delayed method such as SEPA direct debit succeeds or fails, or the checkout expires. The payment becomes **Paid** (with the time, the payment intent and the method used: card, Bancontact, SEPA direct debit, PayPal or other), **Failed** or **Expired**. A paid or refunded payment is never set back by a late event.
+3. Stripe calls the app's webhook when the checkout completes, a delayed method such as SEPA direct debit succeeds or fails, or the checkout expires. The payment becomes **Paid** (with the time, the payment intent and the method used: card, Bancontact, SEPA direct debit, PayPal or other), **Failed** or **Expired**. A paid or refunded payment is never set back by a late event. Only the latest checkout can fail or expire a payment; money received through an older one is still recorded.
+4. Starting a new checkout for a payment that still has one open closes the old one first, so the payer can't pay twice. While a delayed method such as SEPA direct debit is on its way, no new checkout opens.
 
 The Nonprofit app then passes the payment's status on to the registrations, memberships and orders it pays for.
 

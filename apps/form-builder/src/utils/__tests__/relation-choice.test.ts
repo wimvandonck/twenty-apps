@@ -23,34 +23,31 @@ const definition = (fields: FormField[]): FormDefinition => ({
 });
 
 describe('addChosenRelations', () => {
-  it('accepts a chosen record that exists but was not among the listed choices', async () => {
+  it('never adds a record the visitor chose that was not listed', async () => {
     const fetchById = vi.fn(async () => ({ id: EVENT_ID, name: 'Late event' }));
-    const result = await addChosenRelations(definition([field()]), { registration: { organizedEvent: EVENT_ID } }, fetchById);
+    const result = await addChosenRelations(definition([field()]), fetchById);
 
-    expect(fetchById).toHaveBeenCalledWith('organizedEvents', EVENT_ID);
-    expect(result.records[0].fields[0].options).toEqual([
-      { value: OTHER_ID, label: 'Listed' },
-      { value: EVENT_ID, label: 'Late event' },
-    ]);
+    expect(fetchById).not.toHaveBeenCalled();
+    expect(result.records[0].fields[0].options).toEqual([{ value: OTHER_ID, label: 'Listed' }]);
   });
 
   it('checks the default of a hidden relation the same way', async () => {
     const fetchById = vi.fn(async () => ({ id: EVENT_ID, name: 'Fixed event' }));
-    const result = await addChosenRelations(definition([field({ hidden: true, defaultValue: EVENT_ID })]), {}, fetchById);
+    const result = await addChosenRelations(definition([field({ hidden: true, defaultValue: EVENT_ID })]), fetchById);
 
     expect(result.records[0].fields[0].options?.map(({ value }) => value)).toContain(EVENT_ID);
   });
 
   it('adds nothing for unknown records, malformed ids or listed choices', async () => {
     const fetchById = vi.fn(async () => null);
-    const unknown = await addChosenRelations(definition([field()]), { registration: { organizedEvent: EVENT_ID } }, fetchById);
+    const unknown = await addChosenRelations(definition([field({ hidden: true, defaultValue: EVENT_ID })]), fetchById);
 
     expect(unknown.records[0].fields[0].options).toHaveLength(1);
 
     const calls = vi.fn(async () => null);
 
-    await addChosenRelations(definition([field()]), { registration: { organizedEvent: 'not-an-id' } }, calls);
-    await addChosenRelations(definition([field()]), { registration: { organizedEvent: OTHER_ID } }, calls);
+    await addChosenRelations(definition([field({ hidden: true, defaultValue: 'not-an-id' })]), calls);
+    await addChosenRelations(definition([field({ hidden: true, defaultValue: OTHER_ID })]), calls);
     expect(calls).not.toHaveBeenCalled();
   });
 });

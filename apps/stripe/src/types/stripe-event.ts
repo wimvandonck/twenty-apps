@@ -1,5 +1,5 @@
 export type StripeEvent = {
   type: string;
   created: number;
-  data: { object: Record<string, unknown> };
+  data?: { object?: Record<string, unknown> };
 };

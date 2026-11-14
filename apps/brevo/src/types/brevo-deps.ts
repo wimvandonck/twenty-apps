@@ -21,6 +21,7 @@ export type TwentyDeps = {
 export type BrevoDeps = {
   ensureBooleanAttribute: (name: string) => Promise<void>;
   createList: (name: string) => Promise<number>;
+  deleteList: (brevoListId: number) => Promise<void>;
   upsertContact: (body: object) => Promise<void>;
   removeFromList: (brevoListId: number, emails: string[]) => Promise<void>;
 };
