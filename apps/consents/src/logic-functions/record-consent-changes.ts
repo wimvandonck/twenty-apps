@@ -2,9 +2,10 @@ import { defineLogicFunction } from 'twenty-sdk/define';
 import { type RoutePayload } from 'twenty-sdk/logic-function';
 
 import { createRecordStore } from 'src/twenty-client/create-record-store';
+import { findMissingTargets } from 'src/utils/find-missing-targets.util';
 import { jsonResponse } from 'src/utils/json-response.util';
 import { parseChangeRequest } from 'src/utils/parse-change-request.util';
-import { readAppConfig } from 'src/utils/read-app-config.util';
+import { readAppConfigOrNull } from 'src/utils/read-app-config.util';
 import { recordChanges } from 'src/utils/record-changes.util';
 import { requestContextFrom } from 'src/utils/request-context-from.util';
 
@@ -23,7 +24,20 @@ const handler = async (event: RoutePayload) => {
     ...(typeof body.ipAddress === 'string' && body.ipAddress !== '' ? { ipAddress: body.ipAddress } : {}),
     ...(typeof body.userAgent === 'string' && body.userAgent !== '' ? { userAgent: body.userAgent.slice(0, 500) } : {}),
   };
-  const result = await recordChanges(createRecordStore(), readAppConfig(), parsed.value, context);
+  const config = readAppConfigOrNull();
+
+  if (!config) {
+    return jsonResponse(503, { ok: false, errors: ['The Consents app has no signing secret yet'] });
+  }
+
+  const store = createRecordStore();
+  const missing = await findMissingTargets(store, parsed.value);
+
+  if (missing.length > 0) {
+    return jsonResponse(400, { ok: false, errors: missing });
+  }
+
+  const result = await recordChanges(store, config, parsed.value, context);
 
   return jsonResponse(200, { ok: true, ...result });
 };

@@ -2,7 +2,7 @@ import { defineLogicFunction, type DatabaseEventPayload, type ObjectRecordCreate
 
 import { createRecordStore } from 'src/twenty-client/create-record-store';
 import { buildPreferencesUrl } from 'src/utils/build-preferences-url.util';
-import { readAppConfig } from 'src/utils/read-app-config.util';
+import { readAppConfigOrNull } from 'src/utils/read-app-config.util';
 
 // Every new person gets a personal link to the preferences page, so mails
 // can insert it as a variable.
@@ -11,7 +11,12 @@ const handler = async (event: DatabaseEventPayload<ObjectRecordCreateEvent<{ pre
     return { updated: false };
   }
 
-  const config = readAppConfig();
+  const config = readAppConfigOrNull();
+
+  // Until the signing secret is set; the hourly run fills in the link later.
+  if (!config) {
+    return { updated: false };
+  }
 
   await createRecordStore().update('people', event.recordId, {
     preferencesUrl: buildPreferencesUrl(config.publicBaseUrl, event.recordId, config.signingSecret),

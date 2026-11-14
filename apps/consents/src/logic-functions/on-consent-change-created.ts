@@ -1,7 +1,7 @@
 import { defineLogicFunction, type DatabaseEventPayload, type ObjectRecordCreateEvent } from 'twenty-sdk/define';
 
 import { createRecordStore } from 'src/twenty-client/create-record-store';
-import { readAppConfig } from 'src/utils/read-app-config.util';
+import { readAppConfigOrNull } from 'src/utils/read-app-config.util';
 import { reconcileConsent } from 'src/utils/reconcile-consent.util';
 
 type ChangeRecord = { consentId?: string | null };
@@ -14,7 +14,13 @@ const handler = async (event: DatabaseEventPayload<ObjectRecordCreateEvent<Chang
     return { updated: false };
   }
 
-  return { updated: await reconcileConsent(createRecordStore(), readAppConfig(), consentId, Date.now()) };
+  const config = readAppConfigOrNull();
+
+  if (!config) {
+    return { updated: false };
+  }
+
+  return { updated: await reconcileConsent(createRecordStore(), config, consentId, Date.now()) };
 };
 
 export default defineLogicFunction({

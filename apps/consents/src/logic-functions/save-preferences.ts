@@ -6,7 +6,7 @@ import { buildPreferenceGroups } from 'src/utils/build-preference-groups.util';
 import { getPublicMessages } from 'src/utils/get-public-messages.util';
 import { htmlResponse } from 'src/utils/html-response.util';
 import { parsePostedForm } from 'src/utils/parse-posted-form.util';
-import { readAppConfig } from 'src/utils/read-app-config.util';
+import { readAppConfigOrNull } from 'src/utils/read-app-config.util';
 import { renderInvalidLinkHtml } from 'src/utils/render-invalid-link-html.util';
 import { renderPreferencesHtml } from 'src/utils/render-preferences-html.util';
 import { requestContextFrom } from 'src/utils/request-context-from.util';
@@ -15,7 +15,11 @@ import { savePreferences } from 'src/utils/save-preferences.util';
 // Saves the preferences page and shows it again with a notice.
 const handler = async (event: RoutePayload) => {
   const { locale, messages } = getPublicMessages(event.queryStringParameters?.lang, event.headers?.['accept-language']);
-  const config = readAppConfig();
+  const config = readAppConfigOrNull();
+
+  if (!config) {
+    return htmlResponse(503, renderInvalidLinkHtml(messages, locale));
+  }
   const posted = parsePostedForm(event);
   const result = await savePreferences(createRecordStore(), config, posted, requestContextFrom(event.headers));
 

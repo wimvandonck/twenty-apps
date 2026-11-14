@@ -2,7 +2,7 @@ import { defineLogicFunction, type DatabaseEventPayload, type ObjectRecordCreate
 
 import { createRecordStore } from 'src/twenty-client/create-record-store';
 import { handleStatusEdit } from 'src/utils/handle-status-edit.util';
-import { readAppConfig } from 'src/utils/read-app-config.util';
+import { readAppConfigOrNull } from 'src/utils/read-app-config.util';
 
 type CreatedConsent = { status?: string | null; updatedAt?: string | null };
 
@@ -15,7 +15,13 @@ const handler = async (event: DatabaseEventPayload<ObjectRecordCreateEvent<Creat
     return { checked: false };
   }
 
-  await handleStatusEdit(createRecordStore(), readAppConfig(), event.recordId, Date.now(), {
+  const config = readAppConfigOrNull();
+
+  if (!config) {
+    return { checked: false };
+  }
+
+  await handleStatusEdit(createRecordStore(), config, event.recordId, Date.now(), {
     status: after.status,
     updatedAt: after.updatedAt ?? null,
   });
