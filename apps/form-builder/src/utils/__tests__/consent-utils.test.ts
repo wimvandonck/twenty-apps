@@ -142,6 +142,10 @@ describe('consents in the definition', () => {
   it('keeps the email type a list requires', () => {
     expect(parseFormDefinition({ ...DEFINITION, lists: [CLIMATE] })?.lists[0].emailTypeId).toBe(NEWSLETTER_CONSENT.emailTypeId);
   });
+
+  it('makes a list that requires consent opt-in, so nobody joins it without asking', () => {
+    expect(parseFormDefinition({ ...DEFINITION, lists: [{ ...CLIMATE, optIn: false }] })?.lists[0].optIn).toBe(true);
+  });
 });
 
 describe('consents on the page', () => {

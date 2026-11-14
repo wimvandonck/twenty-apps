@@ -12,7 +12,7 @@ import { type SubmissionResult } from 'src/types/submission-result';
 import { type SubmissionOptIns, type SubmissionValues } from 'src/types/submission-values';
 import { type PickerChoice } from 'src/types/picker-choice';
 import { buildConsentChanges } from 'src/utils/build-consent-changes.util';
-import { buildPickerLines } from 'src/utils/build-picker-lines.util';
+import { buildPickerLines, MAX_LINES_PER_SUBMISSION } from 'src/utils/build-picker-lines.util';
 import { computeTotal } from 'src/utils/compute-total.util';
 import { buildMatchFilter } from 'src/utils/build-match-filter.util';
 import { buildRecordData } from 'src/utils/build-record-data.util';
@@ -78,6 +78,9 @@ export const processSubmission = async (
     ...built.flatMap((entry) => entry.errors),
     ...pickerLines.flatMap((entry) => entry.errors),
     ...total.errors,
+    ...(pickerLines.reduce((sum, { lines }) => sum + lines.length, 0) > MAX_LINES_PER_SUBMISSION
+      ? [messages.tooMany.replace('{max}', String(MAX_LINES_PER_SUBMISSION))]
+      : []),
     ...definition.consents
       .filter((consent) => consent.required && consents[consent.key] !== true)
       .map((consent) => messages.required.replace('{label}', consent.label)),

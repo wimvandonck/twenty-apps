@@ -5,6 +5,7 @@ export type PaymentPatch = {
   patch: Record<string, string>;
   // To look up the method used, once paid.
   paymentIntentId: string | null;
+  sessionId: string | null;
 };
 
 const STATUS_BY_EVENT: Record<string, string> = {
@@ -17,10 +18,10 @@ const STATUS_BY_EVENT: Record<string, string> = {
 // completed checkout is paid at once, or pending for methods that confirm
 // later, such as SEPA direct debit.
 export const paymentPatchForEvent = (event: StripeEvent): PaymentPatch | null => {
-  const session = event.data.object;
-  const paymentId = (session.metadata as Record<string, unknown> | undefined)?.paymentId;
+  const session = event.data?.object;
+  const paymentId = (session?.metadata as Record<string, unknown> | undefined)?.paymentId;
 
-  if (!event.type.startsWith('checkout.session.') || typeof paymentId !== 'string' || paymentId === '') {
+  if (!session || !event.type.startsWith('checkout.session.') || typeof paymentId !== 'string' || paymentId === '') {
     return null;
   }
 
@@ -46,5 +47,6 @@ export const paymentPatchForEvent = (event: StripeEvent): PaymentPatch | null =>
       ...(paymentIntentId ? { providerPaymentId: paymentIntentId } : {}),
     },
     paymentIntentId,
+    sessionId: typeof session.id === 'string' ? session.id : null,
   };
 };

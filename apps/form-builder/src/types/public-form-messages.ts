@@ -23,6 +23,7 @@ export type PublicFormMessages = {
   unavailableTitle: string;
   unavailableText: string;
   misconfigured: string;
+  tooMany: string;
   total: string;
   free: string;
 };

@@ -1,4 +1,5 @@
 import { type FieldMetadata } from 'src/types/field-metadata';
+import { PROTECTED_RELATION_TARGETS } from 'src/constants/protected-relation-targets';
 import { isSupportedFieldType } from 'src/utils/is-supported-field-type.util';
 
 // A field a form may ask for: never a system or read-only field, and only
@@ -13,4 +14,4 @@ export const isSelectableField = (field: FieldMetadata): boolean =>
     (field.relationType === 'MANY_TO_ONE' &&
       field.joinColumnName !== null &&
       field.relationTargetObjectNameSingular !== null &&
-      field.relationTargetObjectNameSingular !== 'form'));
+      !PROTECTED_RELATION_TARGETS.some(({ singular }) => singular === field.relationTargetObjectNameSingular)));

@@ -63,6 +63,13 @@ export const createBrevoDeps = (apiKey: string, folderName: string): BrevoDeps =
 
       return list.json.id as number;
     },
+    deleteList: async (brevoListId) => {
+      const result = await call('DELETE', `/contacts/lists/${brevoListId}`);
+
+      if (!result.ok && result.status !== 404) {
+        throw fail(`deleting list ${brevoListId}`, result);
+      }
+    },
     upsertContact: async (body) => {
       const result = await call('POST', '/contacts', body);
 

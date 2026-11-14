@@ -78,6 +78,15 @@ describe('loadRelationOptions', () => {
       { value: EVENT_ID, label: 'Spring walk' },
     ]);
   });
+
+  it('never loads or offers people or payments, even in a form saved before they were refused', async () => {
+    const loader = vi.fn(async () => [{ id: EVENT_ID, name: 'Someone' }]);
+    const toPayments = { ...EVENT_FIELD, relation: { targetObjectNamePlural: 'payments', joinColumnName: 'paymentId' } };
+    const loaded = await loadRelationOptions({ ...DEFINITION, records: [{ ...DEFINITION.records[0], fields: [toPayments] }] }, loader);
+
+    expect(loader).not.toHaveBeenCalled();
+    expect(loaded.records[0].fields[0].options).toEqual([]);
+  });
 });
 
 describe('recordLabel', () => {

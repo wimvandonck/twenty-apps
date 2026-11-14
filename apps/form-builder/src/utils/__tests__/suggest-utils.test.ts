@@ -108,4 +108,12 @@ describe('suggestPayment', () => {
       ],
     });
   });
+  it('leaves out records matched to an existing one', () => {
+    const records = [record('person', 'person', 'people'), { ...record('order', 'order', 'orders'), mode: 'UPSERT' as const }];
+    const suggested = suggestPayment(records, [], OBJECTS);
+
+    expect(suggested.totalFields).toEqual([]);
+    expect(suggested.paymentLinks).toEqual([]);
+    expect(suggested.payerRecordKey).toBe('person');
+  });
 });

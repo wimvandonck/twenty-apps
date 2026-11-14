@@ -18,7 +18,9 @@ const paymentColumn = (object: ObjectMetadata | undefined) =>
 // Total and payment settings worked out from the form: an order-like total
 // field receives the total, the first person pays, and every record or
 // picker line that can point at a payment does.
-export const suggestPayment = (records: FormRecord[], pickers: FormPicker[], objects: ObjectMetadata[]): FormPayment => {
+export const suggestPayment = (allRecords: FormRecord[], pickers: FormPicker[], objects: ObjectMetadata[]): FormPayment => {
+  // A record matched to an existing one never takes the total or the payment.
+  const records = allRecords.filter(({ mode }) => mode !== 'UPSERT');
   const objectOf = (nameSingular: string) => objects.find((object) => object.nameSingular === nameSingular);
   const objectByPlural = (namePlural: string) => objects.find((object) => object.namePlural === namePlural);
 
@@ -32,7 +34,7 @@ export const suggestPayment = (records: FormRecord[], pickers: FormPicker[], obj
     ),
     createPayment: true,
     checkout: 'NONE',
-    payerRecordKey: records.find(({ objectNameSingular }) => objectNameSingular === LIST_PERSON_OBJECT_NAME_SINGULAR)?.key ?? null,
+    payerRecordKey: allRecords.find(({ objectNameSingular }) => objectNameSingular === LIST_PERSON_OBJECT_NAME_SINGULAR)?.key ?? null,
     paymentLinks: [
       ...records.flatMap((record) => {
         const column = paymentColumn(objectOf(record.objectNameSingular));

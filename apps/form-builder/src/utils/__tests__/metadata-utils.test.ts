@@ -23,6 +23,16 @@ describe('isSelectableField', () => {
     expect(isSelectableField(field({ name: 'a', isUIReadOnly: true }))).toBe(false);
     expect(isSelectableField(field({ name: 'a', isActive: false }))).toBe(false);
   });
+
+  it('excludes relations to records a visitor must not pick or see', () => {
+    const relation = (target: string) =>
+      field({ name: 'a', type: 'RELATION', relationType: 'MANY_TO_ONE', joinColumnName: 'aId', relationTargetObjectNameSingular: target });
+
+    expect(['person', 'payment', 'membership', 'workspaceMember', 'consent', 'form'].map((target) => isSelectableField(relation(target)))).toEqual(
+      [false, false, false, false, false, false],
+    );
+    expect(isSelectableField(relation('organizedEvent'))).toBe(true);
+  });
 });
 
 describe('isRequiredField', () => {

@@ -96,6 +96,7 @@ describe('paymentPatchForEvent', () => {
       paymentId: 'pay-1',
       patch: { status: 'PAID', paidAt: new Date(NOW * 1000).toISOString(), provider: 'STRIPE', providerPaymentId: 'pi_1' },
       paymentIntentId: 'pi_1',
+      sessionId: 'cs_1',
     });
   });
 

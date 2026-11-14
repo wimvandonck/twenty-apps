@@ -7,7 +7,7 @@ import { handleStripeWebhook } from 'src/utils/handle-stripe-webhook.util';
 import { startCheckout } from 'src/utils/start-checkout.util';
 
 const CONFIG: StripeConfig = { secretKey: 'sk_test', webhookSecret: 'whsec', paymentMethods: [], publicBaseUrl: 'https://acme.withtwenty.com' };
-const PAYMENT: PaymentRecord = { id: 'pay-1', name: 'Tickets', status: 'OPEN', amountMicros: 210_000_000, currencyCode: 'EUR', payerEmail: 'ann@example.org' };
+const PAYMENT: PaymentRecord = { id: 'pay-1', name: 'Tickets', status: 'OPEN', amountMicros: 210_000_000, currencyCode: 'EUR', payerEmail: 'ann@example.org', providerPaymentId: null };
 const NOW = 1_800_000_000;
 
 type MockDeps = { [K in keyof StripeDeps]: ReturnType<typeof vi.fn> & StripeDeps[K] };
@@ -18,6 +18,7 @@ const deps = (overrides: Partial<StripeDeps> = {}): MockDeps =>
     updatePayment: vi.fn(async () => undefined),
     createCheckoutSession: vi.fn(async () => ({ id: 'cs_1', url: 'https://checkout.stripe.com/c/cs_1' })),
     fetchPaymentMethodType: vi.fn(async () => 'bancontact'),
+    expireCheckoutSession: vi.fn(async () => undefined),
     ...overrides,
   }) as never;
 
@@ -47,6 +48,27 @@ describe('startCheckout', () => {
     expect(await startCheckout(deps({ getPayment: vi.fn(async () => null) }), CONFIG, { paymentId: 'x' })).toMatchObject({ ok: false });
     expect(await startCheckout(deps({ getPayment: vi.fn(async () => ({ ...PAYMENT, amountMicros: 0 })) }), CONFIG, { paymentId: 'pay-1' })).toMatchObject({ ok: false });
     expect(await startCheckout(deps(), { ...CONFIG, secretKey: null }, { paymentId: 'pay-1' })).toMatchObject({ ok: false });
+  });
+
+  it('closes the checkout that is still open before opening a new one, so it cannot be paid twice', async () => {
+    const d = deps({ getPayment: vi.fn(async () => ({ ...PAYMENT, status: 'PENDING', providerPaymentId: 'cs_old' })) });
+
+    expect(await startCheckout(d, CONFIG, { paymentId: 'pay-1' })).toMatchObject({ ok: true });
+    expect(d.expireCheckoutSession).toHaveBeenCalledWith('cs_old');
+    expect(d.expireCheckoutSession.mock.invocationCallOrder[0]).toBeLessThan(d.createCheckoutSession.mock.invocationCallOrder[0]);
+  });
+
+  it('opens no new checkout when the old one cannot be closed or a bank payment is on its way', async () => {
+    const stuck = deps({
+      getPayment: vi.fn(async () => ({ ...PAYMENT, status: 'PENDING', providerPaymentId: 'cs_old' })),
+      expireCheckoutSession: vi.fn(async () => Promise.reject(new Error('already complete'))),
+    });
+    const debit = deps({ getPayment: vi.fn(async () => ({ ...PAYMENT, status: 'PENDING', providerPaymentId: 'pi_1' })) });
+
+    expect(await startCheckout(stuck, CONFIG, { paymentId: 'pay-1' })).toMatchObject({ ok: false });
+    expect(await startCheckout(debit, CONFIG, { paymentId: 'pay-1' })).toMatchObject({ ok: false });
+    expect(stuck.createCheckoutSession).not.toHaveBeenCalled();
+    expect(debit.createCheckoutSession).not.toHaveBeenCalled();
   });
 });
 
@@ -89,6 +111,27 @@ describe('handleStripeWebhook', () => {
 
     await handleStripeWebhook(noMethod, CONFIG, event, signature(event), NOW);
     expect(noMethod.updatePayment.mock.calls[0][1]).toMatchObject({ status: 'PAID' });
+  });
+
+  it('ignores a failure or expiry of an older checkout, but records a payment from any', async () => {
+    const newer = deps({ getPayment: vi.fn(async () => ({ ...PAYMENT, status: 'PENDING', providerPaymentId: 'cs_2' })) });
+    const expired = JSON.stringify({ ...JSON.parse(event), type: 'checkout.session.expired' });
+
+    expect(await handleStripeWebhook(newer, CONFIG, expired, signature(expired), NOW)).toEqual({ status: 200, handled: false });
+    expect(await handleStripeWebhook(newer, CONFIG, event, signature(event), NOW)).toEqual({ status: 200, handled: true });
+  });
+
+  it('follows its own checkout once the bank payment is on its way', async () => {
+    const debit = deps({ getPayment: vi.fn(async () => ({ ...PAYMENT, status: 'PENDING', providerPaymentId: 'pi_1' })) });
+    const failed = JSON.stringify({ ...JSON.parse(event), type: 'checkout.session.async_payment_failed' });
+
+    expect(await handleStripeWebhook(debit, CONFIG, failed, signature(failed), NOW)).toEqual({ status: 200, handled: true });
+  });
+
+  it('ignores a signed event without an object', async () => {
+    const empty = JSON.stringify({ type: 'checkout.session.completed', created: NOW, data: {} });
+
+    expect(await handleStripeWebhook(deps(), CONFIG, empty, signature(empty), NOW)).toEqual({ status: 200, handled: false });
   });
 
   it('ignores events for no known payment', async () => {

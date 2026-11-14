@@ -2,6 +2,7 @@ import { RestApiClient } from 'twenty-client-sdk/rest';
 
 import { type SyncedList, type TwentyDeps } from 'src/types/brevo-deps';
 import { fetchAllPages, type PageGetter } from 'src/utils/fetch-all-pages.util';
+import { escapeLike, pickPersonByEmail } from 'src/utils/pick-person-by-email.util';
 
 type Row = { id: string } & Record<string, unknown>;
 
@@ -62,7 +63,7 @@ export const createTwentyDeps = (client: RestApiClient = new RestApiClient()): T
     getMemberPersonIds: async (listId) =>
       (await list('messageListMembers', `listId[eq]:"${listId}"`)).map((member) => String(member.personId)),
     findPersonIdByEmail: async (email) =>
-      (await list('people', `emails.primaryEmail[ilike]:"${email.replace(/"/g, '')}"`, 1))[0]?.id ?? null,
+      pickPersonByEmail(await list('people', `emails.primaryEmail[ilike]:"${escapeLike(email.replace(/"/g, ''))}"`, 10), email),
     withdrawAllConsents: async (personId) => {
       const active = (await list('consents', `personId[eq]:"${personId}"`)).filter(
         (consent) => consent.status === 'GRANTED' || consent.status === 'PENDING',
