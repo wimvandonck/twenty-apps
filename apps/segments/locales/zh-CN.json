@@ -60,6 +60,7 @@
   "Which records": "哪些记录",
   "Yes": "是",
   "{count} people match": "{count} 人匹配",
+  "{records} of their {link}": "其{link}的{records}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "动态细分会自动更新；静态细分只计算一次",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "上次匹配的人员 ID，用于区分新匹配与手动移除的人员",

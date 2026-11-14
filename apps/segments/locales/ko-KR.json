@@ -60,6 +60,7 @@
   "Which records": "대상 레코드",
   "Yes": "예",
   "{count} people match": "{count}명 해당",
+  "{records} of their {link}": "{link}의 {records}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "동적 세그먼트는 스스로 업데이트되고, 정적 세그먼트는 한 번 계산됩니다",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "지난번에 일치한 사람들의 ID로, 새로 일치한 사람과 직접 제외한 사람을 구분합니다",

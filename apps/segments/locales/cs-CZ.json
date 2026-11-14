@@ -60,6 +60,7 @@
   "Which records": "Které záznamy",
   "Yes": "Ano",
   "{count} people match": "Vyhovuje {count} lidí",
+  "{records} of their {link}": "{records} jejich {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dynamické segmenty se aktualizují samy; statické se vypočítají jednou",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID lidí, kteří vyhověli minule, aby šlo odlišit nové shody od lidí odebraných ručně",

@@ -60,6 +60,7 @@
   "Which records": "Ce înregistrări",
   "Yes": "Da",
   "{count} people match": "{count} persoane se potrivesc",
+  "{records} of their {link}": "{records} ale {link}-ului lor",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Segmentele dinamice se actualizează singure; cele statice sunt calculate o singură dată",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID-urile persoanelor care corespundeau data trecută, pentru a deosebi potrivirile noi de persoanele scoase manual",

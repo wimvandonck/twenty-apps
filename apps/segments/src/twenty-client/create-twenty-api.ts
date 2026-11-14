@@ -131,6 +131,16 @@ export const createTwentyApi = (client: RestApiClient = new RestApiClient()) => 
     groupRelated,
     findPersonIds: async (filter) => (await fetchAll<{ id: string }>('people', 'id', filter)).map((p) => p.id),
     findAllPersonIds: async () => (await fetchAll<{ id: string }>('people', 'id')).map((p) => p.id),
+    findPersonLinks: async (via) => {
+      const people = await fetchAll<Record<string, string | null>>('people', `id ${via}Id`);
+
+      return new Map(
+        people.flatMap((person) => {
+          const linkedId = person[`${via}Id`];
+          return person.id && linkedId ? [[person.id, linkedId] as [string, string]] : [];
+        }),
+      );
+    },
     findListMemberIds: async (listId) => (await fetchListMembers(listId)).map((member) => member.personId),
   };
 

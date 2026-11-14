@@ -26,6 +26,10 @@ const checkCondition = (condition: unknown, path: string): Condition => {
         throw new Error(`${path}: give the linked object and the field that points at the person`);
       }
 
+      if (condition.via !== undefined && typeof condition.via !== 'string') {
+        throw new Error(`${path}: via must be the name of a field on the person`);
+      }
+
       if (condition.operator !== undefined && !OPERATORS.includes(String(condition.operator))) {
         throw new Error(`${path}: unknown operator "${String(condition.operator)}"`);
       }

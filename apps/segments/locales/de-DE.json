@@ -60,6 +60,7 @@
   "Which records": "Welche Datensätze",
   "Yes": "Ja",
   "{count} people match": "{count} Personen passen",
+  "{records} of their {link}": "{records} ihres {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dynamische Segmente aktualisieren sich selbst; statische Segmente werden einmal berechnet",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "IDs der Personen, die beim letzten Mal passten, um neue Treffer von von Hand entfernten Personen zu unterscheiden",

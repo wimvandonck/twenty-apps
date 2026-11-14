@@ -60,6 +60,7 @@
   "Which records": "Какие записи",
   "Yes": "Да",
   "{count} people match": "Подходят: {count}",
+  "{records} of their {link}": "{records} их {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Динамические сегменты обновляются сами; статические вычисляются один раз",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID людей, подходивших в прошлый раз, чтобы отличать новые совпадения от людей, удалённых вручную",

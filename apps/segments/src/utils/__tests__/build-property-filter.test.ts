@@ -50,17 +50,25 @@ const object = (nameSingular: string, labelPlural: string, fields: ReturnType<ty
 });
 
 describe('personLinks', () => {
-  it('finds every field that points at a person', () => {
+  it('finds every field that points at a person, then links through the person', () => {
     const links = personLinks([
       object('person', 'People', [field('company', 'RELATION', 'company')]),
-      object('donation', 'Donations', [field('donor', 'RELATION', 'person'), field('campaign', 'RELATION', 'campaign')]),
+      object('company', 'Companies', [field('accountOwner', 'RELATION', 'workspaceMember')]),
+      object('donation', 'Donations', [
+        field('donor', 'RELATION', 'person'),
+        field('company', 'RELATION', 'company'),
+        field('campaign', 'RELATION', 'campaign'),
+      ]),
+      object('opportunity', 'Opportunities', [field('company', 'RELATION', 'company')]),
       object('registration', 'Registrations', [field('attendee', 'RELATION', 'person'), field('bookedBy', 'RELATION', 'person')]),
     ]);
 
-    expect(links.map((link) => `${link.object.nameSingular}.${link.relation.name}`)).toEqual([
+    expect(links.map((link) => `${link.via ? `${link.via.name}>` : ''}${link.object.nameSingular}.${link.relation.name}`)).toEqual([
       'donation.donor',
       'registration.attendee',
       'registration.bookedBy',
+      'company>donation.company',
+      'company>opportunity.company',
     ]);
   });
 });

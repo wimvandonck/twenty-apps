@@ -60,6 +60,7 @@
   "Which records": "Hangi kayıtlar",
   "Yes": "Evet",
   "{count} people match": "{count} kişi eşleşiyor",
+  "{records} of their {link}": "{link} kaydının {records}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dinamik segmentler kendiliğinden güncellenir; statik segmentler bir kez hesaplanır",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Geçen sefer eşleşen kişilerin kimlikleri; yeni eşleşmeleri elle çıkarılanlardan ayırmak için",

@@ -60,6 +60,7 @@
   "Which records": "Những bản ghi nào",
   "Yes": "Có",
   "{count} people match": "{count} người phù hợp",
+  "{records} of their {link}": "{records} của {link} của họ",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Phân khúc động tự cập nhật; phân khúc tĩnh được tính một lần",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID của những người khớp lần trước, để phân biệt người mới khớp với người bị xóa thủ công",

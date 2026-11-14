@@ -60,6 +60,7 @@
   "Which records": "אילו רשומות",
   "Yes": "כן",
   "{count} people match": "{count} אנשים מתאימים",
+  "{records} of their {link}": "{records} של ה{link} שלהם",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "פלחים דינמיים מתעדכנים מעצמם; פלחים סטטיים מחושבים פעם אחת",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "מזהי האנשים שהתאימו בפעם הקודמת, כדי להבחין בין התאמות חדשות לאנשים שהוסרו ידנית",

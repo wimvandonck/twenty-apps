@@ -26,7 +26,7 @@ When a dynamic segment is recalculated:
 
 Open a segment and go to the **Conditions** tab. Choose whether people must meet all conditions or at least one, and add conditions:
 
-- **Linked records**: for example donations through their donor. Choose which records count with **Which records**: all of them, or a saved view on that object. Build that view with Twenty's own filters, such as "status is Received" and "received in the past year". Then choose what to measure (the number of records, or the total, average, highest or lowest of a field) and the comparison.
+- **Linked records**: for example donations through their donor, or one step further, such as the opportunities of the person's company. Choose which records count with **Which records**: all of them, or a saved view on that object. Build that view with Twenty's own filters, such as "status is Received" and "received in the past year". Then choose what to measure (the number of records, or the total, average, highest or lowest of a field) and the comparison.
 - **Own field**: a field of the person, such as job title or an email address.
 - **List**: whether the person is on a list.
 - **Group**: a nested set of conditions with its own all or at least one.
@@ -59,7 +59,7 @@ The editor stores the conditions as JSON in the segment's **Definition** field. 
 
 | Type | Matches people who | Fields |
 | --- | --- | --- |
-| `related` | have linked records of another object that pass a test | `object`: plural API name, such as `donations` or `registrations`. `relation`: the field on that object that points at the person, such as `donor` or `attendee`. `filter` or `viewId`: which records count. `measure`, `operator`, `value`: the test. |
+| `related` | have linked records of another object that pass a test | `object`: plural API name, such as `donations` or `registrations`. `relation`: the field on that object that points at the person, such as `donor` or `attendee`. `via` (optional): a field on the person, such as `company`; `relation` then points at that record instead, so a person gets the records of their company. `filter` or `viewId`: which records count. `measure`, `operator`, `value`: the test. |
 | `property` | match a filter on their own fields | `filter` |
 | `list` | are, or are not, on a list | `listId`, `isMember` (default `true`) |
 | `group` | meet a nested set of conditions | `match`, `conditions` |
@@ -76,7 +76,7 @@ Filters use Twenty's GraphQL filter format. Anywhere in a filter or a value, `@t
 # Limitations
 
 - Not real-time: dynamic segments are at most 15 minutes behind.
-- The base is always people. A `related` condition follows one link from the linked object to the person; links over several steps come later.
+- The base is always people. A `related` condition reaches records linked to the person, or to a record the person links to; longer paths are not supported.
 - Grouping linked records per person works but isn't documented by Twenty, so an update could change it.
 
 # Languages
