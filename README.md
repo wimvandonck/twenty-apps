@@ -39,6 +39,10 @@ twenty app apply --create --remote dev
 
 Use `twenty app apply` (without `--create`) for later syncs.
 
+# Checks
+
+`.github/workflows/ci.yml` runs lint, typecheck and the unit tests of every app on each pull request and on `main`. Add a new app to its `matrix.app` list.
+
 # Adding an app
 
 From the repository root:
