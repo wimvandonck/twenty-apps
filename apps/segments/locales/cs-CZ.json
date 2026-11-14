@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dynamické segmenty se aktualizují samy; statické se vypočítají jednou",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID lidí, kteří vyhověli minule, aby šlo odlišit nové shody od lidí odebraných ručně",
+    "Name of the segment": "Název segmentu",
+    "People who met the conditions at the last calculation": "Lidé, kteří při posledním výpočtu splnili podmínky",
+    "Segments that keep this list up to date": "Segmenty, které udržují tento seznam aktuální",
+    "The conditions people must meet": "Podmínky, které musí lidé splnit",
+    "The list the members are kept in": "Seznam, ve kterém jsou členové vedeni",
+    "Who joined and left the list at the last calculation, or what went wrong": "Kdo se při posledním výpočtu do seznamu dostal a kdo z něj odešel, nebo co se nepovedlo"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definice",
+    "Last calculated": "Naposledy vypočteno",
+    "Last result": "Poslední výsledek",
+    "List": "Seznam",
+    "Matched people": "Odpovídající lidé",
+    "Matches": "Shody",
+    "Name": "Název",
+    "Segments": "Segmenty",
+    "Type": "Typ"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmenty"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Lidé splňující podmínky, vedení v seznamu"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmenty"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Rozvržení segmentu"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Domů",
+    "Timeline": "Časová osa"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Pole",
+    "Timeline": "Časová osa"
+  },
+  "view.name": {
+    "All segments": "Všechny segmenty",
+    "Segment fields": "Pole segmentu"
+  }
+}

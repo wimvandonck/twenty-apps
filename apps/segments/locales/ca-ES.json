@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Els segments dinàmics s’actualitzen sols; els estàtics es calculen una vegada",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID de les persones que coincidien l’última vegada, per distingir coincidències noves de persones tretes a mà",
+    "Name of the segment": "Nom del segment",
+    "People who met the conditions at the last calculation": "Persones que complien les condicions en l’últim càlcul",
+    "Segments that keep this list up to date": "Segments que mantenen aquesta llista al dia",
+    "The conditions people must meet": "Les condicions que han de complir les persones",
+    "The list the members are kept in": "La llista on es guarden els membres",
+    "Who joined and left the list at the last calculation, or what went wrong": "Qui va entrar i sortir de la llista en l’últim càlcul, o què va fallar"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definició",
+    "Last calculated": "Últim càlcul",
+    "Last result": "Últim resultat",
+    "List": "Llista",
+    "Matched people": "Persones coincidents",
+    "Matches": "Coincidències",
+    "Name": "Nom",
+    "Segments": "Segments",
+    "Type": "Tipus"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segments"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Persones que compleixen condicions, guardades en una llista"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segments"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Disseny del segment"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Inici",
+    "Timeline": "Cronologia"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Camps",
+    "Timeline": "Cronologia"
+  },
+  "view.name": {
+    "All segments": "Tots els segments",
+    "Segment fields": "Camps del segment"
+  }
+}

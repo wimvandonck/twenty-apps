@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Phân khúc động tự cập nhật; phân khúc tĩnh được tính một lần",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID của những người khớp lần trước, để phân biệt người mới khớp với người bị xóa thủ công",
+    "Name of the segment": "Tên phân khúc",
+    "People who met the conditions at the last calculation": "Những người đáp ứng điều kiện ở lần tính gần nhất",
+    "Segments that keep this list up to date": "Các phân khúc giữ danh sách này luôn cập nhật",
+    "The conditions people must meet": "Các điều kiện mà mọi người phải đáp ứng",
+    "The list the members are kept in": "Danh sách lưu các thành viên",
+    "Who joined and left the list at the last calculation, or what went wrong": "Ai vào và rời danh sách ở lần tính gần nhất, hoặc điều gì bị lỗi"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Định nghĩa",
+    "Last calculated": "Tính lần cuối",
+    "Last result": "Kết quả gần nhất",
+    "List": "Danh sách",
+    "Matched people": "Người khớp",
+    "Matches": "Số người khớp",
+    "Name": "Tên",
+    "Segments": "Phân khúc",
+    "Type": "Loại"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Phân khúc"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Những người đáp ứng điều kiện, lưu trong một danh sách"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Phân khúc"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Phân khúc"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Bố cục phân khúc"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Trang chủ",
+    "Timeline": "Dòng thời gian"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Trường",
+    "Timeline": "Dòng thời gian"
+  },
+  "view.name": {
+    "All segments": "Tất cả phân khúc",
+    "Segment fields": "Trường phân khúc"
+  }
+}

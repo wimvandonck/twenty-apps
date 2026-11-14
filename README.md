@@ -11,6 +11,7 @@ Monorepo for Twenty CRM apps. Each app lives in its own folder under `apps/` and
 | `apps/brevo` | Optional sync of consents and lists with Brevo contacts, attributes and lists |
 | `apps/stripe` | Online payments for Nonprofit payments through Stripe Checkout |
 | `apps/consents` | Email consents with proof, double opt-in and a preferences page |
+| `apps/segments` | Segments that keep a list filled with people who meet conditions, also on linked records |
 | `.claude/skills` | Twenty's official agent skills: `create-app`, `develop-app`, `manage-app` |
 
 # Working on an app

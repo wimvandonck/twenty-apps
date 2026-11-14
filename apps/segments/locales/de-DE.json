@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dynamische Segmente aktualisieren sich selbst; statische Segmente werden einmal berechnet",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "IDs der Personen, die beim letzten Mal passten, um neue Treffer von von Hand entfernten Personen zu unterscheiden",
+    "Name of the segment": "Name des Segments",
+    "People who met the conditions at the last calculation": "Personen, die bei der letzten Berechnung die Bedingungen erfüllten",
+    "Segments that keep this list up to date": "Segmente, die diese Liste aktuell halten",
+    "The conditions people must meet": "Die Bedingungen, die Personen erfüllen müssen",
+    "The list the members are kept in": "Die Liste, in der die Mitglieder geführt werden",
+    "Who joined and left the list at the last calculation, or what went wrong": "Wer bei der letzten Berechnung in die Liste kam und wer sie verließ, oder was schiefging"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definition",
+    "Last calculated": "Zuletzt berechnet",
+    "Last result": "Letztes Ergebnis",
+    "List": "Liste",
+    "Matched people": "Passende Personen",
+    "Matches": "Treffer",
+    "Name": "Name",
+    "Segments": "Segmente",
+    "Type": "Typ"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmente"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Personen, die Bedingungen erfüllen, in einer Liste geführt"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmente"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segmentlayout"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Start",
+    "Timeline": "Zeitleiste"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Felder",
+    "Timeline": "Zeitleiste"
+  },
+  "view.name": {
+    "All segments": "Alle Segmente",
+    "Segment fields": "Segmentfelder"
+  }
+}

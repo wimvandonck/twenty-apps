@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "A dinamikus szegmensek maguktól frissülnek; a statikusakat egyszer számítja ki",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "A legutóbb egyező személyek azonosítói, hogy az új egyezések elkülönüljenek a kézzel eltávolítottaktól",
+    "Name of the segment": "A szegmens neve",
+    "People who met the conditions at the last calculation": "Akik a legutóbbi számításkor teljesítették a feltételeket",
+    "Segments that keep this list up to date": "Szegmensek, amelyek naprakészen tartják ezt a listát",
+    "The conditions people must meet": "A feltételek, amelyeket a személyeknek teljesíteniük kell",
+    "The list the members are kept in": "A lista, amelyben a tagokat tartjuk",
+    "Who joined and left the list at the last calculation, or what went wrong": "Ki került a listára és ki került le róla a legutóbbi számításkor, vagy mi hibázott"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definíció",
+    "Last calculated": "Utoljára számítva",
+    "Last result": "Utolsó eredmény",
+    "List": "Lista",
+    "Matched people": "Egyező személyek",
+    "Matches": "Egyezések",
+    "Name": "Név",
+    "Segments": "Szegmensek",
+    "Type": "Típus"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Szegmensek"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Feltételeket teljesítő személyek egy listában"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Szegmensek"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Szegmens"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Szegmens elrendezése"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Kezdőlap",
+    "Timeline": "Idővonal"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Mezők",
+    "Timeline": "Idővonal"
+  },
+  "view.name": {
+    "All segments": "Összes szegmens",
+    "Segment fields": "Szegmens mezői"
+  }
+}

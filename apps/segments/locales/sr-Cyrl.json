@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Динамички сегменти се сами ажурирају; статички се израчунавају једном",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID-јеви особа које су се поклапале прошли пут, да би се нова поклапања разликовала од особа уклоњених ручно",
+    "Name of the segment": "Назив сегмента",
+    "People who met the conditions at the last calculation": "Особе које су испуњавале услове при последњем израчунавању",
+    "Segments that keep this list up to date": "Сегменти који ажурирају ову листу",
+    "The conditions people must meet": "Услови које особе морају да испуне",
+    "The list the members are kept in": "Листа у којој се чувају чланови",
+    "Who joined and left the list at the last calculation, or what went wrong": "Ко је ушао у листу и изашао из ње при последњем израчунавању, или шта није успело"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Дефиниција",
+    "Last calculated": "Последње израчунавање",
+    "Last result": "Последњи резултат",
+    "List": "Листа",
+    "Matched people": "Особе које се поклапају",
+    "Matches": "Поклапања",
+    "Name": "Назив",
+    "Segments": "Сегменти",
+    "Type": "Тип"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Сегменти"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Особе које испуњавају услове, чуване у листи"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Сегменти"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Сегмент"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Распоред сегмента"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Почетна",
+    "Timeline": "Временска линија"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поља",
+    "Timeline": "Временска линија"
+  },
+  "view.name": {
+    "All segments": "Сви сегменти",
+    "Segment fields": "Поља сегмента"
+  }
+}

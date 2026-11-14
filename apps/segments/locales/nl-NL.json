@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dynamische segmenten werken zichzelf bij; statische segmenten worden één keer berekend",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Id's van de mensen die de vorige keer voldeden, om nieuwe treffers te onderscheiden van mensen die met de hand verwijderd zijn",
+    "Name of the segment": "Naam van het segment",
+    "People who met the conditions at the last calculation": "Mensen die bij de laatste berekening aan de voorwaarden voldeden",
+    "Segments that keep this list up to date": "Segmenten die deze lijst bijwerken",
+    "The conditions people must meet": "De voorwaarden waaraan mensen moeten voldoen",
+    "The list the members are kept in": "De lijst waarin de leden bewaard worden",
+    "Who joined and left the list at the last calculation, or what went wrong": "Wie bij de laatste berekening in de lijst kwam en eruit ging, of wat er misliep"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definitie",
+    "Last calculated": "Laatst berekend",
+    "Last result": "Laatste resultaat",
+    "List": "Lijst",
+    "Matched people": "Overeenkomende mensen",
+    "Matches": "Treffers",
+    "Name": "Naam",
+    "Segments": "Segmenten",
+    "Type": "Type"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmenten"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Mensen die aan voorwaarden voldoen, bewaard in een lijst"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmenten"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segmentindeling"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Start",
+    "Timeline": "Tijdlijn"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Velden",
+    "Timeline": "Tijdlijn"
+  },
+  "view.name": {
+    "All segments": "Alle segmenten",
+    "Segment fields": "Segmentvelden"
+  }
+}

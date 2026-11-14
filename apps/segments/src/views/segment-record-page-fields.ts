@@ -1,0 +1,100 @@
+import { defineView } from 'twenty-sdk/define';
+
+import {
+  SEGMENT_DEFINITION_FIELD_UNIVERSAL_IDENTIFIER,
+  SEGMENT_LAST_CALCULATED_AT_FIELD_UNIVERSAL_IDENTIFIER,
+  SEGMENT_LAST_RESULT_FIELD_UNIVERSAL_IDENTIFIER,
+  SEGMENT_LIST_FIELD_UNIVERSAL_IDENTIFIER,
+  SEGMENT_MEMBER_COUNT_FIELD_UNIVERSAL_IDENTIFIER,
+  SEGMENT_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+  SEGMENT_OBJECT_UNIVERSAL_IDENTIFIER,
+  SEGMENT_MODE_FIELD_UNIVERSAL_IDENTIFIER,
+} from 'src/constants/data-model';
+
+export default defineView({
+  universalIdentifier: '010e4c5f-793c-4303-a5fd-bd93127ce9fc',
+  name: 'Segment fields',
+  objectUniversalIdentifier: SEGMENT_OBJECT_UNIVERSAL_IDENTIFIER,
+  type: 'FIELDS_WIDGET',
+  icon: 'IconListDetails',
+  position: 0,
+  fields: [
+    {
+      universalIdentifier: 'bd8c9daf-c11e-4bb3-af75-433672ff2f34',
+      fieldMetadataUniversalIdentifier: SEGMENT_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 0,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: '8b4b3736-035e-44d2-b1d1-d9156adeea4a',
+      fieldMetadataUniversalIdentifier: SEGMENT_MODE_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 1,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: '94e24e0c-3642-4e3f-a2f0-feca82c24260',
+      fieldMetadataUniversalIdentifier: SEGMENT_LIST_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 2,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: 'f90600c7-e81d-4648-bb5d-cf46ec6855b6',
+      fieldMetadataUniversalIdentifier: SEGMENT_DEFINITION_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 3,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: '5179d92b-dc73-464c-a260-3b8e79d6caba',
+      fieldMetadataUniversalIdentifier: SEGMENT_MEMBER_COUNT_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 4,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: '35e79b11-4c1a-4cb4-92ab-e15e7f49fd40',
+      fieldMetadataUniversalIdentifier: SEGMENT_LAST_CALCULATED_AT_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 5,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: '03043e00-78df-48d5-85ae-c9f469020fb7',
+      fieldMetadataUniversalIdentifier: SEGMENT_LAST_RESULT_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 6,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: 'd72d1869-6a46-43e4-8d67-55ea16b79f7c',
+      fieldMetadataUniversalIdentifier: '1eb6b772-0be3-57c6-8a05-4d02ad9c35af',
+      position: 7,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: 'b1e3c87f-5f94-4c31-af54-0b27aa06e6c7',
+      fieldMetadataUniversalIdentifier: '6e307baf-fdda-5c87-847c-834197b92c58',
+      position: 8,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: '371bf486-94bb-49fd-90cf-df6a20c574e8',
+      fieldMetadataUniversalIdentifier: '9b9b85eb-3a9d-53c4-b0f4-943bc61ec29b',
+      position: 9,
+      isVisible: true,
+      size: 180,
+    },
+    {
+      universalIdentifier: '0349faf5-cc88-433e-879c-746ce7fb84ab',
+      fieldMetadataUniversalIdentifier: 'e6d782a2-5fce-52d3-8ba1-dafc243f0777',
+      position: 10,
+      isVisible: true,
+      size: 180,
+    },
+  ],
+});

@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dinamiese segmente werk hulself by; statiese segmente word een keer bereken",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID's van die mense wat laas gepas het, om nuwe passings te onderskei van mense wat met die hand verwyder is",
+    "Name of the segment": "Naam van die segment",
+    "People who met the conditions at the last calculation": "Mense wat by die laaste berekening aan die voorwaardes voldoen het",
+    "Segments that keep this list up to date": "Segmente wat hierdie lys op datum hou",
+    "The conditions people must meet": "Die voorwaardes waaraan mense moet voldoen",
+    "The list the members are kept in": "Die lys waarin die lede gehou word",
+    "Who joined and left the list at the last calculation, or what went wrong": "Wie by die laaste berekening by die lys gekom en dit verlaat het, of wat verkeerd geloop het"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definisie",
+    "Last calculated": "Laas bereken",
+    "Last result": "Laaste resultaat",
+    "List": "Lys",
+    "Matched people": "Passende mense",
+    "Matches": "Passings",
+    "Name": "Naam",
+    "Segments": "Segmente",
+    "Type": "Tipe"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmente"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Mense wat aan voorwaardes voldoen, in 'n lys gehou"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmente"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segmentuitleg"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Tuis",
+    "Timeline": "Tydlyn"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Velde",
+    "Timeline": "Tydlyn"
+  },
+  "view.name": {
+    "All segments": "Alle segmente",
+    "Segment fields": "Segmentvelde"
+  }
+}

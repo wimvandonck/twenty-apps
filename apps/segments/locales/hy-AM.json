@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Դինամիկ սեգմենտներն ինքնուրույն են թարմացվում, ստատիկները հաշվարկվում են մեկ անգամ",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Նախորդ անգամ համապատասխանած մարդկանց ID-ները՝ նոր համընկնումները ձեռքով հեռացվածներից տարբերելու համար",
+    "Name of the segment": "Սեգմենտի անվանում",
+    "People who met the conditions at the last calculation": "Մարդիկ, ովքեր վերջին հաշվարկի ժամանակ բավարարում էին պայմանները",
+    "Segments that keep this list up to date": "Սեգմենտներ, որոնք թարմացնում են այս ցուցակը",
+    "The conditions people must meet": "Պայմանները, որոնք մարդիկ պետք է բավարարեն",
+    "The list the members are kept in": "Ցուցակը, որում պահվում են անդամները",
+    "Who joined and left the list at the last calculation, or what went wrong": "Ով միացավ ցուցակին և ով դուրս եկավ վերջին հաշվարկի ժամանակ, կամ ինչը սխալ գնաց"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Սահմանում",
+    "Last calculated": "Վերջին հաշվարկ",
+    "Last result": "Վերջին արդյունք",
+    "List": "Ցուցակ",
+    "Matched people": "Համապատասխան մարդիկ",
+    "Matches": "Համընկնումներ",
+    "Name": "Անվանում",
+    "Segments": "Սեգմենտներ",
+    "Type": "Տեսակ"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Սեգմենտներ"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Պայմանները բավարարող մարդիկ՝ ցուցակում"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Սեգմենտներ"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Սեգմենտ"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Սեգմենտի դասավորություն"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Գլխավոր",
+    "Timeline": "Ժամանակագրություն"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Դաշտեր",
+    "Timeline": "Ժամանակագրություն"
+  },
+  "view.name": {
+    "All segments": "Բոլոր սեգմենտները",
+    "Segment fields": "Սեգմենտի դաշտեր"
+  }
+}

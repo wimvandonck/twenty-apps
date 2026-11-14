@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Segmenty dynamiczne aktualizują się same; statyczne są obliczane raz",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID osób, które pasowały ostatnio, aby odróżnić nowe dopasowania od osób usuniętych ręcznie",
+    "Name of the segment": "Nazwa segmentu",
+    "People who met the conditions at the last calculation": "Osoby, które przy ostatnim obliczeniu spełniały warunki",
+    "Segments that keep this list up to date": "Segmenty, które aktualizują tę listę",
+    "The conditions people must meet": "Warunki, które muszą spełnić osoby",
+    "The list the members are kept in": "Lista, w której są przechowywani członkowie",
+    "Who joined and left the list at the last calculation, or what went wrong": "Kto dołączył do listy, a kto ją opuścił przy ostatnim obliczeniu, lub co poszło nie tak"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definicja",
+    "Last calculated": "Ostatnio obliczono",
+    "Last result": "Ostatni wynik",
+    "List": "Lista",
+    "Matched people": "Pasujące osoby",
+    "Matches": "Dopasowania",
+    "Name": "Nazwa",
+    "Segments": "Segmenty",
+    "Type": "Typ"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmenty"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Osoby spełniające warunki, przechowywane na liście"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmenty"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Układ segmentu"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Strona główna",
+    "Timeline": "Oś czasu"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Pola",
+    "Timeline": "Oś czasu"
+  },
+  "view.name": {
+    "All segments": "Wszystkie segmenty",
+    "Segment fields": "Pola segmentu"
+  }
+}

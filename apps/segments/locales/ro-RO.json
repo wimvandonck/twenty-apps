@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Segmentele dinamice se actualizează singure; cele statice sunt calculate o singură dată",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID-urile persoanelor care corespundeau data trecută, pentru a deosebi potrivirile noi de persoanele scoase manual",
+    "Name of the segment": "Numele segmentului",
+    "People who met the conditions at the last calculation": "Persoanele care îndeplineau condițiile la ultimul calcul",
+    "Segments that keep this list up to date": "Segmente care țin această listă la zi",
+    "The conditions people must meet": "Condițiile pe care trebuie să le îndeplinească persoanele",
+    "The list the members are kept in": "Lista în care sunt păstrați membrii",
+    "Who joined and left the list at the last calculation, or what went wrong": "Cine a intrat și cine a ieșit din listă la ultimul calcul, sau ce nu a mers"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definiție",
+    "Last calculated": "Ultimul calcul",
+    "Last result": "Ultimul rezultat",
+    "List": "Listă",
+    "Matched people": "Persoane potrivite",
+    "Matches": "Potriviri",
+    "Name": "Nume",
+    "Segments": "Segmente",
+    "Type": "Tip"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmente"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Persoane care îndeplinesc condiții, păstrate într-o listă"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmente"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Aspectul segmentului"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Acasă",
+    "Timeline": "Cronologie"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Câmpuri",
+    "Timeline": "Cronologie"
+  },
+  "view.name": {
+    "All segments": "Toate segmentele",
+    "Segment fields": "Câmpurile segmentului"
+  }
+}

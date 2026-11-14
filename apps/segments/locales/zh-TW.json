@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "動態區隔會自動更新；靜態區隔只計算一次",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "上次符合的人員 ID，用來區分新符合者與手動移除的人員",
+    "Name of the segment": "區隔名稱",
+    "People who met the conditions at the last calculation": "上次計算時符合條件的人員",
+    "Segments that keep this list up to date": "讓此清單保持最新的區隔",
+    "The conditions people must meet": "人員必須符合的條件",
+    "The list the members are kept in": "保存成員的清單",
+    "Who joined and left the list at the last calculation, or what went wrong": "上次計算時加入與離開清單的人員，或錯誤原因"
+  },
+  "fieldMetadata.label": {
+    "Definition": "定義",
+    "Last calculated": "上次計算時間",
+    "Last result": "上次結果",
+    "List": "清單",
+    "Matched people": "符合的人員",
+    "Matches": "符合數",
+    "Name": "名稱",
+    "Segments": "區隔",
+    "Type": "類型"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "區隔"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "符合條件的人員，保存在清單中"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "區隔"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "區隔"
+  },
+  "pageLayout.name": {
+    "Segment layout": "區隔版面"
+  },
+  "pageLayoutTab.title": {
+    "Home": "首頁",
+    "Timeline": "時間軸"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "欄位",
+    "Timeline": "時間軸"
+  },
+  "view.name": {
+    "All segments": "所有區隔",
+    "Segment fields": "區隔欄位"
+  }
+}

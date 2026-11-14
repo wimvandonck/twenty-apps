@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Les segments dynamiques se mettent à jour d’eux-mêmes ; les segments statiques sont calculés une seule fois",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Identifiants des personnes qui correspondaient la dernière fois, pour distinguer les nouvelles correspondances des personnes retirées à la main",
+    "Name of the segment": "Nom du segment",
+    "People who met the conditions at the last calculation": "Personnes qui remplissaient les conditions lors du dernier calcul",
+    "Segments that keep this list up to date": "Segments qui tiennent cette liste à jour",
+    "The conditions people must meet": "Les conditions que les personnes doivent remplir",
+    "The list the members are kept in": "La liste dans laquelle les membres sont gardés",
+    "Who joined and left the list at the last calculation, or what went wrong": "Qui est entré dans la liste et qui en est sorti lors du dernier calcul, ou ce qui n’a pas fonctionné"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Définition",
+    "Last calculated": "Dernier calcul",
+    "Last result": "Dernier résultat",
+    "List": "Liste",
+    "Matched people": "Personnes correspondantes",
+    "Matches": "Correspondances",
+    "Name": "Nom",
+    "Segments": "Segments",
+    "Type": "Type"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segments"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Personnes qui remplissent des conditions, gardées dans une liste"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segments"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Mise en page du segment"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Accueil",
+    "Timeline": "Chronologie"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Champs",
+    "Timeline": "Chronologie"
+  },
+  "view.name": {
+    "All segments": "Tous les segments",
+    "Segment fields": "Champs du segment"
+  }
+}

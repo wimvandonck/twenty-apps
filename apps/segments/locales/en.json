@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dynamic segments update themselves; static segments are calculated once",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Ids of the people who matched last time, used to tell new matches from people removed by hand",
+    "Name of the segment": "Name of the segment",
+    "People who met the conditions at the last calculation": "People who met the conditions at the last calculation",
+    "Segments that keep this list up to date": "Segments that keep this list up to date",
+    "The conditions people must meet": "The conditions people must meet",
+    "The list the members are kept in": "The list the members are kept in",
+    "Who joined and left the list at the last calculation, or what went wrong": "Who joined and left the list at the last calculation, or what went wrong"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definition",
+    "Last calculated": "Last calculated",
+    "Last result": "Last result",
+    "List": "List",
+    "Matched people": "Matched people",
+    "Matches": "Matches",
+    "Name": "Name",
+    "Segments": "Segments",
+    "Type": "Type"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segments"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "People who meet conditions, kept in a list"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segments"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segment layout"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Home",
+    "Timeline": "Timeline"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Fields",
+    "Timeline": "Timeline"
+  },
+  "view.name": {
+    "All segments": "All segments",
+    "Segment fields": "Segment fields"
+  }
+}
