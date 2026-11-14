@@ -1,0 +1,108 @@
+import { defineView } from 'twenty-sdk/define';
+
+import {
+  CAMPAIGN_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_DONATIONS_FIELD_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_ENDS_ON_FIELD_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_GOAL_FIELD_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_OBJECT_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_RECURRING_DONATIONS_FIELD_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_STARTS_ON_FIELD_UNIVERSAL_IDENTIFIER,
+  CAMPAIGN_STATUS_FIELD_UNIVERSAL_IDENTIFIER,
+} from 'src/constants/data-model';
+
+export default defineView({
+  universalIdentifier: '9de5b334-1fe5-428c-afc0-1d13a1b6541b',
+  name: 'Campaign fields',
+  objectUniversalIdentifier: CAMPAIGN_OBJECT_UNIVERSAL_IDENTIFIER,
+  type: 'FIELDS_WIDGET',
+  icon: 'IconListDetails',
+  position: 0,
+  fields: [
+    {
+      universalIdentifier: 'c4fe6ebf-bd3f-47b7-953e-c723a197af15',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 0,
+      isVisible: true,
+      size: 220,
+    },
+    {
+      universalIdentifier: 'fb7b4146-7117-4790-9c72-832fa510b599',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_STATUS_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 1,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '2b998077-db18-40f1-9e76-af8c92779a09',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_GOAL_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 2,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: 'cc9f2bab-07c1-424b-8349-0f244299ed1f',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_STARTS_ON_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 3,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: 'a94bf68b-515f-457a-a448-fd5e3b354d80',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_ENDS_ON_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 4,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: 'a89e60a3-08ea-42ec-b4d2-51283baa3e19',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 5,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '87e40279-c232-47c4-b42e-ba117c484adb',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_DONATIONS_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 6,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: 'fce0a4ed-e48e-4d8e-a35e-e43ac9556b6a',
+      fieldMetadataUniversalIdentifier: CAMPAIGN_RECURRING_DONATIONS_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 7,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '9e5cd187-dcfe-4a2e-a249-e26fb5e93b9a',
+      fieldMetadataUniversalIdentifier: '5b4df4dc-91b3-5e06-b172-fbd72beeea3c',
+      position: 8,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '2d3d326f-0bf6-4094-9e16-eda97a11ae16',
+      fieldMetadataUniversalIdentifier: '5745ad1b-810a-59d9-8fa3-e87cab5f88d3',
+      position: 9,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '940f2b75-7527-4bff-84fb-806a6ef8fa28',
+      fieldMetadataUniversalIdentifier: '55e6d47d-8cc4-5e8a-b56a-756f3883446c',
+      position: 10,
+      isVisible: true,
+      size: 160,
+    },
+    {
+      universalIdentifier: '2e4f08db-bb10-4b16-bf0d-7d52b4ad2ef5',
+      fieldMetadataUniversalIdentifier: '4fc2985f-47e1-580b-a17a-c3328201c7cf',
+      position: 11,
+      isVisible: true,
+      size: 160,
+    },
+  ],
+});
