@@ -52,6 +52,15 @@ const parseField = (value: unknown): FormField | null => {
         }))
     : undefined;
 
+  const relation = isObject(value.relation) ? value.relation : null;
+
+  if (
+    value.type === 'RELATION' &&
+    (relation === null || !isIdentifier(relation.targetObjectNamePlural) || !isIdentifier(relation.joinColumnName))
+  ) {
+    return null;
+  }
+
   const defaultValue = parseDefaultValue(value.type, value.defaultValue);
   const field: FormField = {
     name: value.name,
@@ -60,6 +69,14 @@ const parseField = (value: unknown): FormField | null => {
     required: value.required === true,
     ...(options ? { options } : {}),
     ...(defaultValue !== undefined ? { defaultValue } : {}),
+    ...(value.type === 'RELATION' && relation !== null
+      ? {
+          relation: {
+            targetObjectNamePlural: relation.targetObjectNamePlural as string,
+            joinColumnName: relation.joinColumnName as string,
+          },
+        }
+      : {}),
   };
 
   // A required field can only be hidden when a default fills it.

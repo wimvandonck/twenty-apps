@@ -7,4 +7,10 @@ export const isSelectableField = (field: FieldMetadata): boolean =>
   field.isActive &&
   !field.isSystem &&
   !field.isUIReadOnly &&
-  isSupportedFieldType(field.type);
+  isSupportedFieldType(field.type) &&
+  // A relation only as a pointer to one existing record.
+  (field.type !== 'RELATION' ||
+    (field.relationType === 'MANY_TO_ONE' &&
+      field.joinColumnName !== null &&
+      field.relationTargetObjectNameSingular !== null &&
+      field.relationTargetObjectNameSingular !== 'form'));

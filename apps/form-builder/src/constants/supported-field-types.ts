@@ -15,4 +15,5 @@ export const SUPPORTED_FIELD_TYPES: readonly FormFieldType[] = [
   'CURRENCY',
   'ADDRESS',
   'RICH_TEXT',
+  'RELATION',
 ];

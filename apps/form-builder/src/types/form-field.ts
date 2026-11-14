@@ -14,4 +14,7 @@ export type FormField = {
   defaultValue?: string | boolean | string[] | Record<string, string>;
   // Hidden fields are not shown on the public form.
   hidden?: boolean;
+  // For a relation: where its choices come from and the column it fills.
+  // The choices themselves are loaded when the form is shown or sent.
+  relation?: { targetObjectNamePlural: string; joinColumnName: string };
 };

@@ -19,7 +19,7 @@ const [PERSON_RECORD, COMPANY_RECORD] = DEFINITION.records;
 
 describe('isSelectableField', () => {
   it('excludes system, read-only, inactive and unsupported fields', () => {
-    expect(PERSON.fields.filter(isSelectableField).map(({ name }) => name)).toEqual(['name', 'emails', 'nickname']);
+    expect(PERSON.fields.filter(isSelectableField).map(({ name }) => name)).toEqual(['name', 'emails', 'nickname', 'company']);
     expect(isSelectableField(field({ name: 'a', isUIReadOnly: true }))).toBe(false);
     expect(isSelectableField(field({ name: 'a', isActive: false }))).toBe(false);
   });

@@ -13,5 +13,7 @@ export type FormFieldType =
   | 'CURRENCY'
   | 'ADDRESS'
   | 'RICH_TEXT'
+  // A record that already exists, chosen from a list or fixed by a default.
+  | 'RELATION'
   // Not a field of the object: starts a new step of the form.
   | 'PAGE_BREAK';

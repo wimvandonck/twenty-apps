@@ -12,16 +12,21 @@ import { OptionSelect } from 'src/front-components/components/option-select';
 import { type FormField } from 'src/types/form-field';
 import { type FormRecord } from 'src/types/form-record';
 import { type ObjectMetadata } from 'src/types/object-metadata';
+import { type RelationRecordLoader } from 'src/types/relation-record-loader';
 import { getBlockingFields } from 'src/utils/get-blocking-fields.util';
 import { isPageBreak } from 'src/utils/is-page-break.util';
 import { isRequiredField } from 'src/utils/is-required-field.util';
 import { isSelectableField } from 'src/utils/is-selectable-field.util';
 import { moveItem } from 'src/utils/move-item.util';
+import { recordLabel } from 'src/utils/record-label.util';
 import { toFormField } from 'src/utils/to-form-field.util';
 
 type RecordCardProps = {
   record: FormRecord;
   object: ObjectMetadata | undefined;
+  objects: ObjectMetadata[];
+  // Reads the records a relation field can point at.
+  loadRelationRecords: RelationRecordLoader;
   isFirst: boolean;
   isLast: boolean;
   onChange: (record: FormRecord) => void;
@@ -33,10 +38,25 @@ type RecordCardProps = {
 const ALWAYS_CREATE = '__always_create__';
 const FIELD_GRID = 'minmax(120px, 1.1fr) minmax(110px, 1fr) minmax(110px, 1fr) auto auto auto';
 
-export const RecordCard = ({ record, object, isFirst, isLast, onChange, onMove, onRemove }: RecordCardProps) => {
+export const RecordCard = ({
+  record,
+  object,
+  objects,
+  loadRelationRecords,
+  isFirst,
+  isLast,
+  onChange,
+  onMove,
+  onRemove,
+}: RecordCardProps) => {
   const theme = useTheme();
   const { t } = useTranslate();
-  const selectable = (object?.fields ?? []).filter(isSelectableField);
+  // A relation can only be offered when its object is known.
+  const selectable = (object?.fields ?? []).filter(
+    (field) =>
+      isSelectableField(field) &&
+      (field.type !== 'RELATION' || objects.some(({ nameSingular }) => nameSingular === field.relationTargetObjectNameSingular)),
+  );
   const available = selectable.filter(({ name }) => !record.fields.some((field) => field.name === name));
   const matchOptions = selectable
     .filter((field) => (MATCH_FIELD_TYPES as readonly string[]).includes(field.type))
@@ -156,7 +176,26 @@ export const RecordCard = ({ record, object, isFirst, isLast, onChange, onMove, 
                 const metadata = available.find((candidate) => candidate.name === name);
 
                 if (metadata !== undefined) {
-                  setFields([...record.fields, toFormField(metadata)]);
+                  const added = toFormField(metadata, objects);
+
+                  setFields([...record.fields, added]);
+
+                  // Load a relation's records, so its default and the preview can show them.
+                  if (added.relation) {
+                    void loadRelationRecords(added.relation.targetObjectNamePlural)
+                      .then((records) =>
+                        records
+                          .map((choice) => ({ value: choice.id, label: recordLabel(choice) }))
+                          .sort((a, b) => a.label.localeCompare(b.label)),
+                      )
+                      .then((options) =>
+                        onChange({
+                          ...record,
+                          fields: [...record.fields, { ...added, options }],
+                        }),
+                      )
+                      .catch(() => undefined);
+                  }
                 }
               }}
             />

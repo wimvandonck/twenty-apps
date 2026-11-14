@@ -3,9 +3,11 @@ import { defineLogicFunction } from 'twenty-sdk/define';
 import { Response, type RoutePayload } from 'twenty-sdk/logic-function';
 
 import { RENDER_FORM_LOGIC_FUNCTION_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identifiers';
+import { createRelationRecordLoader } from 'src/twenty-client/create-relation-record-loader';
 import { fetchPublishedForm } from 'src/twenty-client/fetch-published-form';
 import { escapeHtml } from 'src/utils/escape-html.util';
 import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
+import { loadRelationOptions } from 'src/utils/load-relation-options.util';
 import { renderFormHtml } from 'src/utils/render-form-html.util';
 import { renderPageHtml } from 'src/utils/render-page-html.util';
 
@@ -17,7 +19,10 @@ const handler = async (event: RoutePayload) => {
     event.queryStringParameters?.lang,
     event.headers?.['accept-language'],
   );
-  const definition = await fetchPublishedForm(new RestApiClient(), event.pathParameters?.formId);
+  const client = new RestApiClient();
+  const published = await fetchPublishedForm(client, event.pathParameters?.formId);
+  const definition =
+    published === null ? null : await loadRelationOptions(published, createRelationRecordLoader(client));
 
   if (definition === null) {
     return new Response(
