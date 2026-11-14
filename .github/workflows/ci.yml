@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [form-builder, nonprofit, consents, stripe, brevo]
+        app: [form-builder, nonprofit, consents, stripe, brevo, segments]
     defaults:
       run:
         working-directory: apps/${{ matrix.app }}

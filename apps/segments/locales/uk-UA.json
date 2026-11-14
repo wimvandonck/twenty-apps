@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Динамічні сегменти оновлюються самі; статичні обчислюються один раз",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID людей, які відповідали минулого разу, щоб відрізнити нові збіги від людей, вилучених вручну",
+    "Name of the segment": "Назва сегмента",
+    "People who met the conditions at the last calculation": "Люди, які відповідали умовам під час останнього обчислення",
+    "Segments that keep this list up to date": "Сегменти, що підтримують цей список в актуальному стані",
+    "The conditions people must meet": "Умови, яким мають відповідати люди",
+    "The list the members are kept in": "Список, у якому зберігаються учасники",
+    "Who joined and left the list at the last calculation, or what went wrong": "Хто потрапив до списку і хто вибув під час останнього обчислення, або що пішло не так"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Визначення",
+    "Last calculated": "Останнє обчислення",
+    "Last result": "Останній результат",
+    "List": "Список",
+    "Matched people": "Відповідні люди",
+    "Matches": "Збіги",
+    "Name": "Назва",
+    "Segments": "Сегменти",
+    "Type": "Тип"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Сегменти"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Люди, що відповідають умовам, у списку"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Сегменти"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Сегмент"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Макет сегмента"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Головна",
+    "Timeline": "Хронологія"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поля",
+    "Timeline": "Хронологія"
+  },
+  "view.name": {
+    "All segments": "Усі сегменти",
+    "Segment fields": "Поля сегмента"
+  }
+}

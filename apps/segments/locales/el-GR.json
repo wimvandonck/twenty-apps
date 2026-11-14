@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Τα δυναμικά τμήματα ενημερώνονται μόνα τους· τα στατικά υπολογίζονται μία φορά",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Αναγνωριστικά των ατόμων που ταίριαζαν την προηγούμενη φορά, για να ξεχωρίζουν οι νέες αντιστοιχίσεις από όσους αφαιρέθηκαν με το χέρι",
+    "Name of the segment": "Όνομα του τμήματος",
+    "People who met the conditions at the last calculation": "Άτομα που πληρούσαν τις προϋποθέσεις στον τελευταίο υπολογισμό",
+    "Segments that keep this list up to date": "Τμήματα που ενημερώνουν αυτή τη λίστα",
+    "The conditions people must meet": "Οι προϋποθέσεις που πρέπει να πληρούν τα άτομα",
+    "The list the members are kept in": "Η λίστα όπου τηρούνται τα μέλη",
+    "Who joined and left the list at the last calculation, or what went wrong": "Ποιος μπήκε και ποιος βγήκε από τη λίστα στον τελευταίο υπολογισμό, ή τι πήγε στραβά"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Ορισμός",
+    "Last calculated": "Τελευταίος υπολογισμός",
+    "Last result": "Τελευταίο αποτέλεσμα",
+    "List": "Λίστα",
+    "Matched people": "Άτομα που ταιριάζουν",
+    "Matches": "Αντιστοιχίσεις",
+    "Name": "Όνομα",
+    "Segments": "Τμήματα",
+    "Type": "Τύπος"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Τμήματα"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Άτομα που πληρούν προϋποθέσεις, σε μια λίστα"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Τμήματα"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Τμήμα"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Διάταξη τμήματος"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Αρχική",
+    "Timeline": "Χρονολόγιο"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Πεδία",
+    "Timeline": "Χρονολόγιο"
+  },
+  "view.name": {
+    "All segments": "Όλα τα τμήματα",
+    "Segment fields": "Πεδία τμήματος"
+  }
+}

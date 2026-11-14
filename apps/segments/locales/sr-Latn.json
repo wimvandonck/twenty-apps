@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dinamički segmenti se sami ažuriraju; statički se izračunavaju jednom",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID-jevi osoba koje su se poklapale prošli put, da bi se nova poklapanja razlikovala od osoba uklonjenih ručno",
+    "Name of the segment": "Naziv segmenta",
+    "People who met the conditions at the last calculation": "Osobe koje su ispunjavale uslove pri poslednjem izračunavanju",
+    "Segments that keep this list up to date": "Segmenti koji ažuriraju ovu listu",
+    "The conditions people must meet": "Uslovi koje osobe moraju da ispune",
+    "The list the members are kept in": "Lista u kojoj se čuvaju članovi",
+    "Who joined and left the list at the last calculation, or what went wrong": "Ko je ušao u listu i izašao iz nje pri poslednjem izračunavanju, ili šta nije uspelo"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definicija",
+    "Last calculated": "Poslednje izračunavanje",
+    "Last result": "Poslednji rezultat",
+    "List": "Lista",
+    "Matched people": "Osobe koje se poklapaju",
+    "Matches": "Poklapanja",
+    "Name": "Naziv",
+    "Segments": "Segmenti",
+    "Type": "Tip"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmenti"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Osobe koje ispunjavaju uslove, čuvane u listi"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmenti"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Raspored segmenta"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Početna",
+    "Timeline": "Vremenska linija"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Polja",
+    "Timeline": "Vremenska linija"
+  },
+  "view.name": {
+    "All segments": "Svi segmenti",
+    "Segment fields": "Polja segmenta"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dinamik segmentler kendiliğinden güncellenir; statik segmentler bir kez hesaplanır",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Geçen sefer eşleşen kişilerin kimlikleri; yeni eşleşmeleri elle çıkarılanlardan ayırmak için",
+    "Name of the segment": "Segmentin adı",
+    "People who met the conditions at the last calculation": "Son hesaplamada koşulları karşılayan kişiler",
+    "Segments that keep this list up to date": "Bu listeyi güncel tutan segmentler",
+    "The conditions people must meet": "Kişilerin karşılaması gereken koşullar",
+    "The list the members are kept in": "Üyelerin tutulduğu liste",
+    "Who joined and left the list at the last calculation, or what went wrong": "Son hesaplamada listeye kimin girip çıktığı veya neyin ters gittiği"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Tanım",
+    "Last calculated": "Son hesaplama",
+    "Last result": "Son sonuç",
+    "List": "Liste",
+    "Matched people": "Eşleşen kişiler",
+    "Matches": "Eşleşmeler",
+    "Name": "Ad",
+    "Segments": "Segmentler",
+    "Type": "Tür"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmentler"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Koşulları karşılayan kişiler, bir listede"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmentler"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segment düzeni"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Ana sayfa",
+    "Timeline": "Zaman çizelgesi"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Alanlar",
+    "Timeline": "Zaman çizelgesi"
+  },
+  "view.name": {
+    "All segments": "Tüm segmentler",
+    "Segment fields": "Segment alanları"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Динамические сегменты обновляются сами; статические вычисляются один раз",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID людей, подходивших в прошлый раз, чтобы отличать новые совпадения от людей, удалённых вручную",
+    "Name of the segment": "Название сегмента",
+    "People who met the conditions at the last calculation": "Люди, соответствовавшие условиям при последнем расчёте",
+    "Segments that keep this list up to date": "Сегменты, поддерживающие этот список в актуальном состоянии",
+    "The conditions people must meet": "Условия, которым должны соответствовать люди",
+    "The list the members are kept in": "Список, в котором хранятся участники",
+    "Who joined and left the list at the last calculation, or what went wrong": "Кто попал в список и кто покинул его при последнем расчёте, или что пошло не так"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Определение",
+    "Last calculated": "Последний расчёт",
+    "Last result": "Последний результат",
+    "List": "Список",
+    "Matched people": "Подходящие люди",
+    "Matches": "Совпадения",
+    "Name": "Название",
+    "Segments": "Сегменты",
+    "Type": "Тип"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Сегменты"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Люди, соответствующие условиям, в списке"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Сегменты"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Сегмент"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Макет сегмента"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Главная",
+    "Timeline": "Хронология"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поля",
+    "Timeline": "Хронология"
+  },
+  "view.name": {
+    "All segments": "Все сегменты",
+    "Segment fields": "Поля сегмента"
+  }
+}

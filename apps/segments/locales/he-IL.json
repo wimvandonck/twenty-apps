@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "פלחים דינמיים מתעדכנים מעצמם; פלחים סטטיים מחושבים פעם אחת",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "מזהי האנשים שהתאימו בפעם הקודמת, כדי להבחין בין התאמות חדשות לאנשים שהוסרו ידנית",
+    "Name of the segment": "שם הפלח",
+    "People who met the conditions at the last calculation": "אנשים שעמדו בתנאים בחישוב האחרון",
+    "Segments that keep this list up to date": "פלחים ששומרים על הרשימה הזו מעודכנת",
+    "The conditions people must meet": "התנאים שאנשים צריכים לעמוד בהם",
+    "The list the members are kept in": "הרשימה שבה נשמרים החברים",
+    "Who joined and left the list at the last calculation, or what went wrong": "מי הצטרף לרשימה ומי עזב אותה בחישוב האחרון, או מה השתבש"
+  },
+  "fieldMetadata.label": {
+    "Definition": "הגדרה",
+    "Last calculated": "חושב לאחרונה",
+    "Last result": "תוצאה אחרונה",
+    "List": "רשימה",
+    "Matched people": "אנשים תואמים",
+    "Matches": "התאמות",
+    "Name": "שם",
+    "Segments": "פלחים",
+    "Type": "סוג"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "פלחים"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "אנשים שעומדים בתנאים, ברשימה"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "פלחים"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "פלח"
+  },
+  "pageLayout.name": {
+    "Segment layout": "פריסת פלח"
+  },
+  "pageLayoutTab.title": {
+    "Home": "בית",
+    "Timeline": "ציר זמן"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "שדות",
+    "Timeline": "ציר זמן"
+  },
+  "view.name": {
+    "All segments": "כל הפלחים",
+    "Segment fields": "שדות פלח"
+  }
+}

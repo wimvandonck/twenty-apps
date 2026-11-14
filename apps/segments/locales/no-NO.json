@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dynamiske segmenter oppdaterer seg selv; statiske segmenter beregnes én gang",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID-er for personene som passet sist, for å skille nye treff fra personer fjernet manuelt",
+    "Name of the segment": "Navn på segmentet",
+    "People who met the conditions at the last calculation": "Personer som oppfylte betingelsene ved siste beregning",
+    "Segments that keep this list up to date": "Segmenter som holder denne listen oppdatert",
+    "The conditions people must meet": "Betingelsene personer må oppfylle",
+    "The list the members are kept in": "Listen medlemmene holdes i",
+    "Who joined and left the list at the last calculation, or what went wrong": "Hvem som kom inn på og gikk ut av listen ved siste beregning, eller hva som gikk galt"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definisjon",
+    "Last calculated": "Sist beregnet",
+    "Last result": "Siste resultat",
+    "List": "Liste",
+    "Matched people": "Personer som passer",
+    "Matches": "Treff",
+    "Name": "Navn",
+    "Segments": "Segmenter",
+    "Type": "Type"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmenter"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Personer som oppfyller betingelser, holdt i en liste"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmenter"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segmentoppsett"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Hjem",
+    "Timeline": "Tidslinje"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Felter",
+    "Timeline": "Tidslinje"
+  },
+  "view.name": {
+    "All segments": "Alle segmenter",
+    "Segment fields": "Segmentfelter"
+  }
+}

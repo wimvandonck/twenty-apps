@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dinamik segmentlar o‘zi yangilanadi; statik segmentlar bir marta hisoblanadi",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "O‘tgan safar mos kelgan odamlarning ID lari, yangi mosliklarni qo‘lda olib tashlanganlardan ajratish uchun",
+    "Name of the segment": "Segment nomi",
+    "People who met the conditions at the last calculation": "Oxirgi hisoblashda shartlarga javob bergan odamlar",
+    "Segments that keep this list up to date": "Bu ro‘yxatni yangilab turadigan segmentlar",
+    "The conditions people must meet": "Odamlar javob berishi kerak bo‘lgan shartlar",
+    "The list the members are kept in": "A’zolar saqlanadigan ro‘yxat",
+    "Who joined and left the list at the last calculation, or what went wrong": "Oxirgi hisoblashda ro‘yxatga kim qo‘shildi va kim chiqdi, yoki nima noto‘g‘ri bo‘ldi"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Ta’rif",
+    "Last calculated": "Oxirgi hisoblash",
+    "Last result": "Oxirgi natija",
+    "List": "Ro‘yxat",
+    "Matched people": "Mos odamlar",
+    "Matches": "Mosliklar",
+    "Name": "Nomi",
+    "Segments": "Segmentlar",
+    "Type": "Turi"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmentlar"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Shartlarga javob beradigan odamlar, ro‘yxatda"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmentlar"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segment"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segment maketi"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Bosh sahifa",
+    "Timeline": "Vaqt chizig‘i"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Maydonlar",
+    "Timeline": "Vaqt chizig‘i"
+  },
+  "view.name": {
+    "All segments": "Barcha segmentlar",
+    "Segment fields": "Segment maydonlari"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "بخش‌های پویا خودشان به‌روز می‌شوند؛ بخش‌های ایستا یک بار محاسبه می‌شوند",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "شناسهٔ کسانی که دفعهٔ قبل مطابقت داشتند، برای تشخیص مطابقت‌های تازه از کسانی که دستی حذف شده‌اند",
+    "Name of the segment": "نام بخش",
+    "People who met the conditions at the last calculation": "کسانی که در آخرین محاسبه شرایط را داشتند",
+    "Segments that keep this list up to date": "بخش‌هایی که این فهرست را به‌روز نگه می‌دارند",
+    "The conditions people must meet": "شرایطی که افراد باید داشته باشند",
+    "The list the members are kept in": "فهرستی که اعضا در آن نگه داشته می‌شوند",
+    "Who joined and left the list at the last calculation, or what went wrong": "چه کسی در آخرین محاسبه به فهرست اضافه شد و چه کسی خارج شد، یا چه اشکالی پیش آمد"
+  },
+  "fieldMetadata.label": {
+    "Definition": "تعریف",
+    "Last calculated": "آخرین محاسبه",
+    "Last result": "آخرین نتیجه",
+    "List": "فهرست",
+    "Matched people": "افراد مطابق",
+    "Matches": "مطابقت‌ها",
+    "Name": "نام",
+    "Segments": "بخش‌ها",
+    "Type": "نوع"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "بخش‌ها"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "افرادی که شرایط را دارند، در یک فهرست"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "بخش‌ها"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "بخش"
+  },
+  "pageLayout.name": {
+    "Segment layout": "چیدمان بخش"
+  },
+  "pageLayoutTab.title": {
+    "Home": "خانه",
+    "Timeline": "خط زمانی"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "فیلدها",
+    "Timeline": "خط زمانی"
+  },
+  "view.name": {
+    "All segments": "همهٔ بخش‌ها",
+    "Segment fields": "فیلدهای بخش"
+  }
+}

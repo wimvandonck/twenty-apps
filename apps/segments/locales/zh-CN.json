@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "动态细分会自动更新；静态细分只计算一次",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "上次匹配的人员 ID，用于区分新匹配与手动移除的人员",
+    "Name of the segment": "细分名称",
+    "People who met the conditions at the last calculation": "上次计算时满足条件的人员",
+    "Segments that keep this list up to date": "保持此列表更新的细分",
+    "The conditions people must meet": "人员必须满足的条件",
+    "The list the members are kept in": "保存成员的列表",
+    "Who joined and left the list at the last calculation, or what went wrong": "上次计算时加入和离开列表的人员，或出错原因"
+  },
+  "fieldMetadata.label": {
+    "Definition": "定义",
+    "Last calculated": "上次计算时间",
+    "Last result": "上次结果",
+    "List": "列表",
+    "Matched people": "匹配人员",
+    "Matches": "匹配数",
+    "Name": "名称",
+    "Segments": "细分",
+    "Type": "类型"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "细分"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "满足条件的人员，保存在列表中"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "细分"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "细分"
+  },
+  "pageLayout.name": {
+    "Segment layout": "细分布局"
+  },
+  "pageLayoutTab.title": {
+    "Home": "首页",
+    "Timeline": "时间线"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "字段",
+    "Timeline": "时间线"
+  },
+  "view.name": {
+    "All segments": "所有细分",
+    "Segment fields": "细分字段"
+  }
+}

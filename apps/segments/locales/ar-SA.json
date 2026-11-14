@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "تُحدّث الشرائح الديناميكية نفسها؛ وتُحسب الشرائح الثابتة مرة واحدة",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "معرّفات الأشخاص الذين طابقوا في المرة السابقة، للتمييز بين المطابقات الجديدة ومن أُزيلوا يدويًا",
+    "Name of the segment": "اسم الشريحة",
+    "People who met the conditions at the last calculation": "الأشخاص الذين استوفوا الشروط في آخر حساب",
+    "Segments that keep this list up to date": "الشرائح التي تحافظ على تحديث هذه القائمة",
+    "The conditions people must meet": "الشروط التي يجب أن يستوفيها الأشخاص",
+    "The list the members are kept in": "القائمة التي يُحفظ فيها الأعضاء",
+    "Who joined and left the list at the last calculation, or what went wrong": "من انضم إلى القائمة ومن غادرها في آخر حساب، أو ما الذي حدث من خطأ"
+  },
+  "fieldMetadata.label": {
+    "Definition": "التعريف",
+    "Last calculated": "آخر حساب",
+    "Last result": "آخر نتيجة",
+    "List": "القائمة",
+    "Matched people": "الأشخاص المطابقون",
+    "Matches": "المطابقات",
+    "Name": "الاسم",
+    "Segments": "الشرائح",
+    "Type": "النوع"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "الشرائح"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "أشخاص يستوفون شروطًا، محفوظون في قائمة"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "الشرائح"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "الشريحة"
+  },
+  "pageLayout.name": {
+    "Segment layout": "تخطيط الشريحة"
+  },
+  "pageLayoutTab.title": {
+    "Home": "الرئيسية",
+    "Timeline": "الخط الزمني"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "الحقول",
+    "Timeline": "الخط الزمني"
+  },
+  "view.name": {
+    "All segments": "جميع الشرائح",
+    "Segment fields": "حقول الشريحة"
+  }
+}

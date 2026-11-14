@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "動的セグメントは自動で更新され、静的セグメントは一度だけ計算されます",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "前回一致した人のID。新たな一致と手動で外された人を区別するために使います",
+    "Name of the segment": "セグメント名",
+    "People who met the conditions at the last calculation": "前回の計算で条件を満たした人",
+    "Segments that keep this list up to date": "このリストを最新に保つセグメント",
+    "The conditions people must meet": "対象となる人が満たすべき条件",
+    "The list the members are kept in": "メンバーを保管するリスト",
+    "Who joined and left the list at the last calculation, or what went wrong": "前回の計算でリストに加わった人と外れた人、またはエラーの内容"
+  },
+  "fieldMetadata.label": {
+    "Definition": "定義",
+    "Last calculated": "最終計算日時",
+    "Last result": "最終結果",
+    "List": "リスト",
+    "Matched people": "一致した人",
+    "Matches": "一致数",
+    "Name": "名前",
+    "Segments": "セグメント",
+    "Type": "種類"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "セグメント"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "条件を満たす人をリストで管理"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "セグメント"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "セグメント"
+  },
+  "pageLayout.name": {
+    "Segment layout": "セグメントのレイアウト"
+  },
+  "pageLayoutTab.title": {
+    "Home": "ホーム",
+    "Timeline": "タイムライン"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "フィールド",
+    "Timeline": "タイムライン"
+  },
+  "view.name": {
+    "All segments": "すべてのセグメント",
+    "Segment fields": "セグメントのフィールド"
+  }
+}

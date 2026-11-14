@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "Dynaamiset segmentit päivittyvät itsestään; staattiset lasketaan kerran",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Viime kerralla täsmänneiden henkilöiden tunnukset, jotta uudet osumat erottuvat käsin poistetuista",
+    "Name of the segment": "Segmentin nimi",
+    "People who met the conditions at the last calculation": "Henkilöt, jotka täyttivät ehdot viimeisessä laskennassa",
+    "Segments that keep this list up to date": "Segmentit, jotka pitävät tämän listan ajan tasalla",
+    "The conditions people must meet": "Ehdot, jotka henkilöiden on täytettävä",
+    "The list the members are kept in": "Lista, jossa jäsenet pidetään",
+    "Who joined and left the list at the last calculation, or what went wrong": "Kuka tuli listalle ja kuka poistui viimeisessä laskennassa, tai mikä meni pieleen"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Määritelmä",
+    "Last calculated": "Laskettu viimeksi",
+    "Last result": "Viimeisin tulos",
+    "List": "Lista",
+    "Matched people": "Täsmäävät henkilöt",
+    "Matches": "Osumat",
+    "Name": "Nimi",
+    "Segments": "Segmentit",
+    "Type": "Tyyppi"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmentit"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Ehdot täyttävät henkilöt listassa"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmentit"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segmentti"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Segmentin asettelu"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Etusivu",
+    "Timeline": "Aikajana"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Kentät",
+    "Timeline": "Aikajana"
+  },
+  "view.name": {
+    "All segments": "Kaikki segmentit",
+    "Segment fields": "Segmentin kentät"
+  }
+}

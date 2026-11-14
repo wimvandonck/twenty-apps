@@ -1,0 +1,50 @@
+{
+  "fieldMetadata.description": {
+    "Dynamic segments update themselves; static segments are calculated once": "I segmenti dinamici si aggiornano da soli; quelli statici vengono calcolati una volta",
+    "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID delle persone che corrispondevano l’ultima volta, per distinguere le nuove corrispondenze dalle persone rimosse a mano",
+    "Name of the segment": "Nome del segmento",
+    "People who met the conditions at the last calculation": "Persone che soddisfacevano le condizioni all’ultimo calcolo",
+    "Segments that keep this list up to date": "Segmenti che tengono aggiornato questo elenco",
+    "The conditions people must meet": "Le condizioni che le persone devono soddisfare",
+    "The list the members are kept in": "L’elenco in cui sono tenuti i membri",
+    "Who joined and left the list at the last calculation, or what went wrong": "Chi è entrato e uscito dall’elenco all’ultimo calcolo, o cosa è andato storto"
+  },
+  "fieldMetadata.label": {
+    "Definition": "Definizione",
+    "Last calculated": "Ultimo calcolo",
+    "Last result": "Ultimo risultato",
+    "List": "Elenco",
+    "Matched people": "Persone corrispondenti",
+    "Matches": "Corrispondenze",
+    "Name": "Nome",
+    "Segments": "Segmenti",
+    "Type": "Tipo"
+  },
+  "navigationMenuItem.name": {
+    "Segments": "Segmenti"
+  },
+  "objectMetadata.description": {
+    "People who meet conditions, kept in a list": "Persone che soddisfano condizioni, tenute in un elenco"
+  },
+  "objectMetadata.labelPlural": {
+    "Segments": "Segmenti"
+  },
+  "objectMetadata.labelSingular": {
+    "Segment": "Segmento"
+  },
+  "pageLayout.name": {
+    "Segment layout": "Layout del segmento"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Home",
+    "Timeline": "Cronologia"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Campi",
+    "Timeline": "Cronologia"
+  },
+  "view.name": {
+    "All segments": "Tutti i segmenti",
+    "Segment fields": "Campi del segmento"
+  }
+}
