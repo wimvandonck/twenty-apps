@@ -1,10 +1,12 @@
 import { FORM_PAGE_SCRIPT } from 'src/constants/form-page-script';
 import { type FormDefinition } from 'src/types/form-definition';
+import { type PickerChoice } from 'src/types/picker-choice';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
 import { escapeHtml } from 'src/utils/escape-html.util';
 import { getFormSteps } from 'src/utils/get-form-steps.util';
 import { renderFieldHtml } from 'src/utils/render-field-html.util';
 import { renderPageHtml } from 'src/utils/render-page-html.util';
+import { renderPickerHtml } from 'src/utils/render-picker-html.util';
 
 // The complete public page for a form definition. Every step is in the page;
 // the script shows them one at a time.
@@ -12,6 +14,7 @@ export const renderFormHtml = (
   definition: FormDefinition,
   messages: PublicFormMessages,
   locale = 'en',
+  pickerChoices: Map<string, PickerChoice[]> = new Map(),
 ): string => {
   const steps = getFormSteps(definition);
   const hasSeveralRecords =
@@ -33,7 +36,15 @@ export const renderFormHtml = (
       return `<div class="field"><label class="check" for="${id}"><input id="${id}" type="checkbox" data-consent="${escapeHtml(consent.key)}"${required}><span>${escapeHtml(consent.label)}${marker}</span></label></div>`;
     })
     .join('');
-  // The boxes for consents and lists go at the end of the last step.
+  const pickers = definition.pickers
+    .map((picker) => renderPickerHtml(picker, pickerChoices.get(picker.key) ?? [], messages, locale))
+    .join('');
+  const totalHtml =
+    definition.pickers.length > 0
+      ? `<p class="total" data-total data-currency="${escapeHtml(definition.payment?.currencyCode ?? 'EUR')}" data-locale="${escapeHtml(locale)}">${escapeHtml(messages.total)}: <strong data-total-amount></strong></p>`
+      : '';
+  // Pickers, the total and the boxes for consents and lists go at the end of
+  // the last step.
   const stepsHtml = (steps.length > 0 ? steps : [{ title: '', sections: [] }])
     .map(
       (step, index, all) =>
@@ -44,7 +55,7 @@ export const renderFormHtml = (
                 .map((field) => renderFieldHtml(record.key, field, messages))
                 .join('')}</section>`,
           )
-          .join('')}${index === all.length - 1 ? consentBoxes + optIns : ''}</div>`,
+          .join('')}${index === all.length - 1 ? pickers + totalHtml + consentBoxes + optIns : ''}</div>`,
     )
     .join('');
 

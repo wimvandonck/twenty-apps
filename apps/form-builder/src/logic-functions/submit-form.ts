@@ -8,6 +8,7 @@ import { createRelationRecordLoader } from 'src/twenty-client/create-relation-re
 import { fetchPublishedForm } from 'src/twenty-client/fetch-published-form';
 import { type SubmissionOptIns, type SubmissionValues } from 'src/types/submission-values';
 import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
+import { loadPickerChoices } from 'src/utils/load-picker-choices.util';
 import { loadRelationOptions } from 'src/utils/load-relation-options.util';
 import { processSubmission } from 'src/utils/process-submission.util';
 
@@ -23,6 +24,7 @@ const handler = async (event: RoutePayload) => {
     values?: unknown;
     lists?: unknown;
     consents?: unknown;
+    picks?: unknown;
     website?: unknown;
     language?: unknown;
   };
@@ -55,6 +57,9 @@ const handler = async (event: RoutePayload) => {
   const userAgent = event.headers?.['user-agent']?.slice(0, 500);
   const result = await processSubmission(definition, values, createRecordApi(client), messages, optIns, {
     consentApi: createConsentApi(client),
+    // Prices come from the records in Twenty, never from the browser.
+    pickerChoices: await loadPickerChoices(definition, createRelationRecordLoader(client)),
+    picks: (typeof body.picks === 'object' && body.picks !== null ? body.picks : {}) as Record<string, Record<string, unknown>>,
     consents,
     language: typeof body.language === 'string' ? body.language : undefined,
     visitor: { ...(ipAddress ? { ipAddress } : {}), ...(userAgent ? { userAgent } : {}) },

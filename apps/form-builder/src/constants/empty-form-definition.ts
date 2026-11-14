@@ -10,4 +10,6 @@ export const EMPTY_FORM_DEFINITION: FormDefinition = {
   links: [],
   lists: [],
   consents: [],
+  pickers: [],
+  payment: null,
 };

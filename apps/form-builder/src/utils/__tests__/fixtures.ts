@@ -152,6 +152,8 @@ export const DEFINITION: FormDefinition = {
   ],
   lists: [],
   consents: [],
+  pickers: [],
+  payment: null,
 };
 
 export const NEWSLETTER = {

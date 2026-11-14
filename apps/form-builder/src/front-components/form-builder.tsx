@@ -17,6 +17,7 @@ import { FormPreview } from 'src/front-components/components/form-preview';
 import { LinksSection } from 'src/front-components/components/links-section';
 import { ConsentsSection } from 'src/front-components/components/consents-section';
 import { ListsSection } from 'src/front-components/components/lists-section';
+import { PickersSection } from 'src/front-components/components/pickers-section';
 import { OptionSelect } from 'src/front-components/components/option-select';
 import { RecordCard } from 'src/front-components/components/record-card';
 import { SettingsSection } from 'src/front-components/components/settings-section';
@@ -305,6 +306,7 @@ const FormBuilder = () => {
               <Tabs.List aria-label={t('Form')}>
                 <Tabs.Tab value="fields">{t('Fields')}</Tabs.Tab>
                 <Tabs.Tab value="links">{t('Links')}</Tabs.Tab>
+                <Tabs.Tab value="choices">{t('Choices and total')}</Tabs.Tab>
                 <Tabs.Tab value="consents">{t('Consents')}</Tabs.Tab>
                 <Tabs.Tab value="lists">{t('Lists')}</Tabs.Tab>
                 <Tabs.Tab value="settings">{t('Settings')}</Tabs.Tab>
@@ -354,6 +356,16 @@ const FormBuilder = () => {
                     links={definition.links}
                     hasCycle={hasCycle}
                     onChange={(links) => applyDefinition({ links })}
+                  />
+                </div>
+              </Tabs.Panel>
+              <Tabs.Panel value="choices">
+                <div style={panelStyle}>
+                  <PickersSection
+                    definition={definition}
+                    objects={objects}
+                    loadRecords={relationRecordLoader}
+                    onChange={applyDefinition}
                   />
                 </div>
               </Tabs.Panel>

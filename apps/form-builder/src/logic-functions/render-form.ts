@@ -7,6 +7,7 @@ import { createRelationRecordLoader } from 'src/twenty-client/create-relation-re
 import { fetchPublishedForm } from 'src/twenty-client/fetch-published-form';
 import { escapeHtml } from 'src/utils/escape-html.util';
 import { getPublicFormMessages } from 'src/utils/get-public-form-messages.util';
+import { loadPickerChoices } from 'src/utils/load-picker-choices.util';
 import { loadRelationOptions } from 'src/utils/load-relation-options.util';
 import { renderFormHtml } from 'src/utils/render-form-html.util';
 import { renderPageHtml } from 'src/utils/render-page-html.util';
@@ -35,7 +36,9 @@ const handler = async (event: RoutePayload) => {
     );
   }
 
-  return new Response(renderFormHtml(definition, messages, locale), { status: 200, headers: HTML_HEADERS });
+  const pickerChoices = await loadPickerChoices(definition, createRelationRecordLoader(client));
+
+  return new Response(renderFormHtml(definition, messages, locale, pickerChoices), { status: 200, headers: HTML_HEADERS });
 };
 
 export default defineLogicFunction({

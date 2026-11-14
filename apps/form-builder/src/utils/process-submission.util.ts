@@ -3,13 +3,17 @@ import {
   LIST_MEMBER_OBJECT_NAME_PLURAL,
   LIST_MEMBER_PERSON_JOIN_COLUMN,
 } from 'src/constants/list-objects';
+import { PAYMENT_OBJECT_NAME_PLURAL } from 'src/constants/payment-object';
 import { type ConsentApi } from 'src/types/consent-api';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type PublicFormMessages } from 'src/types/public-form-messages';
 import { type RecordApi } from 'src/types/record-api';
 import { type SubmissionResult } from 'src/types/submission-result';
 import { type SubmissionOptIns, type SubmissionValues } from 'src/types/submission-values';
+import { type PickerChoice } from 'src/types/picker-choice';
 import { buildConsentChanges } from 'src/utils/build-consent-changes.util';
+import { buildPickerLines } from 'src/utils/build-picker-lines.util';
+import { computeTotal } from 'src/utils/compute-total.util';
 import { buildMatchFilter } from 'src/utils/build-match-filter.util';
 import { buildRecordData } from 'src/utils/build-record-data.util';
 import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
@@ -21,6 +25,10 @@ export type SubmissionOptions = {
   consents?: SubmissionOptIns;
   language?: string;
   visitor?: { ipAddress?: string; userAgent?: string };
+  // The records each picker offers now, loaded from Twenty.
+  pickerChoices?: Map<string, PickerChoice[]>;
+  // What the visitor chose per picker: choice id -> quantity.
+  picks?: Record<string, Record<string, unknown>>;
 };
 
 // Validates a whole submission first, then writes the records in link order,
@@ -46,8 +54,30 @@ export const processSubmission = async (
     record,
     ...buildRecordData(record, values[record.key] ?? {}, messages),
   }));
+  const currencyCode = definition.payment?.currencyCode ?? 'EUR';
+  const pickerLines = definition.pickers.map((picker) => ({
+    picker,
+    ...buildPickerLines(
+      picker,
+      options.pickerChoices?.get(picker.key) ?? [],
+      options.picks?.[picker.key] ?? {},
+      messages,
+      currencyCode,
+    ),
+  }));
+  const pickersMicros = pickerLines.reduce((sum, { totalMicros }) => sum + totalMicros, 0);
+  const total = definition.payment
+    ? computeTotal(
+        definition.payment,
+        Object.fromEntries(built.map(({ record, data }) => [record.key, data])),
+        pickersMicros,
+        messages,
+      )
+    : { totalMicros: pickersMicros, errors: [] };
   const errors = [
     ...built.flatMap((entry) => entry.errors),
+    ...pickerLines.flatMap((entry) => entry.errors),
+    ...total.errors,
     ...definition.consents
       .filter((consent) => consent.required && consents[consent.key] !== true)
       .map((consent) => messages.required.replace('{label}', consent.label)),
@@ -57,7 +87,17 @@ export const processSubmission = async (
     return { ok: false, status: 422, errors };
   }
 
+  for (const { recordKey, fieldName } of definition.payment?.totalFields ?? []) {
+    const entry = built.find(({ record }) => record.key === recordKey);
+
+    if (entry) {
+      entry.data[fieldName] = { amountMicros: total.totalMicros, currencyCode };
+    }
+  }
+
   const recordIds = new Map<string, string>();
+  const lineIds = new Map<string, string[]>();
+  let paymentId: string | undefined;
   const createdKeys = new Set<string>();
   const created: Array<{ objectNamePlural: string; id: string }> = [];
 
@@ -85,6 +125,25 @@ export const processSubmission = async (
         createdKeys.add(record.key);
         created.push({ objectNamePlural: record.objectNamePlural, id });
       }
+    }
+
+    for (const { picker, lines } of pickerLines) {
+      const ids: string[] = [];
+
+      for (const line of lines) {
+        const data = { ...line };
+
+        for (const link of picker.line.links) {
+          data[link.joinColumnName] = recordIds.get(link.recordKey);
+        }
+
+        const id = await api.create(picker.line.objectNamePlural, data);
+
+        ids.push(id);
+        created.push({ objectNamePlural: picker.line.objectNamePlural, id });
+      }
+
+      lineIds.set(picker.key, ids);
     }
 
     for (const link of definition.links) {
@@ -139,6 +198,37 @@ export const processSubmission = async (
       }
     }
 
+    if (definition.payment?.createPayment && total.totalMicros > 0) {
+      const payerId = definition.payment.payerRecordKey ? recordIds.get(definition.payment.payerRecordKey) : undefined;
+
+      paymentId = await api.create(PAYMENT_OBJECT_NAME_PLURAL, {
+        name: definition.title || 'Form payment',
+        amount: { amountMicros: total.totalMicros, currencyCode },
+        status: 'OPEN',
+        ...(payerId ? { payerId } : {}),
+      });
+      created.push({ objectNamePlural: PAYMENT_OBJECT_NAME_PLURAL, id: paymentId });
+
+      for (const link of definition.payment.paymentLinks) {
+        if (link.recordKey) {
+          const record = definition.records.find(({ key }) => key === link.recordKey);
+          const id = recordIds.get(link.recordKey);
+
+          if (record && id) {
+            await api.update(record.objectNamePlural, id, { [link.joinColumnName]: paymentId });
+          }
+        }
+
+        if (link.pickerKey) {
+          const picker = definition.pickers.find(({ key }) => key === link.pickerKey);
+
+          for (const id of lineIds.get(link.pickerKey) ?? []) {
+            await api.update(picker?.line.objectNamePlural ?? '', id, { [link.joinColumnName]: paymentId });
+          }
+        }
+      }
+    }
+
     if (options.consentApi) {
       for (const [recordKey, changes] of buildConsentChanges(definition, consents, optIns, options.language)) {
         const personId = recordIds.get(recordKey);
@@ -158,5 +248,5 @@ export const processSubmission = async (
     return { ok: false, status: 500, errors: [messages.genericError] };
   }
 
-  return { ok: true };
+  return paymentId ? { ok: true, paymentId, totalMicros: total.totalMicros } : { ok: true };
 };
