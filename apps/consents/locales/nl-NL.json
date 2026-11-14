@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Standaardtekst naast het vinkje in formulieren",
+    "Explanation on the preferences page": "Uitleg op de voorkeurenpagina",
+    "Groups the changes of one form submission": "Groepeert de wijzigingen van één formulierinzending",
+    "Inactive types are hidden on forms and the preferences page": "Inactieve types verschijnen niet in formulieren en op de voorkeurenpagina",
+    "Lets people join or leave this list on the preferences page": "Laat mensen zich op de voorkeurenpagina in- of uitschrijven voor deze lijst",
+    "Link that confirms the consent while it is pending": "Link die de consent bevestigt zolang die in afwachting is",
+    "Personal link to the email preferences page": "Persoonlijke link naar de pagina met e-mailvoorkeuren",
+    "Shown on the preferences page": "Getoond op de voorkeurenpagina",
+    "The text as the person saw it": "De tekst zoals de persoon hem zag"
+  },
+  "fieldMetadata.label": {
+    "Action": "Actie",
+    "Active": "Actief",
+    "Changes": "Wijzigingen",
+    "Confirmation link": "Bevestigingslink",
+    "Confirmation sent at": "Bevestiging verstuurd op",
+    "Consent": "Consent",
+    "Consent text": "Consenttekst",
+    "Consents": "Consents",
+    "Description": "Beschrijving",
+    "Email type": "E-mailtype",
+    "Form": "Formulier",
+    "Granted at": "Gegeven op",
+    "IP address": "IP-adres",
+    "Language": "Taal",
+    "Lists": "Lijsten",
+    "Name": "Naam",
+    "Note": "Notitie",
+    "Occurred at": "Tijdstip",
+    "Person": "Persoon",
+    "Preferences link": "Voorkeurenlink",
+    "Required email type": "Vereist e-mailtype",
+    "Show on preferences page": "Tonen op voorkeurenpagina",
+    "Shown text": "Getoonde tekst",
+    "Source": "Bron",
+    "Status": "Status",
+    "Submission ID": "Inzending-ID",
+    "User agent": "Browser",
+    "Withdrawn at": "Ingetrokken op"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Consents",
+    "Email types": "E-mailtypes"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Een soort e-mail waarvoor toestemming nodig is, zoals de nieuwsbrief",
+    "A person's current consent for one email type": "De huidige toestemming van een persoon voor één e-mailtype",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Eén opt-in, bevestiging of intrekking, bewaard als bewijs"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Consentwijzigingen",
+    "Consents": "Consents",
+    "Email types": "E-mailtypes"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Consent",
+    "Consent change": "Consentwijziging",
+    "Email type": "E-mailtype"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Indeling consentwijziging",
+    "Consent layout": "Indeling consent",
+    "Email type layout": "Indeling e-mailtype"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Start",
+    "Timeline": "Tijdlijn"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Velden",
+    "Timeline": "Tijdlijn"
+  },
+  "view.name": {
+    "All consent changes": "Alle consentwijzigingen",
+    "All consents": "Alle consents",
+    "All email types": "Alle e-mailtypes",
+    "Consent change fields": "Velden consentwijziging",
+    "Consent fields": "Velden consent",
+    "Email type fields": "Velden e-mailtype"
+  }
+}
