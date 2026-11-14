@@ -143,6 +143,44 @@ export const FORM_PAGE_SCRIPT = `
     return lists;
   }
 
+  function collectPicks() {
+    var picks = {};
+    form.querySelectorAll('[data-picker]').forEach(function (input) {
+      var picker = (picks[input.dataset.picker] = picks[input.dataset.picker] || {});
+      if (input.type === 'radio') {
+        if (input.checked) picker.choice = input.dataset.choice;
+      } else {
+        picker[input.dataset.choice] = input.value;
+      }
+    });
+    return picks;
+  }
+
+  var totalElement = form.querySelector('[data-total]');
+
+  function updateTotal() {
+    if (!totalElement) return;
+    var micros = 0;
+    form.querySelectorAll('[data-picker]').forEach(function (input) {
+      var quantity = input.type === 'radio' ? (input.checked ? 1 : 0) : Math.max(0, parseInt(input.value, 10) || 0);
+      micros += quantity * Number(input.dataset.price || 0);
+    });
+    var amount = micros / 1000000;
+    var text;
+    try {
+      text = new Intl.NumberFormat(totalElement.dataset.locale, { style: 'currency', currency: totalElement.dataset.currency }).format(amount);
+    } catch (error) {
+      text = totalElement.dataset.currency + ' ' + amount.toFixed(2);
+    }
+    totalElement.querySelector('[data-total-amount]').textContent = text;
+  }
+
+  form.querySelectorAll('[data-picker]').forEach(function (input) {
+    input.addEventListener('input', updateTotal);
+    input.addEventListener('change', updateTotal);
+  });
+  updateTotal();
+
   function collectConsents() {
     var consents = {};
     form.querySelectorAll('[data-consent]').forEach(function (input) {
@@ -178,7 +216,7 @@ export const FORM_PAGE_SCRIPT = `
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ values: collect(), lists: collectLists(), consents: collectConsents(), website: form.elements.website.value, language: document.documentElement.lang })
+      body: JSON.stringify({ values: collect(), lists: collectLists(), consents: collectConsents(), picks: collectPicks(), website: form.elements.website.value, language: document.documentElement.lang })
     })
       .then(function (response) {
         return response.json().catch(function () { return {}; }).then(function (body) {

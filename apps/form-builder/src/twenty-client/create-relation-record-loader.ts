@@ -9,9 +9,9 @@ const MAX_CHOICES = 200;
 // Reads the records a relation field can point at over the REST API.
 export const createRelationRecordLoader =
   (client: RestApiClient): RelationRecordLoader =>
-  async (objectNamePlural) => {
+  async (objectNamePlural, filter) => {
     const response = await client.get<ListResponse>(`/rest/${objectNamePlural}`, {
-      query: { limit: MAX_CHOICES },
+      query: { limit: MAX_CHOICES, ...(filter ? { filter } : {}) },
     });
 
     return Object.values(response.data)[0] ?? [];

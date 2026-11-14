@@ -3,6 +3,7 @@ import { type ObjectMetadata } from 'src/types/object-metadata';
 import { enforceRequiredFields } from 'src/utils/enforce-required-fields.util';
 import { pruneConsents } from 'src/utils/prune-consents.util';
 import { pruneLinks } from 'src/utils/prune-links.util';
+import { prunePickers } from 'src/utils/prune-pickers.util';
 import { pruneLists } from 'src/utils/prune-lists.util';
 
 // Brings a definition in line with the workspace's current objects: required
@@ -21,6 +22,7 @@ export const normalizeDefinition = (
 
   return {
     ...definition,
+    ...prunePickers({ ...definition, records }),
     records,
     links: pruneLinks(definition.links, records, objects),
     lists: pruneLists(definition.lists, records),

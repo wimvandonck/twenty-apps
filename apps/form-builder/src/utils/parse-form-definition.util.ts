@@ -1,10 +1,13 @@
 import { LIST_PERSON_OBJECT_NAME_SINGULAR } from 'src/constants/list-objects';
+import { CURRENCY_CODES } from 'src/constants/currency-codes';
 import { MATCH_FIELD_TYPES } from 'src/constants/match-field-types';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type FormField } from 'src/types/form-field';
 import { type FormConsent } from 'src/types/form-consent';
 import { type FormLink } from 'src/types/form-link';
 import { type FormList } from 'src/types/form-list';
+import { type FormPayment } from 'src/types/form-payment';
+import { type FormPicker } from 'src/types/form-picker';
 import { type FormRecord } from 'src/types/form-record';
 import { hasUsableDefault } from 'src/utils/has-usable-default.util';
 import { isSupportedFieldType } from 'src/utils/is-supported-field-type.util';
@@ -217,6 +220,119 @@ const parseConsent = (value: unknown, records: FormRecord[]): FormConsent | null
   };
 };
 
+const asIdentifierOrNull = (value: unknown): string | null => (isIdentifier(value) ? value : null);
+
+const parseRecordFieldRefs = (value: unknown, recordKeys: string[]): Array<{ recordKey: string; fieldName: string }> | null => {
+  const refs = Array.isArray(value) ? value : [];
+
+  return refs.every((ref) => isObject(ref) && recordKeys.includes(ref.recordKey as string) && isIdentifier(ref.fieldName))
+    ? refs.map((ref) => ({ recordKey: ref.recordKey as string, fieldName: ref.fieldName as string }))
+    : null;
+};
+
+// Forms saved before pickers existed have none. A picker's line may only
+// point at records of the form.
+const parsePicker = (value: unknown, recordKeys: string[]): FormPicker | null => {
+  if (!isObject(value) || !isIdentifier(value.key) || !isObject(value.source) || !isObject(value.line)) {
+    return null;
+  }
+
+  const { source, line } = value;
+  const filters = Array.isArray(source.filters) ? source.filters : [];
+  const links = Array.isArray(line.links) ? line.links : [];
+  const copies = Array.isArray(line.copies) ? line.copies : [];
+
+  if (
+    !isIdentifier(source.objectNamePlural) ||
+    !isIdentifier(line.objectNamePlural) ||
+    !isIdentifier(line.sourceJoinColumnName) ||
+    !filters.every(
+      (filter) => isObject(filter) && isIdentifier(filter.fieldName) && ['string', 'boolean'].includes(typeof filter.value),
+    ) ||
+    !links.every((link) => isObject(link) && isIdentifier(link.joinColumnName) && recordKeys.includes(link.recordKey as string)) ||
+    !copies.every((copy) => isObject(copy) && isIdentifier(copy.sourceJoinColumnName) && isIdentifier(copy.lineJoinColumnName))
+  ) {
+    return null;
+  }
+
+  const maxQuantity = typeof value.maxQuantity === 'number' && Number.isInteger(value.maxQuantity) ? value.maxQuantity : 10;
+
+  return {
+    key: value.key,
+    label: asText(value.label, ''),
+    required: value.required === true,
+    single: value.single === true,
+    maxQuantity: Math.min(Math.max(maxQuantity, 1), 100),
+    source: {
+      objectNamePlural: source.objectNamePlural,
+      priceFieldName: asIdentifierOrNull(source.priceFieldName),
+      filters: filters.map((filter) => ({
+        fieldName: (filter as Record<string, unknown>).fieldName as string,
+        value: (filter as Record<string, unknown>).value as string | boolean,
+      })),
+    },
+    line: {
+      objectNamePlural: line.objectNamePlural,
+      sourceJoinColumnName: line.sourceJoinColumnName,
+      quantityFieldName: asIdentifierOrNull(line.quantityFieldName),
+      unitPriceFieldName: asIdentifierOrNull(line.unitPriceFieldName),
+      lineTotalFieldName: asIdentifierOrNull(line.lineTotalFieldName),
+      links: links.map((link) => ({
+        joinColumnName: (link as Record<string, unknown>).joinColumnName as string,
+        recordKey: (link as Record<string, unknown>).recordKey as string,
+      })),
+      copies: copies.map((copy) => ({
+        sourceJoinColumnName: (copy as Record<string, unknown>).sourceJoinColumnName as string,
+        lineJoinColumnName: (copy as Record<string, unknown>).lineJoinColumnName as string,
+      })),
+    },
+  };
+};
+
+// Returns undefined when the payment settings are malformed, null when there are none.
+const parsePayment = (value: unknown, recordKeys: string[], pickerKeys: string[]): FormPayment | null | undefined => {
+  if (value === null || value === undefined) {
+    return null;
+  }
+
+  if (!isObject(value) || typeof value.currencyCode !== 'string' || !CURRENCY_CODES.includes(value.currencyCode)) {
+    return undefined;
+  }
+
+  const amountFields = parseRecordFieldRefs(value.amountFields, recordKeys);
+  const totalFields = parseRecordFieldRefs(value.totalFields, recordKeys);
+  const paymentLinks = Array.isArray(value.paymentLinks) ? value.paymentLinks : [];
+  const linksValid = paymentLinks.every(
+    (link) =>
+      isObject(link) &&
+      isIdentifier(link.joinColumnName) &&
+      ((link.recordKey !== undefined && recordKeys.includes(link.recordKey as string)) ||
+        (link.pickerKey !== undefined && pickerKeys.includes(link.pickerKey as string))),
+  );
+  const payerRecordKey = typeof value.payerRecordKey === 'string' && recordKeys.includes(value.payerRecordKey) ? value.payerRecordKey : null;
+
+  if (amountFields === null || totalFields === null || !linksValid) {
+    return undefined;
+  }
+
+  return {
+    currencyCode: value.currencyCode,
+    amountFields,
+    totalFields,
+    createPayment: value.createPayment === true,
+    payerRecordKey,
+    paymentLinks: paymentLinks.map((link) => {
+      const entry = link as Record<string, unknown>;
+
+      return {
+        ...(entry.recordKey !== undefined ? { recordKey: entry.recordKey as string } : {}),
+        ...(entry.pickerKey !== undefined ? { pickerKey: entry.pickerKey as string } : {}),
+        joinColumnName: entry.joinColumnName as string,
+      };
+    }),
+  };
+};
+
 // Turns the stored JSON into a definition that is safe to render and write
 // from. Returns null when it is missing or malformed.
 export const parseFormDefinition = (value: unknown): FormDefinition | null => {
@@ -262,6 +378,19 @@ export const parseFormDefinition = (value: unknown): FormDefinition | null => {
     return null;
   }
 
+  const pickers = (Array.isArray(value.pickers) ? value.pickers : []).map((picker) => parsePicker(picker, recordKeys));
+  const pickerKeys = pickers.map((picker) => picker?.key);
+
+  if (pickers.some((picker) => picker === null) || new Set(pickerKeys).size !== pickerKeys.length) {
+    return null;
+  }
+
+  const payment = parsePayment(value.payment, recordKeys, pickerKeys as string[]);
+
+  if (payment === undefined) {
+    return null;
+  }
+
   return {
     version: 1,
     title: asText(value.title, ''),
@@ -272,5 +401,7 @@ export const parseFormDefinition = (value: unknown): FormDefinition | null => {
     links: links as FormLink[],
     lists: lists as FormList[],
     consents: consents as FormConsent[],
+    pickers: pickers as FormPicker[],
+    payment,
   };
 };

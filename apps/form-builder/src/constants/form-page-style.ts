@@ -26,4 +26,12 @@ button:disabled{opacity:.6;cursor:default}
 .message.error{color:#b4232a;background:#fdecec}
 .message.success{color:#18794e;background:#e9f6ee}
 .message ul{margin:0;padding-left:18px}
+.picker{border:0;margin:16px 0 12px;padding:0}
+.picker legend{font-size:14px;font-weight:600;margin:0 0 4px}
+.pick{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #ebebeb}
+.pick label{display:flex;flex:1;justify-content:space-between;gap:12px;min-width:0;font-weight:400}
+.pick .price{color:#666;white-space:nowrap}
+.pick input[type=number]{width:72px;flex:none}
+.pick input[type=radio]{width:16px;height:16px;flex:none}
+.total{font-size:15px;margin:12px 0 16px;color:inherit}
 `;

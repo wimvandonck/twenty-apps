@@ -22,7 +22,9 @@
     "networkError": "Could not reach the server. Please try again.",
     "unavailableTitle": "Form unavailable",
     "unavailableText": "This form does not exist or is not published.",
-    "misconfigured": "This form is misconfigured."
+    "misconfigured": "This form is misconfigured.",
+    "total": "Total",
+    "free": "Free"
   },
   "af-ZA": {
     "firstName": "Voornaam",
@@ -172,7 +174,9 @@
     "networkError": "Der Server ist nicht erreichbar. Bitte versuchen Sie es erneut.",
     "unavailableTitle": "Formular nicht verfügbar",
     "unavailableText": "Dieses Formular existiert nicht oder ist nicht veröffentlicht.",
-    "misconfigured": "Dieses Formular ist falsch konfiguriert."
+    "misconfigured": "Dieses Formular ist falsch konfiguriert.",
+    "total": "Gesamt",
+    "free": "Kostenlos"
   },
   "el-GR": {
     "firstName": "Όνομα",
@@ -222,7 +226,9 @@
     "networkError": "No se pudo contactar con el servidor. Inténtalo de nuevo.",
     "unavailableTitle": "Formulario no disponible",
     "unavailableText": "Este formulario no existe o no está publicado.",
-    "misconfigured": "Este formulario está mal configurado."
+    "misconfigured": "Este formulario está mal configurado.",
+    "total": "Total",
+    "free": "Gratis"
   },
   "fa-IR": {
     "firstName": "نام",
@@ -297,7 +303,9 @@
     "networkError": "Impossible de joindre le serveur. Veuillez réessayer.",
     "unavailableTitle": "Formulaire indisponible",
     "unavailableText": "Ce formulaire n’existe pas ou n’est pas publié.",
-    "misconfigured": "Ce formulaire est mal configuré."
+    "misconfigured": "Ce formulaire est mal configuré.",
+    "total": "Total",
+    "free": "Gratuit"
   },
   "he-IL": {
     "firstName": "שם פרטי",
@@ -472,7 +480,9 @@
     "networkError": "De server is niet bereikbaar. Probeer het opnieuw.",
     "unavailableTitle": "Formulier niet beschikbaar",
     "unavailableText": "Dit formulier bestaat niet of is niet gepubliceerd.",
-    "misconfigured": "Dit formulier is verkeerd ingesteld."
+    "misconfigured": "Dit formulier is verkeerd ingesteld.",
+    "total": "Totaal",
+    "free": "Gratis"
   },
   "no-NO": {
     "firstName": "Fornavn",

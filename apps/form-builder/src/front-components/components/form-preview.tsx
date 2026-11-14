@@ -116,6 +116,13 @@ export const FormPreview = ({ definition }: FormPreviewProps) => {
                 </div>
               ))}
               {isLast &&
+                definition.pickers.map((picker) => (
+                  <div key={picker.key} style={{ margin: '12px 0' }}>
+                    <strong>{picker.label}</strong>
+                    <div style={{ color: '#888', fontSize: 12 }}>{picker.source.objectNamePlural}</div>
+                  </div>
+                ))}
+              {isLast &&
                 definition.consents.map((consent) => (
                   <PreviewField
                     key={consent.key}
