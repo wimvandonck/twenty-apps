@@ -21,7 +21,7 @@ export const fetchPendingConsents = async (store: RecordStore): Promise<PendingC
 
       return {
         ...consent,
-        submissionId: latest?.submissionId ?? null,
+        submissionId: latest?.action === 'REQUESTED' ? (latest.submissionId ?? latest.id) : null,
         language: latest?.language ?? null,
         requestedAt: latest?.occurredAt ?? null,
         email: email && email !== '' ? email : null,
