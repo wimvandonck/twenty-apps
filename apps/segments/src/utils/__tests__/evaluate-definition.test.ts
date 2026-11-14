@@ -22,6 +22,7 @@ const createDeps = (overrides: Partial<SegmentDeps> = {}) => {
     findPersonIds: async (filter) => (JSON.stringify(filter).includes('Brussel') ? ['an', 'dries'] : []),
     findListMemberIds: async () => ['bram'],
     findAllPersonIds: async () => ['an', 'bram', 'charlotte', 'dries'],
+    findPersonLinks: async () => new Map([['an', 'acme'], ['bram', 'acme'], ['charlotte', 'globex']]),
     ...overrides,
   };
 
@@ -171,6 +172,32 @@ describe('evaluateDefinition', () => {
     );
 
     expect(sorted(result)).toEqual(['an']);
+  });
+
+  it('follows a link through the person, such as opportunities of their company', async () => {
+    const { deps, requests } = createDeps({
+      groupRelated: async (request) => {
+        requests.push(request);
+        return { values: new Map([['acme', 2]]) };
+      },
+    });
+    const opportunities = {
+      type: 'related' as const,
+      object: 'opportunities',
+      relation: 'company',
+      via: 'company',
+      filter: { stage: { eq: 'WON' } },
+    };
+
+    expect(sorted(await evaluateDefinition({ match: 'ALL', conditions: [opportunities] }, deps, NOW))).toEqual(['an', 'bram']);
+    expect(requests[0]).toMatchObject({ object: 'opportunities', relation: 'company' });
+
+    // Without a won opportunity counts as 0, also for people without a company.
+    expect(
+      sorted(
+        await evaluateDefinition({ match: 'ALL', conditions: [{ ...opportunities, operator: 'EQ', value: 0 }] }, deps, NOW),
+      ),
+    ).toEqual(['charlotte', 'dries']);
   });
 
   it('only loads everyone when a condition needs it', async () => {

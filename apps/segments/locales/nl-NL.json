@@ -60,6 +60,7 @@
   "Which records": "Welke records",
   "Yes": "Ja",
   "{count} people match": "{count} mensen voldoen",
+  "{records} of their {link}": "{records} van hun {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dynamische segmenten werken zichzelf bij; statische segmenten worden één keer berekend",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Id's van de mensen die de vorige keer voldeden, om nieuwe treffers te onderscheiden van mensen die met de hand verwijderd zijn",

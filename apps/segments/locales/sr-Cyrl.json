@@ -60,6 +60,7 @@
   "Which records": "Који записи",
   "Yes": "Да",
   "{count} people match": "Одговара особа: {count}",
+  "{records} of their {link}": "{records} њиховог {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Динамички сегменти се сами ажурирају; статички се израчунавају једном",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID-јеви особа које су се поклапале прошли пут, да би се нова поклапања разликовала од особа уклоњених ручно",

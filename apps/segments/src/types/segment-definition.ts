@@ -24,7 +24,13 @@ export type RelatedCondition = {
   // Plural API name of the linked object, such as "donations".
   object: string;
   // Field on that object that points at the person, such as "donor".
+  // With via, the field that points at the person's linked record instead.
   relation: string;
+  // A field on the person that points at another record, such as
+  // "company". The linked records then belong to that record: with via
+  // "company", object "opportunities" and relation "company", a person
+  // gets the opportunities of their company.
+  via?: string;
   // A saved view on that object whose filters apply.
   viewId?: string;
   filter?: Record<string, unknown>;

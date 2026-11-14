@@ -60,6 +60,7 @@
   "Which records": "哪些記錄",
   "Yes": "是",
   "{count} people match": "{count} 人符合",
+  "{records} of their {link}": "其{link}的{records}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "動態區隔會自動更新；靜態區隔只計算一次",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "上次符合的人員 ID，用來區分新符合者與手動移除的人員",

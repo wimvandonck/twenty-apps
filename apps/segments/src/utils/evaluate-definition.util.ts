@@ -74,13 +74,27 @@ const evaluateRelated = async (condition: RelatedCondition, context: Context): P
   const operator = condition.operator ?? 'GTE';
   const expected = toComparable(measure, condition.value ?? 1, context.now);
 
-  const { values } = await context.deps.groupRelated({
+  const { values: grouped } = await context.deps.groupRelated({
     object: condition.object,
     relation: condition.relation,
     viewId: condition.viewId,
     filter: condition.filter ? resolveRelativeDates(condition.filter, context.now) : undefined,
     aggregateField: aggregateFieldName(measure),
   });
+
+  // With via, the records were grouped per linked record, such as per
+  // company; each person takes the value of their own linked record.
+  const values = condition.via ? new Map<string, number>() : grouped;
+
+  if (condition.via) {
+    for (const [personId, linkedId] of await context.deps.findPersonLinks(condition.via)) {
+      const value = grouped.get(linkedId);
+
+      if (value !== undefined) {
+        values.set(personId, value);
+      }
+    }
+  }
 
   const matched = new Set(
     [...values].filter(([, value]) => compare(value, operator, expected)).map(([id]) => id),

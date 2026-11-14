@@ -60,6 +60,7 @@
   "Which records": "کدام رکوردها",
   "Yes": "بله",
   "{count} people match": "{count} نفر مطابقت دارند",
+  "{records} of their {link}": "{records} مربوط به {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "بخش‌های پویا خودشان به‌روز می‌شوند؛ بخش‌های ایستا یک بار محاسبه می‌شوند",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "شناسهٔ کسانی که دفعهٔ قبل مطابقت داشتند، برای تشخیص مطابقت‌های تازه از کسانی که دستی حذف شده‌اند",

@@ -7,7 +7,7 @@ export const newCondition = (type: Condition['type'], metadata: EditorMetadata):
   switch (type) {
     case 'related': {
       const [link] = personLinks(metadata.objects);
-      return { type, object: link?.object.namePlural ?? '', relation: link?.relation.name ?? '', value: 1 };
+      return { type, object: link?.object.namePlural ?? '', relation: link?.relation.name ?? '', via: link?.via?.name, value: 1 };
     }
     case 'property':
       return { type, filter: {}, field: '', operator: 'IS', value: '' };

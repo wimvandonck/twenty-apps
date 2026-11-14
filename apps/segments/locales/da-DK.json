@@ -60,6 +60,7 @@
   "Which records": "Hvilke poster",
   "Yes": "Ja",
   "{count} people match": "{count} personer passer",
+  "{records} of their {link}": "{records} fra deres {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dynamiske segmenter opdaterer sig selv; statiske segmenter beregnes én gang",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID'er på de personer, der matchede sidste gang, så nye match kan skelnes fra personer fjernet manuelt",

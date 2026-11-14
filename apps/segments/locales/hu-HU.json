@@ -60,6 +60,7 @@
   "Which records": "Mely rekordok",
   "Yes": "Igen",
   "{count} people match": "{count} személy felel meg",
+  "{records} of their {link}": "{records} a {link} alapján",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "A dinamikus szegmensek maguktól frissülnek; a statikusakat egyszer számítja ki",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "A legutóbb egyező személyek azonosítói, hogy az új egyezések elkülönüljenek a kézzel eltávolítottaktól",

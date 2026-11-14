@@ -18,7 +18,7 @@ import {
   type RelatedCondition,
 } from 'src/types/segment-definition';
 import { buildPropertyFilter, needsValue, operatorsFor, PROPERTY_FIELD_TYPES } from 'src/utils/build-property-filter.util';
-import { measurableFields, personLinks } from 'src/utils/person-links.util';
+import { measurableFields, personLinkKey, personLinks } from 'src/utils/person-links.util';
 
 type ConditionCardProps = {
   condition: Condition;
@@ -40,7 +40,7 @@ const RelatedFields = ({
 }) => {
   const { t } = useTranslate();
   const links = personLinks(metadata.objects);
-  const linkKey = `${condition.object}:${condition.relation}`;
+  const linkKey = personLinkKey(condition.object, condition.relation, condition.via);
   const object = metadata.objects.find((candidate) => candidate.namePlural === condition.object);
   const aggregate: Aggregate = condition.measure?.aggregate ?? 'COUNT';
   const fields = object && aggregate !== 'COUNT' ? measurableFields(object, aggregate) : [];
@@ -61,15 +61,25 @@ const RelatedFields = ({
     <div style={grid}>
       <OptionSelect
         label={t('Linked records')}
-        value={links.some((link) => `${link.object.namePlural}:${link.relation.name}` === linkKey) ? linkKey : ''}
+        value={links.some((link) => personLinkKey(link.object.namePlural, link.relation.name, link.via?.name) === linkKey) ? linkKey : ''}
         placeholder={t('Choose records')}
         options={links.map((link) => ({
-          value: `${link.object.namePlural}:${link.relation.name}`,
-          label: `${link.object.labelPlural} (${link.relation.label})`,
+          value: personLinkKey(link.object.namePlural, link.relation.name, link.via?.name),
+          label: link.via
+            ? t('{records} of their {link}', { records: link.object.labelPlural, link: link.via.label.toLowerCase() })
+            : `${link.object.labelPlural} (${link.relation.label})`,
         }))}
         onChange={(next) => {
-          const [nextObject, nextRelation] = next.split(':');
-          onChange({ ...condition, object: nextObject, relation: nextRelation, viewId: undefined, measure: undefined, value: 1 });
+          const [nextObject, nextRelation, nextVia] = next.split(':');
+          onChange({
+            ...condition,
+            object: nextObject,
+            relation: nextRelation,
+            via: nextVia === '' ? undefined : nextVia,
+            viewId: undefined,
+            measure: undefined,
+            value: 1,
+          });
         }}
       />
       <OptionSelect

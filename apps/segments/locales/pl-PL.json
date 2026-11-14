@@ -60,6 +60,7 @@
   "Which records": "Które rekordy",
   "Yes": "Tak",
   "{count} people match": "Pasujące osoby: {count}",
+  "{records} of their {link}": "{records} ich {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Segmenty dynamiczne aktualizują się same; statyczne są obliczane raz",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID osób, które pasowały ostatnio, aby odróżnić nowe dopasowania od osób usuniętych ręcznie",

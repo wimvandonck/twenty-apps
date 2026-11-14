@@ -20,4 +20,6 @@ export type SegmentDeps = {
   findPersonIds: (filter: Record<string, unknown>) => Promise<string[]>;
   findListMemberIds: (listId: string) => Promise<string[]>;
   findAllPersonIds: () => Promise<string[]>;
+  // Person id to the id of the record a field on the person points at.
+  findPersonLinks: (via: string) => Promise<Map<string, string>>;
 };

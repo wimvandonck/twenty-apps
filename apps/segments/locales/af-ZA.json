@@ -60,6 +60,7 @@
   "Which records": "Watter rekords",
   "Yes": "Ja",
   "{count} people match": "{count} mense pas",
+  "{records} of their {link}": "{records} van hul {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dinamiese segmente werk hulself by; statiese segmente word een keer bereken",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "ID's van die mense wat laas gepas het, om nuwe passings te onderskei van mense wat met die hand verwyder is",

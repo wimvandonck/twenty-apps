@@ -60,6 +60,7 @@
   "Which records": "Ποιες εγγραφές",
   "Yes": "Ναι",
   "{count} people match": "Ταιριάζουν {count} άτομα",
+  "{records} of their {link}": "{records} του {link} τους",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Τα δυναμικά τμήματα ενημερώνονται μόνα τους· τα στατικά υπολογίζονται μία φορά",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Αναγνωριστικά των ατόμων που ταίριαζαν την προηγούμενη φορά, για να ξεχωρίζουν οι νέες αντιστοιχίσεις από όσους αφαιρέθηκαν με το χέρι",

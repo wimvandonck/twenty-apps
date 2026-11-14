@@ -60,6 +60,7 @@
   "Which records": "対象のレコード",
   "Yes": "はい",
   "{count} people match": "{count} 人が該当",
+  "{records} of their {link}": "{link}の{records}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "動的セグメントは自動で更新され、静的セグメントは一度だけ計算されます",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "前回一致した人のID。新たな一致と手動で外された人を区別するために使います",

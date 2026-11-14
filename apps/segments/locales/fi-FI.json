@@ -60,6 +60,7 @@
   "Which records": "Mitkä tietueet",
   "Yes": "Kyllä",
   "{count} people match": "{count} henkilöä täsmää",
+  "{records} of their {link}": "{records}, heidän {link}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dynaamiset segmentit päivittyvät itsestään; staattiset lasketaan kerran",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "Viime kerralla täsmänneiden henkilöiden tunnukset, jotta uudet osumat erottuvat käsin poistetuista",

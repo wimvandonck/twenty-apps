@@ -60,6 +60,7 @@
   "Which records": "Qaysi yozuvlar",
   "Yes": "Ha",
   "{count} people match": "{count} kishi mos keladi",
+  "{records} of their {link}": "{link} bo‘yicha {records}",
   "fieldMetadata.description": {
     "Dynamic segments update themselves; static segments are calculated once": "Dinamik segmentlar o‘zi yangilanadi; statik segmentlar bir marta hisoblanadi",
     "Ids of the people who matched last time, used to tell new matches from people removed by hand": "O‘tgan safar mos kelgan odamlarning ID lari, yangi mosliklarni qo‘lda olib tashlanganlardan ajratish uchun",
