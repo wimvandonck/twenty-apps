@@ -220,7 +220,14 @@ export const FORM_PAGE_SCRIPT = `
     })
       .then(function (response) {
         return response.json().catch(function () { return {}; }).then(function (body) {
-          if (response.ok && body.ok) {
+          if (response.ok && body.ok && body.redirectUrl) {
+            // Leave an embedded form too: checkout pages refuse to load in a frame.
+            try {
+              window.top.location.href = body.redirectUrl;
+            } catch (error) {
+              window.location.href = body.redirectUrl;
+            }
+          } else if (response.ok && body.ok) {
             form.hidden = true;
             showMessage('success', [form.dataset.success]);
           } else {
