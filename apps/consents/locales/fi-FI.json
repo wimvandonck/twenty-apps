@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Oletusteksti ruudun vieressä lomakkeissa",
+    "Explanation on the preferences page": "Selitys asetussivulla",
+    "Groups the changes of one form submission": "Ryhmittelee yhden lomakelähetyksen muutokset",
+    "Inactive types are hidden on forms and the preferences page": "Passiiviset tyypit piilotetaan lomakkeista ja asetussivulta",
+    "Lets people join or leave this list on the preferences page": "Antaa liittyä listaan tai poistua siltä asetussivulla",
+    "Link that confirms the consent while it is pending": "Linkki, joka vahvistaa suostumuksen sen odottaessa",
+    "Personal link to the email preferences page": "Henkilökohtainen linkki sähköpostiasetusten sivulle",
+    "Shown on the preferences page": "Näytetään asetussivulla",
+    "The text as the person saw it": "Teksti sellaisena kuin henkilö sen näki"
+  },
+  "fieldMetadata.label": {
+    "Action": "Toiminto",
+    "Active": "Aktiivinen",
+    "Changes": "Muutokset",
+    "Confirmation link": "Vahvistuslinkki",
+    "Confirmation sent at": "Vahvistus lähetetty",
+    "Consent": "Suostumus",
+    "Consent text": "Suostumusteksti",
+    "Consents": "Suostumukset",
+    "Description": "Kuvaus",
+    "Email type": "Sähköpostityyppi",
+    "Form": "Lomake",
+    "Granted at": "Annettu",
+    "IP address": "IP-osoite",
+    "Language": "Kieli",
+    "Lists": "Listat",
+    "Name": "Nimi",
+    "Note": "Muistiinpano",
+    "Occurred at": "Ajankohta",
+    "Person": "Henkilö",
+    "Preferences link": "Asetuslinkki",
+    "Required email type": "Vaadittu sähköpostityyppi",
+    "Show on preferences page": "Näytä asetussivulla",
+    "Shown text": "Näytetty teksti",
+    "Source": "Lähde",
+    "Status": "Tila",
+    "Submission ID": "Lähetystunnus",
+    "User agent": "Selain",
+    "Withdrawn at": "Peruutettu"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Suostumukset",
+    "Email types": "Sähköpostityypit"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Sähköpostityyppi, joka vaatii suostumuksen, kuten uutiskirje",
+    "A person's current consent for one email type": "Henkilön nykyinen suostumus yhteen sähköpostityyppiin",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Yksi tilaus, vahvistus tai peruutus, säilytetty todisteena"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Suostumusmuutokset",
+    "Consents": "Suostumukset",
+    "Email types": "Sähköpostityypit"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Suostumus",
+    "Consent change": "Suostumusmuutos",
+    "Email type": "Sähköpostityyppi"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Suostumusmuutoksen asettelu",
+    "Consent layout": "Suostumuksen asettelu",
+    "Email type layout": "Sähköpostityypin asettelu"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Etusivu",
+    "Timeline": "Aikajana"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Kentät",
+    "Timeline": "Aikajana"
+  },
+  "view.name": {
+    "All consent changes": "Kaikki suostumusmuutokset",
+    "All consents": "Kaikki suostumukset",
+    "All email types": "Kaikki sähköpostityypit",
+    "Consent change fields": "Suostumusmuutoksen kentät",
+    "Consent fields": "Suostumuksen kentät",
+    "Email type fields": "Sähköpostityypin kentät"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "متن پیش‌فرض کنار کادر در فرم‌ها",
+    "Explanation on the preferences page": "توضیح در صفحه ترجیحات",
+    "Groups the changes of one form submission": "تغییرات یک ارسال فرم را گروه‌بندی می‌کند",
+    "Inactive types are hidden on forms and the preferences page": "انواع غیرفعال در فرم‌ها و صفحه ترجیحات پنهان‌اند",
+    "Lets people join or leave this list on the preferences page": "امکان پیوستن یا ترک این فهرست در صفحه ترجیحات",
+    "Link that confirms the consent while it is pending": "پیوندی که رضایت را تا زمانی که در انتظار است تأیید می‌کند",
+    "Personal link to the email preferences page": "پیوند شخصی به صفحه ترجیحات ایمیل",
+    "Shown on the preferences page": "در صفحه ترجیحات نمایش داده می‌شود",
+    "The text as the person saw it": "متن همان‌طور که فرد دید"
+  },
+  "fieldMetadata.label": {
+    "Action": "اقدام",
+    "Active": "فعال",
+    "Changes": "تغییرات",
+    "Confirmation link": "پیوند تأیید",
+    "Confirmation sent at": "تأیید ارسال شد",
+    "Consent": "رضایت",
+    "Consent text": "متن رضایت",
+    "Consents": "رضایت‌ها",
+    "Description": "توضیحات",
+    "Email type": "نوع ایمیل",
+    "Form": "فرم",
+    "Granted at": "داده‌شده در",
+    "IP address": "نشانی IP",
+    "Language": "زبان",
+    "Lists": "فهرست‌ها",
+    "Name": "نام",
+    "Note": "یادداشت",
+    "Occurred at": "زمان",
+    "Person": "فرد",
+    "Preferences link": "پیوند ترجیحات",
+    "Required email type": "نوع ایمیل لازم",
+    "Show on preferences page": "نمایش در صفحه ترجیحات",
+    "Shown text": "متن نمایش‌داده‌شده",
+    "Source": "منبع",
+    "Status": "وضعیت",
+    "Submission ID": "شناسه ارسال",
+    "User agent": "مرورگر",
+    "Withdrawn at": "لغوشده در"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "رضایت‌ها",
+    "Email types": "انواع ایمیل"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "نوعی ایمیل که به رضایت نیاز دارد، مانند خبرنامه",
+    "A person's current consent for one email type": "رضایت فعلی یک فرد برای یک نوع ایمیل",
+    "One opt-in, confirmation or withdrawal, kept as proof": "یک عضویت، تأیید یا لغو، نگهداری‌شده به‌عنوان مدرک"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "تغییرات رضایت",
+    "Consents": "رضایت‌ها",
+    "Email types": "انواع ایمیل"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "رضایت",
+    "Consent change": "تغییر رضایت",
+    "Email type": "نوع ایمیل"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "چیدمان تغییر رضایت",
+    "Consent layout": "چیدمان رضایت",
+    "Email type layout": "چیدمان نوع ایمیل"
+  },
+  "pageLayoutTab.title": {
+    "Home": "خانه",
+    "Timeline": "خط زمانی"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "فیلدها",
+    "Timeline": "خط زمانی"
+  },
+  "view.name": {
+    "All consent changes": "همه تغییرات رضایت",
+    "All consents": "همه رضایت‌ها",
+    "All email types": "همه انواع ایمیل",
+    "Consent change fields": "فیلدهای تغییر رضایت",
+    "Consent fields": "فیلدهای رضایت",
+    "Email type fields": "فیلدهای نوع ایمیل"
+  }
+}

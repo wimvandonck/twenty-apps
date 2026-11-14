@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "טקסט ברירת מחדל ליד התיבה בטפסים",
+    "Explanation on the preferences page": "הסבר בדף ההעדפות",
+    "Groups the changes of one form submission": "מקבץ את השינויים של הגשת טופס אחת",
+    "Inactive types are hidden on forms and the preferences page": "סוגים לא פעילים מוסתרים בטפסים ובדף ההעדפות",
+    "Lets people join or leave this list on the preferences page": "מאפשר להצטרף לרשימה או לעזוב אותה בדף ההעדפות",
+    "Link that confirms the consent while it is pending": "קישור שמאשר את ההסכמה כל עוד היא ממתינה",
+    "Personal link to the email preferences page": "קישור אישי לדף העדפות הדוא\"ל",
+    "Shown on the preferences page": "מוצג בדף ההעדפות",
+    "The text as the person saw it": "הטקסט כפי שהאדם ראה אותו"
+  },
+  "fieldMetadata.label": {
+    "Action": "פעולה",
+    "Active": "פעיל",
+    "Changes": "שינויים",
+    "Confirmation link": "קישור אישור",
+    "Confirmation sent at": "האישור נשלח",
+    "Consent": "הסכמה",
+    "Consent text": "נוסח ההסכמה",
+    "Consents": "הסכמות",
+    "Description": "תיאור",
+    "Email type": "סוג דוא\"ל",
+    "Form": "טופס",
+    "Granted at": "ניתן ב",
+    "IP address": "כתובת IP",
+    "Language": "שפה",
+    "Lists": "רשימות",
+    "Name": "שם",
+    "Note": "הערה",
+    "Occurred at": "זמן",
+    "Person": "אדם",
+    "Preferences link": "קישור העדפות",
+    "Required email type": "סוג דוא\"ל נדרש",
+    "Show on preferences page": "הצגה בדף ההעדפות",
+    "Shown text": "טקסט שהוצג",
+    "Source": "מקור",
+    "Status": "סטטוס",
+    "Submission ID": "מזהה הגשה",
+    "User agent": "דפדפן",
+    "Withdrawn at": "בוטל ב"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "הסכמות",
+    "Email types": "סוגי דוא\"ל"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "סוג דוא\"ל שדורש הסכמה, כמו הניוזלטר",
+    "A person's current consent for one email type": "ההסכמה הנוכחית של אדם לסוג דוא\"ל אחד",
+    "One opt-in, confirmation or withdrawal, kept as proof": "הרשמה, אישור או ביטול אחד, שנשמרים כראיה"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "שינויי הסכמה",
+    "Consents": "הסכמות",
+    "Email types": "סוגי דוא\"ל"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "הסכמה",
+    "Consent change": "שינוי הסכמה",
+    "Email type": "סוג דוא\"ל"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "פריסת שינוי הסכמה",
+    "Consent layout": "פריסת הסכמה",
+    "Email type layout": "פריסת סוג דוא\"ל"
+  },
+  "pageLayoutTab.title": {
+    "Home": "בית",
+    "Timeline": "ציר זמן"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "שדות",
+    "Timeline": "ציר זמן"
+  },
+  "view.name": {
+    "All consent changes": "כל שינויי ההסכמה",
+    "All consents": "כל ההסכמות",
+    "All email types": "כל סוגי הדוא\"ל",
+    "Consent change fields": "שדות שינוי הסכמה",
+    "Consent fields": "שדות הסכמה",
+    "Email type fields": "שדות סוג דוא\"ל"
+  }
+}

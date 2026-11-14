@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "フォームのチェックボックス横の既定テキスト",
+    "Explanation on the preferences page": "設定ページの説明",
+    "Groups the changes of one form submission": "1 回のフォーム送信の変更をまとめます",
+    "Inactive types are hidden on forms and the preferences page": "無効な種別はフォームと設定ページに表示されません",
+    "Lets people join or leave this list on the preferences page": "設定ページでこのリストへの参加・退出を可能にします",
+    "Link that confirms the consent while it is pending": "保留中の同意を確認するリンク",
+    "Personal link to the email preferences page": "メール設定ページへの個人用リンク",
+    "Shown on the preferences page": "設定ページに表示されます",
+    "The text as the person saw it": "本人が見たとおりのテキスト"
+  },
+  "fieldMetadata.label": {
+    "Action": "アクション",
+    "Active": "有効",
+    "Changes": "変更",
+    "Confirmation link": "確認リンク",
+    "Confirmation sent at": "確認送信日時",
+    "Consent": "同意",
+    "Consent text": "同意文",
+    "Consents": "同意",
+    "Description": "説明",
+    "Email type": "メール種別",
+    "Form": "フォーム",
+    "Granted at": "同意日時",
+    "IP address": "IP アドレス",
+    "Language": "言語",
+    "Lists": "リスト",
+    "Name": "名前",
+    "Note": "メモ",
+    "Occurred at": "日時",
+    "Person": "人",
+    "Preferences link": "設定リンク",
+    "Required email type": "必須のメール種別",
+    "Show on preferences page": "設定ページに表示",
+    "Shown text": "表示されたテキスト",
+    "Source": "ソース",
+    "Status": "ステータス",
+    "Submission ID": "送信 ID",
+    "User agent": "ブラウザー",
+    "Withdrawn at": "撤回日時"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "同意",
+    "Email types": "メール種別"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "ニュースレターのように同意が必要なメールの種類",
+    "A person's current consent for one email type": "1 つのメール種別に対する人の現在の同意",
+    "One opt-in, confirmation or withdrawal, kept as proof": "証拠として保管される 1 回の登録・確認・撤回"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "同意の変更",
+    "Consents": "同意",
+    "Email types": "メール種別"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "同意",
+    "Consent change": "同意の変更",
+    "Email type": "メール種別"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "同意の変更のレイアウト",
+    "Consent layout": "同意のレイアウト",
+    "Email type layout": "メール種別のレイアウト"
+  },
+  "pageLayoutTab.title": {
+    "Home": "ホーム",
+    "Timeline": "タイムライン"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "フィールド",
+    "Timeline": "タイムライン"
+  },
+  "view.name": {
+    "All consent changes": "すべての同意の変更",
+    "All consents": "すべての同意",
+    "All email types": "すべてのメール種別",
+    "Consent change fields": "同意の変更のフィールド",
+    "Consent fields": "同意のフィールド",
+    "Email type fields": "メール種別のフィールド"
+  }
+}

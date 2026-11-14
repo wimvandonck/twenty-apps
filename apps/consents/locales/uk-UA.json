@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Типовий текст біля прапорця у формах",
+    "Explanation on the preferences page": "Пояснення на сторінці налаштувань",
+    "Groups the changes of one form submission": "Групує зміни одного надсилання форми",
+    "Inactive types are hidden on forms and the preferences page": "Неактивні типи приховано у формах і на сторінці налаштувань",
+    "Lets people join or leave this list on the preferences page": "Дозволяє приєднатися до списку або вийти з нього на сторінці налаштувань",
+    "Link that confirms the consent while it is pending": "Посилання, що підтверджує згоду, поки вона очікує",
+    "Personal link to the email preferences page": "Особисте посилання на сторінку налаштувань листів",
+    "Shown on the preferences page": "Показано на сторінці налаштувань",
+    "The text as the person saw it": "Текст у тому вигляді, у якому його бачила особа"
+  },
+  "fieldMetadata.label": {
+    "Action": "Дія",
+    "Active": "Активно",
+    "Changes": "Зміни",
+    "Confirmation link": "Посилання підтвердження",
+    "Confirmation sent at": "Підтвердження надіслано",
+    "Consent": "Згода",
+    "Consent text": "Текст згоди",
+    "Consents": "Згоди",
+    "Description": "Опис",
+    "Email type": "Тип листів",
+    "Form": "Форма",
+    "Granted at": "Надано",
+    "IP address": "IP-адреса",
+    "Language": "Мова",
+    "Lists": "Списки",
+    "Name": "Назва",
+    "Note": "Нотатка",
+    "Occurred at": "Час",
+    "Person": "Особа",
+    "Preferences link": "Посилання на налаштування",
+    "Required email type": "Обов'язковий тип листів",
+    "Show on preferences page": "Показувати на сторінці налаштувань",
+    "Shown text": "Показаний текст",
+    "Source": "Джерело",
+    "Status": "Статус",
+    "Submission ID": "ID надсилання",
+    "User agent": "Браузер",
+    "Withdrawn at": "Відкликано"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Згоди",
+    "Email types": "Типи листів"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Тип листів, для якого потрібна згода, наприклад розсилка",
+    "A person's current consent for one email type": "Поточна згода особи на один тип листів",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Одна підписка, підтвердження чи відкликання, збережені як доказ"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Зміни згод",
+    "Consents": "Згоди",
+    "Email types": "Типи листів"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Згода",
+    "Consent change": "Зміна згоди",
+    "Email type": "Тип листів"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Макет зміни згоди",
+    "Consent layout": "Макет згоди",
+    "Email type layout": "Макет типу листів"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Головна",
+    "Timeline": "Хронологія"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поля",
+    "Timeline": "Хронологія"
+  },
+  "view.name": {
+    "All consent changes": "Усі зміни згод",
+    "All consents": "Усі згоди",
+    "All email types": "Усі типи листів",
+    "Consent change fields": "Поля зміни згоди",
+    "Consent fields": "Поля згоди",
+    "Email type fields": "Поля типу листів"
+  }
+}

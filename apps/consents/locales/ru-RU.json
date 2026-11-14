@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Текст по умолчанию рядом с флажком в формах",
+    "Explanation on the preferences page": "Пояснение на странице настроек",
+    "Groups the changes of one form submission": "Группирует изменения одной отправки формы",
+    "Inactive types are hidden on forms and the preferences page": "Неактивные типы скрыты в формах и на странице настроек",
+    "Lets people join or leave this list on the preferences page": "Позволяет вступить в список или выйти из него на странице настроек",
+    "Link that confirms the consent while it is pending": "Ссылка, подтверждающая согласие, пока оно ожидает",
+    "Personal link to the email preferences page": "Личная ссылка на страницу настроек писем",
+    "Shown on the preferences page": "Показано на странице настроек",
+    "The text as the person saw it": "Текст в том виде, в каком его видел человек"
+  },
+  "fieldMetadata.label": {
+    "Action": "Действие",
+    "Active": "Активно",
+    "Changes": "Изменения",
+    "Confirmation link": "Ссылка подтверждения",
+    "Confirmation sent at": "Подтверждение отправлено",
+    "Consent": "Согласие",
+    "Consent text": "Текст согласия",
+    "Consents": "Согласия",
+    "Description": "Описание",
+    "Email type": "Тип писем",
+    "Form": "Форма",
+    "Granted at": "Дано",
+    "IP address": "IP-адрес",
+    "Language": "Язык",
+    "Lists": "Списки",
+    "Name": "Название",
+    "Note": "Заметка",
+    "Occurred at": "Время",
+    "Person": "Человек",
+    "Preferences link": "Ссылка на настройки",
+    "Required email type": "Обязательный тип писем",
+    "Show on preferences page": "Показывать на странице настроек",
+    "Shown text": "Показанный текст",
+    "Source": "Источник",
+    "Status": "Статус",
+    "Submission ID": "ID отправки",
+    "User agent": "Браузер",
+    "Withdrawn at": "Отозвано"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Согласия",
+    "Email types": "Типы писем"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Тип писем, для которого нужно согласие, например рассылка",
+    "A person's current consent for one email type": "Текущее согласие человека на один тип писем",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Одна подписка, подтверждение или отзыв, сохранённые как доказательство"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Изменения согласий",
+    "Consents": "Согласия",
+    "Email types": "Типы писем"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Согласие",
+    "Consent change": "Изменение согласия",
+    "Email type": "Тип писем"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Макет изменения согласия",
+    "Consent layout": "Макет согласия",
+    "Email type layout": "Макет типа писем"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Главная",
+    "Timeline": "Хронология"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Поля",
+    "Timeline": "Хронология"
+  },
+  "view.name": {
+    "All consent changes": "Все изменения согласий",
+    "All consents": "Все согласия",
+    "All email types": "Все типы писем",
+    "Consent change fields": "Поля изменения согласия",
+    "Consent fields": "Поля согласия",
+    "Email type fields": "Поля типа писем"
+  }
+}

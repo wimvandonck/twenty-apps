@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Texto predeterminado junto a la casilla en los formularios",
+    "Explanation on the preferences page": "Explicación en la página de preferencias",
+    "Groups the changes of one form submission": "Agrupa los cambios de un envío de formulario",
+    "Inactive types are hidden on forms and the preferences page": "Los tipos inactivos se ocultan en los formularios y en la página de preferencias",
+    "Lets people join or leave this list on the preferences page": "Permite unirse a esta lista o dejarla en la página de preferencias",
+    "Link that confirms the consent while it is pending": "Enlace que confirma el consentimiento mientras está pendiente",
+    "Personal link to the email preferences page": "Enlace personal a la página de preferencias de correo",
+    "Shown on the preferences page": "Se muestra en la página de preferencias",
+    "The text as the person saw it": "El texto tal como lo vio la persona"
+  },
+  "fieldMetadata.label": {
+    "Action": "Acción",
+    "Active": "Activo",
+    "Changes": "Cambios",
+    "Confirmation link": "Enlace de confirmación",
+    "Confirmation sent at": "Confirmación enviada el",
+    "Consent": "Consentimiento",
+    "Consent text": "Texto de consentimiento",
+    "Consents": "Consentimientos",
+    "Description": "Descripción",
+    "Email type": "Tipo de correo",
+    "Form": "Formulario",
+    "Granted at": "Concedido el",
+    "IP address": "Dirección IP",
+    "Language": "Idioma",
+    "Lists": "Listas",
+    "Name": "Nombre",
+    "Note": "Nota",
+    "Occurred at": "Fecha",
+    "Person": "Persona",
+    "Preferences link": "Enlace de preferencias",
+    "Required email type": "Tipo de correo requerido",
+    "Show on preferences page": "Mostrar en la página de preferencias",
+    "Shown text": "Texto mostrado",
+    "Source": "Origen",
+    "Status": "Estado",
+    "Submission ID": "ID de envío",
+    "User agent": "Navegador",
+    "Withdrawn at": "Retirado el"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Consentimientos",
+    "Email types": "Tipos de correo"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Un tipo de correo que necesita consentimiento, como el boletín",
+    "A person's current consent for one email type": "El consentimiento actual de una persona para un tipo de correo",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Una alta, confirmación o retirada, guardada como prueba"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Cambios de consentimiento",
+    "Consents": "Consentimientos",
+    "Email types": "Tipos de correo"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Consentimiento",
+    "Consent change": "Cambio de consentimiento",
+    "Email type": "Tipo de correo"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Diseño del cambio de consentimiento",
+    "Consent layout": "Diseño del consentimiento",
+    "Email type layout": "Diseño del tipo de correo"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Inicio",
+    "Timeline": "Cronología"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Campos",
+    "Timeline": "Cronología"
+  },
+  "view.name": {
+    "All consent changes": "Todos los cambios de consentimiento",
+    "All consents": "Todos los consentimientos",
+    "All email types": "Todos los tipos de correo",
+    "Consent change fields": "Campos del cambio de consentimiento",
+    "Consent fields": "Campos del consentimiento",
+    "Email type fields": "Campos del tipo de correo"
+  }
+}

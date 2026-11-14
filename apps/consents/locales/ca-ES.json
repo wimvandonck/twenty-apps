@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Text per defecte al costat de la casella als formularis",
+    "Explanation on the preferences page": "Explicació a la pàgina de preferències",
+    "Groups the changes of one form submission": "Agrupa els canvis d'un enviament de formulari",
+    "Inactive types are hidden on forms and the preferences page": "Els tipus inactius s'amaguen als formularis i a la pàgina de preferències",
+    "Lets people join or leave this list on the preferences page": "Permet unir-se o sortir d'aquesta llista a la pàgina de preferències",
+    "Link that confirms the consent while it is pending": "Enllaç que confirma el consentiment mentre està pendent",
+    "Personal link to the email preferences page": "Enllaç personal a la pàgina de preferències de correu",
+    "Shown on the preferences page": "Es mostra a la pàgina de preferències",
+    "The text as the person saw it": "El text tal com el va veure la persona"
+  },
+  "fieldMetadata.label": {
+    "Action": "Acció",
+    "Active": "Actiu",
+    "Changes": "Canvis",
+    "Confirmation link": "Enllaç de confirmació",
+    "Confirmation sent at": "Confirmació enviada el",
+    "Consent": "Consentiment",
+    "Consent text": "Text de consentiment",
+    "Consents": "Consentiments",
+    "Description": "Descripció",
+    "Email type": "Tipus de correu",
+    "Form": "Formulari",
+    "Granted at": "Concedit el",
+    "IP address": "Adreça IP",
+    "Language": "Idioma",
+    "Lists": "Llistes",
+    "Name": "Nom",
+    "Note": "Nota",
+    "Occurred at": "Data",
+    "Person": "Persona",
+    "Preferences link": "Enllaç de preferències",
+    "Required email type": "Tipus de correu necessari",
+    "Show on preferences page": "Mostra a la pàgina de preferències",
+    "Shown text": "Text mostrat",
+    "Source": "Origen",
+    "Status": "Estat",
+    "Submission ID": "ID de l'enviament",
+    "User agent": "Navegador",
+    "Withdrawn at": "Retirat el"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Consentiments",
+    "Email types": "Tipus de correu"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "Un tipus de correu que necessita consentiment, com el butlletí",
+    "A person's current consent for one email type": "El consentiment actual d'una persona per a un tipus de correu",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Una alta, confirmació o retirada, guardada com a prova"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Canvis de consentiment",
+    "Consents": "Consentiments",
+    "Email types": "Tipus de correu"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Consentiment",
+    "Consent change": "Canvi de consentiment",
+    "Email type": "Tipus de correu"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Disseny del canvi de consentiment",
+    "Consent layout": "Disseny del consentiment",
+    "Email type layout": "Disseny del tipus de correu"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Inici",
+    "Timeline": "Cronologia"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Camps",
+    "Timeline": "Cronologia"
+  },
+  "view.name": {
+    "All consent changes": "Tots els canvis de consentiment",
+    "All consents": "Tots els consentiments",
+    "All email types": "Tots els tipus de correu",
+    "Consent change fields": "Camps del canvi de consentiment",
+    "Consent fields": "Camps del consentiment",
+    "Email type fields": "Camps del tipus de correu"
+  }
+}

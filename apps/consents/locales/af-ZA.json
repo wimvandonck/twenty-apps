@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Verstekteks langs die blokkie in vorms",
+    "Explanation on the preferences page": "Verduideliking op die voorkeurbladsy",
+    "Groups the changes of one form submission": "Groepeer die veranderinge van een vorminskrywing",
+    "Inactive types are hidden on forms and the preferences page": "Onaktiewe soorte word in vorms en op die voorkeurbladsy versteek",
+    "Lets people join or leave this list on the preferences page": "Laat mense op die voorkeurbladsy by hierdie lys aansluit of dit verlaat",
+    "Link that confirms the consent while it is pending": "Skakel wat die toestemming bevestig terwyl dit hangende is",
+    "Personal link to the email preferences page": "Persoonlike skakel na die bladsy met e-posvoorkeure",
+    "Shown on the preferences page": "Gewys op die voorkeurbladsy",
+    "The text as the person saw it": "Die teks soos die persoon dit gesien het"
+  },
+  "fieldMetadata.label": {
+    "Action": "Aksie",
+    "Active": "Aktief",
+    "Changes": "Veranderinge",
+    "Confirmation link": "Bevestigingskakel",
+    "Confirmation sent at": "Bevestiging gestuur op",
+    "Consent": "Toestemming",
+    "Consent text": "Toestemmingsteks",
+    "Consents": "Toestemmings",
+    "Description": "Beskrywing",
+    "Email type": "E-possoort",
+    "Form": "Vorm",
+    "Granted at": "Gegee op",
+    "IP address": "IP-adres",
+    "Language": "Taal",
+    "Lists": "Lyste",
+    "Name": "Naam",
+    "Note": "Nota",
+    "Occurred at": "Tydstip",
+    "Person": "Persoon",
+    "Preferences link": "Voorkeurskakel",
+    "Required email type": "Vereiste e-possoort",
+    "Show on preferences page": "Wys op voorkeurbladsy",
+    "Shown text": "Gewysde teks",
+    "Source": "Bron",
+    "Status": "Status",
+    "Submission ID": "Inskrywing-ID",
+    "User agent": "Blaaier",
+    "Withdrawn at": "Onttrek op"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Toestemmings",
+    "Email types": "E-possoorte"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "'n Soort e-pos wat toestemming nodig het, soos die nuusbrief",
+    "A person's current consent for one email type": "'n Persoon se huidige toestemming vir een e-possoort",
+    "One opt-in, confirmation or withdrawal, kept as proof": "Een inskrywing, bevestiging of onttrekking, as bewys gehou"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Toestemmingsveranderinge",
+    "Consents": "Toestemmings",
+    "Email types": "E-possoorte"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Toestemming",
+    "Consent change": "Toestemmingsverandering",
+    "Email type": "E-possoort"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Uitleg van toestemmingsverandering",
+    "Consent layout": "Uitleg van toestemming",
+    "Email type layout": "Uitleg van e-possoort"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Tuis",
+    "Timeline": "Tydlyn"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Velde",
+    "Timeline": "Tydlyn"
+  },
+  "view.name": {
+    "All consent changes": "Alle toestemmingsveranderinge",
+    "All consents": "Alle toestemmings",
+    "All email types": "Alle e-possoorte",
+    "Consent change fields": "Velde van toestemmingsverandering",
+    "Consent fields": "Velde van toestemming",
+    "Email type fields": "Velde van e-possoort"
+  }
+}
