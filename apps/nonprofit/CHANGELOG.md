@@ -8,6 +8,7 @@ All notable changes to this application are documented in this file.
 - New memberships get their name, period and amount from their type
 - A payment's status flows to its registrations, memberships and orders
 - Active memberships expire every night once their end date has passed
+- Records linked to a payment take over its status right away
 
 ## 0.1.0
 
