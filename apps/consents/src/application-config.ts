@@ -45,6 +45,7 @@ export default defineApplication({
       universalIdentifier: ORGANIZATION_NAME_VARIABLE_UNIVERSAL_IDENTIFIER,
       label: 'Organization name',
       description: 'Shown in confirmation mails and on the public pages.',
+      isRequired: true,
     },
   },
 });

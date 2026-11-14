@@ -4,6 +4,6 @@ export type AppConfig = {
   senderEmail: string;
   senderName: string;
   organizationName: string;
-  // The server's public address; public routes live under /s.
+  // The public address of the app's routes, which live under /s.
   publicBaseUrl: string;
 };

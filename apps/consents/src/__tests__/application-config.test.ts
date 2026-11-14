@@ -21,6 +21,10 @@ describe('application config', () => {
     expect(variables.BREVO_API_KEY?.isRequired).not.toBe(true);
   });
 
+  it('requires the organization name, which the mail and pages use', () => {
+    expect(variables.ORGANIZATION_NAME).toMatchObject({ isRequired: true });
+  });
+
   it('declares the sender and organization settings', () => {
     expect(Object.keys(variables).sort()).toEqual(
       ['BREVO_API_KEY', 'CONSENT_SIGNING_SECRET', 'ORGANIZATION_NAME', 'SENDER_EMAIL', 'SENDER_NAME'].sort(),

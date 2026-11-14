@@ -1,0 +1,83 @@
+{
+  "fieldMetadata.description": {
+    "Default text next to the checkbox in forms": "Default text next to the checkbox in forms",
+    "Explanation on the preferences page": "Explanation on the preferences page",
+    "Groups the changes of one form submission": "Groups the changes of one form submission",
+    "Inactive types are hidden on forms and the preferences page": "Inactive types are hidden on forms and the preferences page",
+    "Lets people join or leave this list on the preferences page": "Lets people join or leave this list on the preferences page",
+    "Link that confirms the consent while it is pending": "Link that confirms the consent while it is pending",
+    "Personal link to the email preferences page": "Personal link to the email preferences page",
+    "Shown on the preferences page": "Shown on the preferences page",
+    "The text as the person saw it": "The text as the person saw it"
+  },
+  "fieldMetadata.label": {
+    "Action": "Action",
+    "Active": "Active",
+    "Changes": "Changes",
+    "Confirmation link": "Confirmation link",
+    "Confirmation sent at": "Confirmation sent at",
+    "Consent": "Consent",
+    "Consent text": "Consent text",
+    "Consents": "Consents",
+    "Description": "Description",
+    "Email type": "Email type",
+    "Form": "Form",
+    "Granted at": "Granted at",
+    "IP address": "IP address",
+    "Language": "Language",
+    "Lists": "Lists",
+    "Name": "Name",
+    "Note": "Note",
+    "Occurred at": "Occurred at",
+    "Person": "Person",
+    "Preferences link": "Preferences link",
+    "Required email type": "Required email type",
+    "Show on preferences page": "Show on preferences page",
+    "Shown text": "Shown text",
+    "Source": "Source",
+    "Status": "Status",
+    "Submission ID": "Submission ID",
+    "User agent": "User agent",
+    "Withdrawn at": "Withdrawn at"
+  },
+  "navigationMenuItem.name": {
+    "Consents": "Consents",
+    "Email types": "Email types"
+  },
+  "objectMetadata.description": {
+    "A kind of email that needs consent, such as the newsletter": "A kind of email that needs consent, such as the newsletter",
+    "A person's current consent for one email type": "A person's current consent for one email type",
+    "One opt-in, confirmation or withdrawal, kept as proof": "One opt-in, confirmation or withdrawal, kept as proof"
+  },
+  "objectMetadata.labelPlural": {
+    "Consent changes": "Consent changes",
+    "Consents": "Consents",
+    "Email types": "Email types"
+  },
+  "objectMetadata.labelSingular": {
+    "Consent": "Consent",
+    "Consent change": "Consent change",
+    "Email type": "Email type"
+  },
+  "pageLayout.name": {
+    "Consent change layout": "Consent change layout",
+    "Consent layout": "Consent layout",
+    "Email type layout": "Email type layout"
+  },
+  "pageLayoutTab.title": {
+    "Home": "Home",
+    "Timeline": "Timeline"
+  },
+  "pageLayoutWidget.title": {
+    "Fields": "Fields",
+    "Timeline": "Timeline"
+  },
+  "view.name": {
+    "All consent changes": "All consent changes",
+    "All consents": "All consents",
+    "All email types": "All email types",
+    "Consent change fields": "Consent change fields",
+    "Consent fields": "Consent fields",
+    "Email type fields": "Email type fields"
+  }
+}

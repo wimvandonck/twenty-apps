@@ -15,7 +15,7 @@ export const readAppConfig = (env: Record<string, string | undefined> = process.
     brevoApiKey: value(env.BREVO_API_KEY),
     senderEmail: value(env.SENDER_EMAIL) ?? '',
     senderName: value(env.SENDER_NAME) ?? value(env.ORGANIZATION_NAME) ?? '',
-    organizationName: value(env.ORGANIZATION_NAME) ?? '',
-    publicBaseUrl: (value(env.TWENTY_API_URL) ?? '').replace(/\/+$/, ''),
+    organizationName: value(env.ORGANIZATION_NAME) ?? value(env.SENDER_NAME) ?? '',
+    publicBaseUrl: (value(env.TWENTY_FUNCTIONS_URL) ?? value(env.TWENTY_API_URL) ?? '').replace(/\/+$/, ''),
   };
 };
