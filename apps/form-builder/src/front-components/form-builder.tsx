@@ -15,16 +15,19 @@ import { EMPTY_FORM_DEFINITION } from 'src/constants/empty-form-definition';
 import { FORM_BUILDER_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER } from 'src/constants/universal-identifiers';
 import { FormPreview } from 'src/front-components/components/form-preview';
 import { LinksSection } from 'src/front-components/components/links-section';
+import { ConsentsSection } from 'src/front-components/components/consents-section';
 import { ListsSection } from 'src/front-components/components/lists-section';
 import { OptionSelect } from 'src/front-components/components/option-select';
 import { RecordCard } from 'src/front-components/components/record-card';
 import { SettingsSection } from 'src/front-components/components/settings-section';
 import { ShareSection } from 'src/front-components/components/share-section';
 import { fetchForms } from 'src/twenty-client/fetch-forms';
+import { fetchEmailTypes } from 'src/twenty-client/fetch-email-types';
 import { fetchLists } from 'src/twenty-client/fetch-lists';
 import { fetchObjectMetadata } from 'src/twenty-client/fetch-object-metadata';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type FormSummary } from 'src/types/form-summary';
+import { type EmailTypeSummary } from 'src/types/email-type-summary';
 import { type ListSummary } from 'src/types/list-summary';
 import { type ObjectMetadata } from 'src/types/object-metadata';
 import { moveItem } from 'src/utils/move-item.util';
@@ -37,7 +40,12 @@ import { sortRecordsByLinks } from 'src/utils/sort-records-by-links.util';
 type LoadState =
   | { status: 'LOADING' }
   | { status: 'ERROR'; message: string }
-  | { status: 'READY'; objects: ObjectMetadata[]; lists: ListSummary[] | null };
+  | {
+      status: 'READY';
+      objects: ObjectMetadata[];
+      lists: ListSummary[] | null;
+      emailTypes: EmailTypeSummary[] | null;
+    };
 
 type CreatedFormResponse = { data: { createForm: { id: string } } };
 
@@ -75,10 +83,11 @@ const FormBuilder = () => {
     setLoadState({ status: 'LOADING' });
 
     try {
-      const [objects, loadedForms, lists] = await Promise.all([
+      const [objects, loadedForms, lists, emailTypes] = await Promise.all([
         fetchObjectMetadata(),
         fetchForms(client),
         fetchLists(client),
+        fetchEmailTypes(client),
       ]);
       const preferredFormId = requestedFormId ?? localStorage.getItem(LAST_FORM_KEY);
       const initialForm = loadedForms.find(({ id }) => id === preferredFormId) ?? loadedForms[0];
@@ -89,7 +98,7 @@ const FormBuilder = () => {
         openForm(initialForm, objects);
       }
 
-      setLoadState({ status: 'READY', objects, lists });
+      setLoadState({ status: 'READY', objects, lists, emailTypes });
     } catch (error) {
       setLoadState({ status: 'ERROR', message: error instanceof Error ? error.message : String(error) });
     }
@@ -294,6 +303,7 @@ const FormBuilder = () => {
               <Tabs.List aria-label={t('Form')}>
                 <Tabs.Tab value="fields">{t('Fields')}</Tabs.Tab>
                 <Tabs.Tab value="links">{t('Links')}</Tabs.Tab>
+                <Tabs.Tab value="consents">{t('Consents')}</Tabs.Tab>
                 <Tabs.Tab value="lists">{t('Lists')}</Tabs.Tab>
                 <Tabs.Tab value="settings">{t('Settings')}</Tabs.Tab>
                 <Tabs.Tab value="share">{t('Share')}</Tabs.Tab>
@@ -340,6 +350,16 @@ const FormBuilder = () => {
                     links={definition.links}
                     hasCycle={hasCycle}
                     onChange={(links) => applyDefinition({ links })}
+                  />
+                </div>
+              </Tabs.Panel>
+              <Tabs.Panel value="consents">
+                <div style={panelStyle}>
+                  <ConsentsSection
+                    consents={definition.consents}
+                    records={definition.records}
+                    emailTypes={loadState.emailTypes}
+                    onChange={(consents) => applyDefinition({ consents })}
                   />
                 </div>
               </Tabs.Panel>

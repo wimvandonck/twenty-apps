@@ -146,5 +146,16 @@
   "view.name": {
     "All forms": "Բոլոր ձևերը",
     "Form fields": "Ձևի դաշտեր"
-  }
+  },
+  "Add consent": "Add consent",
+  "Ask the person of a submission for consent to an email type. The box starts unticked; the person confirms by email before the consent counts.": "Ask the person of a submission for consent to an email type. The box starts unticked; the person confirms by email before the consent counts.",
+  "Consents": "Consents",
+  "Create an email type in Consents first.": "Create an email type in Consents first.",
+  "Email type": "Email type",
+  "Install the Consents app to ask for consent in forms.": "Install the Consents app to ask for consent in forms.",
+  "No consents yet.": "No consents yet.",
+  "Required to send the form": "Required to send the form",
+  "This list requires consent, which an \"Always\" list does not ask for. Let the visitor tick a box instead.": "This list requires consent, which an \"Always\" list does not ask for. Let the visitor tick a box instead.",
+  "This list requires consent: ticking the box also asks for it, with a confirmation email.": "This list requires consent: ticking the box also asks for it, with a confirmation email.",
+  "Yes, send me {emailType}": "Yes, send me {emailType}"
 }

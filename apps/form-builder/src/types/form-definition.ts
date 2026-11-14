@@ -1,3 +1,4 @@
+import { type FormConsent } from 'src/types/form-consent';
 import { type FormLink } from 'src/types/form-link';
 import { type FormList } from 'src/types/form-list';
 import { type FormRecord } from 'src/types/form-record';
@@ -11,4 +12,5 @@ export type FormDefinition = {
   records: FormRecord[];
   links: FormLink[];
   lists: FormList[];
+  consents: FormConsent[];
 };

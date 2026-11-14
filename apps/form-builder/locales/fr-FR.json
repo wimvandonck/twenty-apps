@@ -146,5 +146,16 @@
   "view.name": {
     "All forms": "Tous les formulaires",
     "Form fields": "Champs du formulaire"
-  }
+  },
+  "Add consent": "Ajouter un consentement",
+  "Ask the person of a submission for consent to an email type. The box starts unticked; the person confirms by email before the consent counts.": "Demandez à la personne d’un envoi son consentement pour un type d’e-mail. La case est décochée au départ ; la personne confirme par e-mail avant que le consentement compte.",
+  "Consents": "Consentements",
+  "Create an email type in Consents first.": "Créez d’abord un type d’e-mail dans Consentements.",
+  "Email type": "Type d’e-mail",
+  "Install the Consents app to ask for consent in forms.": "Installez l’app Consents pour demander un consentement dans les formulaires.",
+  "No consents yet.": "Pas encore de consentements.",
+  "Required to send the form": "Obligatoire pour envoyer le formulaire",
+  "This list requires consent, which an \"Always\" list does not ask for. Let the visitor tick a box instead.": "Cette liste demande un consentement, qu’une liste « Toujours » ne demande pas. Laissez plutôt le visiteur cocher une case.",
+  "This list requires consent: ticking the box also asks for it, with a confirmation email.": "Cette liste demande un consentement : cocher la case le demande aussi, avec un e-mail de confirmation.",
+  "Yes, send me {emailType}": "Oui, envoyez-moi {emailType}"
 }

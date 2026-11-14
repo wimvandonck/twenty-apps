@@ -12,4 +12,7 @@ export type FormList = {
   // The text next to that box, and whether it starts ticked.
   label: string;
   checked: boolean;
+  // The email type of the Consents app the list requires, if any. Ticking
+  // the box then also asks consent for it.
+  emailTypeId: string | null;
 };

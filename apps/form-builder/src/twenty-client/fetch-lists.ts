@@ -4,7 +4,7 @@ import { LIST_OBJECT_NAME_PLURAL } from 'src/constants/list-objects';
 import { type ListSummary } from 'src/types/list-summary';
 
 type ListsResponse = {
-  data: Record<string, Array<{ id: string; name: string | null }>>;
+  data: Record<string, Array<{ id: string; name: string | null; requiredEmailTypeId?: string | null }>>;
 };
 
 // The workspace's lists, or null when it has no lists at all (an older
@@ -16,7 +16,7 @@ export const fetchLists = async (client: RestApiClient): Promise<ListSummary[] |
     });
 
     return (Object.values(response.data)[0] ?? [])
-      .map(({ id, name }) => ({ id, name: name ?? '' }))
+      .map(({ id, name, requiredEmailTypeId }) => ({ id, name: name ?? '', requiredEmailTypeId: requiredEmailTypeId ?? null }))
       .sort((a, b) => a.name.localeCompare(b.name));
   } catch {
     return null;

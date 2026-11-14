@@ -151,6 +151,7 @@ export const DEFINITION: FormDefinition = {
     },
   ],
   lists: [],
+  consents: [],
 };
 
 export const NEWSLETTER = {
@@ -161,4 +162,14 @@ export const NEWSLETTER = {
   optIn: false,
   label: 'Subscribe to Newsletter',
   checked: false,
+  emailTypeId: null,
+};
+
+export const NEWSLETTER_CONSENT = {
+  key: 'consent1',
+  emailTypeId: '27ebfb49-c998-496e-be55-777ad9d5468d',
+  emailTypeName: 'Newsletter',
+  recordKey: 'person',
+  label: 'Yes, send me the newsletter',
+  required: false,
 };

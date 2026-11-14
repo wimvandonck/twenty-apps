@@ -2,6 +2,7 @@ import { LIST_PERSON_OBJECT_NAME_SINGULAR } from 'src/constants/list-objects';
 import { MATCH_FIELD_TYPES } from 'src/constants/match-field-types';
 import { type FormDefinition } from 'src/types/form-definition';
 import { type FormField } from 'src/types/form-field';
+import { type FormConsent } from 'src/types/form-consent';
 import { type FormLink } from 'src/types/form-link';
 import { type FormList } from 'src/types/form-list';
 import { type FormRecord } from 'src/types/form-record';
@@ -167,6 +168,35 @@ const parseList = (value: unknown, records: FormRecord[]): FormList | null => {
     optIn: value.optIn === true,
     label: asText(value.label, listName),
     checked: value.checked === true,
+    emailTypeId: typeof value.emailTypeId === 'string' && UUID.test(value.emailTypeId) ? value.emailTypeId : null,
+  };
+};
+
+// Forms saved before consents existed have none. A consent can only take the
+// form's person records.
+const parseConsent = (value: unknown, records: FormRecord[]): FormConsent | null => {
+  if (
+    !isObject(value) ||
+    !isIdentifier(value.key) ||
+    typeof value.emailTypeId !== 'string' ||
+    !UUID.test(value.emailTypeId) ||
+    !records.some(
+      ({ key, objectNameSingular }) =>
+        key === value.recordKey && objectNameSingular === LIST_PERSON_OBJECT_NAME_SINGULAR,
+    )
+  ) {
+    return null;
+  }
+
+  const emailTypeName = asText(value.emailTypeName, '');
+
+  return {
+    key: value.key,
+    emailTypeId: value.emailTypeId,
+    emailTypeName,
+    recordKey: value.recordKey as string,
+    label: asText(value.label, emailTypeName),
+    required: value.required === true,
   };
 };
 
@@ -206,6 +236,15 @@ export const parseFormDefinition = (value: unknown): FormDefinition | null => {
     return null;
   }
 
+  const consents = (Array.isArray(value.consents) ? value.consents : []).map((consent) =>
+    parseConsent(consent, records as FormRecord[]),
+  );
+  const consentKeys = consents.map((consent) => consent?.key);
+
+  if (consents.some((consent) => consent === null) || new Set(consentKeys).size !== consentKeys.length) {
+    return null;
+  }
+
   return {
     version: 1,
     title: asText(value.title, ''),
@@ -215,5 +254,6 @@ export const parseFormDefinition = (value: unknown): FormDefinition | null => {
     records: records as FormRecord[],
     links: links as FormLink[],
     lists: lists as FormList[],
+    consents: consents as FormConsent[],
   };
 };
