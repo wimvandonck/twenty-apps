@@ -6,7 +6,7 @@ import { fetchPreferenceData } from 'src/twenty-client/fetch-preference-data';
 import { buildPreferenceGroups } from 'src/utils/build-preference-groups.util';
 import { getPublicMessages } from 'src/utils/get-public-messages.util';
 import { htmlResponse } from 'src/utils/html-response.util';
-import { readAppConfig } from 'src/utils/read-app-config.util';
+import { readAppConfigOrNull } from 'src/utils/read-app-config.util';
 import { renderInvalidLinkHtml } from 'src/utils/render-invalid-link-html.util';
 import { renderPreferencesHtml } from 'src/utils/render-preferences-html.util';
 import { verifyToken } from 'src/utils/verify-token.util';
@@ -14,7 +14,11 @@ import { verifyToken } from 'src/utils/verify-token.util';
 // The personal preferences page.
 const handler = async (event: RoutePayload) => {
   const { locale, messages } = getPublicMessages(event.queryStringParameters?.lang, event.headers?.['accept-language']);
-  const config = readAppConfig();
+  const config = readAppConfigOrNull();
+
+  if (!config) {
+    return htmlResponse(503, renderInvalidLinkHtml(messages, locale));
+  }
   const token = event.queryStringParameters?.token ?? '';
   const payload = verifyToken(token, config.signingSecret, Date.now());
   const data = payload?.kind === 'preferences' ? await fetchPreferenceData(createRecordStore(), payload.personId) : null;

@@ -19,3 +19,12 @@ export const readAppConfig = (env: Record<string, string | undefined> = process.
     publicBaseUrl: (value(env.TWENTY_FUNCTIONS_URL) ?? value(env.TWENTY_API_URL) ?? '').replace(/\/+$/, ''),
   };
 };
+
+// The settings, or null while the signing secret is not set yet.
+export const readAppConfigOrNull = (env: Record<string, string | undefined> = process.env): AppConfig | null => {
+  try {
+    return readAppConfig(env);
+  } catch {
+    return null;
+  }
+};

@@ -2,13 +2,16 @@ import { type ChangeRequest } from 'src/types/change-request';
 
 const ACTIONS = ['REQUESTED', 'CONFIRMED', 'GRANTED', 'WITHDRAWN'];
 const SOURCES = ['FORM', 'PREFERENCE_PAGE', 'MANUAL', 'IMPORT', 'API', 'BREVO'];
-const OPTIONAL_TEXT = ['occurredAt', 'shownText', 'formName', 'language', 'note'] as const;
+const OPTIONAL_TEXT = ['shownText', 'formName', 'language', 'note'] as const;
+// A little slack for clocks that run ahead.
+const FUTURE_SLACK_MS = 5 * 60 * 1000;
 
 const isText = (value: unknown): value is string => typeof value === 'string' && value.trim() !== '';
 
 // Checks the body of POST /consents/changes.
 export const parseChangeRequest = (
   body: unknown,
+  now: number = Date.now(),
 ): { ok: true; value: ChangeRequest } | { ok: false; errors: string[] } => {
   const input = (typeof body === 'object' && body !== null ? body : {}) as Record<string, unknown>;
   const errors: string[] = [];
@@ -37,6 +40,16 @@ export const parseChangeRequest = (
     }
 
     const parsed: Record<string, unknown> = { emailTypeId: change.emailTypeId, action: change.action, source: change.source };
+
+    if (isText(change.occurredAt)) {
+      const time = Date.parse(change.occurredAt);
+
+      if (Number.isNaN(time) || time > now + FUTURE_SLACK_MS) {
+        errors.push(`changes[${index}].occurredAt must be a date and time in the past`);
+      } else {
+        parsed.occurredAt = new Date(time).toISOString();
+      }
+    }
 
     for (const key of OPTIONAL_TEXT) {
       if (isText(change[key])) {

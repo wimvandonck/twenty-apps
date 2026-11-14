@@ -4,14 +4,19 @@ import { createRecordStore } from 'src/twenty-client/create-record-store';
 import { fetchPendingConsents } from 'src/twenty-client/fetch-pending-consents';
 import { backfillPreferenceLinks } from 'src/utils/backfill-preference-links.util';
 import { groupPendingForRetry } from 'src/utils/group-pending-for-retry.util';
-import { readAppConfig } from 'src/utils/read-app-config.util';
+import { readAppConfigOrNull } from 'src/utils/read-app-config.util';
 import { sendConfirmation } from 'src/utils/send-confirmation.util';
 
 // Sends confirmation mails that could not go out before, for example because
 // Brevo's daily limit was reached. Also gives people still without a
 // preferences link one, such as those who existed before the secret was set.
 const handler = async () => {
-  const config = readAppConfig();
+  const config = readAppConfigOrNull();
+
+  if (!config) {
+    return { linked: 0, retried: 0, sent: 0 };
+  }
+
   const store = createRecordStore();
   const linked = await backfillPreferenceLinks(store, config);
 
