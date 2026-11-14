@@ -1,0 +1,82 @@
+import { defineObject, FieldType, RelationType } from 'twenty-sdk/define';
+
+import {
+  MEMBERSHIP_MEMBERSHIP_TYPE_FIELD_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_OBJECT_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_TYPE_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_TYPE_DURATION_FIELD_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_TYPE_IS_AVAILABLE_FIELD_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_TYPE_MEMBERSHIPS_FIELD_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_TYPE_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_TYPE_OBJECT_UNIVERSAL_IDENTIFIER,
+  MEMBERSHIP_TYPE_PRICE_FIELD_UNIVERSAL_IDENTIFIER,
+} from 'src/constants/data-model';
+
+export default defineObject({
+  universalIdentifier: MEMBERSHIP_TYPE_OBJECT_UNIVERSAL_IDENTIFIER,
+  nameSingular: 'membershipType',
+  namePlural: 'membershipTypes',
+  labelSingular: 'Membership type',
+  labelPlural: 'Membership types',
+  description: "A kind of membership with its fee and duration, such as individual or family",
+  icon: 'IconIdBadge2',
+  labelIdentifierFieldMetadataUniversalIdentifier: MEMBERSHIP_TYPE_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+  fields: [
+    {
+      universalIdentifier: MEMBERSHIP_TYPE_NAME_FIELD_UNIVERSAL_IDENTIFIER,
+      type: FieldType.TEXT,
+      name: 'name',
+      label: 'Name',
+      icon: 'IconAbc',
+    },
+    {
+      universalIdentifier: MEMBERSHIP_TYPE_PRICE_FIELD_UNIVERSAL_IDENTIFIER,
+      type: FieldType.CURRENCY,
+      name: 'price',
+      label: 'Price',
+      description: 'Fee for one period',
+      icon: 'IconCurrencyEuro',
+      defaultValue: { amountMicros: null, currencyCode: "'EUR'" },
+    },
+    {
+      universalIdentifier: MEMBERSHIP_TYPE_DURATION_FIELD_UNIVERSAL_IDENTIFIER,
+      type: FieldType.SELECT,
+      name: 'duration',
+      label: 'Duration',
+      icon: 'IconCalendarRepeat',
+      defaultValue: "'ONE_YEAR'",
+      options: [
+        { position: 0, label: 'One year', value: 'ONE_YEAR', color: 'blue' },
+        { position: 1, label: 'Calendar year', value: 'CALENDAR_YEAR', color: 'sky' },
+        { position: 2, label: 'One month', value: 'ONE_MONTH', color: 'turquoise' },
+        { position: 3, label: 'Lifetime', value: 'LIFETIME', color: 'purple' },
+      ],
+    },
+    {
+      universalIdentifier: MEMBERSHIP_TYPE_IS_AVAILABLE_FIELD_UNIVERSAL_IDENTIFIER,
+      type: FieldType.BOOLEAN,
+      name: 'isAvailable',
+      label: 'Available',
+      description: 'Unavailable types are not offered in forms',
+      icon: 'IconToggleRight',
+      defaultValue: true,
+    },
+    {
+      universalIdentifier: MEMBERSHIP_TYPE_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
+      type: FieldType.TEXT,
+      name: 'description',
+      label: 'Description',
+      icon: 'IconAlignLeft',
+    },
+    {
+      universalIdentifier: MEMBERSHIP_TYPE_MEMBERSHIPS_FIELD_UNIVERSAL_IDENTIFIER,
+      type: FieldType.RELATION,
+      name: 'memberships',
+      label: 'Memberships',
+      icon: 'IconId',
+      relationTargetObjectMetadataUniversalIdentifier: MEMBERSHIP_OBJECT_UNIVERSAL_IDENTIFIER,
+      relationTargetFieldMetadataUniversalIdentifier: MEMBERSHIP_MEMBERSHIP_TYPE_FIELD_UNIVERSAL_IDENTIFIER,
+      universalSettings: { relationType: RelationType.ONE_TO_MANY },
+    },
+  ],
+});

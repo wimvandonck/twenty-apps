@@ -2,7 +2,7 @@
 
 A Twenty app with the data model non-profits need for event registrations, donations and a small shop. Each registration, donation and order is a record of its own, so it carries its own status, amount, preferences and payment instead of being a plain link between a person and an event or product.
 
-This version contains the data model only. Forms, payment providers and automation come later and will build on these objects.
+Forms come from the Form Builder app; payment providers come later and build on these objects.
 
 # Objects
 
@@ -17,7 +17,9 @@ This version contains the data model only. Forms, payment providers and automati
 | Product | `product` | Something the organisation sells |
 | Order | `order` | A purchase of one or more products |
 | Order line | `orderLine` | One product in an order, with quantity and price at the time of ordering |
-| Payment | `payment` | A payment for registrations, a donation or an order |
+| Membership type | `membershipType` | A kind of membership with its fee and duration, such as individual or family |
+| Membership | `membership` | One person or organization being a member for a period |
+| Payment | `payment` | A payment for registrations, a donation, an order or a membership |
 
 `event` is a reserved name in Twenty, so the event object is called `organizedEvent` in the API. Its label is still "Event".
 
@@ -27,16 +29,23 @@ This version contains the data model only. Forms, payment providers and automati
 - A registration links to its attendee (a person), optionally the person who booked it, a company, a ticket type and a payment. One payment can cover several registrations, for example when one person books for a group.
 - A donation links to a donor (a person) or a company, and optionally a campaign, a recurring donation and a payment. Every collection of a recurring donation is its own donation, so totals and tax certificates always come from donations.
 - An order links to a customer (a person) or a company and a payment, and has order lines. Each order line links to a product and keeps the unit price at the time of ordering.
+- A membership links to its member (a person) or a company, a membership type and a payment.
 - A payment links to the person who paid.
 
-On people and companies, the matching lists appear: registrations, booked registrations, donations, recurring donations, orders and payments.
+On people and companies, the matching lists appear: registrations, booked registrations, donations, recurring donations, orders, memberships and payments.
+
+# Automation
+
+- **A new membership** gets a name (member and type), today as start date, an end date from its type and the type's price as amount, for whatever was left empty. One year ends the day before the same date a year later, a calendar year on 31 December, one month the day before the same date a month later, and a lifetime membership never.
+- **When a payment's status changes**, its registrations get the same payment status (unpaid, paid or refunded). Paid makes pending memberships active and open orders paid; refunded cancels its memberships and refunds its orders. Records already moved on, such as a shipped order, are left alone.
+- **Every night**, active memberships whose end date has passed become expired.
 
 # Optional by design
 
 Organisations differ, so nearly everything is optional. Leave ticket types out for events with one price, leave capacity empty for unlimited events, and ignore company, campaign or tax-deductible fields where they don't apply.
 
 - **Event price** is the default price per attendee; empty means free. Ticket types override it.
-- **Payment status** on a registration is a copy of its payment's status. Twenty can't filter records on a field of a related record, so the copy makes "unpaid registrations" a simple filter. Payment automation will keep it in sync later.
+- **Payment status** on a registration is a copy of its payment's status. Twenty can't filter records on a field of a related record, so the copy makes "unpaid registrations" a simple filter. The app keeps it in sync.
 - **Answers** on a registration is a JSON field for questions specific to one event. Recurring questions have their own fields: dietary requirements, accessibility needs and remarks.
 - **Totals** (order total, line total) are stored values. Twenty has no formula fields, so they will be calculated by a logic function later.
 
